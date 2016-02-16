@@ -1,0 +1,3 @@
+applications:
+  - name: database-dsc
+  - buildpack: staticfile_buildpack
