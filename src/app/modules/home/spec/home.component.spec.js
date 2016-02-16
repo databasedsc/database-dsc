@@ -15,5 +15,8 @@
       })
     }));
 
+    it('set\'s a message on load', function () {
+      expect($ctrl.message).toEqual('DSC Initial message');
+    });
   });
 })();

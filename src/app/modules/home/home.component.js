@@ -7,5 +7,6 @@
       controller: 'HomeController'
     })
     .controller('HomeController', function () {
+      this.message = 'DSC Initial message';
     });
 })();

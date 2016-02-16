@@ -2,6 +2,12 @@
 
 var paths = require('./.yo-rc.json')['generator-gulp-angular'].props.paths;
 
+var browserName = 'phantomjs';
+
+if (process.env.TRAVIS) {
+  browserName = 'firefox'
+}
+
 // An example configuration file.
 exports.config = {
   // The address of a running selenium server.
@@ -10,8 +16,9 @@ exports.config = {
 
   // Capabilities to be passed to the webdriver instance.
   capabilities: {
-    'browserName': 'phantomjs'
+    'browserName': browserName
   },
+
 
   baseUrl: 'http://localhost:3000',
 
