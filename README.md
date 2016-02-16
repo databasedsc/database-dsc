@@ -24,4 +24,6 @@
 
 TBD
 
-Powered by:![Pivotal/CF](https://lh6.googleusercontent.com/TnlmxnMC9UgxldWpn6IdD3uTtE09lMCpqRN7hStfkmaRaPRUwyEbiTLrBnrrFOY74FtkSg=w2536-h1221)
+##Powered by:
+
+![Pivotal/CF](https://lh6.googleusercontent.com/TnlmxnMC9UgxldWpn6IdD3uTtE09lMCpqRN7hStfkmaRaPRUwyEbiTLrBnrrFOY74FtkSg=w2536-h1221)
