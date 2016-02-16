@@ -1,0 +1,7 @@
+pairs:
+  lu: Luis Urraca
+  bh: Bengt Hammarlund
+
+email:
+  prefix: pair
+  domain: pivotal.io
