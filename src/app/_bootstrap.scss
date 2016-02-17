@@ -1,0 +1,10 @@
+.navbar {
+  min-height: 100px !important;
+}
+
+.navbar-brand {
+    padding: 0 !important;
+  > img {
+    height: 100px;
+  }
+}
