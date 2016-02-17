@@ -10,7 +10,8 @@
       'ngMessages',
       'ui.router',
       'ui.bootstrap',
-      'home'
+      'home',
+      'searchResults'
     ]);
 
 })();

@@ -8,7 +8,11 @@
         .state('home', {
           url: '/home',
           template: '<home></home>'
-        });
+        })
+        .state('searchResults', {
+          url: '/',
+          template: '<search-results></search-results>'
+        }),
 
       $urlRouterProvider.otherwise('/');
     });
