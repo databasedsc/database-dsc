@@ -13,7 +13,7 @@ describe('SearchResults', function () {
   });
 
   it('should display result list with 1 startups', function() {
-    expect(page.searchResults.count()).toEqual(1);
+    expect(page.searchResults.count()).toEqual(3);
   });
 
   describe('search form', function () {

@@ -31,6 +31,11 @@ $icon-font-path: "../../bower_components/bootstrap-sass/assets/fonts/bootstrap/"
   padding: 0 50px 0 0;
 }
 
+.short-desc {
+  overflow: hidden;
+  height: 46px;
+}
+
 .background-line {
   position: relative;
   z-index: 1;

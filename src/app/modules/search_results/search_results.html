@@ -24,14 +24,14 @@
 
   </div>
 
-  <div ng-repeat="company in $ctrl.results" class="row col-xs-9 result-container">
+  <div class="row col-xs-9 result-container">
 
-    <div class="col-sm-4 col-xs-6 result-item">
+    <div ng-repeat="company in $ctrl.results" class="col-sm-4 col-xs-6 result-item">
       <div class="panel panel-default">
         <div class="panel-thumbnail"><img src="{{company.logo}}" class="logo img-responsive"></div>
         <div class="panel-body">
           <p id="name" class="lead">{{company.name}}</p>
-          <p id="short-desc">{{company.shortDesc}}</p>
+          <p id="short-desc" class="short-desc">{{company.short_description}}</p>
 
           <p>
             <img src="http://api.randomuser.me/portraits/med/men/20.jpg" width="28px" height="28px">
