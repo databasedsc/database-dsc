@@ -3,4 +3,7 @@ Rails.application.routes.draw do
 
   # Serve websocket cable requests in-process
   # mount ActionCable.server => '/cable'
+    namespace :v1 do
+      get 'companies', to: 'companies#index'
+    end
 end
