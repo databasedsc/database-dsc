@@ -1,5 +1,7 @@
 (function () {
   'use strict';
 
-  angular.module('searchResults', []);
+  angular.module('searchResults', [
+    'configuration'
+  ]);
 })();
