@@ -16,7 +16,8 @@
     }));
 
     it('should have search results', function () {
-      expect($ctrl.results).toBeDefined();
+      expect($ctrl.results.length).toEqual(1);
     });
+
   });
 })();
