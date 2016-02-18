@@ -4,32 +4,34 @@
     <h3 class="background-line"><span>Tech Companies</span></h3>
   </div>
   <div class="row col-xs-3 form-group filters">
-    <div class="form-group"><input type="search" name="" id="" class="form-control"/></div>
-    <a href="#" class="btn btn-primary btn-lg btn-block">Search</a><br/>
+    <div class="form-group">
+      <input type="search" name="" id="search-text-field" class="form-control"/></div>
+      <a href="#" id="search-button" class="btn btn-primary btn-lg btn-block">Search</a><br/>
 
-    <form class="form-horizontal">
-      <fieldset>
-        <legend>Filters</legend>
-        <div class="form-group"><label class="col-xs-4" for="">Filter 1</label><select name="" id="" class="form-control col-xs-12"></select></div>
-        <div class="form-group"><label class="col-xs-4" for="">Filter 2</label><select name="" id="" class="form-control col-xs-12"></select></div>
-        <div class="form-group"><label class="col-xs-4" for="">Filter 3</label><select name="" id="" class="form-control col-xs-12"></select></div>
-        <div class="form-group"><label class="col-xs-4" for="">Filter 4</label><select name="" id="" class="form-control col-xs-12"></select></div>
-        <div class="form-group"><label class="col-xs-4" for="">Filter 5</label><select name="" id="" class="form-control col-xs-12"></select></div>
-        <div class="form-group"><label class="col-xs-4" for="">Filter 6</label><select name="" id="" class="form-control col-xs-12"></select></div>
-        <div class="form-group"><label class="col-xs-4" for="">Filter 7</label><select name="" id="" class="form-control col-xs-12"></select></div>
-        <div class="form-group"><label class="col-xs-4" for="">Filter 8</label><select name="" id="" class="form-control col-xs-12"></select></div>
-      </fieldset>
-    </form>
-
+      <form class="form-horizontal">
+        <fieldset>
+          <legend>Filters</legend>
+          <div class="form-group"><label class="col-xs-4" for="">Filter 1</label><select name="" id="" class="form-control col-xs-12"></select></div>
+          <div class="form-group"><label class="col-xs-4" for="">Filter 2</label><select name="" id="" class="form-control col-xs-12"></select></div>
+          <div class="form-group"><label class="col-xs-4" for="">Filter 3</label><select name="" id="" class="form-control col-xs-12"></select></div>
+          <div class="form-group"><label class="col-xs-4" for="">Filter 4</label><select name="" id="" class="form-control col-xs-12"></select></div>
+          <div class="form-group"><label class="col-xs-4" for="">Filter 5</label><select name="" id="" class="form-control col-xs-12"></select></div>
+          <div class="form-group"><label class="col-xs-4" for="">Filter 6</label><select name="" id="" class="form-control col-xs-12"></select></div>
+          <div class="form-group"><label class="col-xs-4" for="">Filter 7</label><select name="" id="" class="form-control col-xs-12"></select></div>
+          <div class="form-group"><label class="col-xs-4" for="">Filter 8</label><select name="" id="" class="form-control col-xs-12"></select></div>
+        </fieldset>
+      </form>
 
   </div>
-  <div class="row col-xs-9 result-container">
+
+  <div ng-repeat="company in $ctrl.results" class="row col-xs-9 result-container">
+
     <div class="col-sm-4 col-xs-6 result-item">
       <div class="panel panel-default">
-        <div class="panel-thumbnail"><img src="https://placehold.it/450X300/dddddd/EE3333" class="img-responsive"></div>
+        <div class="panel-thumbnail"><img src="{{company.logo}}" class="logo img-responsive"></div>
         <div class="panel-body">
-          <p class="lead">Hacker News</p>
-          <p>120k Followers, 900 Posts</p>
+          <p id="name" class="lead">{{company.name}}</p>
+          <p id="short-desc">{{company.shortDesc}}</p>
 
           <p>
             <img src="http://api.randomuser.me/portraits/med/men/20.jpg" width="28px" height="28px">
@@ -40,127 +42,6 @@
       </div>
     </div><!--/col-->
 
-    <div class="col-sm-4 col-xs-6 result-item">
-      <div class="panel panel-default">
-        <div class="panel-thumbnail"><img src="https://placehold.it/450X300/dddddd/EE77EE" class="img-responsive"></div>
-        <div class="panel-body">
-          <p class="lead">Bootstrap Templates</p>
-          <p>902 Followers, 88 Posts</p>
-
-          <p>
-            <img src="http://api.randomuser.me/portraits/med/men/4.jpg" width="28px" height="28px">
-            <img src="http://api.randomuser.me/portraits/med/men/24.jpg" width="28px" height="28px">
-          </p>
-        </div>
-      </div>
-    </div><!--/col-->
-
-    <div class="col-sm-4 col-xs-6 result-item">
-      <div class="panel panel-default">
-        <div class="panel-thumbnail"><img src="https://placehold.it/450X300/dddddd/2222EE" class="img-responsive"></div>
-        <div class="panel-body">
-          <p class="lead">Social Media</p>
-          <p>19k Followers, 789 Posts</p>
-
-          <p>
-            <img src="http://api.randomuser.me/portraits/med/women/4.jpg" height="28px">
-            <img src="http://api.randomuser.me/portraits/med/men/4.jpg" width="28px" height="28px">
-          </p>
-        </div>
-      </div>
-    </div><!--/col-->
-
-    <div class="col-sm-4 col-xs-6 result-item">
-      <div class="panel panel-default">
-        <div class="panel-thumbnail"><img src="https://placehold.it/450X300/dddddd/EE3333" class="img-responsive"></div>
-        <div class="panel-body">
-          <p class="lead">Hacker News</p>
-          <p>120k Followers, 900 Posts</p>
-
-          <p>
-            <img src="http://api.randomuser.me/portraits/med/men/20.jpg" width="28px" height="28px">
-            <img src="http://api.randomuser.me/portraits/med/men/21.jpg" width="28px" height="28px">
-            <img src="http://api.randomuser.me/portraits/med/men/14.jpg" width="28px" height="28px">
-          </p>
-        </div>
-      </div>
-    </div><!--/col-->
-
-    <div class="col-sm-4 col-xs-6 result-item">
-      <div class="panel panel-default">
-        <div class="panel-thumbnail"><img src="https://placehold.it/450X300/dddddd/EE77EE" class="img-responsive"></div>
-        <div class="panel-body">
-          <p class="lead">Bootstrap Templates</p>
-          <p>902 Followers, 88 Posts</p>
-
-          <p>
-            <img src="http://api.randomuser.me/portraits/med/men/4.jpg" width="28px" height="28px">
-            <img src="http://api.randomuser.me/portraits/med/men/24.jpg" width="28px" height="28px">
-          </p>
-        </div>
-      </div>
-    </div><!--/col-->
-
-    <div class="col-sm-4 col-xs-6 result-item">
-      <div class="panel panel-default">
-        <div class="panel-thumbnail"><img src="https://placehold.it/450X300/dddddd/2222EE" class="img-responsive"></div>
-        <div class="panel-body">
-          <p class="lead">Social Media</p>
-          <p>19k Followers, 789 Posts</p>
-
-          <p>
-            <img src="http://api.randomuser.me/portraits/med/women/4.jpg" height="28px">
-            <img src="http://api.randomuser.me/portraits/med/men/4.jpg" width="28px" height="28px">
-          </p>
-        </div>
-      </div>
-    </div><!--/col-->
-
-    <div class="col-sm-4 col-xs-6 result-item">
-      <div class="panel panel-default">
-        <div class="panel-thumbnail"><img src="https://placehold.it/450X300/dddddd/EE3333" class="img-responsive"></div>
-        <div class="panel-body">
-          <p class="lead">Hacker News</p>
-          <p>120k Followers, 900 Posts</p>
-
-          <p>
-            <img src="http://api.randomuser.me/portraits/med/men/20.jpg" width="28px" height="28px">
-            <img src="http://api.randomuser.me/portraits/med/men/21.jpg" width="28px" height="28px">
-            <img src="http://api.randomuser.me/portraits/med/men/14.jpg" width="28px" height="28px">
-          </p>
-        </div>
-      </div>
-    </div><!--/col-->
-
-    <div class="col-sm-4 col-xs-6 result-item">
-      <div class="panel panel-default">
-        <div class="panel-thumbnail"><img src="https://placehold.it/450X300/dddddd/EE77EE" class="img-responsive"></div>
-        <div class="panel-body">
-          <p class="lead">Bootstrap Templates</p>
-          <p>902 Followers, 88 Posts</p>
-
-          <p>
-            <img src="http://api.randomuser.me/portraits/med/men/4.jpg" width="28px" height="28px">
-            <img src="http://api.randomuser.me/portraits/med/men/24.jpg" width="28px" height="28px">
-          </p>
-        </div>
-      </div>
-    </div><!--/col-->
-
-    <div class="col-sm-4 col-xs-6 result-item">
-      <div class="panel panel-default">
-        <div class="panel-thumbnail"><img src="https://placehold.it/450X300/dddddd/2222EE" class="img-responsive"></div>
-        <div class="panel-body">
-          <p class="lead">Social Media</p>
-          <p>19k Followers, 789 Posts</p>
-
-          <p>
-            <img src="http://api.randomuser.me/portraits/med/women/4.jpg" height="28px">
-            <img src="http://api.randomuser.me/portraits/med/men/4.jpg" width="28px" height="28px">
-          </p>
-        </div>
-      </div>
-    </div><!--/col-->
   </div>
 
 </div>
