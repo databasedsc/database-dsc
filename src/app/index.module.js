@@ -11,6 +11,7 @@
       'ui.router',
       'ui.bootstrap',
       'home',
+      'searchCompanies',
       'searchResults'
     ]);
 

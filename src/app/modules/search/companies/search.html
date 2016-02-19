@@ -1,0 +1,29 @@
+<div class="row">
+
+  <div class="row">
+    <h3 class="background-line"><span>Tech Companies</span></h3>
+  </div>
+  <div class="row col-xs-3 form-group filters">
+    <form class="form-horizontal" ng-submit="$ctrl.search()">
+      <div class="form-group">
+        <input type="search" name="search-text" id="search-text-field" class="form-control" ng-model="$ctrl.query" autocomplete="off" /></div>
+      <button type="submit" href="#" id="search-button" class="btn btn-primary btn-lg btn-block" >Search</button><br/>
+
+      <fieldset>
+        <legend>Filters</legend>
+        <div class="form-group"><label class="col-xs-4" for="">Filter 1</label><select name="" id="" class="form-control col-xs-12"></select></div>
+        <div class="form-group"><label class="col-xs-4" for="">Filter 2</label><select name="" id="" class="form-control col-xs-12"></select></div>
+        <div class="form-group"><label class="col-xs-4" for="">Filter 3</label><select name="" id="" class="form-control col-xs-12"></select></div>
+        <div class="form-group"><label class="col-xs-4" for="">Filter 4</label><select name="" id="" class="form-control col-xs-12"></select></div>
+        <div class="form-group"><label class="col-xs-4" for="">Filter 5</label><select name="" id="" class="form-control col-xs-12"></select></div>
+        <div class="form-group"><label class="col-xs-4" for="">Filter 6</label><select name="" id="" class="form-control col-xs-12"></select></div>
+        <div class="form-group"><label class="col-xs-4" for="">Filter 7</label><select name="" id="" class="form-control col-xs-12"></select></div>
+        <div class="form-group"><label class="col-xs-4" for="">Filter 8</label><select name="" id="" class="form-control col-xs-12"></select></div>
+      </fieldset>
+    </form>
+
+  </div>
+
+  <search-results companies="$ctrl.results" message="$ctrl.message"></search-results>
+
+</div>

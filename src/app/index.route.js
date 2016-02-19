@@ -9,9 +9,9 @@
           url: '/home',
           template: '<home></home>'
         })
-        .state('searchResults', {
+        .state('searchCompanies', {
           url: '/',
-          template: '<search-results></search-results>'
+          template: '<search-companies></search-companies>'
         }),
 
       $urlRouterProvider.otherwise('/');
