@@ -4,13 +4,19 @@ default: &default
   pool: 5
   timeout: 5000
 
-development:
-  <<: *default
-  database: db/development.sqlite3
+development: &development
+  adapter: postgresql
+  pool: 5
+  timeout: 5000
+  host: 192.168.99.100
+  port: 32768
+  username: postgres
+  database: development
+#  password: pguser_password
 
 test:
-  <<: *default
-  database: db/test.sqlite3
+  <<: *development
+  database: testing
 
 production:
   <<: *default
