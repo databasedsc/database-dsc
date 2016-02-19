@@ -7,12 +7,7 @@ services:
 language: ruby
 
 rvm:
- - 2.2.3
-
- env:
-   global:
- #CF_PASSWORD
-   - secure:  u0SEOPeSk6fd23oz3uYXnlJe+eOIqWNbBIbqSmMqML614m6hVS7Ko18QBfHeFfy/MFvMVjL7RB6+yMIEhnoCebTtYmmfrLCzCW/9CnsHdkC600oOzIE3IAPFQhi0RsLy9ktrMvBqhg4unUWPL6O17hqSWqVQvMBr8TJKYhvb/2cMiPSallGnVwZiV/eEOG5mhNVuhzq2LecFgwNikhN7wTZnXNmUGwmeonxpl+zYW/xlZa42BzDlQb6R7kf6JBgDxgIn5msU1ED82sorh6pccsubJZq/WTpJt6AtH3NtlGpBEMSI0viu1SaZPgqDS4yf8e4DODOiOKVCwGJquXLzq/1pr2rbj96up8gFuI8ZjMMogQrNwZsG8Ddk51h3lvTXZGuR8g7gR3nRiXw/mmyUHhmpGqxdtLqAGLNJdxmXSoPNgwaYqQV04XsdCiPzi6ykAS+fdOsKFb8p6REsl0cUhp2t6KyNE171UmVHORViK5z7mfwwutue00lvh4sBzTiXDCPVOcACGvVNdVFfoafgx3SuF+1zs1Yw73r35pj0fWPl1vISHOTpoFfWHh3OLdpNXRGLY4BhGDhkCio8BxVeVsowRPa3puo0aNmZPWHANYwD5C3pzTRipbp1w7IeC2aQy9nG3SfSG9XFC8MsSBkjKkZl+IlybijnQzWcEJ0PtiM=
+  - 2.2.3
 
 install:
   - . $HOME/.nvm/nvm.sh
@@ -27,13 +22,15 @@ install:
 before_script:
   - export DISPLAY=:99.0
   - sh -e /etc/init.d/xvfb start
-#  - cp server/config/database.yml.travis server/config/database.yml
 
 script:
   - gulp test
   - cd server/dsc-db-be && bundle install
-  - rake db:setup && rails s -p 4000 > /dev/null &
+  - cp config/database.yml.travis config/database.yml
+  - rake db:setup db:seed
+  - rails s -p 4000 > /dev/null &
   - cd ../../
+  - sleep 10
   - gulp protractor
 
 before_deploy:
@@ -49,13 +46,3 @@ deploy:
   api: https://api.run.pivotal.io
   organization: bengt-org
   space: development
-
-#after_deploy:
-#  - cd server/dsc-db-be
-#  - curl -L "https://cli.run.pivotal.io/stable?release=linux64binary&source=github" | tar -zx
-#  - ./cf api https://api.cf.foo.com
-#  - ./cf login -u bgadelhahammarlund@pivotal.io -p $CF_PASSWORD -o trial -s testing
-#  - ./cf push database-dsc
-
-
-

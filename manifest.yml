@@ -1,3 +1,4 @@
 applications:
   - name: database-dsc
-  - buildpack: staticfile_buildpack
+    memory: 128M
+    buildpack: staticfile_buildpack
