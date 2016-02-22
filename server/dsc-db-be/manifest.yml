@@ -1,0 +1,6 @@
+applications:
+  - name: database-dsc-be
+    memory: 256M
+    command: bundle exec rake cf:on_first_instance db:migrate db:seed && bundle exec rails s -p $PORT -e $RAILS_ENV
+    services:
+      - rails-db
