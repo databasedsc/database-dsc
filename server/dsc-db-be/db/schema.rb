@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160219162026) do
+ActiveRecord::Schema.define(version: 20160222123730) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,6 +22,13 @@ ActiveRecord::Schema.define(version: 20160219162026) do
     t.string   "name"
     t.string   "logo"
     t.text     "short_description"
+    t.string   "headquarters"
+    t.string   "formerly_known_as"
+    t.text     "founders"
+    t.text     "categories"
+    t.text     "investors"
+    t.text     "office_locations"
+    t.string   "incubator"
   end
 
   create_table "pg_search_documents", force: :cascade do |t|

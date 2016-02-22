@@ -16,7 +16,14 @@ class Company < ApplicationRecord
   pg_search_scope :search,
     against: {
       name: 'A',
-      short_description: 'B'
+      short_description: 'B',
+      headquarters: 'C',
+      formerly_known_as: 'A',
+      founders: 'D',
+      categories: 'D',
+      investors: 'D',
+      office_locations: 'D',
+      incubator: 'D'
     },
     using: {
       tsearch: {prefix: true}
