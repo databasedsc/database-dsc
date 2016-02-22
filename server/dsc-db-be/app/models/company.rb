@@ -26,6 +26,6 @@ class Company < ApplicationRecord
       incubator: 'D'
     },
     using: {
-      tsearch: {prefix: true}
+      tsearch: { any_word: true, prefix: true, dictionary: "english" }
     }
 end
