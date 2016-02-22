@@ -34,8 +34,9 @@ script:
   - gulp protractor
 
 before_deploy:
-  - gulp build
   - cp src/app/ngConstants.js.prod src/app/ngConstants.js
+  - gulp build
+  - echo $PWD
 
 deploy:
   edge: true
