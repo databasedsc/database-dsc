@@ -28,7 +28,7 @@ Company.create(
       "short_description": "Software to analyse customer/client profiles for companies.",
       "headquarters": "Dublin",
       "formerly_known_as": "",
-      "founders": "Dave O'Flanagan",
+      "founders": "Dave O'Flanagan, Alan Giles, Dermot O'Connor",
       "categories": "Travel, Big Data Analytics, Personalization",
       "investors": "NDRC - Seed, Series A; Tadhgh O'Toole - Angel; Bloom Equity - Angel; Conor Stanley - Angel; Delta Partners - Angel, Series A; Frontline Ventures - Series B; Polaris Partners - Series B; Silicon Valley Bank - Series B",
       "office_locations": "Ashford House, Tara Street, Dublin, Dublin 2; 34 Farnsworth Street, Floor 4, Boston, MA 02110, USA",
