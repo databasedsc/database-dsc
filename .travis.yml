@@ -39,7 +39,6 @@ before_deploy:
   - echo $PWD
 
 deploy:
-  edge: true
   provider: cloudfoundry
   username: bgadelhahammarlund@pivotal.io
   password:
