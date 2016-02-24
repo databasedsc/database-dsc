@@ -25,7 +25,7 @@ Company.create(
       "employees": 6,
       "funding_amount": 250000,
       "product_stage": "Complete",
-      "geo_markets": "G",,
+      "geo_markets": "EU",
       "business_model": "B2B",
       "company_stage": "Growth",
       "operational_status": "Active"
