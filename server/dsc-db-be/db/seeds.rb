@@ -20,7 +20,15 @@ Company.create(
       "categories": "Technology, Social Recruiting, Event Management",
       "investors": "Undisclosed",
       "office_locations": "NDRC at the Digital Exchange, Crane Street, Dublin 8",
-      "incubator": "NDRC"
+      "incubator": "NDRC",
+      "funding_stage": "Seed",
+      "employees": 6,
+      "funding_amount": 250000,
+      "product_stage": "Complete",
+      "geo_markets": "G",,
+      "business_model": "B2B",
+      "company_stage": "Growth",
+      "operational_status": "Active"
     },
     {
       "name": "Boxever",
@@ -32,7 +40,15 @@ Company.create(
       "categories": "Travel, Big Data Analytics, Personalization",
       "investors": "NDRC - Seed, Series A; Tadhgh O'Toole - Angel; Bloom Equity - Angel; Conor Stanley - Angel; Delta Partners - Angel, Series A; Frontline Ventures - Series B; Polaris Partners - Series B; Silicon Valley Bank - Series B",
       "office_locations": "Ashford House, Tara Street, Dublin, Dublin 2; 34 Farnsworth Street, Floor 4, Boston, MA 02110, USA",
-      "incubator": "NDRC"
+      "incubator": "NDRC",
+      "funding_stage": "Series B",
+      "employees": 150,
+      "funding_amount": 18000000,
+      "product_stage": "Complete",
+      "geo_markets": "G",
+      "business_model": "B2B",
+      "company_stage": "Acquired",
+      "operational_status": "Active"
     },
     {
       "name": "Logentries",
@@ -44,7 +60,15 @@ Company.create(
       "categories": "Business Analytics, Application Performance Monitoring, Big Data Analytics",
       "investors": "NDRC, Seed Polaris Partners - Seed, Series A; Floodgate - Seed, Series A; Frontline Ventures - Series A; RRE Ventures - Series A",
       "office_locations": "26-28 Lomard Street, Dublin 2, Dublin; 34 Farnsworth Street, Floor 4, Boston, MA 02110, USA",
-      "incubator": "NDRC"
+      "incubator": "NDRC",
+      "funding_stage": "Acquired",
+      "employees": 40,
+      "funding_amount": 18000000,
+      "product_stage": "Complete",
+      "geo_markets": "G",
+      "business_model": "B2B",
+      "company_stage": "Acquired",
+      "operational_status": "Active"
     },
     {
       "name": "Trustev",
@@ -56,7 +80,15 @@ Company.create(
       "categories": "Security, E-Commerce, Fraud Detection, Software",
       "investors": "Wayra - Angel, Seed, Convertible Note; Shane Naughton - Seed; Notion Capital - Seed; Mangrove Capital Partners - Seed, Convertible Note; Kevin Abosch - Seed; Greycroft Partners - Seed, Convertible Note; Enterprise Ireland - Seed; David Coallier - Seed; ACT Venture Capital - Seed, Convertible Note",
       "office_locations": "2100 Cork Airport Business Park, Cork; 355 Lexington Avenue, New York, NY 10017, USA; 15 West 28th Street, Floor 8, New York, NY 10001, USA",
-      "incubator": "NDRC"
+      "incubator": "NDRC",
+      "funding_stage": "Acquired",
+      "employees": 29,
+      "funding_amount": 7500000,
+      "product_stage": "Complete",
+      "geo_markets": "G",
+      "business_model": "B2B",
+      "company_stage": "Early-stage",
+      "operational_status": "Active"
     },
     {
       "name": "Soundwave",
@@ -68,7 +100,15 @@ Company.create(
       "categories": "Music, Apps, Analytics, Local, Social Media, Real Time, Location Based Services",
       "investors": "ACT Venture Captal - Seed, Venture; Colin Wiel - Venture; Enterprise Ireland - Seed; Iain MacDonald - Venture; Matthew Le Merle - Seed; Mike Ryan - Venture; NDRC - Seed; Paddy Holahan - Venture; Per Brilloth - Venture; Radical Investments - Seed; Spark Labs Global - Venture; Trevor Bowen - Venture; Xandez Investments LLP - Venture",
       "office_locations": "1 Rathmines Road Upper, Rathmines, Dublin 6, Dublin",
-      "incubator": "NDRC"
+      "incubator": "NDRC",
+      "funding_stage": "Acquired",
+      "employees": 23,
+      "funding_amount": 3500000,
+      "product_stage": "Complete",
+      "geo_markets": "G",
+      "business_model": "B2C",
+      "company_stage": "Acquired",
+      "operational_status": "Active"
     },
 
     {
@@ -81,7 +121,15 @@ Company.create(
       "categories": "Enterprise Software, SaaS, Restaurants, Online Scheduling",
       "investors": "NDRC - Seed",
       "office_locations": "St. Martin's House, Waterloo Road, Dublin 4, Dublin",
-      "incubator": "NDRC"
+      "incubator": "NDRC",
+      "funding_stage": "Series A",
+      "employees": 14,
+      "funding_amount": 750000,
+      "product_stage": "Complete",
+      "geo_markets": "G",
+      "business_model": "B2B",
+      "company_stage": "Growth",
+      "operational_status": "Active"
     },
     {
       "name": "Storyful",
@@ -93,7 +141,15 @@ Company.create(
       "categories": "News, Publishing, Media, Social Media",
       "investors": "SOSV - Seed; ACT Venture Capital - Venture",
       "office_locations": "Ferry House, 48 Lower Mount Street, Dublin 2, Dublin",
-      "incubator": ""
+      "incubator": "",
+      "funding_stage": "Acquired",
+      "employees": 93,
+      "funding_amount": nil,
+      "product_stage": "Complete",
+      "geo_markets": "G",
+      "business_model": "B2B",
+      "company_stage": "Growth",
+      "operational_status": "Active"
     },
     {
       "name": "CurrencyFair",
@@ -105,7 +161,15 @@ Company.create(
       "categories": "Finance, Virtualization, Peer-to-Peer, P2P Money Transfer",
       "investors": "Frontline Ventures - Seed, Series A; Enterprise Ireland - Venture; Octopus Ventures - Series A",
       "office_locations": "Colm House, 91 Pembroke Rd, Ballsbridge, Dublin 4, Dublin",
-      "incubator": ""
+      "incubator": "",
+      "funding_stage": "Series A",
+      "employees": 75,
+      "funding_amount": 18000000,
+      "product_stage": "Complete",
+      "geo_markets": "G",
+      "business_model": "B2C",
+      "company_stage": "Growth",
+      "operational_status": "Active"
     },
     {
       "name": "PageFair",
@@ -117,7 +181,15 @@ Company.create(
       "categories": "Advertising, Software, Digital Media",
       "investors": "Tribal Ventures - Angel, Seed; Frontline Ventures - Angel; Enterprise Ireland - Angel",
       "office_locations": "Unit D, Mount Pleasant Business Park, Mount Pleasant Avenue, Ranelagh, Dublin 6, Dublin",
-      "incubator": ""
+      "incubator": "",
+      "funding_stage": "Seed",
+      "employees": 12,
+      "funding_amount": 3500000,
+      "product_stage": "Complete",
+      "geo_markets": "G",
+      "business_model": "B2B",
+      "company_stage": "Early-stage",
+      "operational_status": "Active"
     },
     {
       "name": "Pointy",
@@ -129,7 +201,15 @@ Company.create(
       "categories": "Wireless, Internet, Services",
       "investors": "Frontline Ventures - Seed",
       "office_locations": "National College of Ireland Business Centre, Mayor Square, IFSC, Dublin 1, Dublin",
-      "incubator": ""
+      "incubator": "",
+      "funding_stage": "Seed",
+      "employees": 4,
+      "funding_amount": 3500000,
+      "product_stage": "Complete",
+      "geo_markets": "EU",
+      "business_model": "B2B",
+      "company_stage": "Early-stage",
+      "operational_status": "Active"
     }
   ]
 )

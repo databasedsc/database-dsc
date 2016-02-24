@@ -11,14 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160222123730) do
+ActiveRecord::Schema.define(version: 20160223153529) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "companies", force: :cascade do |t|
-    t.datetime "created_at",        null: false
-    t.datetime "updated_at",        null: false
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
     t.string   "name"
     t.string   "logo"
     t.text     "short_description"
@@ -29,6 +29,14 @@ ActiveRecord::Schema.define(version: 20160222123730) do
     t.text     "investors"
     t.text     "office_locations"
     t.string   "incubator"
+    t.integer  "employees"
+    t.string   "funding_stage"
+    t.integer  "funding_amount"
+    t.string   "product_stage"
+    t.string   "geo_markets"
+    t.string   "business_model"
+    t.string   "company_stage"
+    t.string   "operational_status"
   end
 
   create_table "pg_search_documents", force: :cascade do |t|

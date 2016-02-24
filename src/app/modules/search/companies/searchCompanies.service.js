@@ -5,14 +5,24 @@
   angular
     .module('searchCompanies')
     .service('searchCompaniesService', function($http, $httpParamSerializer, serverUrl) {
-      this.getCompanies = function(query) {
+      this.getCompanies = function(query, filters) {
+        var basePath = serverUrl + '/companies';
+        var params = {}
 
-        var queryString = '/companies';
-        if (query) {
-          queryString += '?' + $httpParamSerializer(query);
+        if (query || filters) {
+          if (query.searchText) {
+            params["searchText"] = query.searchText
+          }
+          if (filters) {
+            Object.keys(filters).forEach(function(name){
+              if (filters[name] !== '') {
+                params[name] = filters[name];
+              }
+            })
+          }
         }
 
-        return $http.get(serverUrl + queryString).then(function(responseObject) {
+        return $http.get(basePath, {params: params}).then(function(responseObject) {
           return responseObject.data;
         });
       };
