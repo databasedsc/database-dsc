@@ -75,7 +75,7 @@
       $scope.$apply();
 
       //expect($ctrl.searchCompaniesService.getCompanies.calls.count()).toEqual(1); //TODO: enable this test once we deal with the controller initialization
-      expect($ctrl.searchCompaniesService.getCompanies).toHaveBeenCalledWith({searchText: 'mustard'}, { employees: '', fundingStage: '', fundingAmount: '', productStage: '', geographicalMarkets: '', businessModel: '', companyStage: '', status: '' });
+      expect($ctrl.searchCompaniesService.getCompanies).toHaveBeenCalledWith({searchText: 'mustard'}, { employees: '', fundingStage: '', fundingAmount: '', productStage: '', geographicalMarkets: '', businessModel: '', companyStage: '', operationalStatus: '' });
       expect($ctrl.results.length).toEqual(1);
     });
 

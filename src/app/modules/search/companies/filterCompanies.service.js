@@ -46,7 +46,7 @@
           selectedValue: '',
           values: ['', 'Early-stage', 'Growth', 'Late-stage', 'Public', 'Acquired']
         },
-        status: {
+        operationalStatus: {
           selectedValue: '',
           values: ['', 'Active', 'Inactive']
         }

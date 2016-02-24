@@ -207,7 +207,7 @@ RSpec.describe 'V1::Companies', :type => :request do
         end
 
         it 'should return companies filtered by company status' do
-          get '/v1/companies?status=Active'
+          get '/v1/companies?operationalStatus=Active'
           companies_json = JSON.parse(response.body)
           expect(response).to have_http_status(200)
           expect(companies_json.size).to eq(1)
