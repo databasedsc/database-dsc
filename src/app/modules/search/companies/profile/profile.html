@@ -2,19 +2,19 @@
   <div id="overview" class="col-lg-8">
 
     <div class="">
-      <img ng-src="https://crunchbase-production-res.cloudinary.com/image/upload/c_pad,h_200,w_500/v1415669358/cfx78b8ybfao4orxttaa.png" class="logo img-responsive">
+      <img ng-src="{{$ctrl.company.logo}}" class="logo img-responsive">
     </div>
     <label for="name" class="col-xs-12">
       Name:
-      <p id="name">Logentries</p>
+      <p id="name">{{$ctrl.company.name}}</p>
     </label>
     <label for="tagline" class="col-xs-12">
       Tagline:
-      <p id="tagline">Real-time log management and analytics</p>
+      <p id="tagline">{{$ctrl.company.short_description}}</p>
     </label>
     <label for="description" class="col-xs-12">
       Description
-      <p id="description">Logentries is the leading real-time log management and analytics service built for the cloud, making business insights from machine-generated log data easily accessible to development, IT and business operations teams of all sizes. With the broadest platform support and an open API, Logentries brings the value of log-level data to any system, to any team member, and to a community of more than 35,000 worldwide users. While traditional log management and analytics solutions require advanced technical skills to use, and are costly to set-up, Logentries provides an alternative designed for managing huge amounts of data, visualizing insights that matter, and automating in-depth analytics and reporting across its global user community. To sign up for the free Logentries service, visit http://logentries.com</p>
+      <p id="description">{{$ctrl.company.long_description}}</p>
     </label>
   </div>
   <div class="col-lg-4"></div>
@@ -24,7 +24,7 @@
     <div class="left col-xs-6">
       <label for="acquisitions" class="col-xs-12">
         Acquisitions
-        <p id="acquisitions">Acquired by Rapid7, October 2015</p>
+        <p id="acquisitions">{{$ctrl.company.acquisitions}}</p>
       </label>
       <label for="headquarters" class="col-xs-12">
         Headquarters:
