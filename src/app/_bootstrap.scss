@@ -14,3 +14,15 @@
     padding: 15px 0 0 0;
   }
 }
+
+a.no-decoration * {
+  text-decoration: none !important;
+  color: #666666;
+}
+
+a.no-decoration:hover {
+  text-decoration: none !important;
+  * {
+    color: #66afe9;
+  }
+}

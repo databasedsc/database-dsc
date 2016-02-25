@@ -1,7 +1,8 @@
 'use strict';
 
 describe('SearchResults', function() {
-  var page;
+  var page,
+      profilePage;
 
   beforeEach(function() {
     browser.get('#/');
@@ -108,6 +109,20 @@ describe('SearchResults', function() {
         expect(page.searchResults.count()).toEqual(1);
       });
 
+    });
+
+  });
+
+  describe('Navigate from search results', function() {
+    profilePage = require('./companyProfile.po');
+
+    it("should display the company profile page", function() {
+      page.searchResults.then(function(items) {
+        //TODO: Find a better way to access a particular company card
+        items[3].element(by.css('#name')).click()
+      });
+      expect(profilePage.body.getText()).toContain('Tags')
+      expect(profilePage.body.getText()).toContain('Funding')
     });
 
   });

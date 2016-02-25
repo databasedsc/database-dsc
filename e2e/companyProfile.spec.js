@@ -2,11 +2,19 @@
 
 describe('CompanyProfile', function() {
   var page;
+  var searchPage;
 
   beforeEach(function() {
-    browser.get('#/profile');
+    searchPage = require('./search.po');
     page = require('./companyProfile.po');
+
+    browser.get('#/');
+
+    searchPage.searchResults.then(function(items) {
+      items[3].element(by.css('#name')).click()
+    });
   });
+
 
   describe('Overview', function() {
     it("should display the logo", function() {

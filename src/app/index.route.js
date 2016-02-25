@@ -14,7 +14,7 @@
           template: '<search-companies></search-companies>'
         })
         .state('companyProfile', {
-          url: '/profile',
+          url: '/profile/:id',
           template: '<company-profile></company-profile>'
         }),
 
