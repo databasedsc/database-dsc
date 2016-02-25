@@ -1,6 +1,34 @@
 require 'rails_helper'
 
 RSpec.describe 'V1::Companies', :type => :request do
+  describe 'GET /v1/companies/:id' do
+    let!(:company) do
+      FactoryGirl.create(
+        :company,
+        name: 'mustard',
+        short_description: 'something',
+        headquarters: 'Dublin',
+        formerly_known_as: 'ketchup',
+        founders: 'Kevin Fogarty',
+        categories: 'Personalisation',
+        investors: '',
+        office_locations: '',
+        incubator: 'NDRC',
+        employees: 140,
+        funding_stage: 'Bootstrapped',
+        product_stage: 'Complete',
+        geo_markets: 'IE'
+      )
+    end
+
+    it 'should return a company' do
+      get "/v1/companies/#{company.id}"
+      company_json = JSON.parse(response.body)
+      expect(response).to have_http_status(200)
+      expect(company_json['name']).to eq('mustard')
+    end
+  end
+
   describe 'GET /v1/companies' do
 
     before(:each) do
@@ -19,7 +47,6 @@ RSpec.describe 'V1::Companies', :type => :request do
         funding_stage: 'Bootstrapped',
         product_stage: 'Complete',
         geo_markets: 'IE'
-
       )
       FactoryGirl.create(
         :company,
@@ -34,7 +61,6 @@ RSpec.describe 'V1::Companies', :type => :request do
         business_model: 'B2C',
         operational_status: 'Active',
         geo_markets: 'UK'
-
       )
       FactoryGirl.create(
         :company,
@@ -42,7 +68,6 @@ RSpec.describe 'V1::Companies', :type => :request do
         company_stage: 'Growth',
         funding_amount: 150000000,
         geo_markets: 'G'
-
       )
     end
 
@@ -190,7 +215,6 @@ RSpec.describe 'V1::Companies', :type => :request do
             expect(companies_json.size).to eq(1)
           end
         end
-
 
         it 'should return companies filtered by business model' do
           get '/v1/companies?businessModel=B2C'

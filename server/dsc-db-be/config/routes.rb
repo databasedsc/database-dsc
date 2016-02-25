@@ -5,5 +5,6 @@ Rails.application.routes.draw do
   # mount ActionCable.server => '/cable'
     namespace :v1 do
       get 'companies', to: 'companies#index'
+      get 'companies/:id', to: 'companies#show'
     end
 end
