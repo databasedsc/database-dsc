@@ -8,8 +8,7 @@
     })
     .component('searchResults', {
       bindings: {
-        companies: '=',
-        message: '='
+        companies: '='
       },
       templateUrl: 'app/modules/search/companies/search_results/search_results.html',
       controller: 'SearchResultsController'
