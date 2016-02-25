@@ -18,7 +18,11 @@ describe('SearchResults', function() {
 
   describe('search form', function() {
     beforeEach(function() {
-      browser.get('#/');
+      browser.get('#/').then(function () {
+        // There's a PhantomJS issue that prevent the browser from clicking some element.
+        // Resizing the window fix it .https://github.com/ariya/phantomjs/issues/11637
+        browser.manage().window().maximize();
+      });
       page = require('./search.po');
     });
 
@@ -81,7 +85,6 @@ describe('SearchResults', function() {
     describe('search filters', function() {
 
       it('should filter search results using drop-downs for string filters', function() {
-
         page.searchField.clear().sendKeys("Dublin").sendKeys(protractor.Key.ENTER);
         expect(page.searchResults.count()).toEqual(9);
 
@@ -90,7 +93,6 @@ describe('SearchResults', function() {
       });
 
       it('should filter search results using drop-downs for numerical filters', function() {
-
         page.searchField.clear().sendKeys("Dublin").sendKeys(protractor.Key.ENTER);
         expect(page.searchResults.count()).toEqual(9);
 
@@ -99,11 +101,10 @@ describe('SearchResults', function() {
       });
 
       it('should filter search results using checkbox', function() {
-
         page.searchField.clear().sendKeys("customer").sendKeys(protractor.Key.ENTER);
         expect(page.searchResults.count()).toEqual(2);
 
-        element(by.id('Europe')).click();
+        element(by.css('input#Europe')).click();
         expect(page.searchResults.count()).toEqual(1);
       });
 
