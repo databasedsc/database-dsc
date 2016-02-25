@@ -12,7 +12,8 @@
       'ui.bootstrap',
       'home',
       'searchCompanies',
-      'searchResults'
+      'searchResults',
+      'companyProfile'
     ]);
 
 })();
