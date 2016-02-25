@@ -42,10 +42,13 @@ $icon-font-path: "../../bower_components/bootstrap-sass/assets/fonts/bootstrap/"
 
   &:before {
     border-top: 2px solid #dfdfdf;
-    content:"";
+    content: "";
     margin: 0 auto; /* this centers the line to the full width specified */
     position: absolute; /* positioning must be absolute here, and relative positioning must be applied to the parent */
-    top: 50%; left: 0; right: 0; bottom: 0;
+    top: 50%;
+    left: 0;
+    right: 0;
+    bottom: 0;
     width: 85%;
     z-index: -1;
   }
@@ -55,6 +58,12 @@ $icon-font-path: "../../bower_components/bootstrap-sass/assets/fonts/bootstrap/"
     background: #fff;
     padding: 0 15px;
   }
+}
+
+.v-center {
+  float: none !important;
+  vertical-align: middle !important;
+  display: table-cell !important;
 }
 
 /**
