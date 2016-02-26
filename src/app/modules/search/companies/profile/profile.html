@@ -28,35 +28,35 @@
       </label>
       <label for="headquarters" class="col-xs-12">
         Headquarters:
-        <p id="headquarters">Dublin</p>
+        <p id="headquarters">{{$ctrl.company.headquarters}}</p>
       </label>
       <label for="formerly-known-as" class="col-xs-12">
         Formerly known as:
-        <p id="formerly-known-as"></p>
+        <p id="formerly-known-as">{{$ctrl.company.formerly_known_as}}</p>
       </label>
       <label for="founders" class="col-xs-12">
         Founders:
-        <p id="founders">Viliam Holub, Trevor Parsons</p>
+        <p id="founders">{{$ctrl.company.founders}}</p>
       </label>
       <label for="founded" class="col-xs-12">
         Founded:
-        <p id="founded">2010</p>
+        <p id="founded">{{$ctrl.company.founded}}</p>
       </label>
       <label for="employees" class="col-xs-12">
         Employees:
-        <p id="employees">40</p>
+        <p id="employees">{{$ctrl.company.employees}}</p>
       </label>
       <label for="funding-stage" class="col-xs-12">
         Funding Stage:
-        <p id="funding-stage">Acquired</p>
+        <p id="funding-stage">{{$ctrl.company.funding_stage}}</p>
       </label>
       <label for="total-funding" class="col-xs-12">
         Total Funding:
-        <p id="total-funding">18m</p>
+        <p id="total-funding">{{$ctrl.company.funding_amount | shortFmt:0}}</p>
       </label>
       <label for="geographical-markets" class="col-xs-12">
         Geographical Markets:
-        <p id="geographical-markets">Global</p>
+        <p id="geographical-markets">{{$ctrl.company.geo_markets | regionCodeToHuman}}</p>
       </label>
       <label for="office-locations" class="col-xs-12">
         Office Locations:
@@ -69,39 +69,39 @@
     <div class="right col-xs-6">
       <label for="business-model" class="col-xs-12">
         Business Model:
-        <p id="business-model">B2B</p>
+        <p id="business-model">{{$ctrl.company.business_model}}</p>
       </label>
       <label for="product-stage" class="col-xs-12">
         Product Stage:
-        <p id="product-stage">Complete</p>
+        <p id="product-stage">{{$ctrl.company.product_stage}}</p>
       </label>
       <label for="contact" class="col-xs-12">
         Contact:
-        <p id="contact">hello@logentries.com</p>
+        <p id="contact">{{$ctrl.company.contact}}</p>
       </label>
       <label for="company-stage" class="col-xs-12">
         Company Stage:
-        <p id="company-stage">Growth</p>
+        <p id="company-stage">{{$ctrl.company.company_stage}}</p>
       </label>
       <label for="incubator-accelerator" class="col-xs-12">
         Incubator/Accelerator:
-        <p id="incubator-accelerator">NDRC</p>
+        <p id="incubator-accelerator">{{$ctrl.company.incubator}}</p>
       </label>
       <label for="status" class="col-xs-12">
         Status:
-        <p id="status">Active</p>
+        <p id="status">{{$ctrl.company.operational_status}}</p>
       </label>
       <label for="government-assistance" class="col-xs-12">
         Government Assistance:
-        <p id="government-assistance">NDRC</p>
+        <p id="government-assistance">{{$ctrl.company.government_assistance}}</p>
       </label>
       <label for="selling-already" class="col-xs-12">
         Selling already:
-        <p id="selling-already">Yes</p>
+        <p id="selling-already">{{$ctrl.company.selling | booleanToHuman}}</p>
       </label>
       <label for="looking-for" class="col-xs-12">
         We're looking for:
-        <p id="looking-for">Senior technical talent</p>
+        <p id="looking-for">{{$ctrl.company.looking_for}}</p>
       </label>
     </div>
 
@@ -110,23 +110,15 @@
 <div class="row">
   <div id="tags">
     <h3 class="col-xs-2 v-center">Tags</h3>
-    <p class="tag col-xs-3 v-center">Business Analytics</p>
-    <span class="tag col-xs-4 v-center">Application Performance Monitoring</span>
-    <span class="tag col-xs-3 v-center">Big Data Analytics</span>
+    <p class="v-center">{{$ctrl.company.categories}}</p>
   </div>
 </div>
 <div class="row text-center">
   <div id="funding">
     <h1>Funding</h1>
-    <div class="row rounds">
+    <div class="row rounds" ng-repeat="round in $ctrl.company.funding_rounds">
       <div class="round">
-        <p>Undisclosed, January 2010, Pre-seed</p>
-      </div>
-      <div class="round">
-        <p>1.1m, January 2012, Seed</p>
-      </div>
-      <div class="round">
-        <p>10m, January 2013, Series A</p>
+        <p>{{round.amount}}, {{round.date}}, {{round.type}}</p>
       </div>
     </div>
   </div>

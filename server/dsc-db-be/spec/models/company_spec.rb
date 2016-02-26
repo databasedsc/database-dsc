@@ -2,36 +2,45 @@
 #
 # Table name: companies
 #
-#  id                 :integer          not null, primary key
-#  created_at         :datetime         not null
-#  updated_at         :datetime         not null
-#  name               :string
-#  logo               :string
-#  short_description  :text
-#  headquarters       :string
-#  formerly_known_as  :string
-#  founders           :text
-#  categories         :text
-#  investors          :text
-#  office_locations   :text
-#  incubator          :string
-#  employees          :integer
-#  funding_stage      :string
-#  funding_amount     :integer
-#  product_stage      :string
-#  geo_markets        :string
-#  business_model     :string
-#  company_stage      :string
-#  operational_status :string
+#  id                    :integer          not null, primary key
+#  created_at            :datetime         not null
+#  updated_at            :datetime         not null
+#  name                  :string
+#  logo                  :string
+#  short_description     :text
+#  headquarters          :string
+#  formerly_known_as     :string
+#  founders              :text
+#  categories            :text
+#  investors             :text
+#  office_locations      :text
+#  incubator             :string
+#  employees             :integer
+#  funding_stage         :string
+#  funding_amount        :integer
+#  product_stage         :string
+#  geo_markets           :string
+#  business_model        :string
+#  company_stage         :string
+#  operational_status    :string
+#  funding_rounds        :jsonb
+#  looking_for           :text
+#  selling               :boolean
+#  government_assistance :string
+#  contact               :text
+#  long_description      :text
+#  founded               :string
+#  acquisitions          :text
 #
 
 require 'rails_helper'
 
 RSpec.describe Company, :type => :model do
   [
-    :name, :logo, :short_description, :long_description, :headquarters, :formerly_known_as, :founders, :categories, :investors,
-    :office_locations, :incubator, :employees, :funding_stage, :funding_amount, :product_stage, :geo_markets,
-    :business_model, :company_stage, :operational_status
+    :name, :logo, :acquisitions, :founded,  :short_description,:long_description, :headquarters, :formerly_known_as,
+    :founders, :categories, :investors, :office_locations, :incubator, :employees, :funding_stage, :funding_amount,
+    :product_stage, :geo_markets, :business_model, :contact, :company_stage, :operational_status, :government_assistance,
+    :selling, :looking_for, :funding_rounds
   ].each do |column|
     it { should have_db_column(column) }
   end

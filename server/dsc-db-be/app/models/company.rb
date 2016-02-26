@@ -2,27 +2,35 @@
 #
 # Table name: companies
 #
-#  id                 :integer          not null, primary key
-#  created_at         :datetime         not null
-#  updated_at         :datetime         not null
-#  name               :string
-#  logo               :string
-#  short_description  :text
-#  headquarters       :string
-#  formerly_known_as  :string
-#  founders           :text
-#  categories         :text
-#  investors          :text
-#  office_locations   :text
-#  incubator          :string
-#  employees          :integer
-#  funding_stage      :string
-#  funding_amount     :integer
-#  product_stage      :string
-#  geo_markets        :string
-#  business_model     :string
-#  company_stage      :string
-#  operational_status :string
+#  id                    :integer          not null, primary key
+#  created_at            :datetime         not null
+#  updated_at            :datetime         not null
+#  name                  :string
+#  logo                  :string
+#  short_description     :text
+#  headquarters          :string
+#  formerly_known_as     :string
+#  founders              :text
+#  categories            :text
+#  investors             :text
+#  office_locations      :text
+#  incubator             :string
+#  employees             :integer
+#  funding_stage         :string
+#  funding_amount        :integer
+#  product_stage         :string
+#  geo_markets           :string
+#  business_model        :string
+#  company_stage         :string
+#  operational_status    :string
+#  funding_rounds        :jsonb
+#  looking_for           :text
+#  selling               :boolean
+#  government_assistance :string
+#  contact               :text
+#  long_description      :text
+#  founded               :string
+#  acquisitions          :text
 #
 
 class Company < ApplicationRecord

@@ -5,19 +5,38 @@ RSpec.describe 'V1::Companies', :type => :request do
     let!(:company) do
       FactoryGirl.create(
         :company,
-        name: 'mustard',
-        short_description: 'something',
-        headquarters: 'Dublin',
-        formerly_known_as: 'ketchup',
-        founders: 'Kevin Fogarty',
-        categories: 'Personalisation',
-        investors: '',
-        office_locations: '',
-        incubator: 'NDRC',
-        employees: 140,
-        funding_stage: 'Bootstrapped',
-        product_stage: 'Complete',
-        geo_markets: 'IE'
+        "name": "Mustard",
+        "logo": "https://crunchbase-production-res.cloudinary.com/image/upload/c_pad,w_250,h_140/v1455114908/tmpxdogqv3vysbaww9g3.png",
+        "acquisitions": "Acquired by Sandwich",
+        "short_description": "The on demand staffing network",
+        "long_description": "Mustard instantly connects those with short term positions to fill, with the best available candidates. A data-science focussed company, pairing gamification and on demand technology to build the worlds largest and most functional network of instant talent.",
+        "headquarters": "Dublin",
+        "formerly_known_as": "Ketchup",
+        "founders": "Gavin Fogarty",
+        "categories": "Technology, Social Recruiting, Event Management",
+        "investors": "Undisclosed",
+        "office_locations": "NDRC at the Digital Exchange, Crane Street, Dublin 8",
+        "incubator": "NDRC",
+        "funding_stage": "Seed",
+        "employees": 6,
+        "funding_amount": 250000,
+        "product_stage": "Complete",
+        "geo_markets": "EU",
+        "business_model": "B2B",
+        "company_stage": "Growth",
+        "operational_status": "Active",
+        "government_assistance": "NDRC",
+        "selling": true,
+        "looking_for": "Good Talent",
+        "contact": "heya@mustard.ie",
+        "founded": "2015",
+        "funding_rounds": [
+          {
+            "amount": "200k",
+            "date": "June 2015",
+            "type": "Seed"
+          }
+        ]
       )
     end
 
@@ -25,7 +44,32 @@ RSpec.describe 'V1::Companies', :type => :request do
       get "/v1/companies/#{company.id}"
       company_json = JSON.parse(response.body)
       expect(response).to have_http_status(200)
-      expect(company_json['name']).to eq('mustard')
+      expect(company_json['name']).to eq('Mustard')
+      expect(company_json['logo']).to eq('https://crunchbase-production-res.cloudinary.com/image/upload/c_pad,w_250,h_140/v1455114908/tmpxdogqv3vysbaww9g3.png')
+      expect(company_json['acquisitions']).to eq('Acquired by Sandwich')
+      expect(company_json['short_description']).to eq('The on demand staffing network')
+      expect(company_json['long_description']).to eq('Mustard instantly connects those with short term positions to fill, with the best available candidates. A data-science focussed company, pairing gamification and on demand technology to build the worlds largest and most functional network of instant talent.')
+      expect(company_json['headquarters']).to eq('Dublin')
+      expect(company_json['formerly_known_as']).to eq('Ketchup')
+      expect(company_json['founders']).to eq('Gavin Fogarty')
+      expect(company_json['categories']).to eq('Technology, Social Recruiting, Event Management')
+      expect(company_json['investors']).to eq('Undisclosed')
+      expect(company_json['office_locations']).to eq('NDRC at the Digital Exchange, Crane Street, Dublin 8')
+      expect(company_json['incubator']).to eq('NDRC')
+      expect(company_json['funding_stage']).to eq('Seed')
+      expect(company_json['employees']).to eq(6)
+      expect(company_json['funding_amount']).to eq(250000)
+      expect(company_json['product_stage']).to eq('Complete')
+      expect(company_json['geo_markets']).to eq('EU')
+      expect(company_json['business_model']).to eq('B2B')
+      expect(company_json['company_stage']).to eq('Growth')
+      expect(company_json['operational_status']).to eq('Active')
+      expect(company_json['government_assistance']).to eq('NDRC')
+      expect(company_json['selling']).to eq(true)
+      expect(company_json['looking_for']).to eq('Good Talent')
+      expect(company_json['contact']).to eq('heya@mustard.ie')
+      expect(company_json['founded']).to eq('2015')
+      expect(company_json['funding_rounds'].size).to eq(1)
     end
   end
 

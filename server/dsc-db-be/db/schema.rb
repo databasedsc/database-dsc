@@ -11,14 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160223153529) do
+ActiveRecord::Schema.define(version: 20160226124821) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "companies", force: :cascade do |t|
-    t.datetime "created_at",         null: false
-    t.datetime "updated_at",         null: false
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
     t.string   "name"
     t.string   "logo"
     t.text     "short_description"
@@ -37,6 +37,15 @@ ActiveRecord::Schema.define(version: 20160223153529) do
     t.string   "business_model"
     t.string   "company_stage"
     t.string   "operational_status"
+    t.jsonb    "funding_rounds"
+    t.text     "looking_for"
+    t.boolean  "selling"
+    t.string   "government_assistance"
+    t.text     "contact"
+    t.text     "long_description"
+    t.string   "founded"
+    t.text     "acquisitions"
+    t.index ["funding_rounds"], name: "index_companies_on_funding_rounds", using: :gin
   end
 
   create_table "pg_search_documents", force: :cascade do |t|

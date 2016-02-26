@@ -11,7 +11,7 @@ describe('CompanyProfile', function() {
     browser.get('#/');
 
     searchPage.searchResults.then(function(items) {
-      items[3].element(by.css('#name')).click()
+      items[2].element(by.css('#name')).click()
     });
   });
 
@@ -73,7 +73,7 @@ describe('CompanyProfile', function() {
     });
 
     it('should display Total funding', function() {
-      expect(page.details.getText()).toContain('18m');
+      expect(page.details.getText()).toContain('18 M');
     });
 
     it('should display Geographical markets', function() {
