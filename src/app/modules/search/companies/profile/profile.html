@@ -1,64 +1,63 @@
 <div class="row">
   <div id="overview" class="col-lg-8">
-
-    <div class="">
+    <div ng-show="$ctrl.company.logo" class="">
       <img ng-src="{{$ctrl.company.logo}}" class="logo img-responsive">
     </div>
-    <label for="name" class="col-xs-12">
+    <label ng-show="$ctrl.company.name" for="name" class="col-xs-12">
       Name:
       <p id="name">{{$ctrl.company.name}}</p>
     </label>
-    <label for="tagline" class="col-xs-12">
+    <label ng-show="$ctrl.company.short_description" for="tagline" class="col-xs-12">
       Tagline:
       <p id="tagline">{{$ctrl.company.short_description}}</p>
     </label>
-    <label for="description" class="col-xs-12">
+    <label ng-show="$ctrl.company.long_description" for="description" class="col-xs-12">
       Description
       <p id="description">{{$ctrl.company.long_description}}</p>
     </label>
   </div>
-  <div class="col-lg-4"></div>
+  <div class="col-lg-4 video-player"></div>
 </div>
 <div class="row">
   <div id="details">
     <div class="left col-xs-6">
-      <label for="acquisitions" class="col-xs-12">
+      <label ng-show="$ctrl.company.acquisitions" for="acquisitions" class="col-xs-12">
         Acquisitions
         <p id="acquisitions">{{$ctrl.company.acquisitions}}</p>
       </label>
-      <label for="headquarters" class="col-xs-12">
+      <label ng-show="$ctrl.company.headquarters" for="headquarters" class="col-xs-12">
         Headquarters:
         <p id="headquarters">{{$ctrl.company.headquarters}}</p>
       </label>
-      <label for="formerly-known-as" class="col-xs-12">
+      <label ng-show="$ctrl.company.formerly_known_as" for="formerly-known-as" class="col-xs-12">
         Formerly known as:
         <p id="formerly-known-as">{{$ctrl.company.formerly_known_as}}</p>
       </label>
-      <label for="founders" class="col-xs-12">
+      <label ng-show="$ctrl.company.founders" for="founders" class="col-xs-12">
         Founders:
         <p id="founders">{{$ctrl.company.founders}}</p>
       </label>
-      <label for="founded" class="col-xs-12">
+      <label ng-show="$ctrl.company.founded" for="founded" class="col-xs-12">
         Founded:
         <p id="founded">{{$ctrl.company.founded}}</p>
       </label>
-      <label for="employees" class="col-xs-12">
+      <label ng-show="$ctrl.company.employees" for="employees" class="col-xs-12">
         Employees:
         <p id="employees">{{$ctrl.company.employees}}</p>
       </label>
-      <label for="funding-stage" class="col-xs-12">
+      <label ng-show="$ctrl.company.funding_stage" for="funding-stage" class="col-xs-12">
         Funding Stage:
         <p id="funding-stage">{{$ctrl.company.funding_stage}}</p>
       </label>
-      <label for="total-funding" class="col-xs-12">
+      <label ng-show="$ctrl.company.funding_amount" for="total-funding" class="col-xs-12">
         Total Funding:
         <p id="total-funding">{{$ctrl.company.funding_amount | shortFmt:0}}</p>
       </label>
-      <label for="geographical-markets" class="col-xs-12">
+      <label ng-show="$ctrl.company.geographical_marker" for="geographical-markets" class="col-xs-12">
         Geographical Markets:
         <p id="geographical-markets">{{$ctrl.company.geo_markets | regionCodeToHuman}}</p>
       </label>
-      <label for="office-locations" class="col-xs-12">
+      <label ng-show="" for="office-locations" class="col-xs-12">
         Office Locations:
         <div id="office-locations">
           <p>26-28 Lomard Street, Dublin 2, Dublin</p>
@@ -67,39 +66,39 @@
       </label>
     </div>
     <div class="right col-xs-6">
-      <label for="business-model" class="col-xs-12">
+      <label ng-show="$ctrl.company.business_model" for="business-model" class="col-xs-12">
         Business Model:
         <p id="business-model">{{$ctrl.company.business_model}}</p>
       </label>
-      <label for="product-stage" class="col-xs-12">
+      <label ng-show="$ctrl.company.product_stage" for="product-stage" class="col-xs-12">
         Product Stage:
         <p id="product-stage">{{$ctrl.company.product_stage}}</p>
       </label>
-      <label for="contact" class="col-xs-12">
+      <label ng-show="$ctrl.company.contact" for="contact" class="col-xs-12">
         Contact:
         <p id="contact">{{$ctrl.company.contact}}</p>
       </label>
-      <label for="company-stage" class="col-xs-12">
+      <label ng-show="$ctrl.company_stage" for="company-stage" class="col-xs-12">
         Company Stage:
         <p id="company-stage">{{$ctrl.company.company_stage}}</p>
       </label>
-      <label for="incubator-accelerator" class="col-xs-12">
+      <label ng-show="$ctrl.company.incubator" for="incubator-accelerator" class="col-xs-12">
         Incubator/Accelerator:
         <p id="incubator-accelerator">{{$ctrl.company.incubator}}</p>
       </label>
-      <label for="status" class="col-xs-12">
+      <label ng-show="$ctrl.company.operational_status" for="status" class="col-xs-12">
         Status:
         <p id="status">{{$ctrl.company.operational_status}}</p>
       </label>
-      <label for="government-assistance" class="col-xs-12">
+      <label ng-show="$ctrl.company.government_assistance" for="government-assistance" class="col-xs-12">
         Government Assistance:
         <p id="government-assistance">{{$ctrl.company.government_assistance}}</p>
       </label>
-      <label for="selling-already" class="col-xs-12">
+      <label ng-show="$ctrl.company.selling" for="selling-already" class="col-xs-12">
         Selling already:
         <p id="selling-already">{{$ctrl.company.selling | booleanToHuman}}</p>
       </label>
-      <label for="looking-for" class="col-xs-12">
+      <label ng-show="$ctrl.company.looking_for" for="looking-for" class="col-xs-12">
         We're looking for:
         <p id="looking-for">{{$ctrl.company.looking_for}}</p>
       </label>
@@ -108,13 +107,13 @@
   </div>
 </div>
 <div class="row">
-  <div id="tags">
+  <div ng-show="$ctrl.company.categories" id="tags">
     <h3 class="col-xs-2 v-center">Tags</h3>
     <p class="v-center">{{$ctrl.company.categories}}</p>
   </div>
 </div>
 <div class="row text-center">
-  <div id="funding">
+  <div ng-show="$ctrl.company.funding_rounds" id="funding">
     <h1>Funding</h1>
     <div class="row rounds" ng-repeat="round in $ctrl.company.funding_rounds">
       <div class="round">
@@ -123,4 +122,3 @@
     </div>
   </div>
 </div>
-
