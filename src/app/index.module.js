@@ -10,6 +10,7 @@
       'ngMessages',
       'ui.router',
       'ui.bootstrap',
+      'angular.filter',
       'home',
       'searchCompanies',
       'searchResults',
