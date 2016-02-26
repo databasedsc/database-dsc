@@ -28,7 +28,7 @@ script:
   - gulp test
   - cd server/dsc-db-be && bundle install
   - cp config/database.yml.travis config/database.yml
-  - rake db:setup db:seed
+  - rake db:schema:load db:seed
   - rails s -p 4000 > /dev/null &
   - cd ../../
   - sleep 10
