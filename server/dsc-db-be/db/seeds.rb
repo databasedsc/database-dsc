@@ -7,6 +7,33 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 Company.delete_all
+Multinational.delete_all
+
+Multinational.create(
+  [
+   {
+     "name": "Facebook",
+     "logo": "https://crunchbase-production-res.cloudinary.com/image/upload/c_pad,h_140,w_250/v1408491700/ypqf483smhnqo0rh6mff.png",
+     "short_description": "Facebook is an online social networking service that enables its users to connect with friends and family as well as make new connections.",
+     "headquarters": "Menlo Park, CA",
+     "local_office": "4 Grand Canal Street Lower, Dublin 2, Dublin"
+   },
+   {
+     "name": "Microsoft",
+     "logo": "https://crunchbase-production-res.cloudinary.com/image/upload/c_pad,h_140,w_250/v1397182206/6835990abacfb4d14ecdbfc87641e469.jpg",
+     "short_description": "Microsoft, a software corporation, develops licensed and support products and services ranging from personal use to enterprise application.",
+     "headquarters": "Redmond, WA",
+     "local_office": "Block B, Atrium Building, Sandyford Industrial Estate, Carmangall Road, Dublin 18"
+   },
+   {
+     "name": "SquareSpace",
+     "logo": "https://crunchbase-production-res.cloudinary.com/image/upload/c_pad,h_140,w_250/v1398216186/sn3vn5nvwxjyvkkz905h.png",
+     "short_description": "Squarespace is a SaaS-based Content Management System (CMS) offering a website builder, store builder, blogging platform, & hosting service.",
+     "headquarters": "New York, NY",
+     "local_office": "Le Pole House 1st Floor, Ship Street Great, Dublin 8"
+   }
+  ]
+)
 
 Company.create(
   [
