@@ -105,6 +105,9 @@ describe('SearchResults', function() {
         page.searchField.clear().sendKeys("customer").sendKeys(protractor.Key.ENTER);
         expect(page.searchResults.count()).toEqual(2);
 
+        browser.driver.sleep(1);
+        browser.waitForAngular();
+
         element(by.css('input#Europe')).click();
         expect(page.searchResults.count()).toEqual(1);
       });

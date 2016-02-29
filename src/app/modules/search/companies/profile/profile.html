@@ -53,15 +53,14 @@
         Total Funding:
         <p id="total-funding">{{$ctrl.company.funding_amount | shortFmt:0}}</p>
       </label>
-      <label ng-show="$ctrl.company.geographical_marker" for="geographical-markets" class="col-xs-12">
+      <label ng-show="$ctrl.company.geo_markets" for="geographical-markets" class="col-xs-12">
         Geographical Markets:
         <p id="geographical-markets">{{$ctrl.company.geo_markets | regionCodeToHuman}}</p>
       </label>
-      <label ng-show="" for="office-locations" class="col-xs-12">
+      <label ng-show="$ctrl.company.office_locations" for="office-locations" class="col-xs-12">
         Office Locations:
         <div id="office-locations">
-          <p>26-28 Lomard Street, Dublin 2, Dublin</p>
-          <p>34 Farnsworth Street, Floor 4, Boston, MA 02110, USA</p>
+          <p>{{$ctrl.company.office_locations}}</p>
         </div>
       </label>
     </div>
@@ -78,7 +77,7 @@
         Contact:
         <p id="contact">{{$ctrl.company.contact}}</p>
       </label>
-      <label ng-show="$ctrl.company_stage" for="company-stage" class="col-xs-12">
+      <label ng-show="$ctrl.company.company_stage" for="company-stage" class="col-xs-12">
         Company Stage:
         <p id="company-stage">{{$ctrl.company.company_stage}}</p>
       </label>
