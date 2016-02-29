@@ -5,7 +5,7 @@ var paths = require('./.yo-rc.json')['generator-gulp-angular'].props.paths;
 var browserName = 'phantomjs';
 
 if (process.env.TRAVIS) {
-  browserName = 'chrome'
+  //browserName = 'chrome'
 }
 
 // An example configuration file.
