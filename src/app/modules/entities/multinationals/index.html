@@ -1,0 +1,15 @@
+<div class="row">
+
+  <div class="row">
+    <h3 class="background-line"><span>Multinationals</span></h3>
+  </div>
+  <div class="row col-xs-3 form-group filters">
+    <form class="form-horizontal" ng-submit="$ctrl.search()">
+      <div class="form-group">
+        <input type="search" name="search-text" id="search-text-field" class="form-control" ng-model="$ctrl.query" autocomplete="off" />
+      </div>
+      <button type="submit" href="#" id="search-button" class="btn btn-primary btn-lg btn-block" >Search</button><br/>
+    </form>
+  </div>
+  <search-results collection="$ctrl.results"></search-results>
+</div>

@@ -36,7 +36,7 @@
       $scope = $rootScope.$new();
 
       resultsDeferred = $q.defer();
-      spyOn(searchCompaniesService, 'getCompanies').and.callFake(function(query) {
+      spyOn(searchCompaniesService, 'getCompanies').and.callFake(function() {
         return resultsDeferred.promise
       });
 

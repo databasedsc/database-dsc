@@ -5,7 +5,7 @@ describe('CompanyProfile', function() {
   var searchPage;
 
   beforeEach(function() {
-    searchPage = require('./search.po');
+    searchPage = require('./companySearch.po');
     page = require('./companyProfile.po');
 
     browser.get('#/');

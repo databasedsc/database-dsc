@@ -14,7 +14,8 @@
       'home',
       'searchCompanies',
       'searchResults',
-      'companyProfile'
+      'companyProfile',
+      'searchMultinationals'
     ]);
 
 })();

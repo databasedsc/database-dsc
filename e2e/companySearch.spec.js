@@ -6,11 +6,11 @@ describe('SearchResults', function() {
 
   beforeEach(function() {
     browser.get('#/');
-    page = require('./search.po');
+    page = require('./companySearch.po');
   });
 
   it('should display result list', function() {
-    expect(page.searchResultsContainer).toBeDefined();
+    expect(page.searchResultsContainer.isPresent()).toBe(true);
   });
 
   it('should display result list with 10 startups', function() {
@@ -24,7 +24,7 @@ describe('SearchResults', function() {
         // Resizing the window fix it .https://github.com/ariya/phantomjs/issues/11637
         browser.manage().window().maximize();
       });
-      page = require('./search.po');
+      page = require('./companySearch.po');
     });
 
     describe('search field', function() {
