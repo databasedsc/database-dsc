@@ -4,7 +4,7 @@
   angular
     .module('companyProfile')
     .component('companyProfile', {
-      templateUrl: 'app/modules/search/companies/profile/profile.html',
+      templateUrl: 'app/modules/entities/companies/profile/profile.html',
       controller: 'CompaniesProfilesController'
     })
     .controller('CompaniesProfilesController', function($scope, $stateParams, getCompanyService) {

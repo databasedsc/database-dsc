@@ -10,7 +10,7 @@
       bindings: {
         companies: '='
       },
-      templateUrl: 'app/modules/search/companies/search_results/search_results.html',
+      templateUrl: 'app/modules/entities/companies/search/search_results.html',
       controller: 'SearchResultsController'
     });
 

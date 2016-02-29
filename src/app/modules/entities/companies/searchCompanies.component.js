@@ -4,7 +4,7 @@
   angular
     .module('searchCompanies')
     .component('searchCompanies', {
-      templateUrl: 'app/modules/search/companies/search.html',
+      templateUrl: 'app/modules/entities/companies/index.html',
       controller: 'SearchCompaniesController'
     })
     .controller('SearchCompaniesController', function($scope, searchCompaniesService, filterCompaniesService) {
