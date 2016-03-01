@@ -9,7 +9,24 @@
 Company.delete_all
 Multinational.delete_all
 Investor.delete_all
+Hub.delete_all
 
+Hub.create(
+  [
+    {
+      "name": "NDRC",
+      "logo": "http://static.wixstatic.com/media/41176a_ffd50f75062644a897fa34f6e0483b5c.jpg/v1/fill/w_250,h_140,al_c,q_80,usm_0.66_1.00_0.01/41176a_ffd50f75062644a897fa34f6e0483b5c.jpg",
+      "short_description": "Making Ventures Happen",
+      "programs": ""
+    },
+    {
+      "name": "Dogpatch Labs",
+      "logo": "https://crunchbase-production-res.cloudinary.com/image/upload/c_pad,h_140,w_250/v1397188849/56ce6584c4d9ad5db3127a6906857e0e.png",
+      "short_description": "Dogpatch Labs is a pay to play co-working space for tech start-ups between seed and series a.",
+      "programs": ""
+    }
+  ]
+)
 
 Investor.create(
           [
