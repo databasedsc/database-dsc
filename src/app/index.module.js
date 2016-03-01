@@ -15,7 +15,8 @@
       'searchCompanies',
       'searchResults',
       'companyProfile',
-      'searchMultinationals'
+      'searchMultinationals',
+      'searchInvestors'
     ]);
 
 })();

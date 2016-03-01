@@ -16,7 +16,7 @@
       searchMultinationalsService = _searchMultinationalsService_;
     }));
 
-    fdescribe('#getMultinationals', function() {
+    describe('#getMultinationals', function() {
       it('calls the server to get the multinationals', function () {
         var multinationals = {name: 'Company', logo: "somelogo.png", shortDesc: "short description"};
 
