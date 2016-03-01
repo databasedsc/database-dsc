@@ -11,5 +11,6 @@ Rails.application.routes.draw do
       get 'companies', to: 'companies#index'
       get 'companies/:id', to: 'companies#show'
       get 'multinationals', to: 'multinationals#index'
+      get 'investors', to: 'investors#index'
     end
 end

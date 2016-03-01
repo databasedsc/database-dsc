@@ -8,6 +8,51 @@
 
 Company.delete_all
 Multinational.delete_all
+Investor.delete_all
+
+
+Investor.create(
+          [
+            {
+              "name": "Frontline Ventures",
+              "logo": "https://crunchbase-production-res.cloudinary.com/image/upload/c_pad,h_140,w_250/v1397179018/863daa91a3ecb96fed179502587ff7a3.png",
+              "short_description": "We are a pioneering early-stage venture capital firm, believing in ideas and investing in passion.",
+              "headquarters": "London",
+              "founders": [
+                {
+                  "name": "Shay Garvey",
+                  "linkedin": "shaygarvey"
+                }
+              ],
+              "local_office": "26-28 Lombard Street East, First Floor, Dublin 2",
+              "office_locations": [],
+              "tags": ["Big Data", "Cloud Services", "Internet", "Mobile"]
+            },
+            {
+              "name": "Polaris Partners",
+              "logo": "https://crunchbase-production-res.cloudinary.com/image/upload/c_pad,h_140,w_250/v1416862786/xnew66hyjlq8nkokxnsb.jpg",
+              "short_description": "Polaris Partners invests in exceptional technology and healthcare companies across all stages of their lifecycles.",
+              "headquarters": "Waltham",
+              "founders": [
+                {
+                  "name": "Steve Arnold",
+                  "linkedin": ""
+                },
+                {
+                  "name": "Jon Flint",
+                  "linkedin": ""
+                },
+                {
+                  "name": "Terrance McGuire",
+                  "linkedin": ""
+                }
+              ],
+              "local_office": "",
+              "office_locations": ["Waltham Office, 1000 Winter Street Suite 3350, Waltham, MA 02451, USA"],
+              "tags": ["Healthcare", "Technology"]
+            }
+          ]
+)
 
 Multinational.create(
   [
