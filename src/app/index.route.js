@@ -25,6 +25,10 @@
           url: '/investors',
           template: '<search-investors></search-investors>'
         })
+        .state('searchHubs', {
+          url: '/hubs',
+          template: '<search-hubs></search-hubs>'
+        })
         ,
 
       $urlRouterProvider.otherwise('/');
