@@ -53,8 +53,10 @@ ActiveRecord::Schema.define(version: 20160301150218) do
     t.string   "logo"
     t.text     "short_description"
     t.text     "programs"
-    t.datetime "created_at",        null: false
-    t.datetime "updated_at",        null: false
+    t.datetime "created_at",                        null: false
+    t.datetime "updated_at",                        null: false
+    t.text     "hub_type",             default: [],              array: true
+    t.date     "application_deadline"
   end
 
   create_table "investors", force: :cascade do |t|
