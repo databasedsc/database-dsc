@@ -10,6 +10,11 @@
 #  local_office      :string
 #  created_at        :datetime         not null
 #  updated_at        :datetime         not null
+#  emea_hq           :boolean          default(FALSE)
+#  startup_packages  :text             default([]), is an Array
+#  employees         :integer
+#  events_space      :boolean          default(FALSE)
+#  functions         :text             default([]), is an Array
 #
 
 class Multinational < ApplicationRecord
@@ -23,6 +28,40 @@ class Multinational < ApplicationRecord
       local_office: 'D',
     },
     using: {
-      tsearch: { any_word: true, prefix: true, dictionary: 'english' }
+      tsearch: {any_word: true, prefix: true, dictionary: 'english'}
     }
+
+  pg_search_scope :functions,
+    against: {
+      functions: 'A'
+    },
+    using: {
+      tsearch: {any_word: true}
+    }
+
+  scope :emea_hq, -> (emea_hq) { where(emea_hq: emea_hq) }
+
+
+  scope :empty_startup_packages, -> { where(startup_packages: '{}') }
+  scope :have_startup_packages , -> { where.not(startup_packages: '{}') }
+
+  scope :events_space, -> (events_space) { where(events_space: events_space) }
+
+  scope :greater_than, -> (column, limit) { where "#{column} > #{limit}" }
+  scope :range_scope, -> (column, range) { where("#{column}" => range) }
+
+  def self.select_numeric_scope(column, range_as_string)
+    if range_as_string == '1000+'
+      return greater_than(column, 1000)
+    else
+      lower, upper = range_as_string.split('-').map(&:to_i)
+      range_scope(column, lower..upper)
+    end
+  end
+
+  def self.startup_packages(filter_by_non_empty)
+    return have_startup_packages if filter_by_non_empty
+    empty_startup_packages
+  end
+
 end
