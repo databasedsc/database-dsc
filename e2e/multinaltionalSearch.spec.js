@@ -13,8 +13,8 @@ describe('SearchResults', function() {
     expect(page.searchResultsContainer.isPresent()).toBe(true);
   });
 
-  it('should display result list with 3 multinationals', function() {
-    expect(page.searchResults.count()).toEqual(3);
+  it('should display result list with 5 multinationals', function() {
+    expect(page.searchResults.count()).toEqual(5);
   });
 
   describe('search form', function() {
@@ -59,6 +59,18 @@ describe('SearchResults', function() {
         expect(page.searchResultsContainer.getText()).not.toContain('Microsoft');
       });
     });
+
+    describe('search filters', function() {
+      it("should filter search results using drop-downs for string filters", function() {
+        page.emeaHeadquarterFilter.element(by.cssContainingText('option', 'Yes')).click();
+        expect(page.searchResults.count()).toEqual(3);
+      });
+
+      it("should filter search results using drop-downs for numerical filters", function() {
+        page.employeesFilter.element(by.cssContainingText('option', '101-250')).click();
+        expect(page.searchResults.count()).toEqual(1);
+      });
+    })
 
   });
 
