@@ -13,6 +13,9 @@
 #  office_locations  :text             default([]), is an Array
 #  created_at        :datetime         not null
 #  updated_at        :datetime         not null
+#  funding_types     :text             default([]), is an Array
+#  investment_size   :integer
+#  deal_structure    :text
 #
 
 class Investor < ApplicationRecord
@@ -31,4 +34,23 @@ class Investor < ApplicationRecord
     using: {
       tsearch: { any_word: true, prefix: true, dictionary: 'english' }
     }
+
+  pg_search_scope :funding_types,
+    against: {
+      funding_types: 'A'
+    },
+    using: {
+      tsearch: { any_word: true }
+    }
+
+  scope :deal_structure, -> (deal_structure) { where(deal_structure: deal_structure) }
+  scope :greater_than, -> (column, limit) { where "#{column} > #{limit}" }
+  scope :range_scope, -> (column, range) { where("#{column}" => range) }
+
+  def self.select_numeric_scope(column, range_as_string)
+    lower, upper = range_as_string.split('-').map(&:to_i)
+    return greater_than(column, lower) if upper == 100000000
+    range_scope(column, lower..upper)
+  end
+
 end

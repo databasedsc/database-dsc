@@ -68,8 +68,12 @@ ActiveRecord::Schema.define(version: 20160301150218) do
     t.text     "office_locations",  default: [],              array: true
     t.datetime "created_at",                     null: false
     t.datetime "updated_at",                     null: false
-    t.index ["founders"], name: "index_investors_on_founders", using: :gin
+    t.text     "funding_types",     default: [],              array: true
+    t.integer  "investment_size"
+    t.text     "deal_structure"
   end
+
+  add_index "investors", ["founders"], name: "index_investors_on_founders", using: :gin
 
   create_table "multinationals", force: :cascade do |t|
     t.string   "name"
@@ -92,7 +96,8 @@ ActiveRecord::Schema.define(version: 20160301150218) do
     t.integer  "searchable_id"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
-    t.index ["searchable_type", "searchable_id"], name: "index_pg_search_documents_on_searchable_type_and_searchable_id", using: :btree
   end
+
+  add_index "pg_search_documents", ["searchable_type", "searchable_id"], name: "index_pg_search_documents_on_searchable_type_and_searchable_id", using: :btree
 
 end

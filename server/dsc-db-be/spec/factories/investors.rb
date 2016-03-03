@@ -13,6 +13,9 @@
 #  office_locations  :text             default([]), is an Array
 #  created_at        :datetime         not null
 #  updated_at        :datetime         not null
+#  funding_types     :text             default([]), is an Array
+#  investment_size   :integer
+#  deal_structure    :text
 #
 
 FactoryGirl.define do
