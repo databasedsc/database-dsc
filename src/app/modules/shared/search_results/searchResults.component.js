@@ -7,7 +7,8 @@
     })
     .component('searchResults', {
       bindings: {
-        collection: '='
+        collection: '<',
+        type: '@'
       },
       templateUrl: 'app/modules/shared/search_results/search_results.html',
       controller: 'SearchResultsController'

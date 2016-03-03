@@ -11,6 +11,7 @@
       'ui.router',
       'ui.bootstrap',
       'angular.filter',
+      'rzModule',
       'home',
       'searchCompanies',
       'searchResults',
@@ -18,6 +19,7 @@
       'searchMultinationals',
       'searchInvestors',
       'searchHubs'
+      'searchFilters'
     ]);
 
 })();

@@ -6,7 +6,7 @@
     <!--<a ng-show="entity.type == 'multinational'" ui-sref="multinationalProfile({id: entity.id})" class="no-decoration">-->
     <!--<a ng-show="entity.type == 'hub'" ui-sref="hubProfile({id: entity.id})" class="no-decoration">-->
     <!--<a ng-show="entity.type == 'investor'" ui-sref="investorProfile({id: entity.id})" class="no-decoration">-->
-    <a ui-sref="companyProfile({id: entity.id})" class="no-decoration">
+    <a ui-sref="{{$ctrl.type}}Profile({id: entity.id})" class="no-decoration">
       <div class="panel panel-default">
         <div class="panel-thumbnail"><img ng-src="{{entity.logo}}" class="logo img-responsive"></div>
         <div class="panel-body">
