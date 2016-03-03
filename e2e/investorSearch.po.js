@@ -7,6 +7,7 @@ var SearchPage = function() {
   this.searchField = element(by.id('search-text-field'));
   this.searchButton = element(by.id('search-button'));
   this.searchFilters = element.all(by.css('fieldset select'));
+  this.dealStructureFilter = element(by.id('deal-structure'));
 };
 
 module.exports = new SearchPage();

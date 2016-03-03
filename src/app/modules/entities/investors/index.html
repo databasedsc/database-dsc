@@ -10,6 +10,7 @@
         <input type="search" name="search-text" id="search-text-field" class="form-control" ng-model="$ctrl.query" autocomplete="off" />
       </div>
       <button type="submit" href="#" id="search-button" class="btn btn-primary btn-lg btn-block" >Search</button><br/>
+      <search-filters filters="$ctrl.filters" searchfn="$ctrl.search()"></search-filters>
     </form>
   </div>
   <search-results collection="$ctrl.results"></search-results>

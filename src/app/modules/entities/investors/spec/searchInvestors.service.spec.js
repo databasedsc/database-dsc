@@ -41,6 +41,20 @@
         $httpBackend.flush();
       });
 
+      it("should call the server with filtered query", function() {
+        var investors = {name: 'Company', logo: "somelogo.png", shortDesc: "short description"};
+
+        $httpBackend.expectGET("http://test.example.com/investors?fundingType=Seed&investmentSize=1000000-2000000").respond(investors);
+
+        searchInvestorsService.get({searchText: ''}, {investmentSize: '1000000-2000000', fundingType: 'Seed'}).then(function(response){
+          expect(response).toEqual(investors);
+        });
+
+        $httpBackend.flush();
+
+      });
+
+
     });
 
   });
