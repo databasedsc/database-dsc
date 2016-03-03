@@ -12,6 +12,7 @@
     "angular-bootstrap": "~0.13.4",
     "angular-filter": "~0.5.8",
     "animate.css": "~3.4.0",
+    "angularjs-slider": "~2.10.2",
     "angular": "~1.5.1"
   },
   "devDependencies": {
