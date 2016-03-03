@@ -41,6 +41,20 @@
         $httpBackend.flush();
       });
 
+      it("should call the server with filtered query", function() {
+        var multinationals = {name: 'Company', logo: "somelogo.png", shortDesc: "short description"};
+
+        $httpBackend.expectGET("http://test.example.com/multinationals?emeaHq=Yes&employees=101-250").respond(multinationals);
+
+        searchMultinationalsService.get({searchText: ''}, {employees: '101-250', emeaHq: 'Yes'}).then(function(response){
+          expect(response).toEqual(multinationals);
+        });
+
+        $httpBackend.flush();
+
+      });
+
+
     });
 
   });

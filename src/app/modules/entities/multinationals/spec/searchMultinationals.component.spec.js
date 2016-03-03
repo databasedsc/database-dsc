@@ -51,10 +51,9 @@
       $ctrl.search();
       $scope.$apply();
 
-      expect($ctrl.searchMultinationalsService.get).toHaveBeenCalledWith({searchText: 'microsoft'});
+      expect($ctrl.searchMultinationalsService.get).toHaveBeenCalledWith({searchText: 'microsoft'},{ emeaHq: '', startupPackages: '', employees: '', eventsSpace: '', functions: '' });
       expect($ctrl.results.length).toEqual(1);
     });
-
 
   });
 })();
