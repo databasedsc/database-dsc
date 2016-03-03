@@ -42,6 +42,20 @@
         $httpBackend.flush();
       });
 
+      it("should call the server with filtered query", function() {
+        var hubs = {name: 'Company', logo: "somelogo.png", shortDesc: "short description"};
+
+
+        $httpBackend.expectGET("http://test.example.com/hubs?applicationDeadline=Next+Month&hubType=Accelerator").respond(hubs);
+
+        searchHubsService.get({searchText: ''}, {applicationDeadline: 'Next Month', hubType: 'Accelerator'}).then(function(response){
+          expect(response).toEqual(hubs);
+        });
+
+        $httpBackend.flush();
+
+      });
+
     });
 
   });

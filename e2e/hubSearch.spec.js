@@ -61,6 +61,22 @@ describe('SearchResults', function() {
       });
     });
 
+    describe('filters', function(){
+      //no data
+      //TODO: uncomment test when seed data becomes available
+
+      //it("should filter search results using drop-downs for string filters", function() {
+      //  page.emeaHeadquarterFilter.element(by.cssContainingText('option', 'Yes')).click();
+      //  expect(page.searchResults.count()).toEqual(3);
+      //});
+      //
+      //it("should filter search results using drop-downs for numerical filters", function() {
+      //  page.employeesFilter.element(by.cssContainingText('option', '101-250')).click();
+      //  expect(page.searchResults.count()).toEqual(1);
+      //});
+
+    });
+
   });
 
 });

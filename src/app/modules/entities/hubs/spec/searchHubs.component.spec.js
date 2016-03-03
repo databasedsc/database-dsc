@@ -51,7 +51,7 @@
       $ctrl.search();
       $scope.$apply();
 
-      expect($ctrl.searchHubsService.get).toHaveBeenCalledWith({searchText: 'NDRC'});
+      expect($ctrl.searchHubsService.get).toHaveBeenCalledWith({searchText: 'NDRC'}, { hubType: '', applicationDeadlines: '' });
       expect($ctrl.results.length).toEqual(1);
     });
 
