@@ -6,85 +6,16 @@
   <div class="row col-xs-3 form-group filters">
     <form class="form-horizontal" ng-submit="$ctrl.search()">
       <div class="form-group">
-        <input type="search" name="search-text" id="search-text-field" class="form-control" ng-model="$ctrl.query" autocomplete="off" /></div>
+        <input type="search" name="search-text" id="search-text-field" class="form-control" ng-model="$ctrl.query" autocomplete="off" />
+      </div>
       <button type="submit" href="#" id="search-button" class="btn btn-primary btn-lg btn-block" >Search</button><br/>
 
-      <fieldset>
-        <legend>Filters</legend>
-        <div class="form-group">
-          <label class="col-xs-12" for="employees">Employees</label>
-          <select ng-init="$ctrl.filters.employees.selectedValue = $ctrl.filters.employees.values[0]" name="employees" id="employees"
-                  class="form-control col-xs-12"
-                  ng-options="option for option in $ctrl.filters.employees.values"
-                  ng-model="$ctrl.filters.employees.selectedValue" ng-change="$ctrl.search()">
-          </select>
-        </div>
-        <div class="form-group">
-          <label class="col-xs-12" for="funding-stage">Funding</label>
-          <select ng-init="$ctrl.filters.fundingStage.selectedValue = $ctrl.filters.fundingStage.values[0]" name="funding-stage" id="funding-stage" class="form-control col-xs-12"
-                  ng-options="option for option in $ctrl.filters.fundingStage.values"
-                  ng-model="$ctrl.filters.fundingStage.selectedValue" ng-change="$ctrl.search()">
-
-          </select>
-        </div>
-        <div class="form-group">
-          <label class="col-xs-12" for="funding-amount">Funding Amount</label>
-          <select ng-init="$ctrl.filters.fundingAmount.selectedValue = $ctrl.filters.fundingAmount.values[0]" name="funding-amount" id="funding-amount" class="form-control col-xs-12"
-                  ng-options="option for option in $ctrl.filters.fundingAmount.values"
-                  ng-model="$ctrl.filters.fundingAmount.selectedValue" ng-change="$ctrl.search()">
-
-          </select>
-        </div>
-        <div class="form-group">
-          <label class="col-xs-12" for="product-stage">Product Stage</label>
-          <select ng-init="$ctrl.filters.productStage.selectedValue = $ctrl.filters.productStage.values[0]" name="product-stage" id="product-stage" class="form-control col-xs-12"
-                  ng-options="option for option in $ctrl.filters.productStage.values"
-                  ng-model="$ctrl.filters.productStage.selectedValue" ng-change="$ctrl.search()">
-
-          </select>
-        </div>
-        <div class="form-group">
-          <label class="col-xs-12">Geographical Markets</label>
-          <div class="checkbox" ng-repeat="geoMarket in $ctrl.filters.geographicalMarkets.values">
-            <label>
-              <input id="{{geoMarket.label}}" type="checkbox" ng-model="$ctrl.filters.geographicalMarkets.selectedValue[geoMarket.code]" ng-change="$ctrl.search()">{{geoMarket.label}}
-            </label>
-          </div>
-        </div>
-
-        <div class="form-group">
-          <label class="col-xs-12" for="business-model">Business Model</label>
-          <select ng-init="$ctrl.filters.businessModel.selectedValue = $ctrl.filters.businessModel.values[0]" name="business-model" id="business-model" class="form-control col-xs-12"
-                  ng-options="option for option in $ctrl.filters.businessModel.values"
-                  ng-model="$ctrl.filters.businessModel.selectedValue" ng-change="$ctrl.search()">
-
-          </select>
-        </div>
-
-        <div class="form-group">
-          <label class="col-xs-12" for="company-stage">Company Stage</label>
-          <select ng-init="$ctrl.filters.companyStage.selectedValue = $ctrl.filters.companyStage.values[0]" name="company-stage" id="company-stage" class="form-control col-xs-12"
-                  ng-options="option for option in $ctrl.filters.companyStage.values"
-                  ng-model="$ctrl.filters.companyStage.selectedValue" ng-change="$ctrl.search()">
-
-          </select>
-        </div>
-        <div class="form-group">
-          <label class="col-xs-12" for="status">Status</label>
-          <select ng-init="$ctrl.filters.operationalStatus.selectedValue = $ctrl.filters.operationalStatus.values[0]" name="status" id="status" class="form-control col-xs-12"
-                  ng-options="option for option in $ctrl.filters.operationalStatus.values"
-                  ng-model="$ctrl.filters.operationalStatus.selectedValue" ng-change="$ctrl.search()">
-
-          </select>
-        </div>
-
-        <!--<search-filters></search-filters>-->
-      </fieldset>
+      <search-filters filters="$ctrl.filters" searchfn="$ctrl.search()"></search-filters>
 
     </form>
 
   </div>
 
-  <search-results collection="$ctrl.results"></search-results>
+  <search-results collection="$ctrl.results" type="company"></search-results>
 
 </div>

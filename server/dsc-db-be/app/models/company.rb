@@ -68,16 +68,16 @@ class Company < ApplicationRecord
   scope :company_stage, -> (company_stage) { where company_stage: company_stage }
   scope :business_model, -> (business_model) { where business_model: business_model }
   scope :operational_status, -> (operational_status) { where operational_status: operational_status }
-  scope :greater_than, -> (entity, limit) { where "#{entity} > #{limit}" }
-  scope :range_scope, -> (entity, range) { where("#{entity}" => range) }
+  scope :greater_than, -> (column, limit) { where "#{column} > #{limit}" }
+  scope :range_scope, -> (column, range) { where("#{column}" => range) }
 
-  def self.select_numeric_scope(entity, range_as_string)
+  def self.select_numeric_scope(column, range_as_string)
     if range_as_string == '>500' || range_as_string == '>100m'
       limit = range_as_string.parse_units.gsub('>', '').to_i
-      self.greater_than(entity, limit)
+      self.greater_than(column, limit)
     else
       lower, upper = range_as_string.parse_units.split('-').map(&:to_i)
-      self.range_scope(entity, lower..upper)
+      self.range_scope(column, lower..upper)
     end
   end
 end
