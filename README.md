@@ -26,4 +26,4 @@ TBD
 
 ##Powered by:
 
-![Pivotal/CF](https://lh6.googleusercontent.com/TnlmxnMC9UgxldWpn6IdD3uTtE09lMCpqRN7hStfkmaRaPRUwyEbiTLrBnrrFOY74FtkSg=w2536-h1221)
+<img src="./PivotalLabs-Logo-OnLight.png" width="400" height="85" /><img src="./PivotalCloudFoundry-Logo-Horizontal-OnLight.png" width="400" height="85" />
