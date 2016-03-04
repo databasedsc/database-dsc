@@ -51,7 +51,7 @@
       $ctrl.search();
       $scope.$apply();
 
-      expect($ctrl.searchInvestorsService.get).toHaveBeenCalledWith({searchText: 'microsoft'}, {fundingType: '', investmentSize: '', dealStructure: '' });
+      expect($ctrl.searchInvestorsService.get).toHaveBeenCalledWith({searchText: 'microsoft'}, {fundingTypes: '', investmentSize: '', dealStructure: '' });
       expect($ctrl.results.length).toEqual(1);
     });
 
