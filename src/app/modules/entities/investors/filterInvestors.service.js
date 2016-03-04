@@ -10,7 +10,7 @@
       };
 
       this.data = {
-        fundingType: {
+        fundingTypes: {
           type: 'checklist',
           id: 'funding-type',
           label: 'Type',

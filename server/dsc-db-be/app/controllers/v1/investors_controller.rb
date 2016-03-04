@@ -6,7 +6,7 @@ class V1::InvestorsController < ApplicationController
       investors = Investor.all
     end
 
-    investors = investors.funding_types(params[:fundingTypes]) if params[:fundingTypes]
+    investors = investors.funding_types(JSON.parse(params[:fundingTypes]).select { |k, v| v }.keys.join(' ')) if params[:fundingTypes]
     investors = investors.select_numeric_scope('investment_size', params[:investmentSize]) if params[:investmentSize]
     investors = investors.deal_structure(params[:dealStructure]) if params[:dealStructure]
 
