@@ -43,7 +43,8 @@ Investor.create(
               ],
               "local_office": "26-28 Lombard Street East, First Floor, Dublin 2",
               "office_locations": [],
-              "tags": ["Big Data", "Cloud Services", "Internet", "Mobile"]
+              "tags": ["Big Data", "Cloud Services", "Internet", "Mobile"],
+              "funding_types": ["PS", "S", "SA", "SB"]
             },
             {
               "name": "Polaris Partners",
@@ -66,10 +67,12 @@ Investor.create(
               ],
               "local_office": "",
               "office_locations": ["Waltham Office, 1000 Winter Street Suite 3350, Waltham, MA 02451, USA"],
-              "tags": ["Healthcare", "Technology"]
+              "tags": ["Healthcare", "Technology"],
+              "funding_types": ["PS", "S", "SA", "SB", "SC", "SC+"]
             }
           ]
 )
+
 
 
 Multinational.create(
