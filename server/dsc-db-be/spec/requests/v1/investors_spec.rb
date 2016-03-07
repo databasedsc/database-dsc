@@ -1,6 +1,37 @@
 require 'rails_helper'
 
 RSpec.describe 'V1::Investors', :type => :request do
+
+  describe 'GET /v1/investors/:id' do
+
+    let!(:investor) do
+      FactoryGirl.create(:investor,
+        name: "Frontline Ventures",
+        logo: "https://crunchbase-production-res.cloudinary.com/image/upload/c_pad,h_140,w_140/v1397179018/863daa91a3ecb96fed179502587ff7a3.png",
+        headquarters: "London",
+        short_description: "We are a pioneering early-stage venture capital firm, believing in ideas and investing in passion.",
+        office_locations: ["26-28 Lombard Street East, First Floor, Dublin 2"],
+        local_office: "Grand Canal Area",
+        funding_types: ['Pre-seed', 'Seed', 'Series A', 'Series B', 'Series C', 'Series C+'],
+        investment_size: 14000000,
+        deal_structure: 'Mezzanine',
+        tags: ["Big Data", "Cloud Services", "Internet", "Mobile"],
+        founders: [
+          {
+            name: "Shay Garvey",
+            linkedin: "shagarvey"
+          }
+        ]
+      )
+    end
+
+    it 'should return an investor' do
+      get "/v1/investors/#{investor.id}"
+      investor_json = JSON.parse(response.body)
+      expect(response).to have_http_status(200)
+    end
+  end
+
   describe 'GET /v1/investors' do
 
     let!(:facebook) do
@@ -11,7 +42,7 @@ RSpec.describe 'V1::Investors', :type => :request do
         short_description: "We are a pioneering early-stage venture capital firm, believing in ideas and investing in passion.",
         office_locations: ["26-28 Lombard Street East, First Floor, Dublin 2"],
         local_office: "Grand Canal Area",
-        funding_types: ['Pre-seed', 'Seed', 'Series A', 'Series B', 'Series C', 'Series C+'],
+        funding_types: ['PS', 'S', 'SA', 'SB', 'SC', 'SC+'],
         investment_size: 14000000,
         deal_structure: 'Mezzanine',
         tags: ["Big Data", "Cloud Services", "Internet", "Mobile"],
@@ -77,7 +108,7 @@ RSpec.describe 'V1::Investors', :type => :request do
 
     describe 'filters' do
       it 'should return the investors matching the filter criteria funding type' do
-        get '/v1/investors?fundingTypes=Series+A'
+        get '/v1/investors?fundingTypes=%7B%22SA%22:true%7D'
         investors_json = JSON.parse(response.body)
         expect(response).to have_http_status(200)
         expect(investors_json.size).to eq(1)

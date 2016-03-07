@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160303104720) do
+ActiveRecord::Schema.define(version: 20160304182052) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -74,8 +74,21 @@ ActiveRecord::Schema.define(version: 20160303104720) do
     t.text     "funding_types",     default: [],              array: true
     t.integer  "investment_size"
     t.text     "deal_structure"
+    t.string   "funds_raised"
+    t.text     "regions"
+    t.string   "contact"
+    t.string   "contact_email"
+    t.text     "preferred_contact"
+    t.text     "co_investors"
+    t.text     "board_members",     default: [],              array: true
+    t.text     "similar_investors"
+    t.text     "long_description"
+    t.string   "exits_ipos"
+    t.string   "founded"
+    t.jsonb    "contact_urls"
   end
 
+  add_index "investors", ["contact_urls"], name: "index_investors_on_contact_urls", using: :gin
   add_index "investors", ["founders"], name: "index_investors_on_founders", using: :gin
 
   create_table "multinationals", force: :cascade do |t|
