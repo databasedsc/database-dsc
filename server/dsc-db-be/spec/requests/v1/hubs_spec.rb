@@ -119,14 +119,14 @@ RSpec.describe 'V1::Hubs', :type => :request do
       end
 
       it 'should return hubs filtered by E type' do
-        get '/v1/hubs?hubType=E'
+        get '/v1/hubs?hubType=%7B%22E%22:true%7D'
         hubs_json = JSON.parse(response.body)
         expect(response).to have_http_status(200)
         expect(hubs_json.size).to eq(2)
       end
 
       it 'should return hubs filtered by CW type' do
-        get '/v1/hubs?hubType=CW'
+        get '/v1/hubs?hubType=%7B%22CW%22:true%7D'
         hubs_json = JSON.parse(response.body)
         expect(response).to have_http_status(200)
         expect(hubs_json.size).to eq(1)

@@ -15,6 +15,11 @@ class V1::InvestorsController < ApplicationController
     render json: investors, status: 200
   end
 
+  def show
+    investor = Investor.find(params[:id])
+    render json: investor, status: 200
+  end
+
   private
 
   def funding_types_parse

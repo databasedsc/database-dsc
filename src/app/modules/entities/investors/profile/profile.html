@@ -1,0 +1,101 @@
+<div class="row">
+  <div id="overview" class="col-lg-8">
+    <div ng-show="$ctrl.investor.logo" class="">
+      <img ng-src="{{$ctrl.investor.logo}}" class="logo img-responsive">
+    </div>
+    <label ng-show="$ctrl.investor.name" for="name" class="col-xs-12">
+      Name:
+      <p id="name">{{$ctrl.investor.name}}</p>
+    </label>
+    <label ng-show="$ctrl.investor.short_description" for="tagline" class="col-xs-12">
+      Tagline:
+      <p id="tagline">{{$ctrl.investor.short_description}}</p>
+    </label>
+    <label ng-show="$ctrl.investor.long_description" for="description" class="col-xs-12">
+      Description
+      <p id="description">{{$ctrl.investor.long_description}}</p>
+    </label>
+    <p ng-repeat="contact_url in $ctrl.investor.contact_urls">{{contact_url}}</p>
+
+  </div>
+  <div class="col-lg-4 video-player"></div>
+</div>
+<div class="row">
+  <div id="details">
+    <div class="left col-xs-6">
+      <label ng-show="$ctrl.investor.exits_ipos" for="exits-ipos" class="col-xs-12">
+        Exits/IPOs:
+        <p id="exits-ipos">{{$ctrl.investor.exits_ipos}}</p>
+      </label>
+      <label ng-show="$ctrl.investor.headquarters" for="headquarters" class="col-xs-12">
+        Headquarters:
+        <p id="headquarters">{{$ctrl.investor.headquarters}}</p>
+      </label>
+      <label ng-show="$ctrl.investor.founders" for="founders" class="col-xs-12">
+        Founders:
+        <p id="founders" ng-repeat="founder in $ctrl.investor.founders">{{founder.name}}</p>
+      </label>
+      <label ng-show="$ctrl.investor.founded" for="founded" class="col-xs-12">
+        Founded:
+        <p id="founded">{{$ctrl.investor.founded}}</p>
+      </label>
+      <label ng-show="$ctrl.investor.funds_raised" for="funds-raised" class="col-xs-12">
+        Funds Raised:
+        <p id="funds-raised">${{$ctrl.investor.funds_raised}}</p>
+      </label>
+      <label ng-show="$ctrl.investor.funding_types" for="funding-type" class="col-xs-12">
+        Type of Funding:
+        <p id="funding-type">{{$ctrl.investor.funding_types | fundingCodeToHuman : 'array' }}</p>
+      </label>
+      <label nag-show="$ctrl.investor.funding_amount" for="investment-size" class="col-xs-12">
+        Investment Size
+        <p id="investment-size">{{$ctrl.investor.investment_size}}</p>
+      </label>
+      <label ng-show="$ctrl.investor.regions" for="regions" class="col-xs-12">
+        Regions:
+        <p id="regions">{{$ctrl.investor.regions}}</p>
+      </label>
+      <label ng-show="$ctrl.investor.office_locations" for="office-locations" class="col-xs-12">
+        Office Locations:
+        <div id="office-locations" ng-repeat="office in $ctrl.investor.office_locations">
+          <p>{{office}}</p>
+        </div>
+      </label>
+    </div>
+    <div class="right col-xs-6">
+      <label ng-show="$ctrl.investor.contact" for="contact" class="col-xs-12">
+        Contact:
+        <p id="contact">{{$ctrl.investor.contact}}</p>
+      </label>
+      <label ng-show="$ctrl.investor.contact_email" for="contact-email" class="col-xs-12">
+        Contact Number:
+        <p id="contact-email">{{$ctrl.investor.contact_email}}</p>
+      </label>
+      <label ng-show="$ctrl.investor.deal_structure" for="deal-structure" class="col-xs-12">
+        Deal Structure:
+        <p id="deal-structure">{{$ctrl.investor.deal_structure}}</p>
+      </label>
+      <label ng-show="$ctrl.investor.preferred_contact" for="preferred-contact" class="col-xs-12">
+        Preferred Contact:
+        <p id="preferred-contact">{{$ctrl.investor.preferred_contact}}</p>
+      </label>
+      <label ng-show="$ctrl.investor.co_investors" for="co-investors" class="col-xs-12">
+        Co-Investors:
+        <p id="co-investors">{{$ctrl.investor.co_investors}}</p>
+      </label>
+      <label ng-show="$ctrl.investor.board_members" for="board-members" class="col-xs-12">
+        Board Members:
+        <p id="board-members" ng-repeat="member in $ctrl.investor.board_members">{{member}}</p>
+      </label>
+      <label ng-show="$ctrl.investor.similar_investors" for="similar-investors" class="col-xs-12">
+        Similar Investors:
+        <p id="similar-investors"></p>
+      </label>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div id="portfolio">
+    <h3>Irish Portfolio Companies</h3>
+  </div>
+</div>
