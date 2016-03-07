@@ -1,0 +1,48 @@
+<div class="row">
+  <div id="overview" class="col-lg-8">
+    <div ng-show="$ctrl.hub.logo" class="">
+      <img ng-src="{{$ctrl.hub.logo}}" class="logo img-responsive">
+    </div>
+    <label ng-show="$ctrl.hub.name" for="name" class="col-xs-12">
+      Name:
+      <p id="name">{{$ctrl.hub.name}}</p>
+    </label>
+    <label ng-show="$ctrl.hub.short_description" for="tagline" class="col-xs-12">
+      Tagline:
+      <p id="tagline">{{$ctrl.hub.short_description}}</p>
+    </label>
+    <label ng-show="$ctrl.hub.long_description" for="description" class="col-xs-12">
+      Description:
+      <p id="description">{{$ctrl.hub.long_description}}</p>
+    </label>
+  </div>
+  <div class="col-lg-4 video-player"></div>
+</div>
+<div class="row">
+  <div id="details">
+    <div class="left col-xs-6">
+      <label ng-show="$ctrl.hub.hub_type" for="hub_type" class="col-xs-12">
+        Hub Type:
+        <p id="hub_type">{{$ctrl.hub.hub_type | join: ', '}}</p>
+      </label>
+      <label ng-show="$ctrl.hub.founded" for="founded" class="col-xs-12">
+        Founded
+        <p id="founded">{{$ctrl.hub.founded}}</p>
+      </label>
+      <label nag-show="$ctrl.hub.contact" for="contact" class="col-xs-12">
+        Contact:
+        <p id="contact">{{$ctrl.hub.contact}}</p>
+      </label>
+      <label nag-show="$ctrl.hub.contact_detail" for="contact_detail" class="col-xs-12">
+        Contact Details:
+        <p id="contact_detail">{{$ctrl.hub.contact_detail}}</p>
+      </label>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <h3>Alumni</h3>
+  <div id="alumni">
+    <p>{{$ctrl.hub.alumni | join: ', '}}</p>
+  </div>
+</div>

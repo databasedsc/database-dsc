@@ -20,6 +20,7 @@
       'searchInvestors',
       'investorProfile',
       'searchHubs',
+      'hubProfile',
       'searchFilters'
     ]);
 

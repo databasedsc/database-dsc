@@ -33,6 +33,10 @@
           url: '/hubs',
           template: '<search-hubs></search-hubs>'
         })
+        .state('hubProfile', {
+          url: '/hub/:id',
+          template: '<hub-profile></hub-profile>'
+        })
         ,
 
       $urlRouterProvider.otherwise('/');

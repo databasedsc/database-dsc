@@ -1,7 +1,6 @@
 (function() {
   'use strict';
 
-
   angular
     .module('companyProfile')
     .service('getCompanyService', function($http, $httpParamSerializer, serverUrl) {
