@@ -108,13 +108,19 @@ ActiveRecord::Schema.define(version: 20160307151154) do
     t.text     "short_description"
     t.string   "headquarters"
     t.string   "local_office"
-    t.datetime "created_at",                        null: false
-    t.datetime "updated_at",                        null: false
-    t.boolean  "emea_hq",           default: false
-    t.text     "startup_packages",  default: [],                 array: true
+    t.datetime "created_at",                              null: false
+    t.datetime "updated_at",                              null: false
+    t.boolean  "emea_hq",                 default: false
+    t.text     "startup_packages",        default: [],                 array: true
     t.integer  "employees"
-    t.boolean  "events_space",      default: false
-    t.text     "functions",         default: [],                 array: true
+    t.boolean  "events_space",            default: false
+    t.text     "functions",               default: [],                 array: true
+    t.string   "linkedin"
+    t.string   "facebook"
+    t.string   "twitter"
+    t.text     "long_description"
+    t.text     "events_space_qualifiers"
+    t.string   "next_event"
   end
 
   create_table "pg_search_documents", force: :cascade do |t|
