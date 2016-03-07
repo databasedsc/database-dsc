@@ -25,6 +25,10 @@
           url: '/investors',
           template: '<search-investors></search-investors>'
         })
+        .state('investorProfile', {
+          url: '/investor/:id',
+          template: '<investor-profile></investor-profile>'
+        })
         .state('searchHubs', {
           url: '/hubs',
           template: '<search-hubs></search-hubs>'
