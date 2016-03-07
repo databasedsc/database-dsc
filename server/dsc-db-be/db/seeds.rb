@@ -17,148 +17,110 @@ Hub.create(
       "name": "NDRC",
       "logo": "http://static.wixstatic.com/media/41176a_ffd50f75062644a897fa34f6e0483b5c.jpg/v1/fill/w_250,h_140,al_c,q_80,usm_0.66_1.00_0.01/41176a_ffd50f75062644a897fa34f6e0483b5c.jpg",
       "short_description": "Making Ventures Happen",
-      "long_description": "NDRC builds high-impact new ventures. By providing the people, time, space and investment needed at the earliest stages of dedicated commercialisation work, NDRC is creating companies worthy of commercial investment and with the ability to scale. The NDRC team has the breadth of knowledge and expertise in technology and markets. NDRC works side-by-side with researchers, entrepreneurs and venture teams to turn great ideas into successful new ventures. By the end of 2014, NDRC’s portfolio of startup ventures had secured a cumulative €88m in follow-on investment from commercial investors, with a combined market capitalisation of approx. €220m.",
-      "founded": "",
-      "contact": "",
-      "contact_detail": "info@ndrc.ie",
-      "address": "",
-      "alumni": ["Building eye", "Commutable", "Cityhook", "Gigstarter", "ParkYa", "Bragbet", "Busy Moos", "Voice", "Balls.ie", "Shotclip", "Soundwave", "Mobstats", "Twiddle", "Loylap", "Localmint", "Adyuka", "Tubett", "Digifeye", "Adaptics", "Aftering", "YapMe", "travayl"],
-      "contact_urls": {},
-      "events": [],
-      "programs": "",
-      "hub_type": ["Accelerator/Incubator"]
+      "programs": ""
     },
     {
       "name": "Dogpatch Labs",
       "logo": "https://crunchbase-production-res.cloudinary.com/image/upload/c_pad,h_140,w_250/v1397188849/56ce6584c4d9ad5db3127a6906857e0e.png",
       "short_description": "Dogpatch Labs is a pay to play co-working space for tech start-ups between seed and series a.",
-      "long_description": "Dogpatch Labs was founded in San Francisco in 2009 by Polaris Ventures. Since then it has housed a litany of successful startups including Instagram (sold to Facebook for $1 billion). Domestically it has been home to such success stories as Logentries and Intercom who have raised $10 million and $30 million respectively. In total @dogpatchlabs companies have raised over $250 million in angel and venture financing from investors such as Ron Conway, Ray Ozzie and Chris Sacca, and funds including Sequoia Capital, Benchmark Capital, Andreessen Horowitz, USV and many more. Today Dogpatch Labs is a pay-to-play co-working space for startups. Located in one of Dublin's most iconic buildings, The CHQ building, we have over 20,000 square feet of co-working and meeting space and house some of Ireland's leading local and international startups who are focused on scaling from seed to series A and beyond.",
-      "founded": "2008",
-      "contact": "Patrick Walsh",
-      "contact_detail": "patrick@dogpatchlabs.com",
-      "address": "",
-      "alumni": ["Trustev", "CoderDojo", "Twilio", "Pivotal"],
-      "contact_urls": {},
-      "events": [],
-      "programs": "",
-      "hub_type": ["Co-Working"]
+      "programs": ""
     }
   ]
 )
 
 Investor.create(
-  [
-    {
-      "name": "Frontline Ventures",
-      "logo": "https://crunchbase-production-res.cloudinary.com/image/upload/c_pad,h_140,w_250/v1397179018/863daa91a3ecb96fed179502587ff7a3.png",
-      "short_description": "We are a pioneering early-stage venture capital firm, believing in ideas and investing in passion.",
-      "long_description": "Frontline Ventures is focused on the needs of the new wave of technology entrepreneurs. They only invest in the best teams, who build capital-efficient businesses in high-growth markets. They build long-term trusted relationships with the people they invest in and seek to develop a community which fosters them and other budding entrepreneurs.",
-      "headquarters": "London",
-      "founders": [
-        {
-          "name": "Shay Garvey",
-          "linkedin": "shaygarvey"
-        }
-      ],
-      "local_office": "26-28 Lombard Street East, First Floor, Dublin 2",
-      "tags": ["Big Data", "Cloud Services", "Internet", "Mobile"],
-      "funding_types": ["PS", "S", "SA", "SB"],
-      "funds_raised": "54.6m",
-      "investment_size": "100k",
-      "office_locations": ["26-28 Lombard Street East, First Floor, Dublin 2"],
-      "co_investors": "Polaris Partners",
-      "preferred_contact": "Referral Only",
-      "contact_email": "info@frontline.vc",
-      "contact_urls": {
-        "website": "http://www.frontline.vc",
-        "facebook": "https://www.facebook.com/frontlineventures/",
-        "twitter": "https://twitter.com/Frontline",
-        "linkedin": "http://www.linkedin.com/company/frontline-ventures"
-      }
-    },
-    {
-      "name": "Polaris Partners",
-      "logo": "https://crunchbase-production-res.cloudinary.com/image/upload/c_pad,h_140,w_250/v1416862786/xnew66hyjlq8nkokxnsb.jpg",
-      "short_description": "Polaris Partners invests in exceptional technology and healthcare companies across all stages of their lifecycles.",
-      "long_description": "Polaris Partners invests in exceptional technology and healthcare companies across all stages of their lifecycles. With offices in Boston, San Francisco, and Dublin, we partner globally with an unparalleled network of repeat entrepreneurs, top scientists and emerging innovators who are making a significant impact in their fields and improving the way in which we live and work. For more information please visit: www.polarispartners.com.",
-      "headquarters": "Waltham",
-      "founders": [
-        {
-          "name": "Steve Arnold",
-          "linkedin": ""
-        },
-        {
-          "name": "Jon Flint",
-          "linkedin": ""
-        },
-        {
-          "name": "Terrance McGuire",
-          "linkedin": ""
-        }
-      ],
-      "local_office": "",
-      "tags": ["Healthcare", "Technology"],
-      "funding_types": ["PS", "S", "SA", "SB", "SC", "SC+"],
-      "funds_raised": "1.73b",
-      "investment_size": "100k",
-      "office_locations": ["Waltham Office, 1000 Winter Street Suite 3350, Waltham, MA 02451, USA"],
-      "co_investors": "Frontline Ventures",
-      "preferred_contact": "Referral",
-      "contact_email": "nruane@polarispartners.com",
-      "contact_urls": {
-        "website": "http://polarispartners.com",
-        "facebook": "http://www.facebook.com/pages/Polaris-Partners/404737049642094",
-        "twitter": "http://twitter.com/PolarisVC",
-        "linkedin": "http://www.linkedin.com/company/20197"
-      }
-    }
-  ]
+          [
+            {
+              "name": "Frontline Ventures",
+              "logo": "https://crunchbase-production-res.cloudinary.com/image/upload/c_pad,h_140,w_250/v1397179018/863daa91a3ecb96fed179502587ff7a3.png",
+              "short_description": "We are a pioneering early-stage venture capital firm, believing in ideas and investing in passion.",
+              "headquarters": "London",
+              "founders": [
+                {
+                  "name": "Shay Garvey",
+                  "linkedin": "shaygarvey"
+                }
+              ],
+              "local_office": "26-28 Lombard Street East, First Floor, Dublin 2",
+              "office_locations": [],
+              "tags": ["Big Data", "Cloud Services", "Internet", "Mobile"]
+            },
+            {
+              "name": "Polaris Partners",
+              "logo": "https://crunchbase-production-res.cloudinary.com/image/upload/c_pad,h_140,w_250/v1416862786/xnew66hyjlq8nkokxnsb.jpg",
+              "short_description": "Polaris Partners invests in exceptional technology and healthcare companies across all stages of their lifecycles.",
+              "headquarters": "Waltham",
+              "founders": [
+                {
+                  "name": "Steve Arnold",
+                  "linkedin": ""
+                },
+                {
+                  "name": "Jon Flint",
+                  "linkedin": ""
+                },
+                {
+                  "name": "Terrance McGuire",
+                  "linkedin": ""
+                }
+              ],
+              "local_office": "",
+              "office_locations": ["Waltham Office, 1000 Winter Street Suite 3350, Waltham, MA 02451, USA"],
+              "tags": ["Healthcare", "Technology"]
+            }
+          ]
 )
 
 
 Multinational.create(
   [
-    {
-      "name": "Facebook",
-      "logo": "https://crunchbase-production-res.cloudinary.com/image/upload/c_pad,h_140,w_250/v1408491700/ypqf483smhnqo0rh6mff.png",
-      "short_description": "Facebook is an online social networking service that enables its users to connect with friends and family as well as make new connections.",
-      "headquarters": "Menlo Park, CA",
-      "local_office": "4 Grand Canal Street Lower, Dublin 2, Dublin",
-      "emea_hq": true,
-      "startup_packages": [
-        "FbStart is a new program from Facebook designed to help early stage mobile startups build and grow their apps https://fbstart.com/",
-        "Facebook Developer Community https://www.facebook.com/groups/fbdevelopers/ This is a forum for developers building on the Facebook platform to interact with the Facebook team and other developers.",
-        "Support for Advertisers https://www.facebook.com/business/resources",
-        "Training modules for Advertising on Facebook  https://www.facebook.com/blueprint"
-      ],
-      "events_space": true,
-      "employees": 722,
-      "functions": ['S', 'CS', 'F', 'L', 'SI', 'E', 'M', 'O', 'PD']
-    },
-    {
-      "name": "Microsoft",
-      "logo": "https://crunchbase-production-res.cloudinary.com/image/upload/c_pad,h_140,w_250/v1397182206/6835990abacfb4d14ecdbfc87641e469.jpg",
-      "short_description": "Microsoft, a software corporation, develops licensed and support products and services ranging from personal use to enterprise application.",
-      "headquarters": "Redmond, WA",
-      "local_office": "Block B, Atrium Building, Sandyford Industrial Estate, Carmangall Road, Dublin 18",
-      "emea_hq": true,
-      "startup_packages": ["BizSpark is available to startups that are privately held, less than 5-years-old and earn less than $1M in annual revenue. Note that the Startup must be actively engaged in development of a software-based product or service that will form a core piece of its current or intended business. Signup and learn more here: http://aka.ms/BizSparkIreland BizSpark Plus is Microsoft’s program for mature startups who have been nominated for BizSpark Plus by Microsoft accelerator partners. In addition to BizSpark program benefits, startups enrolled in the BizSpark program receive $10k per month in Azure usage credits for a total of $120K over the course of the 1-year program.  Both Enterprise Ireland HPSU startups and NDRC Startups are currently approved as a Microsoft accelerator partners for BizSpark Plus. If you have startups who like to take advantage of BizSpark Plus, please contact Michael Meagher and Ryan Mesches from Microsoft Ireland and they can arrange a 1-1 to see if you qualify. BizSpark members receive up to $750 per month of free Microsoft Azure cloud services for 3 years: that’s $150 per month each for up to 5 developers. Azure works with OSS/Linux and familiar technologies such as Linux, Ruby, Python, Java and PHP. Along with access to over $100,000 worth of software to build and test their software solutions."],
-      "events_space": true,
-      "employees": 1646,
-      "functions": ['S', 'CS', 'F', 'L', 'SI', 'E', 'M', 'RD', 'MF', 'O', 'PD']
-    },
-    {
-      "name": "SquareSpace",
-      "logo": "https://crunchbase-production-res.cloudinary.com/image/upload/c_pad,h_140,w_250/v1398216186/sn3vn5nvwxjyvkkz905h.png",
-      "short_description": "Squarespace is a SaaS-based Content Management System (CMS) offering a website builder, store builder, blogging platform, & hosting service.",
-      "headquarters": "New York, NY",
-      "local_office": "Le Pole House 1st Floor, Ship Street Great, Dublin 8",
-      "emea_hq": true,
-      "startup_packages": ["We provide an exclusive discount for startups creating a website."],
-      "events_space": true,
-      "employees": 115,
-      "functions": ['S', 'CS', 'D', 'L', 'SI', 'E', 'M', 'O']
-    },
+   {
+     "name": "Facebook",
+     "logo": "https://crunchbase-production-res.cloudinary.com/image/upload/c_pad,h_140,w_250/v1408491700/ypqf483smhnqo0rh6mff.png",
+     "short_description": "Facebook is an online social networking service that enables its users to connect with friends and family as well as make new connections.",
+     "long_description": "Facebook’s mission is to give people the power to share and make the world more open and connected. People use Facebook to stay connected with friends and family, to discover what’s going on in the world, and to share and express what matters to them.",
+     "headquarters": "Menlo Park, CA",
+     "local_office": "4 Grand Canal Street Lower, Dublin 2, Dublin",
+     "emea_hq": true,
+     "startup_packages": [
+       "FbStart is a new program from Facebook designed to help early stage mobile startups build and grow their apps https://fbstart.com/",
+       "Facebook Developer Community https://www.facebook.com/groups/fbdevelopers/ This is a forum for developers building on the Facebook platform to interact with the Facebook team and other developers.",
+       "Support for Advertisers https://www.facebook.com/business/resources",
+       "Training modules for Advertising on Facebook  https://www.facebook.com/blueprint"
+     ],
+     "events_space": true,
+     "employees": 722,
+     "functions": ['S', 'CS', 'F', 'L', 'SI', 'E', 'M', 'O', 'PD']
+   },
+   {
+     "name": "Microsoft",
+     "facebook": "microsoft",
+     "linkedin": "microsoft",
+     "twitter": "microsoft",
+     "logo": "https://crunchbase-production-res.cloudinary.com/image/upload/c_pad,h_140,w_250/v1397182206/6835990abacfb4d14ecdbfc87641e469.jpg",
+     "short_description": "Microsoft, a software corporation, develops licensed and support products and services ranging from personal use to enterprise application.",
+     "long_description": "Our mission is to empower every person and every organization on the planet to achieve more.  Our strategy is to build best-in-class platforms and productivity services for a mobile-first, cloud-first world. Our ambitions are to reinvent productivity & business processes, build the intelligent cloud platform and to create more personal computing.",
+     "headquarters": "Redmond, WA",
+     "local_office": "Block B, Atrium Building, Sandyford Industrial Estate, Carmangall Road, Dublin 18",
+     "emea_hq": true,
+     "startup_packages": ["BizSpark is available to startups that are privately held, less than 5-years-old and earn less than $1M in annual revenue. Note that the Startup must be actively engaged in development of a software-based product or service that will form a core piece of its current or intended business. Signup and learn more here: http://aka.ms/BizSparkIreland", "BizSpark Plus is Microsoft’s program for mature startups who have been nominated for BizSpark Plus by Microsoft accelerator partners. In addition to BizSpark program benefits, startups enrolled in the BizSpark program receive $10k per month in Azure usage credits for a total of $120K over the course of the 1-year program.  Both Enterprise Ireland HPSU startups and NDRC Startups are currently approved as a Microsoft accelerator partners for BizSpark Plus. If you have startups who like to take advantage of BizSpark Plus, please contact Michael Meagher and Ryan Mesches from Microsoft Ireland and they can arrange a 1-1 to see if you qualify.", "BizSpark members receive up to $750 per month of free Microsoft Azure cloud services for 3 years: that’s $150 per month each for up to 5 developers. Azure works with OSS/Linux and familiar technologies such as Linux, Ruby, Python, Java and PHP. Along with access to over $100,000 worth of software to build and test their software solutions."],
+     "events_space": true,
+     "employees": 1646,
+     "functions": ['S', 'CS', 'F', 'L', 'SI', 'E', 'M', 'RD', 'MF', 'O', 'PD']
+   },
+   {
+     "name": "SquareSpace",
+     "logo": "https://crunchbase-production-res.cloudinary.com/image/upload/c_pad,h_140,w_250/v1398216186/sn3vn5nvwxjyvkkz905h.png",
+     "short_description": "Squarespace is a SaaS-based Content Management System (CMS) offering a website builder, store builder, blogging platform, & hosting service.",
+     "long_description": "Squarespace's mission is to provide creative tools that help anyone give a voice to their ideas. From the designers and engineers who are creating the next generation of web and mobile experiences, to anyone putting a website together for the first time, Squarespace provides elegant solutions that set new standards for online publishing. Our Dublin office is mainly Customer Support via emails and Live Chat. We also have an awesome HR and Operations team including Employee Experience and Event Management.",
+     "headquarters": "New York, NY",
+     "local_office": "Le Pole House 1st Floor, Ship Street Great, Dublin 8",
+     "emea_hq": true,
+     "startup_packages": ["We provide an exclusive discount for startups creating a website."],
+     "events_space": true,
+     "employees": 115,
+     "functions": ['S', 'CS', 'D', 'L', 'SI', 'E', 'M', 'O']
+   },
     {
       "name": "Airbnb",
       "logo": "https://crunchbase-production-res.cloudinary.com/image/upload/c_pad,h_140,w_250/v1405534850/vubc5kxhmw6jalain0ot.png",
@@ -284,9 +246,9 @@ Company.create(
       "contact": "hello@logentries.com",
       "acquisitions": "Acquired by Rapid7, October 2015",
       "funding_rounds": [
-        {"amount": "Undisclosed", "date": "January 2010", type: "Pre-seed"},
-        {"amount": "1.1m", "date": "January 2012", type: "Seed"},
-        {"amount": "10m", "date": "January 2013", type: "Series A"}
+        { "amount": "Undisclosed", "date": "January 2010", type: "Pre-seed" },
+        { "amount": "1.1m", "date": "January 2012", type: "Seed" },
+        { "amount": "10m", "date": "January 2013", type: "Series A" }
       ]
     },
     {
@@ -316,10 +278,10 @@ Company.create(
       "contact": "pat.phelan@trustev.com",
       "acquisitions": "Acquired by TransUnion, December 2015",
       "funding_rounds": [
-        {"amount": "300k", "date": "February 2013", "type": "Angel"},
-        {"amount": "3m", "date": "October 2013", "type": "Seed"},
-        {"amount": "500k", "date": "December 2013", "type": "Seed"},
-        {"amount": "3.21m", "date": "November 2013", "type": "Convertible Debt"}
+        { "amount":  "300k", "date": "February 2013", "type": "Angel" },
+        { "amount":  "3m", "date": "October 2013", "type": "Seed" },
+        { "amount":  "500k", "date": "December 2013", "type": "Seed" },
+        { "amount":  "3.21m", "date": "November 2013", "type": "Convertible Debt" }
       ]
     },
     {

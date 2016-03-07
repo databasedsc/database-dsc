@@ -44,7 +44,7 @@
           label: 'Functions in Ireland',
           selectedValue: '',
           values: [
-            { label: 'Sales', code: 'S'},
+            {label: 'Sales', code: 'S'},
             {label: 'Customer Service', code: 'CS'},
             {label: 'Finance', code: 'F'},
             {label: 'Legal', code: 'L'},

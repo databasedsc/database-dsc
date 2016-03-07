@@ -1,6 +1,54 @@
 require 'rails_helper'
 
 RSpec.describe 'V1::Multinationals', :type => :request do
+
+  describe 'GET /v1/multinationals/:id' do
+
+    let!(:sample) do
+      FactoryGirl.create :multinational,
+       name: 'Facebook',
+       logo: 'https://crunchbase-production-res.cloudinary.com/image/upload/c_pad,h_140,w_250/v1408491700/ypqf483smhnqo0rh6mff.png',
+       linkedin: 'linkedin',
+       facebook: 'facebook',
+       twitter: 'twitter',
+       short_description: 'Facebook is an online social networking service that enables its users to connect with friends and family as well as make new connections.',
+       long_description: 'A long description.',
+       headquarters: 'Menlo Park, CA',
+       local_office: '4 Grand Canal Street Lower, Dublin 2, Dublin',
+       startup_packages: ['very good package'],
+       employees: 75,
+       emea_hq: true,
+       events_space: true,
+       events_space_qualifiers: 'A decent event space.',
+       functions: ['S', 'F', 'MF'],
+       next_event: 'Pizza party'
+    end
+
+    it 'should return a multinational' do
+
+
+      get "/v1/multinationals/#{sample.id}"
+      multinational_json = JSON.parse(response.body)
+      expect(response).to have_http_status(200)
+      expect(multinational_json['name']).to eq('Facebook')
+      expect(multinational_json['logo']).to eq('https://crunchbase-production-res.cloudinary.com/image/upload/c_pad,h_140,w_250/v1408491700/ypqf483smhnqo0rh6mff.png')
+      expect(multinational_json['short_description']).to eq('Facebook is an online social networking service that enables its users to connect with friends and family as well as make new connections.')
+      expect(multinational_json['long_description']).to eq('A long description.')
+      expect(multinational_json['headquarters']).to eq('Menlo Park, CA')
+      expect(multinational_json['emea_hq']).to eq(true)
+      expect(multinational_json['startup_packages']).to eq(['very good package'])
+      expect(multinational_json['employees']).to eq(75)
+      expect(multinational_json['functions']).to eq(['S', 'F', 'MF'])
+      expect(multinational_json['events_space']).to eq(true)
+      expect(multinational_json['events_space_qualifiers']).to eq('A decent event space.')
+      expect(multinational_json['next_event']).to eq('Pizza party')
+      expect(multinational_json['linkedin']).to eq('linkedin')
+      expect(multinational_json['facebook']).to eq('facebook')
+      expect(multinational_json['twitter']).to eq('twitter')
+    end
+
+  end
+
   describe 'GET /v1/multinationals' do
 
     let!(:facebook) do

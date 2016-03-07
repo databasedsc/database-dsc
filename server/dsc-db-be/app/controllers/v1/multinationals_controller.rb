@@ -18,6 +18,11 @@ class V1::MultinationalsController < ApplicationController
     render json: multinationals, status: 200
   end
 
+  def show
+    multinational = Multinational.find(params[:id])
+    render json: multinational, status: 200
+  end
+
   private
 
   def functions_parse

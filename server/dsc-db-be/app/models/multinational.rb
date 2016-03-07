@@ -2,19 +2,25 @@
 #
 # Table name: multinationals
 #
-#  id                :integer          not null, primary key
-#  name              :string
-#  logo              :string
-#  short_description :text
-#  headquarters      :string
-#  local_office      :string
-#  created_at        :datetime         not null
-#  updated_at        :datetime         not null
-#  emea_hq           :boolean          default(FALSE)
-#  startup_packages  :text             default([]), is an Array
-#  employees         :integer
-#  events_space      :boolean          default(FALSE)
-#  functions         :text             default([]), is an Array
+#  id                      :integer          not null, primary key
+#  name                    :string
+#  logo                    :string
+#  short_description       :text
+#  headquarters            :string
+#  local_office            :string
+#  created_at              :datetime         not null
+#  updated_at              :datetime         not null
+#  emea_hq                 :boolean          default(FALSE)
+#  startup_packages        :text             default([]), is an Array
+#  employees               :integer
+#  events_space            :boolean          default(FALSE)
+#  functions               :text             default([]), is an Array
+#  linkedin                :string
+#  facebook                :string
+#  twitter                 :string
+#  long_description        :text
+#  events_space_qualifiers :text
+#  next_event              :string
 #
 
 class Multinational < ApplicationRecord

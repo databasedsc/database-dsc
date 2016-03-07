@@ -21,6 +21,10 @@
           url: '/mtns',
           template: '<search-multinationals></search-multinationals>'
         })
+        .state('multinationalProfile', {
+          url: '/mtns/:id',
+          template: '<multinational-profile></multinational-profile>'
+        })
         .state('searchInvestors', {
           url: '/investors',
           template: '<search-investors></search-investors>'

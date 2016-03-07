@@ -17,6 +17,7 @@
       'searchResults',
       'companyProfile',
       'searchMultinationals',
+      'multinationalProfile',
       'searchInvestors',
       'investorProfile',
       'searchHubs',

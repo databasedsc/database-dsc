@@ -2,27 +2,32 @@
 #
 # Table name: multinationals
 #
-#  id                :integer          not null, primary key
-#  name              :string
-#  logo              :string
-#  short_description :text
-#  headquarters      :string
-#  local_office      :string
-#  created_at        :datetime         not null
-#  updated_at        :datetime         not null
-#  emea_hq           :boolean          default(FALSE)
-#  startup_packages  :text             default([]), is an Array
-#  employees         :integer
-#  events_space      :boolean          default(FALSE)
-#  functions         :text             default([]), is an Array
+#  id                      :integer          not null, primary key
+#  name                    :string
+#  logo                    :string
+#  short_description       :text
+#  headquarters            :string
+#  local_office            :string
+#  created_at              :datetime         not null
+#  updated_at              :datetime         not null
+#  emea_hq                 :boolean          default(FALSE)
+#  startup_packages        :text             default([]), is an Array
+#  employees               :integer
+#  events_space            :boolean          default(FALSE)
+#  functions               :text             default([]), is an Array
+#  linkedin                :string
+#  facebook                :string
+#  twitter                 :string
+#  long_description        :text
+#  events_space_qualifiers :text
+#  next_event              :string
 #
 
 require 'rails_helper'
 
 RSpec.describe Multinational, :type => :model do
   [
-    :name, :logo, :short_description, :headquarters, :local_office, :emea_hq, :startup_packages, :employees,
-    :events_space, :functions
+    :name, :logo, :short_description, :headquarters, :local_office, :emea_hq, :startup_packages, :employees, :linkedin, :facebook, :twitter, :long_description, :events_space, :events_space_qualifiers, :next_event, :functions
   ].each do |column|
     it { should have_db_column(column) }
   end
