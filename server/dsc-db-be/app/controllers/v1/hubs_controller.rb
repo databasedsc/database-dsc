@@ -14,7 +14,12 @@ class V1::HubsController < ApplicationController
     render json: hubs, status: 200
   end
 
+  def show
+    hub = Hub.find(params[:id])
+    render json: hub, status: 200
+  end
 
+  private
   def hub_types_parse
     params[:hubType] = JSON.parse(params[:hubType]).select { |k, v| v }.keys.join(' ') if params[:hubType]
   end

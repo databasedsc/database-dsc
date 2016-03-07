@@ -11,6 +11,14 @@
 #  updated_at           :datetime         not null
 #  hub_type             :text             default([]), is an Array
 #  application_deadline :date
+#  long_description     :text
+#  founded              :string
+#  contact              :string
+#  contact_detail       :string
+#  address              :text
+#  contact_urls         :jsonb
+#  events               :text             default([]), is an Array
+#  alumni               :jsonb
 #
 
 class Hub < ApplicationRecord

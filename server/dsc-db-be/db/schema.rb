@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160304182052) do
+ActiveRecord::Schema.define(version: 20160307151154) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -58,7 +58,18 @@ ActiveRecord::Schema.define(version: 20160304182052) do
     t.datetime "updated_at",                        null: false
     t.text     "hub_type",             default: [],              array: true
     t.date     "application_deadline"
+    t.text     "long_description"
+    t.string   "founded"
+    t.string   "contact"
+    t.string   "contact_detail"
+    t.text     "address"
+    t.jsonb    "contact_urls"
+    t.text     "events",               default: [],              array: true
+    t.jsonb    "alumni"
   end
+
+  add_index "hubs", ["alumni"], name: "index_hubs_on_alumni", using: :gin
+  add_index "hubs", ["contact_urls"], name: "index_hubs_on_contact_urls", using: :gin
 
   create_table "investors", force: :cascade do |t|
     t.string   "name"

@@ -17,13 +17,31 @@ Hub.create(
       "name": "NDRC",
       "logo": "http://static.wixstatic.com/media/41176a_ffd50f75062644a897fa34f6e0483b5c.jpg/v1/fill/w_250,h_140,al_c,q_80,usm_0.66_1.00_0.01/41176a_ffd50f75062644a897fa34f6e0483b5c.jpg",
       "short_description": "Making Ventures Happen",
-      "programs": ""
+      "long_description": "NDRC builds high-impact new ventures. By providing the people, time, space and investment needed at the earliest stages of dedicated commercialisation work, NDRC is creating companies worthy of commercial investment and with the ability to scale. The NDRC team has the breadth of knowledge and expertise in technology and markets. NDRC works side-by-side with researchers, entrepreneurs and venture teams to turn great ideas into successful new ventures. By the end of 2014, NDRC’s portfolio of startup ventures had secured a cumulative €88m in follow-on investment from commercial investors, with a combined market capitalisation of approx. €220m.",
+      "founded": "",
+      "contact": "",
+      "contact_detail": "info@ndrc.ie",
+      "address": "",
+      "alumni": ["Building eye", "Commutable", "Cityhook", "Gigstarter", "ParkYa", "Bragbet", "Busy Moos", "Voice", "Balls.ie", "Shotclip", "Soundwave", "Mobstats", "Twiddle", "Loylap", "Localmint", "Adyuka", "Tubett", "Digifeye", "Adaptics", "Aftering", "YapMe", "travayl"],
+      "contact_urls": {},
+      "events": [],
+      "programs": "",
+      "hub_type": ["Accelerator/Incubator"]
     },
     {
       "name": "Dogpatch Labs",
       "logo": "https://crunchbase-production-res.cloudinary.com/image/upload/c_pad,h_140,w_250/v1397188849/56ce6584c4d9ad5db3127a6906857e0e.png",
       "short_description": "Dogpatch Labs is a pay to play co-working space for tech start-ups between seed and series a.",
-      "programs": ""
+      "long_description": "Dogpatch Labs was founded in San Francisco in 2009 by Polaris Ventures. Since then it has housed a litany of successful startups including Instagram (sold to Facebook for $1 billion). Domestically it has been home to such success stories as Logentries and Intercom who have raised $10 million and $30 million respectively. In total @dogpatchlabs companies have raised over $250 million in angel and venture financing from investors such as Ron Conway, Ray Ozzie and Chris Sacca, and funds including Sequoia Capital, Benchmark Capital, Andreessen Horowitz, USV and many more. Today Dogpatch Labs is a pay-to-play co-working space for startups. Located in one of Dublin's most iconic buildings, The CHQ building, we have over 20,000 square feet of co-working and meeting space and house some of Ireland's leading local and international startups who are focused on scaling from seed to series A and beyond.",
+      "founded": "2008",
+      "contact": "Patrick Walsh",
+      "contact_detail": "patrick@dogpatchlabs.com",
+      "address": "",
+      "alumni": ["Trustev", "CoderDojo", "Twilio", "Pivotal"],
+      "contact_urls": {},
+      "events": [],
+      "programs": "",
+      "hub_type": ["Co-Working"]
     }
   ]
 )

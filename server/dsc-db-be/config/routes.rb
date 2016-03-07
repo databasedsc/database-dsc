@@ -14,5 +14,6 @@ Rails.application.routes.draw do
       get 'investors', to: 'investors#index'
       get 'investors/:id', to: 'investors#show'
       get 'hubs', to: 'hubs#index'
+      get 'hubs/:id', to: 'hubs#show'
     end
 end

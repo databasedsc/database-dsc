@@ -16,6 +16,18 @@
 #  funding_types     :text             default([]), is an Array
 #  investment_size   :integer
 #  deal_structure    :text
+#  funds_raised      :string
+#  regions           :text
+#  contact           :string
+#  contact_email     :string
+#  preferred_contact :text
+#  co_investors      :text
+#  board_members     :text             default([]), is an Array
+#  similar_investors :text
+#  long_description  :text
+#  exits_ipos        :string
+#  founded           :string
+#  contact_urls      :jsonb
 #
 
 class Investor < ApplicationRecord
