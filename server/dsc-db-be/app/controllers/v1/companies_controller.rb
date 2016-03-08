@@ -3,7 +3,7 @@ module V1
 
     def index
       companies = CompanySearchService.new(filter_params).call
-      render json: companies, status: 200
+      paginate json: companies, status: 200
     end
 
     def show

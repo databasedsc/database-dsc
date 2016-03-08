@@ -49,11 +49,17 @@
 
     it('should do the load initial', function() {
       resultsDeferred.resolve(
-        [{
-          "name": "Mustard",
-          "logo": "https://crunchbase-production-res.cloudinary.com/image/upload/c_pad,h_140,w_140/v1455114908/tmpxdogqv3vysbaww9g3.png",
-          "shortDesc": "The on demand staffing network"
-        }]);
+        {
+          data: [{
+            "name": "Mustard",
+            "logo": "https://crunchbase-production-res.cloudinary.com/image/upload/c_pad,h_140,w_140/v1455114908/tmpxdogqv3vysbaww9g3.png",
+            "shortDesc": "The on demand staffing network"
+          }],
+          headers: function() {
+            return '10'
+          }
+        }
+      );
 
       $scope.$apply();
 
@@ -63,19 +69,27 @@
 
     it('should do the search', function() {
       resultsDeferred.resolve(
-        [{
-          "name": "Mustard",
-          "logo": "https://crunchbase-production-res.cloudinary.com/image/upload/c_pad,h_140,w_140/v1455114908/tmpxdogqv3vysbaww9g3.png",
-          "shortDesc": "The on demand staffing network"
-        }]
+        {
+          data: [{
+            "name": "Mustard",
+            "logo": "https://crunchbase-production-res.cloudinary.com/image/upload/c_pad,h_140,w_140/v1455114908/tmpxdogqv3vysbaww9g3.png",
+            "shortDesc": "The on demand staffing network"
+          }],
+          headers: function() {
+            return '10'
+          }
+        }
       );
+
+      $scope.currentPage = 1;
+      $scope.perPage = 5;
 
       $ctrl.query = 'mustard';
       $ctrl.search();
       $scope.$apply();
 
       //expect($ctrl.searchCompaniesService.getCompanies.calls.count()).toEqual(1); //TODO: enable this test once we deal with the controller initialization
-      expect($ctrl.searchCompaniesService.getCompanies).toHaveBeenCalledWith({searchText: 'mustard'}, { employees: '', fundingStage: '', fundingAmount: '', productStage: '', geographicalMarkets: '', businessModel: '', companyStage: '', operationalStatus: '' });
+      expect($ctrl.searchCompaniesService.getCompanies).toHaveBeenCalledWith({searchText: 'mustard'}, { employees: '', fundingStage: '', fundingAmount: '', productStage: '', geographicalMarkets: '', businessModel: '', companyStage: '', operationalStatus: '' }, { currentPage: 1, perPage: 5});
       expect($ctrl.results.length).toEqual(1);
     });
 

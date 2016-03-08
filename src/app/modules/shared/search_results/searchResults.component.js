@@ -7,8 +7,12 @@
     })
     .component('searchResults', {
       bindings: {
+        currentPage: '=',
+        perPage: '=',
+        totalItems: '<',
         collection: '<',
-        type: '@'
+        type: '@',
+        searchFn: '&'
       },
       templateUrl: 'app/modules/shared/search_results/search_results.html',
       controller: 'SearchResultsController'

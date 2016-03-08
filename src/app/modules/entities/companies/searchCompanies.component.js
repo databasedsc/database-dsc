@@ -12,6 +12,7 @@
       this.searchCompaniesService = searchCompaniesService;
       this.filterCompaniesService = filterCompaniesService;
 
+      // filter
       this.filters = filterCompaniesService.filtersData();
 
       function getSelectedFilter() {
@@ -22,14 +23,26 @@
         return obj;
       }
 
-      //TODO: maybe remove this, look for a better approach for a default
-      searchCompaniesService.getCompanies().then(function(companies) {
-        controller.results = companies;
-      });
+      // pagination
+      $scope.currentPage = 1;
+      $scope.perPage = 9;
 
+      $scope.$watch('currentPage', function () {
+        controller.search();
+      }, true);
+
+      function getPaginationDetails() {
+        return {
+          currentPage: $scope.currentPage,
+          perPage: $scope.perPage
+        }
+      }
+
+      // search
       this.search = function() {
-        searchCompaniesService.getCompanies({searchText: this.query}, getSelectedFilter()).then(function(companies) {
-          controller.results = companies;
+        searchCompaniesService.getCompanies({searchText: this.query}, getSelectedFilter(), getPaginationDetails()).then(function(companies) {
+          controller.results = companies.data;
+          controller.totalItems = companies.headers('Total')
         });
       };
     });

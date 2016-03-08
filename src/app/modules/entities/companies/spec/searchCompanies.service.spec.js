@@ -23,7 +23,7 @@
         $httpBackend.expectGET('http://test.example.com/companies').respond(companies);
 
         searchCompaniesService.getCompanies().then(function (response) {
-          expect(response).toEqual(companies);
+          expect(response.data).toEqual(companies);
         });
 
         $httpBackend.flush();
@@ -35,7 +35,7 @@
         $httpBackend.expectGET('http://test.example.com/companies?searchText=mustard').respond(companies);
 
         searchCompaniesService.getCompanies({searchText: "mustard"}).then(function (response) {
-          expect(response).toEqual(companies);
+          expect(response.data).toEqual(companies);
         });
 
         $httpBackend.flush();
@@ -48,7 +48,7 @@
         $httpBackend.expectGET('http://test.example.com/companies?employees=1-5&productStage=development').respond(companies);
 
         searchCompaniesService.getCompanies({searchText: ""}, {employees: '1-5', fundingStage: '', fundingAmount: '', productStage: 'development'}).then(function (response) {
-          expect(response).toEqual(companies);
+          expect(response.data).toEqual(companies);
         });
 
         $httpBackend.flush();
@@ -60,7 +60,19 @@
         $httpBackend.expectGET('http://test.example.com/companies?employees=1-5&productStage=development&searchText=company').respond(companies);
 
         searchCompaniesService.getCompanies({searchText: "company"}, {employees: '1-5', fundingStage: '', fundingAmount: '', productStage: 'development'}).then(function (response) {
-          expect(response).toEqual(companies);
+          expect(response.data).toEqual(companies);
+        });
+
+        $httpBackend.flush();
+      });
+
+      it('calls the server with pagination to get the companies', function () {
+        var companies = {name: 'Company', logo: "somelogo.png", shortDesc: "short description"};
+
+        $httpBackend.expectGET('http://test.example.com/companies?page=1&per_page=10').respond(companies);
+
+        searchCompaniesService.getCompanies({}, {},{currentPage: 1, perPage: 10}).then(function (response) {
+          expect(response.data).toEqual(companies);
         });
 
         $httpBackend.flush();

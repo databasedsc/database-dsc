@@ -11,6 +11,11 @@
       </div>
     </a>
   </div>
-
+  <div class="row"></div>
+  <pagination
+    ng-model="$ctrl.currentPage"
+    total-items="$ctrl.totalItems"
+    items-per-page="$ctrl.perPage"
+    boundary-links="true">
+  </pagination>
 </div>
-

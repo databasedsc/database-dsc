@@ -13,8 +13,8 @@ describe('SearchResults', function() {
     expect(page.searchResultsContainer.isPresent()).toBe(true);
   });
 
-  it('should display result list with 10 startups', function() {
-    expect(page.searchResults.count()).toEqual(10);
+  it('should display result list with 9 startups', function() {
+    expect(page.searchResults.count()).toEqual(9);
   });
 
   describe('search form', function() {

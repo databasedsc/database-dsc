@@ -6,16 +6,14 @@
   <div class="row col-xs-3 form-group filters">
     <form class="form-horizontal" ng-submit="$ctrl.search()">
       <div class="form-group">
-        <input type="search" name="search-text" id="search-text-field" class="form-control" ng-model="$ctrl.query" autocomplete="off" />
+        <input type="search" name="search-text" id="search-text-field" class="form-control" ng-model="$ctrl.query"
+               autocomplete="off"/>
       </div>
-      <button type="submit" href="#" id="search-button" class="btn btn-primary btn-lg btn-block" >Search</button><br/>
-
+      <button type="submit" href="#" id="search-button" class="btn btn-primary btn-lg btn-block">Search</button>
+      <br/>
       <search-filters filters="$ctrl.filters" searchfn="$ctrl.search()"></search-filters>
-
     </form>
-
   </div>
-
-  <search-results collection="$ctrl.results" type="company"></search-results>
-
+  <search-results collection="$ctrl.results" type="company" total-items="$ctrl.totalItems" current-page="currentPage"
+                  per-page="perPage"></search-results>
 </div>
