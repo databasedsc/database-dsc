@@ -12,7 +12,7 @@ class V1::InvestorsController < ApplicationController
     investors = investors.select_numeric_scope('investment_size', params[:investmentSize]) if params[:investmentSize]
     investors = investors.deal_structure(params[:dealStructure]) if params[:dealStructure]
 
-    render json: investors, status: 200
+    paginate json: investors, status: 200
   end
 
   def show

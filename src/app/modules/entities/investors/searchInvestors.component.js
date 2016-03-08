@@ -12,6 +12,7 @@
       this.searchInvestorsService = searchInvestorsService;
       this.filterInvestorsService = filterInvestorsService;
 
+      // filters
       this.filters = filterInvestorsService.filtersData();
 
       function getSelectedFilter() {
@@ -22,13 +23,27 @@
         return obj;
       }
 
-      searchInvestorsService.get().then(function(investors) {
-        controller.results = investors;
-      });
+      // pagination
+      $scope.currentPage = 1;
+      $scope.perPage = 9;
+
+      $scope.$watch('currentPage', function () {
+        controller.search();
+      }, true);
+
+      function getPaginationDetails() {
+        return {
+          currentPage: $scope.currentPage,
+          perPage: $scope.perPage
+        }
+      }
+
+      // search
 
       this.search = function() {
-        searchInvestorsService.get({searchText: this.query}, getSelectedFilter()).then(function(investors) {
-          controller.results = investors;
+        searchInvestorsService.get({searchText: this.query}, getSelectedFilter(), getPaginationDetails()).then(function(investors) {
+          controller.results = investors.data;
+          controller.totalItems = investors.headers('Total');
         });
       };
 

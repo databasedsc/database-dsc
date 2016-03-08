@@ -23,7 +23,7 @@
         $httpBackend.expectGET('http://test.example.com/investors').respond(investors);
 
         searchInvestorsService.get().then(function (response) {
-          expect(response).toEqual(investors);
+          expect(response.data).toEqual(investors);
         });
 
         $httpBackend.flush();
@@ -35,7 +35,7 @@
         $httpBackend.expectGET('http://test.example.com/investors?searchText=facebook').respond(investors);
 
         searchInvestorsService.get({searchText: "facebook"}).then(function (response) {
-          expect(response).toEqual(investors);
+          expect(response.data).toEqual(investors);
         });
 
         $httpBackend.flush();
@@ -47,7 +47,20 @@
         $httpBackend.expectGET("http://test.example.com/investors?fundingType=Seed&investmentSize=1000000-2000000").respond(investors);
 
         searchInvestorsService.get({searchText: ''}, {investmentSize: '1000000-2000000', fundingType: 'Seed'}).then(function(response){
-          expect(response).toEqual(investors);
+          expect(response.data).toEqual(investors);
+        });
+
+        $httpBackend.flush();
+
+      });
+
+      it("should call the server with pagination", function() {
+        var investors = {name: 'Company', logo: "somelogo.png", shortDesc: "short description"};
+
+        $httpBackend.expectGET("http://test.example.com/investors?page=4&per_page=10").respond(investors);
+
+        searchInvestorsService.get({}, {}, {currentPage: 4, perPage: 10}).then(function(response){
+          expect(response.data).toEqual(investors);
         });
 
         $httpBackend.flush();

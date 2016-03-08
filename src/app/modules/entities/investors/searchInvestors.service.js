@@ -5,7 +5,7 @@
   angular
     .module('searchInvestors')
     .service('searchInvestorsService', function($http, $httpParamSerializer, serverUrl) {
-      this.get = function(query, filters) {
+      this.get = function(query, filters, pagination) {
         var basePath = serverUrl + '/investors';
         var params = {}
         //
@@ -22,8 +22,13 @@
             }
         }
 
+        if (pagination){
+          params['page'] = pagination.currentPage;
+          params['per_page'] = pagination.perPage;
+        }
+
         return $http.get(basePath, {params: params}).then(function(responseObject) {
-          return responseObject.data;
+          return responseObject;
         });
       };
     });
