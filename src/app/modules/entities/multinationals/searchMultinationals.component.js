@@ -12,6 +12,7 @@
       this.searchMultinationalsService = searchMultinationalsService;
       this.filterCompaniesService = filterMultinationalsService;
 
+      // filters
       this.filters = filterMultinationalsService.filtersData();
 
       function getSelectedFilter() {
@@ -22,14 +23,28 @@
         return obj;
       }
 
-      searchMultinationalsService.get().then(function(multinationals) {
-        controller.results = multinationals;
-      });
+      // pagination
+      $scope.currentPage = 1;
+      $scope.perPage = 9;
 
+      $scope.$watch('currentPage', function () {
+        controller.search();
+      }, true);
+
+      function getPaginationDetails() {
+        return {
+          currentPage: $scope.currentPage,
+          perPage: $scope.perPage
+        }
+      }
+
+      // search
       this.search = function() {
-        searchMultinationalsService.get({searchText: this.query}, getSelectedFilter()).then(function(multinationals) {
-          controller.results = multinationals;
-        });
+          searchMultinationalsService.get({searchText: this.query}, getSelectedFilter(), getPaginationDetails()).then(function(multinationals) {
+            controller.results = multinationals.data;
+            controller.totalItems = multinationals.headers('Total')
+          });
+        //});
       };
     });
 })();

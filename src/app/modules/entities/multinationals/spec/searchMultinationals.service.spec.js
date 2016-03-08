@@ -18,36 +18,36 @@
 
     describe('#getMultinationals', function() {
       it('calls the server to get the multinationals', function () {
-        var multinationals = {name: 'Company', logo: "somelogo.png", shortDesc: "short description"};
+        var multinationals = {name: 'Multinational', logo: "somelogo.png", shortDesc: "short description"};
 
         $httpBackend.expectGET('http://test.example.com/multinationals').respond(multinationals);
 
         searchMultinationalsService.get().then(function (response) {
-          expect(response).toEqual(multinationals);
+          expect(response.data).toEqual(multinationals);
         });
 
         $httpBackend.flush();
       });
 
       it('calls the server with a text search query to get the multinationals', function () {
-        var multinationals = {name: 'Company', logo: "somelogo.png", shortDesc: "short description"};
+        var multinationals = {name: 'Multinational', logo: "somelogo.png", shortDesc: "short description"};
 
         $httpBackend.expectGET('http://test.example.com/multinationals?searchText=facebook').respond(multinationals);
 
         searchMultinationalsService.get({searchText: "facebook"}).then(function (response) {
-          expect(response).toEqual(multinationals);
+          expect(response.data).toEqual(multinationals);
         });
 
         $httpBackend.flush();
       });
 
       it("should call the server with filtered query", function() {
-        var multinationals = {name: 'Company', logo: "somelogo.png", shortDesc: "short description"};
+        var multinationals = {name: 'Multinational', logo: "somelogo.png", shortDesc: "short description"};
 
-        $httpBackend.expectGET("http://test.example.com/multinationals?emeaHq=Yes&employees=101-250").respond(multinationals);
+        $httpBackend.expectGET("http://test.example.com/multinationals?emeaHq=Yes&employees=101-250&page=5&per_page=9").respond(multinationals);
 
-        searchMultinationalsService.get({searchText: ''}, {employees: '101-250', emeaHq: 'Yes'}).then(function(response){
-          expect(response).toEqual(multinationals);
+        searchMultinationalsService.get({searchText: ''}, {employees: '101-250', emeaHq: 'Yes'}, {currentPage: 5, perPage: 9}).then(function(response){
+          expect(response.data).toEqual(multinationals);
         });
 
         $httpBackend.flush();

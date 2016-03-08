@@ -15,7 +15,7 @@ class V1::MultinationalsController < ApplicationController
     multinationals = multinationals.events_space(params[:eventsSpace]) if !params[:eventsSpace].nil?
     multinationals = multinationals.functions(params[:functions]) if params[:functions].present?
 
-    render json: multinationals, status: 200
+    paginate json: multinationals, status: 200
   end
 
   def show

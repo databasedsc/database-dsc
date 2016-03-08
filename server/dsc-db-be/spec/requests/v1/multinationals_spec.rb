@@ -25,8 +25,6 @@ RSpec.describe 'V1::Multinationals', :type => :request do
     end
 
     it 'should return a multinational' do
-
-
       get "/v1/multinationals/#{sample.id}"
       multinational_json = JSON.parse(response.body)
       expect(response).to have_http_status(200)
@@ -51,7 +49,7 @@ RSpec.describe 'V1::Multinationals', :type => :request do
 
   describe 'GET /v1/multinationals' do
 
-    let!(:facebook) do
+    let!(:multinationals) do
       FactoryGirl.create :multinational,
         name: 'Facebook',
         logo: 'https://crunchbase-production-res.cloudinary.com/image/upload/c_pad,h_140,w_250/v1408491700/ypqf483smhnqo0rh6mff.png',
@@ -79,7 +77,6 @@ RSpec.describe 'V1::Multinationals', :type => :request do
       expect(response).to have_http_status(200)
       expect(multinationals_json.size).to eq(3)
     end
-
 
     describe 'keyword search' do
       it 'should return a list of multinationals filtered by search text' do
@@ -153,6 +150,28 @@ RSpec.describe 'V1::Multinationals', :type => :request do
         expect(response).to have_http_status(200)
         expect(multinationals_json.size).to eq(1)
       end
+    end
+
+
+  end
+
+  describe 'GET /v1/multinationals pagination' do
+    let!(:multinationals) do
+      FactoryGirl.create(:multinational)
+      FactoryGirl.create(:multinational)
+      FactoryGirl.create(:multinational, name: 'Multi 3')
+      FactoryGirl.create(:multinational, name: 'Multi 4')
+      FactoryGirl.create(:multinational)
+      Multinational.all
+    end
+
+    it 'should return the multinationals paginated' do
+      get '/v1/multinationals?page=2&per_page=2'
+      multinationals_json = JSON.parse(response.body)
+      expect(response).to have_http_status(200)
+      expect(multinationals_json.size).to eq(2)
+      expect(multinationals_json[0]['name']).to eq('Multi 3')
+      expect(multinationals_json[1]['name']).to eq('Multi 4')
     end
   end
 end
