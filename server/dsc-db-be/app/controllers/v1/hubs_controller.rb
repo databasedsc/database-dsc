@@ -11,7 +11,7 @@ class V1::HubsController < ApplicationController
     hubs = hubs.application_deadline(params[:applicationDeadlines]) if params[:applicationDeadlines]
     hubs = hubs.hub_type(params[:hubType]) if params[:hubType].present?
 
-    render json: hubs, status: 200
+    paginate json: hubs, status: 200
   end
 
   def show

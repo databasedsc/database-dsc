@@ -14,10 +14,6 @@
 
       this.filters = filterHubsService.filtersData();
 
-      searchHubsService.get().then(function(hubs) {
-        controller.results = hubs;
-      });
-
       function getSelectedFilter() {
         var obj = {};
         Object.keys(controller.filters).map(function(filterName) {
@@ -26,10 +22,25 @@
         return obj;
       }
 
+      // pagination
+      $scope.currentPage = 1;
+      $scope.perPage = 9;
+
+      $scope.$watch('currentPage', function () {
+        controller.search();
+      }, true);
+
+      function getPaginationDetails() {
+        return {
+          currentPage: $scope.currentPage,
+          perPage: $scope.perPage
+        }
+      }
 
       this.search = function() {
-        searchHubsService.get({searchText: controller.query}, getSelectedFilter()).then(function(hubs) {
-          controller.results = hubs;
+        searchHubsService.get({searchText: controller.query}, getSelectedFilter(), getPaginationDetails()).then(function(hubs) {
+          controller.results = hubs.data;
+          controller.totalItems = hubs.headers('Total');
         })
       }
     });
