@@ -9,6 +9,10 @@ language: ruby
 rvm:
   - 2.2.3
 
+branches:
+  only:
+    - master
+
 cache:
   bundler: true
   directories:
@@ -29,14 +33,22 @@ before_script:
   - sh -e /etc/init.d/xvfb start
 
 script:
-  - gulp test
+  - echo 'START BACKEND TESTS'
   - cd server/dsc-db-be && bundle install
   - cp config/database.yml.travis config/database.yml
-  - RAILS_ENV=test rake db:create db:schema:load db:seed
+  - RAILS_ENV=test rake db:create
+  - rspec
+  - echo 'END BACKEND TESTS'
+  - RAILS_ENV=test rake db:drop db:create db:migrate db:seed
   - RAILS_ENV=test rails s -p 4000 > /dev/null &
   - cd ../../
+  - echo 'START FRONTEND UNIT TESTS'
+  - gulp test
+  - echo 'END FRONTEND UNIT TESTS'
   - sleep 10
+  - echo 'START E2E TESTS'
   - gulp protractor
+  - echo 'END E2E TESTS'
 
 before_deploy:
   - cp src/app/ngConstants.js.prod src/app/ngConstants.js
