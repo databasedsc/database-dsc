@@ -1,21 +1,24 @@
 <div class="row col-xs-9 result-container">
-
-  <div ng-repeat="entity in $ctrl.collection" class="col-sm-4 col-xs-6 result-item">
-    <a ui-sref="{{$ctrl.type}}Profile({id: entity.id})" class="no-decoration">
-      <div class="panel panel-default">
-        <div class="panel-thumbnail"><img ng-src="{{entity.logo}}" class="logo img-responsive"></div>
-        <div class="panel-body">
-          <p id="name" class="lead">{{entity.name}}</p>
-          <p id="short-desc" class="short-desc">{{entity.short_description}}</p>
+  <div class="row">
+    <div ng-repeat="entity in $ctrl.collection" class="col-sm-4 col-xs-6 result-item">
+      <a ui-sref="{{$ctrl.type}}Profile({id: entity.id})" class="no-decoration">
+        <div class="panel panel-default">
+          <div class="panel-thumbnail"><img ng-src="{{entity.logo}}" class="logo img-responsive"></div>
+          <div class="panel-body">
+            <p id="name" class="lead">{{entity.name}}</p>
+            <p id="short-desc" class="short-desc">{{entity.short_description}}</p>
+          </div>
         </div>
-      </div>
-    </a>
+      </a>
+    </div>
   </div>
-  <div class="row"></div>
-  <pagination
-    ng-model="$ctrl.currentPage"
-    total-items="$ctrl.totalItems"
-    items-per-page="$ctrl.perPage"
-    boundary-links="true">
-  </pagination>
+
+  <div class="center-block">
+    <uib-pagination
+      ng-model="$ctrl.currentPage"
+      total-items="$ctrl.totalItems"
+      items-per-page="$ctrl.perPage"
+      boundary-links="true">
+    </uib-pagination>
+  </div>
 </div>

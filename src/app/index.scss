@@ -65,6 +65,40 @@ $icon-font-path: "../../bower_components/bootstrap-sass/assets/fonts/bootstrap/"
   vertical-align: middle !important;
   display: table-cell !important;
 }
+.main-wrapper{
+  min-height: 1258px;
+  //min-height: 100% !important;
+  margin-bottom: -142px;
+}
+
+.main-wrapper:after {
+  content: "";
+  display: block;
+}
+.site-footer, .main-wrapper:after {
+  height: 142px;
+}
+
+footer {
+  background: #383737;
+  border: 1px solid #424040;
+  box-shadow: 0px 2px 4px 0px rgba(135,119,119,0.50);
+  .footer-wrapper {
+    height: 142px;
+  }
+  .supporters {
+    color: white;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: bold;
+    font-size: 24px;
+  }
+}
+
+.vertical-center {
+  display: flex;
+  align-items: center;
+}
+
 
 /**
  *  Do not remove the comments below. It's the markers used by gulp-inject to inject

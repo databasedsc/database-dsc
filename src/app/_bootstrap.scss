@@ -1,11 +1,40 @@
 .navbar {
-  min-height: 100px !important;
+  min-height: 150px !important;
+  background: #383737 !important;
+
+}
+
+.navbar-nav {
+  padding: 44px 0 0 0 !important;
+  li {
+    padding: 0 80px 0 0;
+    > a {
+      text-transform: uppercase;
+      color: white !important;
+      font-size: 18px;
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    }
+    > a:hover {
+      color: #DF0386 !important;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .navbar .navbar-nav {
+    display: inline-block !important;
+    float: none;
+  }
+
+  .navbar .navbar-collapse {
+    text-align: center !important;
+  }
 }
 
 .navbar-brand {
-    padding: 0 !important;
+  padding: 0 !important;
   > img {
-    height: 100px;
+    margin-top: 40px;
   }
 }
 
@@ -26,3 +55,5 @@ a.no-decoration:hover {
     color: #66afe9;
   }
 }
+
+
