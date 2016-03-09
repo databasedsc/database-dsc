@@ -34,9 +34,9 @@ describe('SearchResults', function() {
 
         page.searchResults.then(function(items) {
           expect(items.length).toEqual(1);
-          expect(items[0].element(by.css('#name')).getText()).toEqual("Mustard");
+          expect(items[0].element(by.css('.name')).getText()).toEqual("Mustard");
           expect(items[0].isElementPresent(by.css('.logo'))).toBe(true);
-          expect(items[0].element(by.css('#short-desc')).getText()).toEqual("The on demand staffing network");
+          expect(items[0].element(by.css('.short-desc')).getText()).toEqual("The on demand staffing network");
         });
       });
 
@@ -123,7 +123,7 @@ describe('SearchResults', function() {
     it("should display the company profile page", function() {
       page.searchResults.then(function(items) {
         //TODO: Find a better way to access a particular company card
-        items[3].element(by.css('#name')).click()
+        items[3].element(by.css('.name')).click()
       });
       expect(profilePage.body.getText()).toContain('Tags')
       expect(profilePage.body.getText()).toContain('Funding')

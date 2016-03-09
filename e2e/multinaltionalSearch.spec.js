@@ -34,9 +34,9 @@ describe('SearchResults', function() {
 
         page.searchResults.then(function(items) {
           expect(items.length).toEqual(1);
-          expect(items[0].element(by.css('#name')).getText()).toEqual("Facebook");
+          expect(items[0].element(by.css('.name')).getText()).toEqual("Facebook");
           expect(items[0].isElementPresent(by.css('.logo'))).toBe(true);
-          expect(items[0].element(by.css('#short-desc')).getText()).toEqual("Facebook is an online social networking service that enables its users to connect with friends and family as well as make new connections.");
+          expect(items[0].element(by.css('.short-desc')).getText()).toEqual("Facebook is an online social networking service that enables its users to connect with friends and family as well as make new connections.");
         });
       });
 

@@ -11,7 +11,7 @@ describe('MultinationalProfile', function() {
     browser.get('#/mtns');
 
     searchPage.searchResults.then(function(items) {
-      items[1].element(by.css('#name')).click()
+      items[1].element(by.css('.name')).click()
     });
   });
 

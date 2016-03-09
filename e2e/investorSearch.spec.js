@@ -33,9 +33,9 @@ describe('SearchResults', function() {
 
         page.searchResults.then(function(items) {
           expect(items.length).toEqual(1);
-          expect(items[0].element(by.css('#name')).getText()).toEqual("Frontline Ventures");
+          expect(items[0].element(by.css('.name')).getText()).toEqual("Frontline Ventures");
           expect(items[0].isElementPresent(by.css('.logo'))).toBe(true);
-          expect(items[0].element(by.css('#short-desc')).getText()).toEqual("We are a pioneering early-stage venture capital firm, believing in ideas and investing in passion.");
+          expect(items[0].element(by.css('.short-desc')).getText()).toEqual("We are a pioneering early-stage venture capital firm, believing in ideas and investing in passion.");
         });
       });
 

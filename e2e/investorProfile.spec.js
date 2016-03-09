@@ -11,7 +11,7 @@ describe('InvestorProfile', function() {
     browser.get('#/investors');
 
     searchPage.searchResults.then(function(items) {
-      items[0].element(by.css('#name')).click()
+      items[0].element(by.css('.name')).click()
     });
   });
 
