@@ -11,6 +11,12 @@ Multinational.delete_all
 Investor.delete_all
 Hub.delete_all
 
+User.create(
+  email: 'test@test.com',
+  password: '12345678'
+)
+
+
 Hub.create(
   [
     {
