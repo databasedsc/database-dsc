@@ -13,6 +13,8 @@
       'angular.filter',
       'rzModule',
       'home',
+      'login',
+      'admin',
       'searchCompanies',
       'searchResults',
       'companyProfile',

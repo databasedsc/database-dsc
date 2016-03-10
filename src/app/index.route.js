@@ -5,39 +5,54 @@
     .module('dscFe')
     .config(function routerConfig($stateProvider, $urlRouterProvider) {
       $stateProvider
-        .state('home', {
+        .state('login', {
+          url: '/login',
+          template: '<div class="container"><login></login></div>'
+        })
+        .state('admin', {
+          url: '/admin',
+          template: '<admin></admin>'
+        })
+        .state('admin.companies', {
+          templateUrl: 'app/search.html',
+          controller: 'AdminController'
+        })
+        .state('search', {
+          templateUrl: 'app/search.html'
+        })
+        .state('search.home', {
           url: '/home',
           template: '<home></home>'
         })
-        .state('searchCompanies', {
+        .state('search.searchCompanies', {
           url: '/',
           template: '<search-companies></search-companies>'
         })
-        .state('companyProfile', {
+        .state('search.companyProfile', {
           url: '/company/:id',
           template: '<company-profile></company-profile>'
         })
-        .state('searchMultinationals', {
+        .state('search.searchMultinationals', {
           url: '/mtns',
           template: '<search-multinationals></search-multinationals>'
         })
-        .state('multinationalProfile', {
+        .state('search.multinationalProfile', {
           url: '/mtns/:id',
           template: '<multinational-profile></multinational-profile>'
         })
-        .state('searchInvestors', {
+        .state('search.searchInvestors', {
           url: '/investors',
           template: '<search-investors></search-investors>'
         })
-        .state('investorProfile', {
+        .state('search.investorProfile', {
           url: '/investor/:id',
           template: '<investor-profile></investor-profile>'
         })
-        .state('searchHubs', {
+        .state('search.searchHubs', {
           url: '/hubs',
           template: '<search-hubs></search-hubs>'
         })
-        .state('hubProfile', {
+        .state('search.hubProfile', {
           url: '/hub/:id',
           template: '<hub-profile></hub-profile>'
         })

@@ -1,0 +1,17 @@
+<div class="absolute-vertical-center">
+  <div class="col-xs-offset-5">
+    <form class="form-signin" ng-submit="$ctrl.login()">
+      <h3 class="form-signin-heading">Please sign in</h3>
+      <label for="inputEmail" class="sr-only">Email:</label>
+      <input ng-model="$ctrl.userCredentials.auth.email" type="email" id="inputEmail" class="form-control" placeholder="Email address"
+             required="" autofocus="">
+      <label for="inputPassword" class="sr-only">Password:</label>
+      <input ng-model="$ctrl.userCredentials.auth.password" type="password" id="inputPassword" class="form-control" placeholder="Password"
+             required="">
+      <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+    </form>
+  </div>
+  <div class="">
+    <uib-alert ng-show="$ctrl.loginFail" type="danger">Email/Password incorrect! Please try again.</uib-alert>
+  </div>
+</div>

@@ -99,6 +99,14 @@ footer {
   align-items: center;
 }
 
+.absolute-vertical-center {
+  min-height: 100% !important;  /* Fallback for browsers do NOT support vh unit */
+  min-height: 100vh !important; /* These two lines are counted as one :-)       */
+
+  display: flex !important;
+  align-items: center !important;
+}
+
 
 /**
  *  Do not remove the comments below. It's the markers used by gulp-inject to inject
