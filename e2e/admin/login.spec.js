@@ -12,7 +12,7 @@ describe('Login Page', function() {
   describe('correct login credentials', function() {
     it("should redirect to /admin", function() {
       page.emailField.sendKeys('test@test.com');
-      page.passwordField.sendKeys('1234');
+      page.passwordField.sendKeys('12345678');
       page.submitButton.click();
 
       expect(page.body.getText()).toContain('Admin Dashboard');
