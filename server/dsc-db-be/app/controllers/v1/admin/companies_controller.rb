@@ -14,7 +14,7 @@ module V1
           :name, :logo, :short_description, :long_description, :acquisitions, :geo_markets, :headquarters,
           :formerly_known_as, :founded, :categories, :incubator, :funding_stage, :employees, :funding_amount,
           :business_model, :company_stage, :operational_status, :government_assistance, :selling, :looking_for,
-          :contact, :founders, :office_locations, funding_rounds: [:type, :amount, :date]
+          :contact, :founders, :office_locations, :video_url, funding_rounds: [:type, :amount, :date]
         )
       end
 
