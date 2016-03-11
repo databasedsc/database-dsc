@@ -7,8 +7,8 @@ describe('Service: admin.createCompany.service', function () {
     var service;
 
     //update the injection
-    beforeEach(inject(function (_createCompany.service_) {
-        service = _createCompany.service_;
+    beforeEach(inject(function (_createCompanyService_) {
+        service = _createCompanyService_;
     }));
 
     /**
