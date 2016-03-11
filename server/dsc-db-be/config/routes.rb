@@ -15,5 +15,9 @@ Rails.application.routes.draw do
     get 'investors/:id', to: 'investors#show'
     get 'hubs', to: 'hubs#index'
     get 'hubs/:id', to: 'hubs#show'
+
+    namespace :admin do
+      resource :companies, only: [:create]
+    end
   end
 end

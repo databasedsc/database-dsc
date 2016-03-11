@@ -10,12 +10,18 @@
           template: '<div class="container"><login></login></div>'
         })
         .state('admin', {
-          url: '/admin',
           template: '<admin></admin>'
         })
+        .state('admin.dashboard', {
+          url: '/admin',
+          template: 'hi'
+        })
         .state('admin.companies', {
-          templateUrl: 'app/search.html',
-          controller: 'AdminController'
+          template: '<admin-companies ui-view></admin-companies>'
+        })
+        .state('admin.companies.new', {
+          url: '/admin/companies',
+          template: '<admin-companies-new></admin-companies-new>'
         })
         .state('search', {
           templateUrl: 'app/search.html'

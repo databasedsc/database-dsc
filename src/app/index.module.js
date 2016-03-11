@@ -11,6 +11,8 @@
       'ui.router',
       'ui.bootstrap',
       'angular.filter',
+      'angular-confirm',
+      'ngTagsInput',
       'rzModule',
       'home',
       'login',

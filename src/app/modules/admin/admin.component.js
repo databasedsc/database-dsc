@@ -4,7 +4,7 @@
   angular
     .module('admin')
     .component('admin', {
-      templateUrl: 'app/modules/admin/dashboard.html',
+      templateUrl: 'app/modules/admin/admin.html',
       controller: 'AdminController'
     })
     .controller('AdminController', function(store, jwtHelper, $state) {
