@@ -1,5 +1,5 @@
 <h1>Create Company</h1>
-<form ng-submit="$ctrl.create()">
+<form name="create" ng-submit="create.$valid && $ctrl.create()">
 
   <div class="panel panel-default">
     <div class="panel-heading">Overview</div>
@@ -21,7 +21,7 @@
 
           <div class="form-group">
             <label for="short-description">Tagline:</label>
-            <textarea ng-model="$ctrl.company.short_description" id="short-description" class="form-control"
+            <textarea required ng-model="$ctrl.company.short_description" id="short-description" class="form-control"
                       type="text"></textarea>
           </div>
         </div>
@@ -33,7 +33,7 @@
 
       <div class="form-group">
         <label for="long-description">Description:</label>
-        <textarea ng-model="$ctrl.company.long_description" id="long-description" class="form-control"
+        <textarea required ng-model="$ctrl.company.long_description" id="long-description" class="form-control"
                   type="text"></textarea>
       </div>
       <div class="form-group">
@@ -41,6 +41,30 @@
         <textarea ng-model="$ctrl.company.video_url" id="video-url" class="form-control"
                   type="text"></textarea>
         <p><b>Note:</b> Make sure to grab the embed version of the video URL.</p>
+      </div>
+
+      <div class="row">
+
+        <div class="form-group col-md-3">
+          <label for="website"><i class="fa fa-globe"></i> Website:</label>
+          <input required ng-model="$ctrl.company.website" id="website" class="form-control" type="text">
+        </div>
+
+        <div class="form-group col-md-3">
+          <label for="twitter"><i class="fa fa-twitter"></i> Twitter:</label>
+          <input ng-model="$ctrl.company.social_accounts.twitter" id="twitter" class="form-control" type="text">
+        </div>
+
+        <div class="form-group col-md-3">
+          <label for="linkedin"><i class="fa fa-linkedin"></i> LinkedIn:</label>
+          <input ng-model="$ctrl.company.social_accounts.linkedin" id="linkedin" class="form-control" type="text">
+        </div>
+
+        <div class="form-group col-md-3">
+          <label for="facebook"><i class="fa fa-facebook"></i> Facebook:</label>
+          <input ng-model="$ctrl.company.social_accounts.facebook" id="facebook" class="form-control" type="text">
+        </div>
+
       </div>
     </div>
 
@@ -222,7 +246,8 @@
   <div class="panel panel-default">
     <div class="panel-heading">Tags</div>
     <div class="row">
-      <tags-input ng-model="$ctrl.tags" on-tag-added="$ctrl.addCategory($tag)"></tags-input>
+      <tags-input ng-model="$ctrl.tags" on-tag-added="$ctrl.addCategory($tag)" min-tags="1"></tags-input>
+      <span ng-show="create.newTag.$invalid" class="label label-danger">At least 1 category is required.</span>
     </div>
   </div>
 

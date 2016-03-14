@@ -46,9 +46,12 @@ ActiveRecord::Schema.define(version: 20160311171746) do
     t.string   "founded"
     t.text     "acquisitions"
     t.text     "video_url"
+    t.string   "website"
+    t.jsonb    "social_accounts"
   end
 
   add_index "companies", ["funding_rounds"], name: "index_companies_on_funding_rounds", using: :gin
+  add_index "companies", ["social_accounts"], name: "index_companies_on_social_accounts", using: :gin
 
   create_table "hubs", force: :cascade do |t|
     t.string   "name"

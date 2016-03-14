@@ -26,7 +26,8 @@
       'investorProfile',
       'searchHubs',
       'hubProfile',
-      'searchFilters'
+      'searchFilters',
+      'socialLinks'
     ]);
 
 })();

@@ -1,5 +1,5 @@
 <div class="row">
-  <div id="overview" class="col-lg-8">
+  <div id="overview" class="col-lg-">
     <div ng-show="$ctrl.company.logo" class="">
       <img ng-src="{{$ctrl.company.logo}}" class="logo img-responsive">
     </div>
@@ -15,8 +15,13 @@
       Description:
       <p id="description">{{$ctrl.company.long_description}}</p>
     </label>
+
+    <p>{{$ctrl.company.website}}</p>
+
+    <social-links social-accounts="$ctrl.company.social_accounts"></social-links>
+
   </div>
-  <div class="col-lg-4 video-player"></div>
+  <div class="col-lg-5 video-player"><iframe width="400" height="250" ng-src="{{trustSrc($ctrl.company.video_url)}}" frameborder="0" allowfullscreen></iframe></div>
 </div>
 <div class="row">
   <div id="details">
