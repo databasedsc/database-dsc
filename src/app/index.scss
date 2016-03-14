@@ -81,6 +81,20 @@ $icon-font-path: "../../bower_components/bootstrap-sass/assets/fonts/bootstrap/"
 }
 
 #search {
+  .contact-us{
+    font-size: 14px;
+    font-family: 'Helvetica Neue';
+    color: #FFFFFF;
+    border: 1px solid #FFFFFF;
+    border-radius: 6px;
+    padding: 0 40px;
+    margin: 40px 0 0 0;
+    &:hover {
+      color: #DF0386;
+      border: 1px solid #DF0386;
+    }
+  }
+
   .main-wrapper{
     min-height: 1258px;
     //min-height: 100% !important;
