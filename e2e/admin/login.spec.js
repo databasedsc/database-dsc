@@ -41,7 +41,7 @@ describe('Login Page', function() {
   describe('logout', function (){
     it('should return to login page after logout', function(){
       page.emailField.sendKeys('test@test.com');
-      page.passwordField.sendKeys('1234');
+      page.passwordField.sendKeys('12345678');
       page.submitButton.click();
 
       expect(page.body.getText()).toContain('Logout!');

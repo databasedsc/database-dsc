@@ -14,7 +14,7 @@
         })
         .state('admin.dashboard', {
           url: '/admin',
-          template: 'hi'
+          templateUrl: 'app/modules/admin/dashboard.html'
         })
         .state('admin.companies', {
           template: '<admin-companies ui-view></admin-companies>'

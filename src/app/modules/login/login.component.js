@@ -15,12 +15,10 @@
       this.login = function() {
         loginService.authenticate(this.userCredentials).then(function(response) {
           store.set('jwt', response.jwt);
-          $state.go('admin');
+          $state.go('admin.dashboard');
         }).catch(function () {
           controller.loginFail = true;
         })
       };
-
-      //TODO: Redirect to admin if already logged in
     });
 })();

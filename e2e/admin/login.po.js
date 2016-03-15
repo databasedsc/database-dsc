@@ -5,7 +5,7 @@ var LoginPage = function() {
   this.emailField = element(by.css('#inputEmail'));
   this.passwordField = element(by.css('#inputPassword'));
   this.submitButton = element(by.css('button.btn-primary'));
-  this.logoutButton = element(by.css('#logout'));
+  this.logoutButton = element(by.css('a#logout'));
 };
 
 module.exports = new LoginPage();
