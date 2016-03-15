@@ -22,6 +22,7 @@
 #
 
 class Hub < ApplicationRecord
+  acts_as_paranoid
   include PgSearch
 
   APPLICATION_DEADLINES_DATE_RANGES = {
@@ -50,6 +51,4 @@ class Hub < ApplicationRecord
     }
 
   scope :application_deadline, -> (range_as_text) { where(application_deadline: APPLICATION_DEADLINES_DATE_RANGES[range_as_text]) }
-
-
 end

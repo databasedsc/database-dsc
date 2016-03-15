@@ -4,26 +4,41 @@ module V1
 
       def create
         company = Company.create(company_params)
+
         render json: company
       end
 
       def index
-        companies = Company.all
+        companies = Company.with_deleted.order(:id)
+
         render json: companies
       end
 
       def show
-        company = Company.find(params[:id])
         render json: company
       end
 
       def update
-        company = Company.find(params[:id])
         company.update(company_params)
+
         render json: company
       end
 
+      def destroy
+        company.destroy
+
+        render status: 204
+      end
+
+      def restore
+        Company.restore(params[:id])
+      end
+
       private
+
+      def company
+        Company.find(params[:id])
+      end
 
       def company_params
         params.require(:company).permit(

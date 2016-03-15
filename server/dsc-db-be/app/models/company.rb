@@ -34,6 +34,7 @@
 #
 
 class Company < ApplicationRecord
+  acts_as_paranoid
   include PgSearch
 
   using Utils

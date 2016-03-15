@@ -24,6 +24,7 @@
 #
 
 class Multinational < ApplicationRecord
+  acts_as_paranoid
   include PgSearch
 
   pg_search_scope :search,

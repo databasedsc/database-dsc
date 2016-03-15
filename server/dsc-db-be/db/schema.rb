@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160311171746) do
+ActiveRecord::Schema.define(version: 20160315121355) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -48,8 +48,10 @@ ActiveRecord::Schema.define(version: 20160311171746) do
     t.text     "video_url"
     t.string   "website"
     t.jsonb    "social_accounts"
+    t.datetime "deleted_at"
   end
 
+  add_index "companies", ["deleted_at"], name: "index_companies_on_deleted_at", using: :btree
   add_index "companies", ["funding_rounds"], name: "index_companies_on_funding_rounds", using: :gin
   add_index "companies", ["social_accounts"], name: "index_companies_on_social_accounts", using: :gin
 
@@ -70,10 +72,12 @@ ActiveRecord::Schema.define(version: 20160311171746) do
     t.jsonb    "contact_urls"
     t.text     "events",               default: [],              array: true
     t.jsonb    "alumni"
+    t.datetime "deleted_at"
   end
 
   add_index "hubs", ["alumni"], name: "index_hubs_on_alumni", using: :gin
   add_index "hubs", ["contact_urls"], name: "index_hubs_on_contact_urls", using: :gin
+  add_index "hubs", ["deleted_at"], name: "index_hubs_on_deleted_at", using: :btree
 
   create_table "investors", force: :cascade do |t|
     t.string   "name"
@@ -101,9 +105,11 @@ ActiveRecord::Schema.define(version: 20160311171746) do
     t.string   "exits_ipos"
     t.string   "founded"
     t.jsonb    "contact_urls"
+    t.datetime "deleted_at"
   end
 
   add_index "investors", ["contact_urls"], name: "index_investors_on_contact_urls", using: :gin
+  add_index "investors", ["deleted_at"], name: "index_investors_on_deleted_at", using: :btree
   add_index "investors", ["founders"], name: "index_investors_on_founders", using: :gin
 
   create_table "multinationals", force: :cascade do |t|
@@ -125,7 +131,10 @@ ActiveRecord::Schema.define(version: 20160311171746) do
     t.text     "long_description"
     t.text     "events_space_qualifiers"
     t.string   "next_event"
+    t.datetime "deleted_at"
   end
+
+  add_index "multinationals", ["deleted_at"], name: "index_multinationals_on_deleted_at", using: :btree
 
   create_table "pg_search_documents", force: :cascade do |t|
     t.text     "content"

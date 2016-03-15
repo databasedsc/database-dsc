@@ -17,7 +17,11 @@ Rails.application.routes.draw do
     get 'hubs/:id', to: 'hubs#show'
 
     namespace :admin do
-      resources :companies, only: [:create, :index, :show, :update]
+      resources :companies, only: [:create, :index, :show, :update, :destroy] do
+        member do
+          put :restore
+        end
+      end
     end
   end
 end

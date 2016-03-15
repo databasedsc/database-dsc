@@ -1,3 +1,11 @@
+GIT
+  remote: git://github.com/rubysherpas/paranoia.git
+  revision: 9e0ec38e5f4d08d25c1bf1b63c1fe78208abe625
+  branch: core
+  specs:
+    paranoia (2.2.0.alpha)
+      activerecord (>= 4.0, < 5.1)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -85,7 +93,7 @@ GEM
       activerecord (>= 3.1)
       activesupport (>= 3.1)
       arel
-    puma (3.0.2)
+    puma (3.1.0)
     rack (2.0.0.alpha)
       json
     rack-cors (0.4.0)
@@ -166,6 +174,7 @@ DEPENDENCIES
   faker
   kaminari
   knock
+  paranoia!
   pg
   pg_search
   puma
