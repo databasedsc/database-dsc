@@ -19,9 +19,17 @@
         .state('admin.companies', {
           template: '<admin-companies ui-view></admin-companies>'
         })
-        .state('admin.companies.new', {
+        .state('admin.companies.index', {
           url: '/admin/companies',
+          template: '<admin-companies-index></admin-companies-index>'
+        })
+        .state('admin.companies.new', {
+          url: '/admin/companies/new',
           template: '<admin-companies-new></admin-companies-new>'
+        })
+        .state('admin.companies.edit', {
+          url: '/admin/companies/:id/edit',
+          template: '<admin-companies-edit></admin-companies-edit>'
         })
         .state('search', {
           templateUrl: 'app/search.html'

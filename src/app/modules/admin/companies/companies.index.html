@@ -1,0 +1,35 @@
+<div class="row">
+  <h2>Companies</h2>
+</div>
+<div class="row">
+  <div class="pull-right">
+    <p>
+      <a ui-sref="admin.companies.new" class="btn btn-primary">New Company</a>
+    </p>
+  </div>
+</div>
+<div class="table-responsive">
+  <table class="table table-striped table-bordered table-hover">
+    <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Headquarters</th>
+      <th>Status</th>
+      <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr ng-repeat="company in $ctrl.companies">
+      <td>{{company.id}}</td>
+      <td>{{company.name}}</td>
+      <td>{{company.headquarters}}</td>
+      <td>{{company.status}}</td>
+      <td>
+        <a ui-sref="admin.companies.edit({id: company.id})">Edit</a>
+        <a href="" ng-click="deleteCompany(company.id)">Delete</a>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>

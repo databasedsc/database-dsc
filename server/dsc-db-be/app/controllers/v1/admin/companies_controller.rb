@@ -4,7 +4,23 @@ module V1
 
       def create
         company = Company.create(company_params)
-        render json: company, status: 200
+        render json: company
+      end
+
+      def index
+        companies = Company.all
+        render json: companies
+      end
+
+      def show
+        company = Company.find(params[:id])
+        render json: company
+      end
+
+      def update
+        company = Company.find(params[:id])
+        company.update(company_params)
+        render json: company
       end
 
       private

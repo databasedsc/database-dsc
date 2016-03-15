@@ -10,6 +10,7 @@
       'ngMessages',
       'ui.router',
       'ui.bootstrap',
+      'ui-notification',
       'angular.filter',
       'angular-confirm',
       'ngTagsInput',
