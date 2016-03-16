@@ -61,10 +61,10 @@ before_deploy:
   - gulp build
   - echo 'START BACKEND DEPLOY'
   - cd server/dsc-db-be
-  - cf api --skip-ssl-validation -a https://api.run.pivotal.io
-  - cf auth email and password
-  - cf target bengt-org development
-  - cf push $CF_EMAIL $CF_PWD
+  - ./cf api --skip-ssl-validation -a https://api.run.pivotal.io
+  - ./cf auth email and password
+  - ./cf target bengt-org development
+  - ./cf push $CF_EMAIL $CF_PWD
 
 
 deploy:
