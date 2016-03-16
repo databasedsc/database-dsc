@@ -10,6 +10,9 @@ var SearchPage = function() {
   this.emeaHeadquarterFilter = element(by.id('emea-hq'));
   this.employeesFilter = element(by.id('employees'));
 
+  this.findMultinational = function(multinationalName) {
+    return element(by.id(multinationalName + '-item'));
+  }
 };
 
 module.exports = new SearchPage();

@@ -10,9 +10,7 @@ describe('HubProfile', function() {
 
     browser.get('#/hubs');
 
-    searchPage.searchResults.then(function(items) {
-      items[1].element(by.css('.name')).click()
-    });
+    searchPage.findHub('dogpatch-labs').click();
   });
 
 

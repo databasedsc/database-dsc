@@ -10,9 +10,7 @@ describe('CompanyProfile', function() {
 
     browser.get('#/');
 
-    searchPage.searchResults.then(function(items) {
-      items[2].element(by.css('.name')).click()
-    });
+    searchPage.findCompany('logentries').click();
   });
 
 

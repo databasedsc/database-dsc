@@ -9,6 +9,10 @@ var SearchPage = function() {
   this.searchFilters = element.all(by.css('fieldset select'));
   this.employeesFilter = element(by.id('employees'));
   this.fundingStageFilter = element(by.id('funding-stage'));
+
+  this.findCompany = function(companyName) {
+    return element(by.id(companyName + '-item'));
+  }
 };
 
 module.exports = new SearchPage();

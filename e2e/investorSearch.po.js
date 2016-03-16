@@ -8,6 +8,10 @@ var SearchPage = function() {
   this.searchButton = element(by.id('search-button'));
   this.searchFilters = element.all(by.css('fieldset select'));
   this.dealStructureFilter = element(by.id('deal-structure'));
+
+  this.findInvestor = function(investorName) {
+    return element(by.id(investorName + '-item'));
+  }
 };
 
 module.exports = new SearchPage();

@@ -42,7 +42,6 @@
       this.create = function() {
         $confirm({text: "Are you sure you want to submit?"}).then(function() {
           setFunctions();
-          console.log(controller.multinational)
           createMultinationalService.create(controller.multinational).then(function() {
             Notification.success('Multinational has been created!');
             setEmptyMultinational();

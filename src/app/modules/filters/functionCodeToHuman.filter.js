@@ -16,7 +16,7 @@
         MF: 'Manufacturing',
         O: 'Operations',
         PD: 'Product Development'
-      }
+      };
 
       return function(functionCode) {
         return functions[functionCode] || '';

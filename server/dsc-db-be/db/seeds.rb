@@ -171,7 +171,7 @@ Multinational.create(
       "startup_packages": ["We provide an exclusive discount for startups creating a website."],
       "events_space": true,
       "employees": 115,
-      "functions": ['S', 'CS', 'D', 'L', 'SI', 'E', 'M', 'O']
+      "functions": ['S', 'CS', 'F', 'L', 'SI', 'E', 'M', 'O']
     },
     {
       "name": "Airbnb",

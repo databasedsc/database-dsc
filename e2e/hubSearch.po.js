@@ -7,6 +7,10 @@ var SearchPage = function() {
   this.searchField = element(by.id('search-text-field'));
   this.searchButton = element(by.id('search-button'));
   this.searchFilters = element.all(by.css('fieldset select'));
+
+  this.findHub = function(hubName) {
+    return element(by.id(hubName + '-item'));
+  }
 };
 
 module.exports = new SearchPage();
