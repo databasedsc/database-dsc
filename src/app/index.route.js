@@ -31,6 +31,21 @@
           url: '/admin/companies/:id/edit',
           template: '<admin-companies-edit></admin-companies-edit>'
         })
+        .state('admin.multinationals', {
+          template: '<admin-multinationals ui-view></admin-multinationals>'
+        })
+        .state('admin.multinationals.index', {
+          url: '/admin/multinationals',
+          template: '<admin-multinationals-index></admin-multinationals-new>'
+        })
+        .state('admin.multinationals.new', {
+          url: '/admin/multinationals/new',
+          template: '<admin-multinationals-new></admin-multinationals-new>'
+        })
+        .state('admin.multinationals.edit', {
+          url: '/admin/multinationals/:id/edit',
+          template: '<admin-multinationals-edit></admin-multinationals-edit>'
+        })
         .state('search', {
           templateUrl: 'app/search.html'
         })

@@ -1,0 +1,127 @@
+<admin-overview entity="$ctrl.multinational"></admin-overview>
+<div class="panel panel-default">
+  <div class="panel-heading">Details</div>
+  <div class="panel-body">
+
+    <div class="row">
+
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="headquarters">Headquarters:</label>
+          <input ng-model="$ctrl.multinational.headquarters" id="headquarters" class="form-control" type="text">
+        </div>
+
+        <div class="form-group">
+          <label>EMEA Headquarters in Ireland</label>
+          <br>
+          <input type="radio" ng-model="$ctrl.multinational.emea_hq" ng-value="true"> Yes
+          <input type="radio" ng-model="$ctrl.multinational.emea_hq" ng-value="false"> No
+        </div>
+
+        <div class="form-group">
+          <label for="irish-office-locations">Irish Office Locations</label>
+          <textarea ng-model="$ctrl.multinational.local_office" id="irish-office-locations"
+                    class="form-control"></textarea>
+        </div>
+
+
+        <div class="form-group">
+          <label for="employees">Employees in Ireland:</label>
+          <input integer ng-model="$ctrl.multinational.employees" id="employees" class="form-control" type="number">
+        </div>
+
+        <div class="form-group">
+          <label>Functions in Ireland</label>
+          <div class="checkbox"><label> <input ng-model="$ctrl.functions.S" type="checkbox"
+                                               value="S">Sales</label><br/></div>
+          <div class="checkbox"><label> <input ng-model="$ctrl.functions.CS" type="checkbox"
+                                               value="CS">Customer Service</label><br/></div>
+          <div class="checkbox"><label> <input ng-model="$ctrl.functions.F" type="checkbox"
+                                               value="F">Finance</label><br/></div>
+          <div class="checkbox"><label> <input ng-model="$ctrl.functions.L" type="checkbox"
+                                               value="L">Legal</label><br/></div>
+          <div class="checkbox"><label> <input ng-model="$ctrl.functions.SI" type="checkbox"
+                                               value="SI">Server Infrastructure</label><br/>
+          </div>
+          <div class="checkbox"><label> <input ng-model="$ctrl.functions.E" type="checkbox"
+                                               value="E">Africa</label><br/></div>
+          <div class="checkbox"><label> <input ng-model="$ctrl.functions.M" type="checkbox"
+                                               value="M">Marketing</label><br/></div>
+          <div class="checkbox"><label> <input ng-model="$ctrl.functions.RD" type="checkbox"
+                                               value="RD">Research and Development</label><br/>
+          </div>
+          <div class="checkbox"><label> <input ng-model="$ctrl.functions.MF" type="checkbox"
+                                               value="MF">Manufactoring</label><br/>
+          </div>
+          <div class="checkbox"><label> <input ng-model="$ctrl.functions.O" type="checkbox"
+                                               value="O">Operations</label><br/>
+          </div>
+          <div class="checkbox"><label> <input ng-model="$ctrl.functions.PD" type="checkbox"
+                                               value="PD">Product Development</label><br/>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="events-space">Events Space</label>
+          <br>
+          <input type="radio" ng-model="$ctrl.multinational.events_space" ng-value="true"> Yes
+          <input type="radio" ng-model="$ctrl.multinational.events_space" ng-value="false"> No
+        </div>
+
+        <div class="form-group">
+          <label for="events-space-qualifier">Events Space Qualifier</label>
+          <textarea ng-model="$ctrl.multinational.events_space_qualifiers" id="events-space-qualifier" class="form-control"></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="next-event">Next Event</label>
+          <textarea ng-model="$ctrl.multinational.next_event" id="next-event" class="form-control"></textarea>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div class="panel panel-default">
+  <div class="panel-heading">Tags</div>
+  <div class="row">
+    <tags-input ng-model="$ctrl.tags" on-tag-added="$ctrl.addCategory($tag)" min-tags="1"></tags-input>
+    <span ng-show="create.newTag.$invalid" class="label label-danger">At least 1 category is required.</span>
+  </div>
+</div>
+
+<div class="panel panel-default">
+  <div class="panel-heading">Startup Packages</div>
+
+  <div class="panel-body">
+    <div class="row">
+      <div class="col-sm-12">
+        <p><a ng-click="$ctrl.addStartupPackage()" class="btn btn-primary pull-right">Add Package</a></p>
+
+      </div>
+    </div>
+    <div class="" ng-repeat="p in $ctrl.multinational.startup_packages track by $index">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          Package
+
+          <a ng-click="$ctrl.removeStartupPackage(p)" class="pull-right"><i
+            class="fa fa-2x fa-trash"></i></a>
+        </div>
+        <div class="panel-body">
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="form-group">
+                <label for="description">Package Description</label>
+                <textarea ng-model="$ctrl.multinational.startup_packages[$index]" id="description" class="form-control"></textarea>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

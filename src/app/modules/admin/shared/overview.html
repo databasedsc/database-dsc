@@ -1,0 +1,68 @@
+<div class="panel panel-default">
+  <div class="panel-heading">Overview</div>
+
+  <div class="panel-body">
+    <div class="row">
+      <div class="col-md-9">
+        <div class="form-group">
+          <label for="name">Name:</label>
+          <input required ng-model="$ctrl.entity.name" id="name" class="form-control" type="text">
+        </div>
+
+        <div class="form-group">
+          <label for="logo">Logo:</label>
+          <input required ng-model="$ctrl.entity.logo" ng-model-options="{ updateOn: 'blur' }" id="logo" class="form-control"
+                 type="text">
+          <p>Recommended image dimensions: 250Wx140H</p>
+        </div>
+
+        <div class="form-group">
+          <label for="short-description">Tagline:</label>
+            <textarea required ng-model="$ctrl.entity.short_description" id="short-description" class="form-control"
+                      type="text"></textarea>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <img ng-src="{{$ctrl.entity.logo}}"/>
+      </div>
+    </div>
+
+
+    <div class="form-group">
+      <label for="long-description">Description:</label>
+        <textarea required ng-model="$ctrl.entity.long_description" id="long-description" class="form-control"
+                  type="text"></textarea>
+    </div>
+    <div class="form-group">
+      <label for="video-url">Video Url:</label>
+        <textarea ng-model="$ctrl.entity.video_url" id="video-url" class="form-control"
+                  type="text"></textarea>
+      <p><b>Note:</b> Make sure to grab the embed version of the video URL.</p>
+    </div>
+
+    <div class="row">
+
+      <div class="form-group col-md-3">
+        <label for="website"><i class="fa fa-globe"></i> Website:</label>
+        <input required ng-model="$ctrl.entity.website" id="website" class="form-control" type="text">
+      </div>
+
+      <div class="form-group col-md-3">
+        <label for="twitter"><i class="fa fa-twitter"></i> Twitter:</label>
+        <input ng-model="$ctrl.entity.social_accounts.twitter" id="twitter" class="form-control" type="text">
+      </div>
+
+      <div class="form-group col-md-3">
+        <label for="linkedin"><i class="fa fa-linkedin"></i> LinkedIn:</label>
+        <input ng-model="$ctrl.entity.social_accounts.linkedin" id="linkedin" class="form-control" type="text">
+      </div>
+
+      <div class="form-group col-md-3">
+        <label for="facebook"><i class="fa fa-facebook"></i> Facebook:</label>
+        <input ng-model="$ctrl.entity.social_accounts.facebook" id="facebook" class="form-control" type="text">
+      </div>
+
+    </div>
+  </div>
+
+</div>

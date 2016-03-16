@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160315121355) do
+ActiveRecord::Schema.define(version: 20160316103049) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -125,16 +125,17 @@ ActiveRecord::Schema.define(version: 20160315121355) do
     t.integer  "employees"
     t.boolean  "events_space",            default: false
     t.text     "functions",               default: [],                 array: true
-    t.string   "linkedin"
-    t.string   "facebook"
-    t.string   "twitter"
     t.text     "long_description"
     t.text     "events_space_qualifiers"
     t.string   "next_event"
     t.datetime "deleted_at"
+    t.string   "website"
+    t.jsonb    "social_accounts"
+    t.string   "categories",              default: [],                 array: true
   end
 
   add_index "multinationals", ["deleted_at"], name: "index_multinationals_on_deleted_at", using: :btree
+  add_index "multinationals", ["social_accounts"], name: "index_multinationals_on_social_accounts", using: :gin
 
   create_table "pg_search_documents", force: :cascade do |t|
     t.text     "content"

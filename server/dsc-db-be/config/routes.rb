@@ -22,6 +22,11 @@ Rails.application.routes.draw do
           put :restore
         end
       end
+      resources :multinationals, only: [:create, :index, :show, :update, :destroy] do
+        member do
+          put :restore
+        end
+      end
     end
   end
 end
