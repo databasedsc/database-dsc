@@ -23,7 +23,6 @@ cache:
     - node_modules
 
 install:
-  - echo $CF_PWD
   - . $HOME/.nvm/nvm.sh
   - nvm install stable
   - nvm use stable
@@ -70,3 +69,10 @@ deploy:
   api: https://api.run.pivotal.io
   organization: bengt-org
   space: development
+
+after_success:
+  - cd server/dsc-db-be
+  - cf api --skip-ssl-validation -a https://api.run.pivotal.io
+  - cf auth email and password
+  - cf target bengt-org development
+  - cf push lurraca@pivotal.io $CF_PWD
