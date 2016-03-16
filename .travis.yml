@@ -1,3 +1,7 @@
+env:
+  global:
+    - secure: "4U5Ze+cjR4HRQcIMHGMZ/PjvCkC5dyu5N1I5RNrkPiwdpJMp9HGSrBLxJxvKx4sht0r8d4MduHjCOyKNVI/ZsZQU3a4wk9Vg0WWZekN9YG6cbDK2az3iGWHvvKoWCvpSoO/mYK7Y4URSCfgnt322w8X6QI5HZsu3I2roatk+rgcmhWXmcUl3SrRHSx+j0TeVUcg0RfAB9pHVWiRDUsviEcOzChUD8cqgA9nW/56vXgO+hQbTlOo63raV6fuTzdmMxPbir1MkS82qQdce1+ANbIw2eEuDih2J+knKz81Khnc7f9HjUmWrdrS50Ks6fRZdcZ61v5TbNyA+6uxGcYobzh71rFeTFxo0zSvN2/Q9KxOrP5FgAydEhB8LM82XhpxSASeXDQJvmfdxEqF9/15rUrabh27R6Bv1YBtkMeYGj6MuWz4qj4otfzllhLxVR/laQpMB8hK5kMOoLsAiqnbse2vGwPIYVlxk596DF9QrtBEUpmivSME0XkZpfhJbQpLzyoQ+QkYpz4XSoeEoI1G3WDm83iZeGkvK179MItE6DhIrUt8g7MsFTbSK3mJbjBAq9pBg1trTxvIp/CyuvBFi2d/dkPQm3BbNkePFWI3HVCs2VLNXFwe8VHN8Z6oK0O2z/Eu6pcdS3oIIVt+xWAc2qjLZvlhHpOd+1AR2CSOppVo="
+
 addons:
   postgresql: " 9.4"
 
@@ -19,6 +23,7 @@ cache:
     - node_modules
 
 install:
+  - echo $CF_PWD
   - . $HOME/.nvm/nvm.sh
   - nvm install stable
   - nvm use stable
