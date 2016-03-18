@@ -118,13 +118,7 @@ RSpec.describe 'V1::Investors', :type => :request do
         expect(response).to have_http_status(200)
         expect(investors_json.size).to eq(1)
       end
-
-      it 'should return the investors matching the filter criteria deal structure' do
-        get '/v1/investors?dealStructure=Mezzanine'
-        investors_json = JSON.parse(response.body)
-        expect(response).to have_http_status(200)
-        expect(investors_json.size).to eq(1)
-      end
+      
     end
   end
 end
