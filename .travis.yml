@@ -67,6 +67,7 @@ before_deploy:
   - cp src/app/ngConstants.js.prod src/app/ngConstants.js
   - gulp build
   - npm install -g cf-blue-green
+  - cd server/database-dsc-be
 
 deploy:
   - provider: cloudfoundry
