@@ -61,6 +61,7 @@ before_deploy:
   - gulp build
   - echo 'START BACKEND DEPLOY'
   - cd server/dsc-db-be
+  - wget https://s3.amazonaws.com/go-cli/releases/latest/cf-linux-amd64.tgz
   - ./cf api --skip-ssl-validation -a https://api.run.pivotal.io
   - ./cf auth email and password
   - ./cf target bengt-org development
