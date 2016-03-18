@@ -70,7 +70,7 @@ deploy:
     organization: bengt-org
     space: development
   - provider: script
-    script: deploy/cf-backend.sh
+    script: server/dsc-db-be/deploy/cf-backend.sh
     on:
       branch: master
 

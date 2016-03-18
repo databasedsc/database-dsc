@@ -122,9 +122,15 @@ describe('CompanyProfile', function() {
 
   describe('Funding', function() {
     it("should display the company funding rounds", function() {
-      expect(page.funding.getText()).toContain('Undisclosed, January 2010, Pre-seed');
-      expect(page.funding.getText()).toContain('1.1m, January 2012, Seed');
-      expect(page.funding.getText()).toContain('10m, January 2013, Series A');
+      expect(page.funding.getText()).toContain('Undisclosed');
+      expect(page.funding.getText()).toContain('January 2010');
+      expect(page.funding.getText()).toContain('Pre-seed');
+      expect(page.funding.getText()).toContain('1.1m');
+      expect(page.funding.getText()).toContain('January 2012');
+      expect(page.funding.getText()).toContain('Seed');
+      expect(page.funding.getText()).toContain('10m');
+      expect(page.funding.getText()).toContain('January 2013');
+      expect(page.funding.getText()).toContain('Series A');
     });
   });
 
