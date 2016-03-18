@@ -67,10 +67,9 @@ Installation Tips
 		
 ### Rails commands
 
-* rspec : runs unit and integration test
-* rake db:seed : Seed the database with initial data
-* rails s -p 4000 : starts a new instance of the backend in the port 4000
-* 
+  - rspec : runs unit and integration test
+  - rake db:seed : Seed the database with initial data
+  - rails s -p 4000 : starts a new instance of the backend in the port 4000
 
 ## Database
 

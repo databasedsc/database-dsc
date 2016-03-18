@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160318112049) do
+ActiveRecord::Schema.define(version: 20160318115244) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -49,6 +49,10 @@ ActiveRecord::Schema.define(version: 20160318112049) do
     t.string   "website"
     t.jsonb    "social_accounts"
     t.datetime "deleted_at"
+    t.text     "custom_field_1"
+    t.text     "custom_field_2"
+    t.text     "custom_field_3"
+    t.text     "custom_field_4"
   end
 
   add_index "companies", ["deleted_at"], name: "index_companies_on_deleted_at", using: :btree
@@ -73,6 +77,10 @@ ActiveRecord::Schema.define(version: 20160318112049) do
     t.text     "events",               default: [],              array: true
     t.jsonb    "alumni"
     t.datetime "deleted_at"
+    t.text     "custom_field_1"
+    t.text     "custom_field_2"
+    t.text     "custom_field_3"
+    t.text     "custom_field_4"
   end
 
   add_index "hubs", ["alumni"], name: "index_hubs_on_alumni", using: :gin
@@ -105,6 +113,10 @@ ActiveRecord::Schema.define(version: 20160318112049) do
     t.string   "founded"
     t.jsonb    "contact_urls"
     t.datetime "deleted_at"
+    t.text     "custom_field_1"
+    t.text     "custom_field_2"
+    t.text     "custom_field_3"
+    t.text     "custom_field_4"
   end
 
   add_index "investors", ["contact_urls"], name: "index_investors_on_contact_urls", using: :gin
@@ -131,6 +143,10 @@ ActiveRecord::Schema.define(version: 20160318112049) do
     t.string   "website"
     t.jsonb    "social_accounts"
     t.string   "categories",              default: [],                 array: true
+    t.text     "custom_field_1"
+    t.text     "custom_field_2"
+    t.text     "custom_field_3"
+    t.text     "custom_field_4"
   end
 
   add_index "multinationals", ["deleted_at"], name: "index_multinationals_on_deleted_at", using: :btree
