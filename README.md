@@ -38,7 +38,11 @@ Installation Tips:
 	- gulp test  : runs front-end app unit tests
 	- gulp e2e   : run application end to end tests
 	
-Note that the e2e runs agaisn't the real backend application, so make sure that an instance of the backend is running on localhost (default port 4000 can be modified on ngConstants.js)
+Note that the e2e runs agaisn't the real backend application, so make sure that an instance of the backend is running on localhost (default port 4000 can be modified on ngConstants.js).
+
+There's a environment(integration) in the backend app designed for this purpose.
+
+`rails s -p 4000 -e integration`
 	
 ##Backend
 Ruby On Rails 5.0-beta3 --api-only
@@ -77,11 +81,13 @@ Posgresql > 9.4
 
 This project uses Postgres Full Text Search functionalities so ensure that the version you will be using have that capability.
  
- ## Continous Delivery
+## Continous Delivery
 
 This project use Travis CI. Refer to the .travis.yml. After the test script tasks passes successfully it will start the deployment to CF.
 
 There are 2 deploy tasks, one for each App.
+
+NOTE: The backend is not being automatically deployed at the moment.
  
 ##Powered by:
 
