@@ -14,11 +14,6 @@
       this.company = getCompanyService.find($stateParams.id).then(function(company) {
         controller.company = company;
       });
-
-      $scope.trustSrc = function(src) {
-        return $sce.trustAsResourceUrl(src);
-      }
-
     });
 
 })();
