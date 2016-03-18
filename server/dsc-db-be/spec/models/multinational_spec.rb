@@ -27,7 +27,7 @@ require 'rails_helper'
 
 RSpec.describe Multinational, :type => :model do
   [
-    :name, :logo, :short_description, :headquarters, :local_office, :emea_hq, :startup_packages, :employees, :linkedin, :facebook, :twitter, :long_description, :events_space, :events_space_qualifiers, :next_event, :functions
+    :name, :logo, :short_description, :headquarters, :local_office, :emea_hq, :startup_packages, :employees, :social_accounts, :long_description, :events_space, :events_space_qualifiers, :next_event, :functions
   ].each do |column|
     it { should have_db_column(column) }
   end

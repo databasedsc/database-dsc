@@ -1,3 +1,8 @@
+env:
+  global:
+    - secure: "Wzi4rVVg/9Z6C9+o6ziKWVqprVgIymruY/mlJiOXuXOKQAvfg1DatUPA2EkfAp2kZlgMN0d5EzXUaqmIRBGX7C2n5+PZOPb2f+koHHwpUW9iOUgDraGiVjg2yxoRPfdw8L4kscFMa6WQm+++PONMJmvt1aoeAtMouwEB/dehdVVNCDn+9O5dOVnPOEYdeEMqpZbgf9CrfyOyGQylMMc1WsVR0gC8fChHYXfe1wUHlDy/Dls72jX5jJXf7Monin3EfXwuqG+X/h4eNpIrpiZ4ED7OagvukAUIYzfV4aQ44V6ZE8eZ4z7cRVeeOUrdcq/vauBixCc2yw7bdgpHMCg6zt96BV42ILQ1j6d8lBHmRUB6gQKM+anMGmOMFYYo4cs/RvJUC2dF+gPQARVpWfO9xGQCHBCx6jgui+tYWt0wGwD7TaAZORtlVrgFSWU1vNtn3hQVSMdNjqUdKHo0Ax7gePrleOLBOkf/l7hLtcPsC6HvDu92MxxEjEUcEtBHHLeH60NUwQSPnpOhRjmnhMaChwQXVhgfhMipopKu4jcrCSlFSub7p9W9wfvjgOrKap4+FGZ6ZhlJvCMyeegPUR5vD3SJ4lGrNrPjYkxLtaAuxLcSTwHkPsxd6cdOjsHzggiRKky43z+THBUgKIWnFZkBO/Z2oglGR8RM8xiyNiQLdhc="
+    - secure: "kl17PjObCfB84mQXudkDIS3+tmJ0vxSN8oc0f9g6vXTP0Dn31qenT9OQ/zOwlqQ+NMM6M5PXkCy4JER6LRifgR1+PYcBKwIaYm3eWDKsfJI8eWSdpNpgNWSdnswsxBat8OiPIM/I1ypFX7dNs++pn5vCo2RCUErz5k5X7qNGag7Sw4U6oS/OpNkGsVUKoLjquw4Za+ZVDonfKQq9YpaLRXSLeDjNFHDuh2GqueVz7el6COMBLMZcHfvMUs24AhhgQWKh918znlRIieDKAvsS7SxzkmBXw7zeiMFGcH86ZtblfexmgdtSW8OHzToyL6beTR3jQGUbV5o2h0PvTH1Bo43zD1YQBTmBbXpIFlxGr/dLtvZjT/JMBoU28AZzTivAwrqllMrMlf9qaYCUW8ihfYI818KuApBqf0VIS4sHI7DyuWElgtEhvEXP+Ny5d4ynWtwpBORPLuV1fTjrqOL67VueeJzcHIjM8TfjZrBINGq2uex9JC1TfMxmnXbuYCxzhRRbkf3WPdQLIjDX/FXCpT9kDufgszZ+53oEuhE8p/GgljEoqhMdKrh/hu+Aq+ieUMEIqhnvQvS2ak6rJOmCNjdiEDDM52oFYi/8iZG+gs5QATkGOsMCYTbnPPcjp3ClbGUQL3gq4dnPtMBxEODF9g7Ars4noJeth5rx83ZTbxA="
+
 addons:
   postgresql: " 9.4"
 
@@ -54,6 +59,13 @@ script:
 before_deploy:
   - cp src/app/ngConstants.js.prod src/app/ngConstants.js
   - gulp build
+  - echo 'START BACKEND DEPLOY'
+  - cd server/dsc-db-be
+  - wget https://s3.amazonaws.com/go-cli/releases/v6.12.4/cf-cli_amd64.deb -qO temp.deb && sudo dpkg -i temp.deb
+  - ./cf api --skip-ssl-validation -a https://api.run.pivotal.io
+  - ./cf auth email and password
+  - ./cf target bengt-org development
+  - ./cf push $CF_EMAIL $CF_PWD
 
 
 deploy:
@@ -65,3 +77,4 @@ deploy:
   api: https://api.run.pivotal.io
   organization: bengt-org
   space: development
+
