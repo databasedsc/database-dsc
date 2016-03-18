@@ -1,0 +1,25 @@
+<div id="overview" class="col-lg-8">
+
+  <div ng-show="$ctrl.entity.logo" class="">
+    <img ng-src="{{$ctrl.entity.logo}}" class="logo img-responsive">
+  </div>
+  <h1 ng-show="$ctrl.entity.name" id="name">{{$ctrl.entity.name}}</h1>
+
+  <h2 ng-show="$ctrl.entity.short_description" id="tagline">{{$ctrl.entity.short_description}}</h2>
+
+  <p id="description">{{$ctrl.entity.long_description}}</p>
+
+  <div ng-show="$ctrl.entity.categories" id="tags">
+    <p class="v-center">
+      <label ng-show="$ctrl.entity.categories" class="col-xs-12">Tags:</label>
+    <div class="text-center">
+      <dsc-tag ng-repeat="tag in $ctrl.entity.categories.split(',')">{{tag}}</dsc-tag>
+    </div>
+    </p>
+  </div>
+
+  <p ng-show="$ctrl.entity.website"><a href="$ctrl.entity.website">{{$ctrl.entity.website}}</a></p>
+
+  <social-links social-accounts="$ctrl.entity.social_accounts"></social-links>
+</div>
+<div class="col-lg-4 video-player"><iframe width="400" height="250" ng-src="{{trustSrc($ctrl.company.video_url)}}" frameborder="0" allowfullscreen></iframe></div>

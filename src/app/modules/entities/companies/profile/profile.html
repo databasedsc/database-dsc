@@ -1,27 +1,12 @@
 <div class="row">
-  <div id="overview" class="col-lg-7">
-    <div ng-show="$ctrl.company.logo" class="">
-      <img ng-src="{{$ctrl.company.logo}}" class="logo img-responsive">
-    </div>
-    <label ng-show="$ctrl.company.name" for="name" class="col-xs-12">
-      Name:
-      <p id="name">{{$ctrl.company.name}}</p>
-    </label>
-    <label ng-show="$ctrl.company.short_description" for="tagline" class="col-xs-12">
-      Tagline:
-      <p id="tagline">{{$ctrl.company.short_description}}</p>
-    </label>
-    <label ng-show="$ctrl.company.long_description" for="description" class="col-xs-12">
-      Description:
-      <p id="description">{{$ctrl.company.long_description}}</p>
-    </label>
 
-    <p>{{$ctrl.company.website}}</p>
+    <!--<p>{{$ctrl.company.website}}</p>-->
 
-    <social-links social-accounts="$ctrl.company.social_accounts"></social-links>
+    <!--<social-links social-accounts="$ctrl.company.social_accounts"></social-links>-->
 
-  </div>
-  <div class="col-lg-5 video-player"><iframe width="400" height="250" ng-src="{{trustSrc($ctrl.company.video_url)}}" frameborder="0" allowfullscreen></iframe></div>
+  <!--</div>-->
+
+  <profile-overview entity="$ctrl.company"></profile-overview>
 </div>
 <div class="row">
   <div id="details">
@@ -108,12 +93,6 @@
       </label>
     </div>
 
-  </div>
-</div>
-<div class="row">
-  <div ng-show="$ctrl.company.categories" id="tags">
-    <h3 class="col-xs-2 v-center">Tags</h3>
-    <p class="v-center">{{$ctrl.company.categories}}</p>
   </div>
 </div>
 <div class="row text-center">

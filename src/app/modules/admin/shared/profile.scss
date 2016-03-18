@@ -1,0 +1,61 @@
+dsc-tag {
+  border: 2px solid #00b3ee;
+  padding: 4px;
+  margin-right: 20px;
+  color: #00b3ee;
+  font: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 700;
+}
+
+dsc-tag:hover {
+  background-color: #ecfdfd;
+  cursor: pointer;
+}
+
+#overview {
+
+  font-size: medium;
+
+  h1 {
+    font-size: x-large;
+  }
+
+  h2 {
+    font-size: larger;
+    color: #a2a2a2;
+  }
+}
+
+#tags {
+  padding: 50px 0px 50px 0px;
+  color: #cacaca;
+}
+
+#details {
+  //margin-top: 80px;
+  font-size: medium;
+}
+
+//#carousel {
+//
+//  /* for funding, startup packages, etc */
+//  height: 300px;
+//  margin-bottom: 80px;
+//  overflow-x: scroll;
+//}
+//
+//.carousel-item {
+//  background-color: #78acbf;
+//  display: inline;
+//  margin:  0px 2px 0px 2px;
+//  padding-top: 30px;
+//  float: left;
+//  color: white;
+//  height: 300px;
+//  width: 200px;
+//
+//  h3, h4, h5 {
+//    color: white;
+//    text-align: center;
+//  }
+//}
