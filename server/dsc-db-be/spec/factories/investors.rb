@@ -15,7 +15,6 @@
 #  updated_at        :datetime         not null
 #  funding_types     :text             default([]), is an Array
 #  investment_size   :integer
-#  deal_structure    :text
 #  funds_raised      :string
 #  regions           :text
 #  contact           :string

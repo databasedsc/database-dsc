@@ -14,7 +14,6 @@ RSpec.describe 'V1::Investors', :type => :request do
         local_office: "Grand Canal Area",
         funding_types: ['Pre-seed', 'Seed', 'Series A', 'Series B', 'Series C', 'Series C+'],
         investment_size: 14000000,
-        deal_structure: 'Mezzanine',
         tags: ["Big Data", "Cloud Services", "Internet", "Mobile"],
         founders: [
           {
@@ -44,7 +43,6 @@ RSpec.describe 'V1::Investors', :type => :request do
         local_office: "Grand Canal Area",
         funding_types: ['PS', 'S', 'SA', 'SB', 'SC', 'SC+'],
         investment_size: 14000000,
-        deal_structure: 'Mezzanine',
         tags: ["Big Data", "Cloud Services", "Internet", "Mobile"],
         founders: [
           {
