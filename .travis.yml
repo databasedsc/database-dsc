@@ -1,5 +1,11 @@
 env:
   global:
+    - CF_APP=database-dsc-be
+    - CF_API=run.pivotal.io
+    - CF_ORGANIZATION=bengt-org
+    - CF_SPACE=development
+    - secure: "bNWTIgggiJstx1+tBFSkOY8lAuSL+SWoLXCnCj1T+aOFyKIfhAVFxonhN2Anp+YEKBZp/OMn2Khz1N3KyTsE7w8g3E6XlZbYupuZXz2rg76g8xJKsFF90ZBrffgM9d2Tk2gPqtgpvUAc+GYJQJ4oYOuZSDl2pZ91/aSTPDtdvr2qSRER/wf0sxviAQHStrUz3emard9AdyrOTWmvYzCNy+GWnWHGhOMCu3Xs3PmJuj+nM/QGaWFeOrix0nrktICajbV2F40UXHQDyzG4fdswMQe2bzxrznjQBMKYjXYOJ1yk6asCa/kmhq5fxOAsh2TkChWlPbnNKIGtDQQf3GymfSrdL3kiYz5/qsNKMUdHE+cZv1S9w6tqJGrfHxXLpMyVMa1eZC4RRkWmvuTUl7igG6CelR3bEEqoBDX4sSfLUajDkGdQ3B/ZbGDduvk7VKbgV7DbEcBSjENjbd8ipi3/mQNSDdAQUjnKTezgUcjSW/TFWPBEAz+5DlIWOo6DaY88JmUwLYV6u2cGf9o8QW3A+f4pSKr17X3fvHb/uXk3Ac0bgekRxG0gMTbN6SlisSrvC7BJE1eL5mTxRGCUrm5tlzBQO337KSUvZmyUNnRxn8xaIRFiQXda2yATrhVQiRCVwvpeXnH/M60ZAGLWGaLTPGEsETsSZloQx+E4ZATFpeM="
+      secure: "cOhMbcacXxGvbsQlr/YKVVvkAmLJ7WL/iWhbDTLvWE7JTuj4cdFO3/hfLKnIrdX0bFKhkYsDZ69qL+MA7Y5buodijxg9AZdhsaJy6WPg7ZhzkaAs4+WajhuK8dEk7ILLX5Z1e5i+yF/tGkbd6K/E1BQl26dTmAKV36cA5/tIgSklB6ZyTEUaHco6fg7s7szRP/4p1iwGjdvnMmHJUIScZrLGJPsPJWo9bmn8OKGbwkzPadT/Rt5PFVl+8IT11a6GOuKKR42h+EnksZ99zcPNbLtx06aCNgQd+Z63jdmPBYflzVPnCpGx/ZoaC53OAA8qZPLbpFkV6kqgU6/sUHi7/evK5JKqtBxucoXYVIWV5xbDOPqd46DwrxE+qVdMVWNuqInooy2qdpPjlLkf71DOPKbqD2ptgPPvOgRw2M1yuNpRq38LWBDHsTkxMhygfgv/IJgZ5QNFToGuXeN3e3alVNojoQB+brXSuh1iGT2YVQpUKzP8qb0+5Ko5qWDLTQtqGV8ZwukNh7fxssS/ppRcdE3DzV/BZ/tlfhCYTDIG18lc01PmOt2p5Wsse9tDKK9zBh9GOSml74SJu3AVncxtKM2UPl8wBptdlDq8kJWtiu27AhQVJHX0rcDRUDR0HT51QhRJBiwqsKN6xe5rfee7e3DBMKnNte81hkQbtETF69I="
     - secure: "Wzi4rVVg/9Z6C9+o6ziKWVqprVgIymruY/mlJiOXuXOKQAvfg1DatUPA2EkfAp2kZlgMN0d5EzXUaqmIRBGX7C2n5+PZOPb2f+koHHwpUW9iOUgDraGiVjg2yxoRPfdw8L4kscFMa6WQm+++PONMJmvt1aoeAtMouwEB/dehdVVNCDn+9O5dOVnPOEYdeEMqpZbgf9CrfyOyGQylMMc1WsVR0gC8fChHYXfe1wUHlDy/Dls72jX5jJXf7Monin3EfXwuqG+X/h4eNpIrpiZ4ED7OagvukAUIYzfV4aQ44V6ZE8eZ4z7cRVeeOUrdcq/vauBixCc2yw7bdgpHMCg6zt96BV42ILQ1j6d8lBHmRUB6gQKM+anMGmOMFYYo4cs/RvJUC2dF+gPQARVpWfO9xGQCHBCx6jgui+tYWt0wGwD7TaAZORtlVrgFSWU1vNtn3hQVSMdNjqUdKHo0Ax7gePrleOLBOkf/l7hLtcPsC6HvDu92MxxEjEUcEtBHHLeH60NUwQSPnpOhRjmnhMaChwQXVhgfhMipopKu4jcrCSlFSub7p9W9wfvjgOrKap4+FGZ6ZhlJvCMyeegPUR5vD3SJ4lGrNrPjYkxLtaAuxLcSTwHkPsxd6cdOjsHzggiRKky43z+THBUgKIWnFZkBO/Z2oglGR8RM8xiyNiQLdhc="
     - secure: "kl17PjObCfB84mQXudkDIS3+tmJ0vxSN8oc0f9g6vXTP0Dn31qenT9OQ/zOwlqQ+NMM6M5PXkCy4JER6LRifgR1+PYcBKwIaYm3eWDKsfJI8eWSdpNpgNWSdnswsxBat8OiPIM/I1ypFX7dNs++pn5vCo2RCUErz5k5X7qNGag7Sw4U6oS/OpNkGsVUKoLjquw4Za+ZVDonfKQq9YpaLRXSLeDjNFHDuh2GqueVz7el6COMBLMZcHfvMUs24AhhgQWKh918znlRIieDKAvsS7SxzkmBXw7zeiMFGcH86ZtblfexmgdtSW8OHzToyL6beTR3jQGUbV5o2h0PvTH1Bo43zD1YQBTmBbXpIFlxGr/dLtvZjT/JMBoU28AZzTivAwrqllMrMlf9qaYCUW8ihfYI818KuApBqf0VIS4sHI7DyuWElgtEhvEXP+Ny5d4ynWtwpBORPLuV1fTjrqOL67VueeJzcHIjM8TfjZrBINGq2uex9JC1TfMxmnXbuYCxzhRRbkf3WPdQLIjDX/FXCpT9kDufgszZ+53oEuhE8p/GgljEoqhMdKrh/hu+Aq+ieUMEIqhnvQvS2ak6rJOmCNjdiEDDM52oFYi/8iZG+gs5QATkGOsMCYTbnPPcjp3ClbGUQL3gq4dnPtMBxEODF9g7Ars4noJeth5rx83ZTbxA="
 
@@ -60,6 +66,7 @@ script:
 before_deploy:
   - cp src/app/ngConstants.js.prod src/app/ngConstants.js
   - gulp build
+  - npm install -g cf-blue-green
 
 deploy:
   - provider: cloudfoundry
@@ -71,7 +78,7 @@ deploy:
     organization: bengt-org
     space: development
   - provider: script
-    script: cf-backend.sh
+    script: cf-blue-green-travis
     on:
       branch: master
 
