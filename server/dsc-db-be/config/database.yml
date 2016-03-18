@@ -12,11 +12,14 @@ development: &development
   port: 32768
   username: postgres
   database: development
-#  password: pguser_password
 
-test:
+test: &test
   <<: *development
   database: testing
+
+integration:
+ <<: *test
+ database: integration
 
 production:
   <<: *default
