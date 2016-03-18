@@ -77,7 +77,7 @@ Posgresql > 9.4
 
 This project uses Postgres Full Text Search functionalities so ensure that the version you will be using have that capability.
  
- ## Continous Delivery
+## Continous Delivery
 
 This project use Travis CI. Refer to the .travis.yml. After the test script tasks passes successfully it will start the deployment to CF.
 
