@@ -28,6 +28,7 @@
 #  exits_ipos        :string
 #  founded           :string
 #  contact_urls      :jsonb
+#  deleted_at        :datetime
 #
 
 class Investor < ApplicationRecord

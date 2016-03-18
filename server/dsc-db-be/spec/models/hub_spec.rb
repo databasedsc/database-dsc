@@ -19,6 +19,7 @@
 #  contact_urls         :jsonb
 #  events               :text             default([]), is an Array
 #  alumni               :jsonb
+#  deleted_at           :datetime
 #
 
 require 'rails_helper'

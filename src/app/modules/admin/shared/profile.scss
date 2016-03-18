@@ -1,14 +1,15 @@
 dsc-tag {
   border: 2px solid #00b3ee;
+  display: inline-block;
   padding: 4px;
-  margin-right: 20px;
+  margin: 10px;
   color: #00b3ee;
   font: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 700;
 }
 
 dsc-tag:hover {
-  background-color: #ecfdfd;
+  background-color: #efeef6;
   cursor: pointer;
 }
 

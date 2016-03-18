@@ -31,6 +31,10 @@
 #  long_description      :text
 #  founded               :string
 #  acquisitions          :text
+#  video_url             :text
+#  website               :string
+#  social_accounts       :jsonb
+#  deleted_at            :datetime
 #
 
 class Company < ApplicationRecord

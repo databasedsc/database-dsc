@@ -15,12 +15,13 @@
 #  employees               :integer
 #  events_space            :boolean          default(FALSE)
 #  functions               :text             default([]), is an Array
-#  linkedin                :string
-#  facebook                :string
-#  twitter                 :string
 #  long_description        :text
 #  events_space_qualifiers :text
 #  next_event              :string
+#  deleted_at              :datetime
+#  website                 :string
+#  social_accounts         :jsonb
+#  categories              :string           default([]), is an Array
 #
 
 require 'rails_helper'

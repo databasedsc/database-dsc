@@ -97,11 +97,23 @@
 </div>
 <div class="row text-center">
   <div ng-show="$ctrl.company.funding_rounds" id="funding">
-    <h1>Funding</h1>
-    <div class="row rounds" ng-repeat="round in $ctrl.company.funding_rounds">
-      <div class="round">
-        <p>{{round.amount}}, {{round.date}}, {{round.type}}</p>
-      </div>
-    </div>
+
+    <h3>Funding</h3>
+
+    <ul class="">
+      <li ng-repeat="round in $ctrl.company.funding_rounds">
+        <ul class="">
+          <li>{{round.amount}}</li>
+          <li>{{round.date}}</li>
+          <li>{{round.type}}</li>
+        </ul>
+      </li>
+    </ul>
+
+    <!--<div class="row rounds" ng-repeat="round in $ctrl.company.funding_rounds">-->
+      <!--<div class="round">-->
+        <!--<p>{{round.amount}}, {{round.date}}, {{round.type}}</p>-->
+      <!--</div>-->
+    <!--</div>-->
   </div>
 </div>
