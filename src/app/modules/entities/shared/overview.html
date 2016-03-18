@@ -9,7 +9,10 @@
 
   <p id="description">{{$ctrl.entity.long_description}}</p>
 
-  <p ng-show="$ctrl.entity.website"><a href="$ctrl.entity.website">{{$ctrl.entity.website}}</a></p>
+  <div class="row">
+    <p ng-show="$ctrl.entity.website" class="col-md-4"><a href="$ctrl.entity.website">{{$ctrl.entity.website}}</a></p>
+    <social-links class="col-md-4" social-accounts="$ctrl.entity.social_accounts"></social-links>
+  </div>
 
   <div ng-show="$ctrl.entity.categories" id="tags">
     <p class="v-center">
@@ -21,7 +24,5 @@
   </div>
     </p>
   </div>
-
-  <social-links social-accounts="$ctrl.entity.social_accounts"></social-links>
 </div>
 <div class="col-lg-4 video-player"><iframe width="400" height="250" ng-src="{{trustSrc($ctrl.entity.video_url)}}" frameborder="0" allowfullscreen></iframe></div>
