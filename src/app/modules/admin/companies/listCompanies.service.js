@@ -1,7 +1,7 @@
-(function(){
+(function() {
   angular
     .module('admin')
-    .service('listCompaniesService', function(serverUrl, $http){
+    .service('listCompaniesService', function(serverUrl, $http) {
 
       this.getAll = function() {
         var basePath = serverUrl + '/admin/companies';

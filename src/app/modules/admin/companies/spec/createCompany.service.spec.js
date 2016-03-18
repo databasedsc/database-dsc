@@ -1,21 +1,35 @@
-describe('Service: admin.createCompany.service', function () {
+(function () {
+  'use strict';
 
-    // load the service's module
+  describe('createCompanyService', function () {
+    var $httpBackend,
+      createCompanyService;
+
     beforeEach(module('admin'));
 
-    // instantiate service
-    var service;
-
-    //update the injection
-    beforeEach(inject(function (_createCompanyService_) {
-        service = _createCompanyService_;
+    beforeEach(module('admin', function($provide) {
+      $provide.constant('serverUrl', 'http://test.example.com');
     }));
 
-    /**
-     * @description
-     * Sample test case to check if the service is injected properly
-     * */
-    it('should be injected and defined', function () {
-        expect(service).toBeDefined();
+    beforeEach(inject(function (_$httpBackend_, _createCompanyService_) {
+      $httpBackend = _$httpBackend_;
+      createCompanyService = _createCompanyService_;
+    }));
+
+    describe('#create', function() {
+      it('calls the server to create companies', function () {
+        var company = { name: 'Company', short_description: 'Very short desc.'}
+
+        $httpBackend.expectPOST('http://test.example.com/admin/companies').respond(company);
+
+        createCompanyService.create(company).then(function (response) {
+          expect(response.data).toEqual(company);
+        });
+
+        $httpBackend.flush();
+      });
+
     });
-});
+
+  });
+})();

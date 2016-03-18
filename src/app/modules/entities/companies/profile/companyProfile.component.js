@@ -7,7 +7,7 @@
       templateUrl: 'app/modules/entities/companies/profile/profile.html',
       controller: 'CompaniesProfilesController'
     })
-    .controller('CompaniesProfilesController', function($scope, $stateParams, getCompanyService, $sce) {
+    .controller('CompaniesProfilesController', function($scope, $stateParams, getCompanyService) {
       var controller = this;
       this.getCompanyService = getCompanyService;
 

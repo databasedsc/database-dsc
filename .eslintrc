@@ -11,6 +11,8 @@
     "inject": true
   },
   "rules": {
-    "angular/controller-as-vm": 0
+    "angular/controller-as-vm": 0,
+    "no-unused-vars": 1,
+    "angular/controller-as": 1
   }
 }
