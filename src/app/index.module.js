@@ -20,6 +20,7 @@
       'admin',
       'searchCompanies',
       'searchResults',
+      'profile',
       'companyProfile',
       'searchMultinationals',
       'multinationalProfile',

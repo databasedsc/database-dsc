@@ -1,38 +1,5 @@
 <div class="row">
-  <div id="overview" class="col-lg-8">
-    <div ng-show="$ctrl.multinational.logo" class="">
-      <img ng-src="{{$ctrl.multinational.logo}}" class="logo img-responsive">
-    </div>
-    <label ng-show="$ctrl.multinational.name" for="name" class="col-xs-12">
-      Name:
-      <p id="name">{{$ctrl.multinational.name}}</p>
-    </label>
-    <label ng-show="$ctrl.multinational.short_description" for="short_description" class="col-xs-12">
-      Tagline:
-      <p id="short_description">{{$ctrl.multinational.short_description}}</p>
-    </label>
-    <label ng-show="$ctrl.multinational.long_description" for="long_description" class="col-xs-12">
-      Description:
-      <p id="long_description">{{$ctrl.multinational.long_description}}</p>
-    </label>
-
-  </div>
-  <div class="col-lg-4 video-player"></div>
-</div>
-
-<div class="text-center">
-  <a ng-show="$ctrl.multinational.facebook"
-     href="http://www.facebook.com/{{$ctrl.multinational.facebook}}">
-      <i class="fa fa-facebook-square fa-2x"></i>
-  </a>
-  <a ng-show="$ctrl.multinational.twitter"
-     href="http://www.twitter.com/{{$ctrl.multinational.twitter}}">
-      <i class="fa fa-twitter-square fa-2x"></i>
-  </a>
-  <a ng-show="$ctrl.multinational.linkedin"
-     href="http://www.linkedin.com/company/{{$ctrl.multinational.linkedin}}">
-      <i class="fa fa-linkedin-square fa-2x"></i>
-  </a>
+  <profile-overview entity="$ctrl.multinational"></profile-overview>
 </div>
 
 <div class="row">
