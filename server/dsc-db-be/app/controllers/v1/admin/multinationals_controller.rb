@@ -58,6 +58,7 @@ module V1
           :video_url,
           :website,
           :events_space_qualifiers,
+          :custom_field_1, :custom_field_2, :custom_field_3, :custom_field_4,
           categories: [],
           functions: [],
           startup_packages: [],
