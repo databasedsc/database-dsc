@@ -36,14 +36,14 @@
         Regions:
         <p id="regions">{{$ctrl.investor.regions}}</p>
       </label>
+    </div>
+    <div class="right col-xs-6">
       <label ng-show="$ctrl.investor.office_locations" for="office-locations" class="col-xs-12">
         Office Locations:
         <div id="office-locations" ng-repeat="office in $ctrl.investor.office_locations">
           <p>{{office}}</p>
         </div>
       </label>
-    </div>
-    <div class="right col-xs-6">
       <label ng-show="$ctrl.investor.contact" for="contact" class="col-xs-12">
         Contact:
         <p id="contact">{{$ctrl.investor.contact}}</p>
@@ -51,10 +51,6 @@
       <label ng-show="$ctrl.investor.contact_email" for="contact-email" class="col-xs-12">
         Contact Number:
         <p id="contact-email">{{$ctrl.investor.contact_email}}</p>
-      </label>
-      <label ng-show="$ctrl.investor.deal_structure" for="deal-structure" class="col-xs-12">
-        Deal Structure:
-        <p id="deal-structure">{{$ctrl.investor.deal_structure}}</p>
       </label>
       <label ng-show="$ctrl.investor.preferred_contact" for="preferred-contact" class="col-xs-12">
         Preferred Contact:

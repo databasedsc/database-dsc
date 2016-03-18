@@ -15,7 +15,6 @@
 #  updated_at        :datetime         not null
 #  funding_types     :text             default([]), is an Array
 #  investment_size   :integer
-#  deal_structure    :text
 #  funds_raised      :string
 #  regions           :text
 #  contact           :string
@@ -57,7 +56,6 @@ class Investor < ApplicationRecord
       tsearch: { any_word: true }
     }
 
-  scope :deal_structure, -> (deal_structure) { where(deal_structure: deal_structure) }
   scope :greater_than, -> (column, limit) { where "#{column} > #{limit}" }
   scope :range_scope, -> (column, range) { where("#{column}" => range) }
 

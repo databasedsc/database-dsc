@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe Investor, :type => :model do
   [
     :name, :logo, :headquarters, :founders, :short_description, :local_office, :tags, :office_locations,
-    :funding_types, :investment_size, :deal_structure
+    :funding_types, :investment_size
   ].each do |column|
     it { should have_db_column(column) }
   end
