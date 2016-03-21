@@ -66,9 +66,12 @@ RSpec.describe 'V1::Multinationals', :type => :request do
 
       FactoryGirl.create(
         :multinational,
-        employees: 10000
+        employees: 10000,
+        short_description: 'Nothing to do with the previous company business'
       )
-      FactoryGirl.create(:multinational)
+      FactoryGirl.create(:multinational,
+        short_description: 'Nothing to do with the previous company business'
+      )
     end
 
 
