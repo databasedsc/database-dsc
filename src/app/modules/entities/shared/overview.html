@@ -1,28 +1,36 @@
-<div id="overview" class="col-lg-8">
+<div id="overview" class="row">
 
-  <div ng-show="$ctrl.entity.logo" class="">
-    <img ng-src="{{$ctrl.entity.logo}}" class="logo img-responsive">
-  </div>
-  <h1 ng-show="$ctrl.entity.name" id="name">{{$ctrl.entity.name}}</h1>
+  <img class="col-md-2 logo img-responsive" ng-show="$ctrl.entity.logo" ng-src="{{$ctrl.entity.logo}}">
 
-  <h2 ng-show="$ctrl.entity.short_description" id="tagline">{{$ctrl.entity.short_description}}</h2>
+  <div class="col-md-6">
 
-  <p id="description">{{$ctrl.entity.long_description}}</p>
+    <h1 ng-show="$ctrl.entity.name" id="name">{{$ctrl.entity.name}}</h1>
 
-  <div class="row">
-    <p ng-show="$ctrl.entity.website" class="col-md-4"><a href="$ctrl.entity.website">{{$ctrl.entity.website}}</a></p>
-    <social-links class="col-md-4" social-accounts="$ctrl.entity.social_accounts"></social-links>
-  </div>
+    <p ng-show="$ctrl.entity.short_description" class="tagline">{{$ctrl.entity.short_description}}</p>
 
-  <div ng-show="$ctrl.entity.categories" id="tags">
-    <p class="v-center">
-    <div class="row">
-      <label ng-show="$ctrl.entity.categories" class="col-md-2">Tags:</label>
-      <div class="col-md-10">
-        <dsc-tag ng-repeat="tag in $ctrl.entity.categories.split(',')" class="text-center">{{tag}}</dsc-tag>
+    <p id="description">{{$ctrl.entity.long_description}}</p>
+
+    <div id="links">
+      <p ng-show="$ctrl.entity.website" class="pull-left"><a href="$ctrl.entity.website">{{$ctrl.entity.website}}</a></p>
+
+      <social-links class="pull-right" social-accounts="$ctrl.entity.social_accounts"></social-links>
+    </div>
+
+    <div ng-show="$ctrl.entity.categories" id="tags">
+      <div class="row">
+        <label ng-show="$ctrl.entity.categories" class="col-md-1">Tags:</label>
+        <div class="col-md-11">
+          <dsc-tag ng-repeat="tag in $ctrl.entity.categories.split(',')" class="text-center">{{tag}}</dsc-tag>
+        </div>
       </div>
+    </div>
   </div>
-    </p>
+
+  <!--<div class="col-md-4 video-player"><iframe width="400" height="250" ng-src="{{trustSrc($ctrl.entity.video_url)}}" frameborder="0" allowfullscreen></iframe></div>-->
+  <div class="col-md-4 video-player">
+    <div class="embed-container">
+      <iframe ng-src="{{trustSrc($ctrl.entity.video_url)}}" frameborder="0" allowfullscreen></iframe>
+    </div>
   </div>
+
 </div>
-<div class="col-lg-4 video-player"><iframe width="400" height="250" ng-src="{{trustSrc($ctrl.entity.video_url)}}" frameborder="0" allowfullscreen></iframe></div>

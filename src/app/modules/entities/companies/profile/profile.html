@@ -1,119 +1,132 @@
-<div class="row">
-
-    <!--<p>{{$ctrl.company.website}}</p>-->
-
-    <!--<social-links social-accounts="$ctrl.company.social_accounts"></social-links>-->
-
-  <!--</div>-->
-
+<div class="container">
   <profile-overview entity="$ctrl.company"></profile-overview>
-</div>
-<div class="row">
-  <div id="details">
-    <div class="left col-xs-6">
-      <label ng-show="$ctrl.company.acquisitions" for="acquisitions" class="col-xs-12">
-        Acquisitions
-        <p id="acquisitions">{{$ctrl.company.acquisitions}}</p>
-      </label>
-      <label ng-show="$ctrl.company.headquarters" for="headquarters" class="col-xs-12">
-        Headquarters:
-        <p id="headquarters">{{$ctrl.company.headquarters}}</p>
-      </label>
-      <label ng-show="$ctrl.company.formerly_known_as" for="formerly-known-as" class="col-xs-12">
-        Formerly known as:
-        <p id="formerly-known-as">{{$ctrl.company.formerly_known_as}}</p>
-      </label>
-      <label ng-show="$ctrl.company.founders" for="founders" class="col-xs-12">
-        Founders:
-        <p id="founders">{{$ctrl.company.founders}}</p>
-      </label>
-      <label ng-show="$ctrl.company.founded" for="founded" class="col-xs-12">
-        Founded:
-        <p id="founded">{{$ctrl.company.founded}}</p>
-      </label>
-      <label ng-show="$ctrl.company.employees" for="employees" class="col-xs-12">
-        Employees:
-        <p id="employees">{{$ctrl.company.employees}}</p>
-      </label>
-      <label ng-show="$ctrl.company.funding_stage" for="funding-stage" class="col-xs-12">
-        Funding Stage:
-        <p id="funding-stage">{{$ctrl.company.funding_stage}}</p>
-      </label>
-      <label ng-show="$ctrl.company.funding_amount" for="total-funding" class="col-xs-12">
-        Total Funding:
-        <p id="total-funding">{{$ctrl.company.funding_amount | shortFmt:0}}</p>
-      </label>
-      <label ng-show="$ctrl.company.geo_markets" for="geographical-markets" class="col-xs-12">
-        Geographical Markets:
-        <p id="geographical-markets">{{$ctrl.company.geo_markets | regionCodeToHuman}}</p>
-      </label>
-      <label ng-show="$ctrl.company.office_locations" for="office-locations" class="col-xs-12">
-        Office Locations:
-        <div id="office-locations">
-          <p>{{$ctrl.company.office_locations}}</p>
-        </div>
-      </label>
-    </div>
-    <div class="right col-xs-6">
-      <label ng-show="$ctrl.company.business_model" for="business-model" class="col-xs-12">
-        Business Model:
-        <p id="business-model">{{$ctrl.company.business_model}}</p>
-      </label>
-      <label ng-show="$ctrl.company.product_stage" for="product-stage" class="col-xs-12">
-        Product Stage:
-        <p id="product-stage">{{$ctrl.company.product_stage}}</p>
-      </label>
-      <label ng-show="$ctrl.company.contact" for="contact" class="col-xs-12">
-        Contact:
-        <p id="contact">{{$ctrl.company.contact}}</p>
-      </label>
-      <label ng-show="$ctrl.company.company_stage" for="company-stage" class="col-xs-12">
-        Company Stage:
-        <p id="company-stage">{{$ctrl.company.company_stage}}</p>
-      </label>
-      <label ng-show="$ctrl.company.incubator" for="incubator-accelerator" class="col-xs-12">
-        Incubator/Accelerator:
-        <p id="incubator-accelerator">{{$ctrl.company.incubator}}</p>
-      </label>
-      <label ng-show="$ctrl.company.operational_status" for="status" class="col-xs-12">
-        Status:
-        <p id="status">{{$ctrl.company.operational_status}}</p>
-      </label>
-      <label ng-show="$ctrl.company.government_assistance" for="government-assistance" class="col-xs-12">
-        Government Assistance:
-        <p id="government-assistance">{{$ctrl.company.government_assistance}}</p>
-      </label>
-      <label ng-show="$ctrl.company.selling" for="selling-already" class="col-xs-12">
-        Selling already:
-        <p id="selling-already">{{$ctrl.company.selling | booleanToHuman}}</p>
-      </label>
-      <label ng-show="$ctrl.company.looking_for" for="looking-for" class="col-xs-12">
-        We're looking for:
-        <p id="looking-for">{{$ctrl.company.looking_for}}</p>
-      </label>
+  <dl id="details" class="col-xs-offset-0 col-md-offset-2">
+    <div ng-show="$ctrl.company.acquisitions">
+      <dt>Acquisitions:</dt>
+      <dd>{{$ctrl.company.acquisitions}}</dd>
     </div>
 
-  </div>
+    <div ng-show="$ctrl.company.headquarters">
+      <dt>Headquarters:</dt>
+      <dd>{{$ctrl.company.headquarters}}</dd>
+    </div>
+
+    <div ng-show="$ctrl.company.formerly_known_as">
+      <dt>Formerly known as:</dt>
+      <dd>{{$ctrl.company.formerly_known_as}}</dd>
+    </div>
+
+    <div ng-show="$ctrl.company.founders">
+      <dt>Founders:</dt>
+      <dd>{{$ctrl.company.founders}}</dd>
+    </div>
+
+    <div ng-show="$ctrl.company.founded">
+      <dt>Founded:</dt>
+      <dd>{{$ctrl.company.founded}}</dd>
+    </div>
+
+    <div ng-show="$ctrl.company.employees">
+      <dt>Employees:</dt>
+      <dd>{{$ctrl.company.employees}}</dd>
+    </div>
+
+    <div ng-show="$ctrl.company.funding_stage">
+      <dt>Funding Stage:</dt>
+      <dd>{{$ctrl.company.funding_stage}}</dd>
+    </div>
+
+    <div ng-show="$ctrl.company.funding_amount ">
+      <dt>Total Funding:</dt>
+      <dd>{{$ctrl.company.funding_amount | shortFmt:0}}</dd>
+    </div>
+
+    <div ng-show="$ctrl.company.geo_markets ">
+      <dt>Geographical Markets:</dt>
+      <dd>{{$ctrl.company.geo_markets | regionCodeToHuman}}</dd>
+    </div>
+
+    <div ng-show="$ctrl.company.office_locations">
+      <dt>Office Locations:</dt>
+      <dd>{{$ctrl.company.office_locations}}</dd>
+    </div>
+
+    <div ng-show="$ctrl.company.business_model">
+      <dt>Business Model:</dt>
+      <dd>{{$ctrl.company.business_model}}</dd>
+    </div>
+
+    <div ng-show="$ctrl.company.product_stage">
+
+      <dt>Product Stage:</dt>
+      <dd>{{$ctrl.company.product_stage}}</dd>
+    </div>
+
+    <div ng-show="$ctrl.company.contact">
+
+      <dt>Contact:</dt>
+      <dd>{{$ctrl.company.contact}}</dd>
+    </div>
+
+    <div ng-show="$ctrl.company.company_stage">
+
+      <dt>Company Stage:</dt>
+      <dd>{{$ctrl.company.company_stage}}</dd>
+    </div>
+
+    <div ng-show="$ctrl.company.incubator">
+
+      <dt>Incubator/Accelerator:</dt>
+      <dd>{{$ctrl.company.incubator}}</dd>
+    </div>
+
+    <div ng-show="$ctrl.company.operational_status">
+
+      <dt>Status:</dt>
+      <dd>{{$ctrl.company.operational_status}}</dd>
+    </div>
+
+    <div ng-show="$ctrl.company.government_assistance">
+
+      <dt>Government Assistance:</dt>
+      <dd>{{$ctrl.company.government_assistance}}</dd>
+    </div>
+
+    <div ng-show="$ctrl.company.selling ">
+
+      <dt>Selling already:</dt>
+      <dd>{{$ctrl.company.selling | booleanToHuman}}</dd>
+    </div>
+
+    <div ng-show="$ctrl.company.looking_for">
+
+      <dt>We're looking for:</dt>
+      <dd>{{$ctrl.company.looking_for}}</dd>
+    </div>
+
+  </dl>
+
 </div>
-<div class="row text-center">
-  <div ng-show="$ctrl.company.funding_rounds" id="funding">
 
-    <h3>Funding</h3>
 
-    <ul class="">
-      <li ng-repeat="round in $ctrl.company.funding_rounds">
-        <ul class="">
-          <li>{{round.amount}}</li>
-          <li>{{round.date}}</li>
-          <li>{{round.type}}</li>
-        </ul>
-      </li>
-    </ul>
+<div class="row dsc-timeline">
+  <div ng-show="$ctrl.company.funding_rounds" id="funding" class="container">
 
-    <!--<div class="row rounds" ng-repeat="round in $ctrl.company.funding_rounds">-->
-      <!--<div class="round">-->
-        <!--<p>{{round.amount}}, {{round.date}}, {{round.type}}</p>-->
-      <!--</div>-->
-    <!--</div>-->
+    <h2>Funding</h2>
+
+    <div class="row" ng-repeat="round in $ctrl.company.funding_rounds">
+      <div class="col-xs-3 col-sm-3 col-xs-offset-2 col-sm-offset-3 text-right">
+        {{round.date}}
+      </div>
+      <div class="col-xs-2 col-sm-1">
+        <div class="dsc-timeline-dot"></div>
+        <div ng-show="!$last" class="dsc-timeline-line"></div>
+      </div>
+      <div class="col-xs-4 col-sm-3text-left">
+        <p>{{round.type}}</p>
+        <p>{{round.amount}}</p>
+      </div>
+    </div>
+
   </div>
 </div>
