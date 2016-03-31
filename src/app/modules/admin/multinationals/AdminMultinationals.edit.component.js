@@ -34,6 +34,10 @@
         });
       }
 
+      controller.addCategory = function(tag) {
+        controller.multinational.categories.push(tag.text);
+      };
+
 
       getMultinationalService.find($stateParams.id).then(function(multinational) {
         controller.multinational = multinational;
@@ -42,6 +46,7 @@
       });
 
       this.update = function() {
+        console.log(controller.multinational.categories);
         setFunctions();
         updateMultinationalService.update(controller.multinational).then(function() {
           Notification.success("Multinational has been updated successfully.");

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160318115244) do
+ActiveRecord::Schema.define(version: 20160330140608) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -132,7 +132,6 @@ ActiveRecord::Schema.define(version: 20160318115244) do
     t.datetime "created_at",                              null: false
     t.datetime "updated_at",                              null: false
     t.boolean  "emea_hq",                 default: false
-    t.text     "startup_packages",        default: [],                 array: true
     t.integer  "employees"
     t.boolean  "events_space",            default: false
     t.text     "functions",               default: [],                 array: true
@@ -147,6 +146,7 @@ ActiveRecord::Schema.define(version: 20160318115244) do
     t.text     "custom_field_2"
     t.text     "custom_field_3"
     t.text     "custom_field_4"
+    t.jsonb    "startup_packages"
   end
 
   add_index "multinationals", ["deleted_at"], name: "index_multinationals_on_deleted_at", using: :btree

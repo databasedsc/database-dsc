@@ -134,10 +134,26 @@ unless Rails.env.production?
         "local_office": "4 Grand Canal Street Lower, Dublin 2, Dublin",
         "emea_hq": true,
         "startup_packages": [
-          "FbStart is a new program from Facebook designed to help early stage mobile startups build and grow their apps https://fbstart.com/",
-          "Facebook Developer Community https://www.facebook.com/groups/fbdevelopers/ This is a forum for developers building on the Facebook platform to interact with the Facebook team and other developers.",
-          "Support for Advertisers https://www.facebook.com/business/resources",
-          "Training modules for Advertising on Facebook  https://www.facebook.com/blueprint"
+          {
+            "name": "FbStart",
+            "description": "FbStart is a new program from Facebook designed to help early stage mobile startups build and grow their apps https://fbstart.com/",
+            "link": "",
+          },
+          {
+            "name": "Facebook Developer Community",
+            "description": "This is a forum for developers building on the Facebook platform to interact with the Facebook team and other developers.",
+            "link": "https://www.facebook.com/groups/fbdevelopers/",
+          },
+          {
+            "name": "Support for Advertisers",
+            "description": "Support for Advertisers https://www.facebook.com/business/resources",
+            "link": "",
+          },
+          {
+            "name": "Training Modules",
+            "description": "Training modules for Advertising on Facebook  https://www.facebook.com/blueprint",
+            "link": "",
+          }
         ],
         "events_space": true,
         "employees": 722,
@@ -156,7 +172,17 @@ unless Rails.env.production?
         "headquarters": "Redmond, WA",
         "local_office": "Block B, Atrium Building, Sandyford Industrial Estate, Carmangall Road, Dublin 18",
         "emea_hq": true,
-        "startup_packages": ["BizSpark is available to startups that are privately held, less than 5-years-old and earn less than $1M in annual revenue. Note that the Startup must be actively engaged in development of a software-based product or service that will form a core piece of its current or intended business. Signup and learn more here: http://aka.ms/BizSparkIreland", "BizSpark Plus is Microsoft’s program for mature startups who have been nominated for BizSpark Plus by Microsoft accelerator partners. In addition to BizSpark program benefits, startups enrolled in the BizSpark program receive $10k per month in Azure usage credits for a total of $120K over the course of the 1-year program.  Both Enterprise Ireland HPSU startups and NDRC Startups are currently approved as a Microsoft accelerator partners for BizSpark Plus. If you have startups who like to take advantage of BizSpark Plus, please contact Michael Meagher and Ryan Mesches from Microsoft Ireland and they can arrange a 1-1 to see if you qualify.", "BizSpark members receive up to $750 per month of free Microsoft Azure cloud services for 3 years: that’s $150 per month each for up to 5 developers. Azure works with OSS/Linux and familiar technologies such as Linux, Ruby, Python, Java and PHP. Along with access to over $100,000 worth of software to build and test their software solutions."],
+        "startup_packages": [
+    {
+      "name": "BizSpark",
+    "link": "",
+    "description": "BizSpark is available to startups that are privately held, less than 5-years-old and earn less than $1M in annual revenue. Note that the Startup must be actively engaged in development of a software-based product or service that will form a core piece of its current or intended business. Signup and learn more here: http://aka.ms/BizSparkIreland."
+  },
+    {
+      "name": "BizSpark Plus",
+    "link": "",
+    "description": "BizSpark Plus is Microsoft’s program for mature startups who have been nominated for BizSpark Plus by Microsoft accelerator partners. In addition to BizSpark program benefits, startups enrolled in the BizSpark program receive $10k per month in Azure usage credits for a total of $120K over the course of the 1-year program.  Both Enterprise Ireland HPSU startups and NDRC Startups are currently approved as a Microsoft accelerator partners for BizSpark Plus. If you have startups who like to take advantage of BizSpark Plus, please contact Michael Meagher and Ryan Mesches from Microsoft Ireland and they can arrange a 1-1 to see if you qualify. BizSpark members receive up to $750 per month of free Microsoft Azure cloud services for 3 years: that’s $150 per month each for up to 5 developers. Azure works with OSS/Linux and familiar technologies such as Linux, Ruby, Python, Java and PHP. Along with access to over $100,000 worth of software to build and test their software solutions."
+  }],
         "events_space": true,
         "employees": 1646,
         "functions": ['S', 'CS', 'F', 'L', 'SI', 'E', 'M', 'RD', 'MF', 'O', 'PD']
@@ -169,7 +195,13 @@ unless Rails.env.production?
         "headquarters": "New York, NY",
         "local_office": "Le Pole House 1st Floor, Ship Street Great, Dublin 8",
         "emea_hq": true,
-        "startup_packages": ["We provide an exclusive discount for startups creating a website."],
+        "startup_packages": [
+    {
+      "name": "Startup Discount",
+    "link": "squarespace.com",
+    "description": "We provide an exclusive discount for startups creating a website.",
+  }
+    ],
         "events_space": true,
         "employees": 115,
         "functions": ['S', 'CS', 'F', 'L', 'SI', 'E', 'M', 'O']

@@ -34,6 +34,7 @@ class Multinational < ApplicationRecord
       short_description: 'B',
       headquarters: 'C',
       local_office: 'D',
+      categories: 'A'
     },
     using: {
       tsearch: {any_word: true, prefix: true, dictionary: 'english'}
