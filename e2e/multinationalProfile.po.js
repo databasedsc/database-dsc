@@ -6,7 +6,7 @@ var MultinationalProfilePage = function() {
   // sections
   this.overview = element(by.id('overview'));
   this.details = element(by.id('details'));
-  this.startupPackages = element(by.id('startup-packages'));
+  this.startupPackages = element(by.css('.startup-packages'));
   this.tags = element(by.id('tags'));
 };
 
