@@ -3,31 +3,37 @@
   <profile-overview entity="$ctrl.hub"></profile-overview>
 
   <div class="row">
-    <div id="details">
-      <div class="left col-xs-6">
-        <label ng-show="$ctrl.hub.hub_type" for="hub_type" class="col-xs-12">
-          Hub Type:
-          <p id="hub_type">{{$ctrl.hub.hub_type | join: ', '}}</p>
-        </label>
-        <label ng-show="$ctrl.hub.founded" for="founded" class="col-xs-12">
-          Founded
-          <p id="founded">{{$ctrl.hub.founded}}</p>
-        </label>
-        <label ng-show="$ctrl.hub.contact" for="contact" class="col-xs-12">
-          Contact:
-          <p id="contact">{{$ctrl.hub.contact}}</p>
-        </label>
-        <label ng-show="$ctrl.hub.contact_detail" for="contact_detail" class="col-xs-12">
-          Contact Details:
-          <p id="contact_detail">{{$ctrl.hub.contact_detail}}</p>
-        </label>
+    <!--<div id="details" class="col-xs-offset-0 col-xs-12 col-md-offset-2 col-md-10">-->
+    <div id="details" class="col-md-offset-2">
+      <div ng-show="$ctrl.hub.hub_type">
+        <h4>Hub Type:</h4>
+        <p>{{$ctrl.hub.hub_type | join: ', '}}</p>
+      </div>
+      <div ng-show="$ctrl.hub.founded">
+        <h4>Founded</h4>
+        <p>{{$ctrl.hub.founded}}</p>
+      </div>
+      <div ng-show="$ctrl.hub.contact">
+        <h4>Contact:</h4>
+        <p>{{$ctrl.hub.contact}}</p>
+      </div>
+      <div ng-show="$ctrl.hub.contact_detail">
+        <h4>Contact Details:</h4>
+        <p>{{$ctrl.hub.contact_detail}}</p>
       </div>
     </div>
   </div>
-  <div class="row">
-    <h3>Alumni</h3>
-    <div id="alumni">
-      <p>{{$ctrl.hub.alumni | join: ', '}}</p>
+</div>
+
+<div ng-show="!!$ctrl.hub.alumni.length" class="alumni">
+  <div class="container">
+    <div class="row">
+      <h2 class="col-md-2">Alumni</h2>
+      <div class="col-md-10 company-list">
+        <div ng-repeat="company in $ctrl.hub.alumni">
+          <p>{{company}}</p>
+        </div>
+      </div>
     </div>
   </div>
 </div>

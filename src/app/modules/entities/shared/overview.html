@@ -27,7 +27,7 @@
   </div>
 
   <!--<div class="col-md-4 video-player"><iframe width="400" height="250" ng-src="{{trustSrc($ctrl.entity.video_url)}}" frameborder="0" allowfullscreen></iframe></div>-->
-  <div class="col-md-4 video-player">
+  <div class="col-md-4 video-player" ng-show="$ctrl.entity.video_url">
     <div class="embed-container">
       <iframe ng-src="{{trustSrc($ctrl.entity.video_url)}}" frameborder="0" allowfullscreen></iframe>
     </div>

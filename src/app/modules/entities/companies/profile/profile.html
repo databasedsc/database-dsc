@@ -1,111 +1,111 @@
 <div class="container">
   <profile-overview entity="$ctrl.company"></profile-overview>
   <div class="row">
-    <dl id="details" class="col-xs-offset-0 col-md-offset-2 col-xs-12 col-md-10">
+    <div id="details" class="col-md-offset-2">
       <div ng-show="$ctrl.company.acquisitions">
-        <dt>Acquisitions:</dt>
-        <dd>{{$ctrl.company.acquisitions}}</dd>
+        <h4>Acquisitions:</h4>
+        <p>{{$ctrl.company.acquisitions}}</p>
       </div>
 
       <div ng-show="$ctrl.company.headquarters">
-        <dt>Headquarters:</dt>
-        <dd>{{$ctrl.company.headquarters}}</dd>
+        <h4>Headquarters:</h4>
+        <p>{{$ctrl.company.headquarters}}</p>
       </div>
 
       <div ng-show="$ctrl.company.formerly_known_as">
-        <dt>Formerly known as:</dt>
-        <dd>{{$ctrl.company.formerly_known_as}}</dd>
+        <h4>Formerly known as:</h4>
+        <p>{{$ctrl.company.formerly_known_as}}</p>
       </div>
 
       <div ng-show="$ctrl.company.founders">
-        <dt>Founders:</dt>
-        <dd>{{$ctrl.company.founders}}</dd>
+        <h4>Founders:</h4>
+        <p>{{$ctrl.company.founders}}</p>
       </div>
 
       <div ng-show="$ctrl.company.founded">
-        <dt>Founded:</dt>
-        <dd>{{$ctrl.company.founded}}</dd>
+        <h4>Founded:</h4>
+        <p>{{$ctrl.company.founded}}</p>
       </div>
 
       <div ng-show="$ctrl.company.employees">
-        <dt>Employees:</dt>
-        <dd>{{$ctrl.company.employees}}</dd>
+        <h4>Employees:</h4>
+        <p>{{$ctrl.company.employees}}</p>
       </div>
 
       <div ng-show="$ctrl.company.funding_stage">
-        <dt>Funding Stage:</dt>
-        <dd>{{$ctrl.company.funding_stage}}</dd>
+        <h4>Funding Stage:</h4>
+        <p>{{$ctrl.company.funding_stage}}</p>
       </div>
 
       <div ng-show="$ctrl.company.funding_amount ">
-        <dt>Total Funding:</dt>
-        <dd>{{$ctrl.company.funding_amount | shortFmt:0}}</dd>
+        <h4>Total Funding:</h4>
+        <p>{{$ctrl.company.funding_amount | shortFmt:0}}</p>
       </div>
 
       <div ng-show="$ctrl.company.geo_markets ">
-        <dt>Geographical Markets:</dt>
-        <dd>{{$ctrl.company.geo_markets | regionCodeToHuman}}</dd>
+        <h4>Geographical Markets:</h4>
+        <p>{{$ctrl.company.geo_markets | regionCodeToHuman}}</p>
       </div>
 
       <div ng-show="$ctrl.company.office_locations">
-        <dt>Office Locations:</dt>
-        <dd>{{$ctrl.company.office_locations}}</dd>
+        <h4>Office Locations:</h4>
+        <p>{{$ctrl.company.office_locations}}</p>
       </div>
 
       <div ng-show="$ctrl.company.business_model">
-        <dt>Business Model:</dt>
-        <dd>{{$ctrl.company.business_model}}</dd>
+        <h4>Business Model:</h4>
+        <p>{{$ctrl.company.business_model}}</p>
       </div>
 
       <div ng-show="$ctrl.company.product_stage">
 
-        <dt>Product Stage:</dt>
-        <dd>{{$ctrl.company.product_stage}}</dd>
+        <h4>Product Stage:</h4>
+        <p>{{$ctrl.company.product_stage}}</p>
       </div>
 
       <div ng-show="$ctrl.company.contact">
 
-        <dt>Contact:</dt>
-        <dd>{{$ctrl.company.contact}}</dd>
+        <h4>Contact:</h4>
+        <p>{{$ctrl.company.contact}}</p>
       </div>
 
       <div ng-show="$ctrl.company.company_stage">
 
-        <dt>Company Stage:</dt>
-        <dd>{{$ctrl.company.company_stage}}</dd>
+        <h4>Company Stage:</h4>
+        <p>{{$ctrl.company.company_stage}}</p>
       </div>
 
       <div ng-show="$ctrl.company.incubator">
 
-        <dt>Incubator/Accelerator:</dt>
-        <dd>{{$ctrl.company.incubator}}</dd>
+        <h4>Incubator/Accelerator:</h4>
+        <p>{{$ctrl.company.incubator}}</p>
       </div>
 
       <div ng-show="$ctrl.company.operational_status">
 
-        <dt>Status:</dt>
-        <dd>{{$ctrl.company.operational_status}}</dd>
+        <h4>Status:</h4>
+        <p>{{$ctrl.company.operational_status}}</p>
       </div>
 
       <div ng-show="$ctrl.company.government_assistance">
 
-        <dt>Government Assistance:</dt>
-        <dd>{{$ctrl.company.government_assistance}}</dd>
+        <h4>Government Assistance:</h4>
+        <p>{{$ctrl.company.government_assistance}}</p>
       </div>
 
       <div ng-show="$ctrl.company.selling ">
 
-        <dt>Selling already:</dt>
-        <dd>{{$ctrl.company.selling | booleanToHuman}}</dd>
+        <h4>Selling already:</h4>
+        <p>{{$ctrl.company.selling | booleanToHuman}}</p>
       </div>
 
       <div ng-show="$ctrl.company.looking_for">
 
-        <dt>We're looking for:</dt>
-        <dd>{{$ctrl.company.looking_for}}</dd>
+        <h4>We're looking for:</h4>
+        <p>{{$ctrl.company.looking_for}}</p>
       </div>
 
-    </dl>
+    </div>
   </div>
 </div>
 

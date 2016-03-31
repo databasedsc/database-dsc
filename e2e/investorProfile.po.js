@@ -7,7 +7,7 @@ var InvestorProfilePage = function() {
   this.overview = element(by.id('overview'));
   this.tags = element(by.id('tags'));
   this.details = element(by.id('details'));
-  this.portfolio = element(by.id('portfolio'));
+  this.portfolio = element(by.css('.portfolio'));
 };
 
 module.exports = new InvestorProfilePage();

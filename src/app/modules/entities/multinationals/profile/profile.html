@@ -2,52 +2,52 @@
   <profile-overview entity="$ctrl.multinational"></profile-overview>
 
   <div class="row">
-    <dl id="details" class="col-xs-offset-0 col-xs-12 col-md-offset-2 col-md-10">
+    <div id="details" class="col-md-offset-2">
       <div ng-show="$ctrl.multinational.headquarters">
-        <dt>Headquarters:</dt>
-        <dd>{{$ctrl.multinational.headquarters}}</dd>
+        <h4>Headquarters:</h4>
+        <p>{{$ctrl.multinational.headquarters}}</p>
       </div>
 
       <div ng-show="$ctrl.multinational.emea_hq">
-        <dt>EMEA HQ in Ireland:</dt>
-        <dd>{{$ctrl.multinational.emea_hq ? 'Yes' : 'No'}}</dd>
+        <h4>EMEA HQ in Ireland:</h4>
+        <p>{{$ctrl.multinational.emea_hq ? 'Yes' : 'No'}}</p>
       </div>
 
       <div ng-show="$ctrl.multinational.local_office">
-        <dt>Irish Office Location:</dt>
-        <dd>{{$ctrl.multinational.local_office}}</dd>
+        <h4>Irish Office Location:</h4>
+        <p>{{$ctrl.multinational.local_office}}</p>
       </div>
 
       <div ng-show="$ctrl.multinational.employees">
-        <dt>Employees in Ireland:</dt>
-        <dd>{{$ctrl.multinational.employees}}</dd>
+        <h4>Employees in Ireland:</h4>
+        <p>{{$ctrl.multinational.employees}}</p>
       </div>
 
       <div ng-show="$ctrl.multinational.functions">
-        <dt>Functions in Ireland:</dt>
-        <dd>
+        <h4>Functions in Ireland:</h4>
+        <p>
           <span ng-repeat="functionCode in $ctrl.multinational.functions">
             {{functionCode | functionCodeToHuman}}{{$last ? ' ' : ','}}
           </span>
-        </dd>
+        </p>
       </div>
 
       <div ng-show="$ctrl.multinational.events_space">
-        <dt>Event space:</dt>
-        <dd>{{$ctrl.multinational.events_space ? 'Yes' : 'No'}}</dd>
+        <h4>Event space:</h4>
+        <p>{{$ctrl.multinational.events_space ? 'Yes' : 'No'}}</p>
       </div>
 
       <div ng-show="$ctrl.multinational.events_space_qualifiers">
-        <dt>Event space qualifiers:</dt>
-        <dd>{{$ctrl.multinational.events_space_qualifiers}}</dd>
+        <h4>Event space qualifiers:</h4>
+        <p>{{$ctrl.multinational.events_space_qualifiers}}</p>
       </div>
 
       <div ng-show="$ctrl.multinational.next_event">
-        <dt>Next event:</dt>
-        <dd>{{$ctrl.multinational.next_event}}</dd>
+        <h4>Next event:</h4>
+        <p>{{$ctrl.multinational.next_event}}</p>
       </div>
 
-    </dl>
+    </div>
   </div>
 
 </div>

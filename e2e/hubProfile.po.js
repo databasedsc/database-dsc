@@ -6,7 +6,7 @@ var HubProfilePage = function() {
   // sections
   this.overview = element(by.id('overview'));
   this.details = element(by.id('details'));
-  this.alumni = element(by.id('alumni'));
+  this.alumni = element(by.css('.alumni'));
 };
 
 module.exports = new HubProfilePage();
