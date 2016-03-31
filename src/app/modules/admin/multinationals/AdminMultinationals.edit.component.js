@@ -46,7 +46,6 @@
       });
 
       this.update = function() {
-        console.log(controller.multinational.categories);
         setFunctions();
         updateMultinationalService.update(controller.multinational).then(function() {
           Notification.success("Multinational has been updated successfully.");

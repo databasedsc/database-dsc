@@ -85,7 +85,7 @@ RSpec.describe 'V1::Hubs', :type => :request do
       let!(:hubs) do
         FactoryGirl.create(
           :hub,
-          application_deadline: 5.days.from_now
+          application_deadline: 10.hours.from_now
         )
         FactoryGirl.create(
           :hub,

@@ -27,10 +27,10 @@ class Hub < ApplicationRecord
   include PgSearch
 
   APPLICATION_DEADLINES_DATE_RANGES = {
-    'This Month' => DateTime.now...DateTime.now.end_of_month,
-    'Next Month' => DateTime.now...DateTime.now.next_month.end_of_month,
-    'Next Three Months' => DateTime.now...3.months.from_now,
-    'Over Three Months' => DateTime.now...5.years.from_now
+    'This Month' => DateTime.now..DateTime.now.end_of_month,
+    'Next Month' => DateTime.now..DateTime.now.next_month.end_of_month,
+    'Next Three Months' => DateTime.now..3.months.from_now,
+    'Over Three Months' => DateTime.now..5.years.from_now
   }
 
   pg_search_scope :search,
