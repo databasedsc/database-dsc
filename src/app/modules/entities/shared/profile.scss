@@ -1,7 +1,7 @@
 //you can delete this
 
 div {
-  //background-color: rgba(0,0,0,.02);
+  //background-color: rgba(0,0,0,.03);
 }
 
 //not this
@@ -20,7 +20,7 @@ dl > div {
   -webkit-column-break-inside: avoid;
   overflow: hidden; /* fix for Firefox */
   break-inside: avoid-column;
-  padding-bottom: 1em;
+  padding-bottom: 1.5em;
 }
 
 dl {
@@ -85,11 +85,6 @@ dsc-tag:hover {
   color: #cacaca;
 }
 
-#details {
-  //margin-top: 80px;
-  font-size: medium;
-}
-
 
 .embed-container {
   position: relative;
@@ -145,20 +140,39 @@ social-links {
   }
 }
 
+
+.startup-packages {
+  color: white;
+  background-color: $brand-blue;
+  overflow-x: hidden;
+
+  a, h3 {
+    font-weight: bold;
+    color: white;
+  }
+
+  .tile {
+    margin-bottom: 2em;
+  }
+}
+
+#funding > .row > div {
+  padding: 0;
+}
+
 .dsc-timeline {
+  color: white;
+  background-color: $brand-blue;
+  overflow-x: hidden;
 
-  h2 {
-
+  p{
+    margin-top: -4px;
   }
 
   p:nth-child(1) {
     font-weight: bold;
     margin-bottom: 0px;
   }
-
-  color: white;
-  min-height: 400px;
-  background-color: $brand-blue;
 }
 
 .dsc-timeline-dot {
@@ -175,4 +189,31 @@ social-links {
   height: 100px;
   overflow: hidden;
   background-color: $gray-dark;
+}
+
+.triangle-border {
+  text-align: center;
+  display: inline-block;
+  background-color: white;
+  color: $brand-blue;
+  position:relative;
+  padding:0 .5em;
+  border-radius:5px;
+  top:-4px;
+}
+
+/* creates the triangle */
+.triangle-border.right:after {
+  content:"";
+  position:absolute;
+  border-style:solid;
+  /* reduce the damage in FF3.0 */
+  display:block;
+  width:0;
+  top:5px; /* value = (:before top) + (:before border-top) - (:after border-top) */
+  bottom:auto;
+  left:auto;
+  right:-12px; /* value = - border-left-width - border-right-width */
+  border-width:9px 0 9px 16px;
+  border-color:transparent #fff;
 }

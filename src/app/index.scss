@@ -12,7 +12,9 @@ $icon-font-path: "../../bower_components/bootstrap-sass/assets/fonts/bootstrap/"
 // bower:scss
 // endbower
 
-
+html {
+  background-color: $gray-darker;
+}
 
 .browsehappy {
   margin: 0.2em 0;
@@ -97,38 +99,24 @@ $icon-font-path: "../../bower_components/bootstrap-sass/assets/fonts/bootstrap/"
     }
   }
 
-  .main-wrapper{
-    min-height: 1258px;
-    //min-height: 100% !important;
-    margin-bottom: -142px;
-  }
-
   .main-wrapper:after {
     content: "";
     display: block;
   }
-  .site-footer, .main-wrapper:after {
-    height: 142px;
-  }
 
   footer {
-    background: #383737;
-    border: 1px solid #424040;
-    box-shadow: 0px 2px 4px 0px rgba(135,119,119,0.50);
-    .footer-wrapper {
-      height: 142px;
-    }
+    background: $gray-darker;
+    padding: 2em 0;
+
     .supporters {
       color: white;
-      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-      font-weight: bold;
       font-size: 24px;
     }
   }
 
   .navbar {
     min-height: 150px !important;
-    background: #383737 !important;
+    background: $gray-darker !important;
 
   }
 
@@ -143,7 +131,7 @@ $icon-font-path: "../../bower_components/bootstrap-sass/assets/fonts/bootstrap/"
         font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
       }
       > a:hover {
-        color: #DF0386 !important;
+        color: $brand-pink !important;
       }
     }
   }
@@ -174,13 +162,13 @@ $icon-font-path: "../../bower_components/bootstrap-sass/assets/fonts/bootstrap/"
 
   a.no-decoration * {
     text-decoration: none !important;
-    color: #666666;
+    color: $gray-dark;
   }
 
   a.no-decoration:hover {
     text-decoration: none !important;
     * {
-      color: #66afe9;
+      color: $brand-blue;
     }
   }
 
@@ -198,7 +186,7 @@ td.actions{
 tr.deleted {
   color: #cacaca;
   text-decoration: line-through;
-  font-style: italic;
+font-style: italic;
 }
 
 /**

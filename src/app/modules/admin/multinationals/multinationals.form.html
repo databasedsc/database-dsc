@@ -117,8 +117,24 @@
           <div class="row">
             <div class="col-sm-12">
               <div class="form-group">
-                <label for="description">Package Description</label>
-                <textarea ng-model="$ctrl.multinational.startup_packages[$index]" id="description" class="form-control"></textarea>
+                <label for="package-name">Package Name</label>
+                <textarea ng-model="p.name" id="package-name" class="form-control"></textarea>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="form-group">
+                <label for="package-description">Package Description</label>
+                <textarea ng-model="p.description" id="package-description" class="form-control"></textarea>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="form-group">
+                <label for="package-link">Package Link</label>
+                <textarea ng-model="p.link" id="package-link" class="form-control"></textarea>
               </div>
             </div>
           </div>

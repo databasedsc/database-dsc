@@ -1,131 +1,136 @@
 <div class="container">
   <profile-overview entity="$ctrl.company"></profile-overview>
-  <dl id="details" class="col-xs-offset-0 col-md-offset-2">
-    <div ng-show="$ctrl.company.acquisitions">
-      <dt>Acquisitions:</dt>
-      <dd>{{$ctrl.company.acquisitions}}</dd>
-    </div>
+  <div class="row">
+    <dl id="details" class="col-xs-offset-0 col-md-offset-2 col-xs-12 col-md-10">
+      <div ng-show="$ctrl.company.acquisitions">
+        <dt>Acquisitions:</dt>
+        <dd>{{$ctrl.company.acquisitions}}</dd>
+      </div>
 
-    <div ng-show="$ctrl.company.headquarters">
-      <dt>Headquarters:</dt>
-      <dd>{{$ctrl.company.headquarters}}</dd>
-    </div>
+      <div ng-show="$ctrl.company.headquarters">
+        <dt>Headquarters:</dt>
+        <dd>{{$ctrl.company.headquarters}}</dd>
+      </div>
 
-    <div ng-show="$ctrl.company.formerly_known_as">
-      <dt>Formerly known as:</dt>
-      <dd>{{$ctrl.company.formerly_known_as}}</dd>
-    </div>
+      <div ng-show="$ctrl.company.formerly_known_as">
+        <dt>Formerly known as:</dt>
+        <dd>{{$ctrl.company.formerly_known_as}}</dd>
+      </div>
 
-    <div ng-show="$ctrl.company.founders">
-      <dt>Founders:</dt>
-      <dd>{{$ctrl.company.founders}}</dd>
-    </div>
+      <div ng-show="$ctrl.company.founders">
+        <dt>Founders:</dt>
+        <dd>{{$ctrl.company.founders}}</dd>
+      </div>
 
-    <div ng-show="$ctrl.company.founded">
-      <dt>Founded:</dt>
-      <dd>{{$ctrl.company.founded}}</dd>
-    </div>
+      <div ng-show="$ctrl.company.founded">
+        <dt>Founded:</dt>
+        <dd>{{$ctrl.company.founded}}</dd>
+      </div>
 
-    <div ng-show="$ctrl.company.employees">
-      <dt>Employees:</dt>
-      <dd>{{$ctrl.company.employees}}</dd>
-    </div>
+      <div ng-show="$ctrl.company.employees">
+        <dt>Employees:</dt>
+        <dd>{{$ctrl.company.employees}}</dd>
+      </div>
 
-    <div ng-show="$ctrl.company.funding_stage">
-      <dt>Funding Stage:</dt>
-      <dd>{{$ctrl.company.funding_stage}}</dd>
-    </div>
+      <div ng-show="$ctrl.company.funding_stage">
+        <dt>Funding Stage:</dt>
+        <dd>{{$ctrl.company.funding_stage}}</dd>
+      </div>
 
-    <div ng-show="$ctrl.company.funding_amount ">
-      <dt>Total Funding:</dt>
-      <dd>{{$ctrl.company.funding_amount | shortFmt:0}}</dd>
-    </div>
+      <div ng-show="$ctrl.company.funding_amount ">
+        <dt>Total Funding:</dt>
+        <dd>{{$ctrl.company.funding_amount | shortFmt:0}}</dd>
+      </div>
 
-    <div ng-show="$ctrl.company.geo_markets ">
-      <dt>Geographical Markets:</dt>
-      <dd>{{$ctrl.company.geo_markets | regionCodeToHuman}}</dd>
-    </div>
+      <div ng-show="$ctrl.company.geo_markets ">
+        <dt>Geographical Markets:</dt>
+        <dd>{{$ctrl.company.geo_markets | regionCodeToHuman}}</dd>
+      </div>
 
-    <div ng-show="$ctrl.company.office_locations">
-      <dt>Office Locations:</dt>
-      <dd>{{$ctrl.company.office_locations}}</dd>
-    </div>
+      <div ng-show="$ctrl.company.office_locations">
+        <dt>Office Locations:</dt>
+        <dd>{{$ctrl.company.office_locations}}</dd>
+      </div>
 
-    <div ng-show="$ctrl.company.business_model">
-      <dt>Business Model:</dt>
-      <dd>{{$ctrl.company.business_model}}</dd>
-    </div>
+      <div ng-show="$ctrl.company.business_model">
+        <dt>Business Model:</dt>
+        <dd>{{$ctrl.company.business_model}}</dd>
+      </div>
 
-    <div ng-show="$ctrl.company.product_stage">
+      <div ng-show="$ctrl.company.product_stage">
 
-      <dt>Product Stage:</dt>
-      <dd>{{$ctrl.company.product_stage}}</dd>
-    </div>
+        <dt>Product Stage:</dt>
+        <dd>{{$ctrl.company.product_stage}}</dd>
+      </div>
 
-    <div ng-show="$ctrl.company.contact">
+      <div ng-show="$ctrl.company.contact">
 
-      <dt>Contact:</dt>
-      <dd>{{$ctrl.company.contact}}</dd>
-    </div>
+        <dt>Contact:</dt>
+        <dd>{{$ctrl.company.contact}}</dd>
+      </div>
 
-    <div ng-show="$ctrl.company.company_stage">
+      <div ng-show="$ctrl.company.company_stage">
 
-      <dt>Company Stage:</dt>
-      <dd>{{$ctrl.company.company_stage}}</dd>
-    </div>
+        <dt>Company Stage:</dt>
+        <dd>{{$ctrl.company.company_stage}}</dd>
+      </div>
 
-    <div ng-show="$ctrl.company.incubator">
+      <div ng-show="$ctrl.company.incubator">
 
-      <dt>Incubator/Accelerator:</dt>
-      <dd>{{$ctrl.company.incubator}}</dd>
-    </div>
+        <dt>Incubator/Accelerator:</dt>
+        <dd>{{$ctrl.company.incubator}}</dd>
+      </div>
 
-    <div ng-show="$ctrl.company.operational_status">
+      <div ng-show="$ctrl.company.operational_status">
 
-      <dt>Status:</dt>
-      <dd>{{$ctrl.company.operational_status}}</dd>
-    </div>
+        <dt>Status:</dt>
+        <dd>{{$ctrl.company.operational_status}}</dd>
+      </div>
 
-    <div ng-show="$ctrl.company.government_assistance">
+      <div ng-show="$ctrl.company.government_assistance">
 
-      <dt>Government Assistance:</dt>
-      <dd>{{$ctrl.company.government_assistance}}</dd>
-    </div>
+        <dt>Government Assistance:</dt>
+        <dd>{{$ctrl.company.government_assistance}}</dd>
+      </div>
 
-    <div ng-show="$ctrl.company.selling ">
+      <div ng-show="$ctrl.company.selling ">
 
-      <dt>Selling already:</dt>
-      <dd>{{$ctrl.company.selling | booleanToHuman}}</dd>
-    </div>
+        <dt>Selling already:</dt>
+        <dd>{{$ctrl.company.selling | booleanToHuman}}</dd>
+      </div>
 
-    <div ng-show="$ctrl.company.looking_for">
+      <div ng-show="$ctrl.company.looking_for">
 
-      <dt>We're looking for:</dt>
-      <dd>{{$ctrl.company.looking_for}}</dd>
-    </div>
+        <dt>We're looking for:</dt>
+        <dd>{{$ctrl.company.looking_for}}</dd>
+      </div>
 
-  </dl>
-
+    </dl>
+  </div>
 </div>
 
 
-<div class="row dsc-timeline">
-  <div ng-show="$ctrl.company.funding_rounds" id="funding" class="container">
+<div ng-show="$ctrl.company.funding_rounds" class="dsc-timeline">
+  <div id="funding" class="container">
 
-    <h2>Funding</h2>
+  <h2>Funding</h2>
 
     <div class="row" ng-repeat="round in $ctrl.company.funding_rounds">
+
       <div class="col-xs-3 col-sm-3 col-xs-offset-2 col-sm-offset-3 text-right">
-        {{round.date}}
+        <span class="triangle-border right">{{round.date}}</span>
       </div>
+
       <div class="col-xs-2 col-sm-1">
         <div class="dsc-timeline-dot"></div>
-        <div ng-show="!$last" class="dsc-timeline-line"></div>
+        <div ng-show="(!$last || ($last && $first))" class="dsc-timeline-line"></div>
       </div>
+
       <div class="col-xs-4 col-sm-3text-left">
         <p>{{round.type}}</p>
         <p>{{round.amount}}</p>
       </div>
+
     </div>
 
   </div>

@@ -2,65 +2,65 @@
   <profile-overview entity="$ctrl.multinational"></profile-overview>
 
   <div class="row">
-    <div id="details">
-
-      <div class="col-lg-6">
-        <label ng-show="$ctrl.multinational.headquarters" for="headquarters" class="col-xs-12">
-          Headquarters:
-          <p id="headquarters">{{$ctrl.multinational.headquarters}}</p>
-        </label>
-        <label ng-show="$ctrl.multinational.emea_hq" for="emea_hq" class="col-xs-12">
-          EMEA HQ in Ireland:
-          <p id="emea_hq">{{$ctrl.multinational.emea_hq ? 'Yes' : 'No'}}</p>
-        </label>
-        <label ng-show="$ctrl.multinational.local_office" for="local_office" class="col-xs-12">
-          Irish Office Location:
-          <p id="local_office">{{$ctrl.multinational.local_office}}</p>
-        </label>
-        <!--<label ng-show="$ctrl.multinational.restrictedContactOption" for="restrictedContactOption" class="col-xs-12">-->
-        <!--Restricted contact option:-->
-        <!--<p id="restrictedContactOption">-</p>-->
-        <!--</label>-->
-        <label ng-show="$ctrl.multinational.employees" for="employees" class="col-xs-12">
-          Employees in Ireland:
-          <p id="employees">{{$ctrl.multinational.employees}}</p>
-        </label>
-
+    <dl id="details" class="col-xs-offset-0 col-xs-12 col-md-offset-2 col-md-10">
+      <div ng-show="$ctrl.multinational.headquarters">
+        <dt>Headquarters:</dt>
+        <dd>{{$ctrl.multinational.headquarters}}</dd>
       </div>
 
-      <div class="col-lg-6">
-        <label ng-show="$ctrl.multinational.functions" for="functions" class="col-xs-12">
-          Functions in Ireland:
-          <p>
-            <!--{{($ctrl.multinational.functions).join(', ')}}-->
+      <div ng-show="$ctrl.multinational.emea_hq">
+        <dt>EMEA HQ in Ireland:</dt>
+        <dd>{{$ctrl.multinational.emea_hq ? 'Yes' : 'No'}}</dd>
+      </div>
+
+      <div ng-show="$ctrl.multinational.local_office">
+        <dt>Irish Office Location:</dt>
+        <dd>{{$ctrl.multinational.local_office}}</dd>
+      </div>
+
+      <div ng-show="$ctrl.multinational.employees">
+        <dt>Employees in Ireland:</dt>
+        <dd>{{$ctrl.multinational.employees}}</dd>
+      </div>
+
+      <div ng-show="$ctrl.multinational.functions">
+        <dt>Functions in Ireland:</dt>
+        <dd>
           <span ng-repeat="functionCode in $ctrl.multinational.functions">
             {{functionCode | functionCodeToHuman}}{{$last ? ' ' : ','}}
           </span>
-          </p>
-        </label>
-        <label ng-show="$ctrl.multinational.events_space" for="events_space" class="col-xs-12">
-          Event space:
-          <p id="events_space">{{$ctrl.multinational.events_space ? 'Yes' : 'No'}}</p>
-        </label>
-        <label ng-show="$ctrl.multinational.events_space_qualifiers" for="events_space_qualifiers" class="col-xs-12">
-          Event space qualifiers:
-          <p id="events_space_qualifiers">{{$ctrl.multinational.events_space_qualifiers}}</p>
-        </label>
-        <label ng-show="$ctrl.multinational.next_event" for="next_event" class="col-xs-12">
-          Next event:
-          <p id="next_event">{{$ctrl.multinational.next_event}}</p>
-        </label>
+        </dd>
       </div>
 
-    </div>
+      <div ng-show="$ctrl.multinational.events_space">
+        <dt>Event space:</dt>
+        <dd>{{$ctrl.multinational.events_space ? 'Yes' : 'No'}}</dd>
+      </div>
+
+      <div ng-show="$ctrl.multinational.events_space_qualifiers">
+        <dt>Event space qualifiers:</dt>
+        <dd>{{$ctrl.multinational.events_space_qualifiers}}</dd>
+      </div>
+
+      <div ng-show="$ctrl.multinational.next_event">
+        <dt>Next event:</dt>
+        <dd>{{$ctrl.multinational.next_event}}</dd>
+      </div>
+
+    </dl>
   </div>
 
-  <div class="row text-center">
-    <div id="startup-packages">
-      <h1>Start Up Packages</h1>
-      <div class="row rounds">
-        <div class="round" ng-repeat="round in $ctrl.multinational.startup_packages">
-          <p>{{round}}</p>
+</div>
+
+<div ng-show="$ctrl.multinational.startup_packages" class="startup-packages">
+  <div class="container">
+    <div class="row">
+      <h2 class="col-md-2">Start Up Packages</h2>
+      <div class="col-md-10 row">
+        <div class="tile col-md-6" ng-repeat="package in $ctrl.multinational.startup_packages">
+          <a href="{{package.link}}"><h3>{{package.name}}</h3></a>
+          <p>{{package.description}}</p>
+          <a ng-show="{{package.link}}" href="{{package.link}}">More &#155;</a>
         </div>
       </div>
     </div>
