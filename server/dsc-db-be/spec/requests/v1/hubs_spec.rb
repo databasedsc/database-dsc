@@ -81,7 +81,7 @@ RSpec.describe 'V1::Hubs', :type => :request do
       end
     end
 
-    describe 'application deadline' do
+    xdescribe 'application deadline' do
       let!(:hubs) do
         FactoryGirl.create(
           :hub,
