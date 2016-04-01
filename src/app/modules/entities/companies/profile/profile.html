@@ -49,7 +49,7 @@
 
       <div ng-show="$ctrl.company.office_locations">
         <h4>Office Locations:</h4>
-        <p>{{$ctrl.company.office_locations}}</p>
+        <p ng-repeat="location in $ctrl.company.office_locations">{{location}}</p>
       </div>
 
       <div ng-show="$ctrl.company.business_model">

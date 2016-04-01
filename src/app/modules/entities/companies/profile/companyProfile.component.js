@@ -13,6 +13,7 @@
 
       this.company = getCompanyService.find($stateParams.id).then(function(company) {
         controller.company = company;
+        controller.company.office_locations = controller.company.office_locations.split(';');
       });
     });
 
