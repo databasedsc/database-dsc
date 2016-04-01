@@ -13,36 +13,42 @@
         employees: {
           type: 'dropdown',
           id: 'employees',
-          label: 'Employees',
+          label: 'No. of Employees',
           selectedValue: '',
-          values: ['', '1-5', '6-10', '11-25', '26-50', '50-100', '101-250', '250-500', '>500']
+          noSelectionString: 'Any number',
+          values: ['1-5', '6-10', '11-25', '26-50', '50-100', '101-250', '250-500', '>500']
         },
         fundingStage: {
           type: 'dropdown',
           id: 'funding-stage',
-          label: 'Funding',
+          label: 'Funding Stage',
           selectedValue: '',
-          values: ['', 'Bootstrapped', 'Pre-seed', 'Seed', 'Series A', 'Series B', 'Series C', 'Series C+', 'Acquired', 'PublicStage']
+          noSelectionString: 'Any stage',
+          values: ['Bootstrapped', 'Pre-seed', 'Seed', 'Series A', 'Series B', 'Series C', 'Series C+', 'Acquired', 'PublicStage']
         },
         fundingAmount: {
           type: 'dropdown',
           id: 'funding-amount',
           label: 'Funding Amount',
           selectedValue: '',
-          values: ['', '0-50k', '51k-500k', '501k-1m', '1m-5m', '5m-10m', '10m-25m', '25m-50m', '50m-100m', '>100m']
+          noSelectionString: 'Any amount',
+          values: ['0-50k', '51k-500k', '501k-1m', '1m-5m', '5m-10m', '10m-25m', '25m-50m', '50m-100m', '>100m']
         },
         productStage: {
           type: 'dropdown',
           id: 'product-stage',
           label: 'Product Stage',
           selectedValue: '',
-          values: ['', 'Development', 'Complete']
+          noSelectionString: 'Any stage',
+          values: ['Development', 'Complete']
         },
         geographicalMarkets: {
           type: 'checklist',
           id: 'geographical-markets',
           label: 'Geographical Markets',
           selectedValue: '',
+          selectedString: 'Any market',
+          noSelectionString: 'Any market',
           values: [
             { label: 'Ireland', code: 'IE'},
             { label: 'United Kingdom', code: 'UK' },
@@ -58,21 +64,24 @@
           id: 'business-model',
           label: 'Business Model',
           selectedValue: '',
-          values: ['', 'B2B', 'B2C', 'B2B2C']
+          noSelectionString: 'Any model',
+          values: ['B2B', 'B2C', 'B2B2C']
         },
         companyStage: {
           type: 'dropdown',
           id: 'company-stage',
           label: 'Company Stage',
           selectedValue: '',
-          values: ['', 'Early-stage', 'Growth', 'Late-stage', 'Public', 'Acquired']
+          noSelectionString: 'Any stage',
+          values: ['Early-stage', 'Growth', 'Late-stage', 'Public', 'Acquired']
         },
         operationalStatus: {
           type: 'dropdown',
           id: 'operational-status',
           label: 'Status',
           selectedValue: '',
-          values: ['', 'Active', 'Inactive']
+          noSelectionString: 'Any status',
+          values: ['Active', 'Inactive']
         }
       };
     })

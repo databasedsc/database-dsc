@@ -7,20 +7,26 @@
 
     <!--dropdown-->
 
-    <select ng-if="filter.type == 'dropdown'"
-            ng-init="filter.selectedValue = filter.values[0]" name="{{filter.id}}" id="{{filter.id}}"
-            class="form-control col-xs-12"
-            ng-options="option for option in filter.values"
+    <select ng-if="filter.type == 'dropdown'"  name="{{filter.id}}" id="{{filter.id}}"
+            class="form-control col-xs-12 {{filter.selectedValue == '' ? 'default-option' : ''}}"
             ng-model="filter.selectedValue" ng-change="$ctrl.search()">
+      <option ng-show="filter.noSelectionString" value="">{{filter.noSelectionString}}</option>
+      <option ng-repeat="option in filter.values" value="{{option}}">{{option}}</option>
     </select>
+    <!--ng-options="option for option in filter.values"-->
 
     <!--checkbox-->
 
     <div ng-if="filter.type == 'checklist'">
-      <div class="checkbox" ng-repeat="value in filter.values">
-        <label>
-          <input id="{{functions.label}}" type="checkbox" ng-model="filter.selectedValue[value.code]" ng-change="$ctrl.search()">{{value.label}}
-        </label>
+
+      <button class="multiselect-dropdown-button {{filter.selectedString == filter.noSelectionString ? 'default-option' : ''}}" ng-click="show=!show">{{filter.selectedString}}</button>
+
+      <div class="multiselect-dropdown" ng-show="show">
+        <div class="checkbox" ng-repeat="value in filter.values">
+          <label>
+            <input type="checkbox" ng-model="filter.selectedValue[value.code]" ng-change="$ctrl.update(filter)">{{value.label}}
+          </label>
+        </div>
       </div>
     </div>
 

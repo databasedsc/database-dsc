@@ -189,6 +189,28 @@ tr.deleted {
 font-style: italic;
 }
 
+
+select,
+.multiselect-dropdown-button{
+  -webkit-appearance:none;
+  border:1px solid #9B9B9B !important;
+  border-radius: 0 !important;
+  background-color: white;
+  width: 100%;
+  text-align: left;
+  height: 40px;
+}
+
+.default-option {
+  color: $gray-light !important;
+}
+
+
+.multiselect-dropdown {
+  background-color: rgba(0,0,0,.1);
+}
+
+
 /**
  *  Do not remove the comments below. It's the markers used by gulp-inject to inject
  *  all your sass files automatically

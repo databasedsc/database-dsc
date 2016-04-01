@@ -13,8 +13,10 @@
         fundingTypes: {
           type: 'checklist',
           id: 'funding-type',
-          label: 'Type',
+          label: 'Type of Funding',
           selectedValue: '',
+          noSelectionString: 'Any type',
+          selectedString: 'Any type',
           values: [
             { label: 'Pre-seed', code: 'PS'},
             { label: 'Seed', code: 'S' },
@@ -51,7 +53,8 @@
           id: 'deal-structure',
           label: 'Deal Structure',
           selectedValue: '',
-          values: ['', 'Equity (Minority)', 'Equity (Majority)', 'Venture Debt', 'Convertible Debt', 'Mezzanine']
+          noSelectionString: 'Any structure',
+          values: ['Equity (Minority)', 'Equity (Majority)', 'Venture Debt', 'Convertible Debt', 'Mezzanine']
         }
       };
     })

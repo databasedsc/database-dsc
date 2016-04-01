@@ -15,6 +15,8 @@
           id: 'hubType',
           label: 'Type',
           selectedValue: '',
+          noSelectionString: 'All types',
+          selectedString: 'All types',
           values: [
             {label: 'Education', code: 'E'},
             {label: 'Co-working', code: 'CW'},
@@ -27,7 +29,8 @@
           id: 'applicationDeadlines',
           label: 'Application Deadlines',
           selectedValue: '',
-          values: ['', 'This Month', 'Next Month', 'Next Three Months', 'Over 3 Months']
+          noSelectionString: 'Any deadlines',
+          values: ['This Month', 'Next Month', 'Next Three Months', 'Over 3 Months']
         }
       };
     })

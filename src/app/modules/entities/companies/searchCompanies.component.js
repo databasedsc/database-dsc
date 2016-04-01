@@ -19,7 +19,7 @@
         var obj = {};
         Object.keys(controller.filters).map(function(filterName) {
           obj[filterName] = controller.filters[filterName].selectedValue;
-        })
+        });
         return obj;
       }
 
