@@ -29,7 +29,7 @@ describe('SearchResults', function() {
     describe('search field', function() {
       it('should display name, logo and short description when searched by hub name', function() {
         page.searchField.sendKeys("NDRC");
-        page.searchButton.click();
+        page.searchField.sendKeys(protractor.Key.ENTER);
 
         page.searchResults.then(function(items) {
           expect(items.length).toEqual(1);
@@ -42,7 +42,7 @@ describe('SearchResults', function() {
       it('should display the specific hubs searched by the different keywords', function() {
         // Short Description
         page.searchField.sendKeys("Making Ventures Happen");
-        page.searchButton.click();
+        page.searchField.sendKeys(protractor.Key.ENTER);
 
         // Company Name
         page.searchField.clear().sendKeys("NDRC").sendKeys(protractor.Key.ENTER);

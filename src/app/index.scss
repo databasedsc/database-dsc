@@ -16,6 +16,11 @@ html {
   background-color: $gray-darker;
 }
 
+h1,
+h3{
+  margin-top:0;
+}
+
 .browsehappy {
   margin: 0.2em 0;
   background: #ccc;
@@ -32,7 +37,7 @@ html {
 }
 
 .row .filters {
-  padding: 0 50px 0 0;
+  //padding: 0;
 }
 
 .short-desc {
@@ -82,6 +87,31 @@ html {
 
   display: flex !important;
   align-items: center !important;
+}
+
+.left-inner-addon {
+  position: relative;
+}
+.left-inner-addon input {
+  padding-left: 2em;
+}
+.left-inner-addon i {
+  position: absolute;
+  padding: 12px 12px;
+  pointer-events: none;
+}
+
+.right-inner-addon {
+  position: relative;
+}
+.right-inner-addon input {
+  padding-right: 30px;
+}
+.right-inner-addon i {
+  position: absolute;
+  right: 0px;
+  padding: 10px 12px;
+  pointer-events: none;
 }
 
 #search {
@@ -189,17 +219,33 @@ tr.deleted {
 font-style: italic;
 }
 
-
-select,
-.multiselect-dropdown-button{
-  -webkit-appearance:none;
-  border:1px solid #9B9B9B !important;
-  border-radius: 0 !important;
-  background-color: white;
-  width: 100%;
-  text-align: left;
-  height: 40px;
+label{
+  font-size: 0.875em;
+  font-weight: normal;
+  text-transform: uppercase;
+  padding-left:0 !important;
 }
+
+#search-text-field{
+  margin-bottom: 3em;
+}
+
+.filters{
+  select,
+  .multiselect-dropdown-button{
+    -webkit-appearance:none;
+    border:1px solid #9B9B9B;
+    border-radius: 0;
+    background-color: white;
+    width: 100%;
+    text-align: left;
+    height: 40px;
+    margin-bottom: 1em;
+    padding-left:10px;
+    cursor: pointer;
+  }
+}
+
 
 .default-option {
   color: $gray-light !important;
@@ -207,7 +253,13 @@ select,
 
 
 .multiselect-dropdown {
-  background-color: rgba(0,0,0,.1);
+  padding-left: 30px;
+  margin-bottom: 2em;
+
+  label{
+    text-transform: none;
+    font-size: 1em;
+  }
 }
 
 

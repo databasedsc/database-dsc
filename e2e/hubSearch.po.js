@@ -5,7 +5,6 @@ var SearchPage = function() {
   this.searchResultsContainer = element(by.tagName('search-results'));
   this.searchResults = element.all(by.css('.result-item'));
   this.searchField = element(by.id('search-text-field'));
-  this.searchButton = element(by.id('search-button'));
   this.searchFilters = element.all(by.css('fieldset select'));
 
   this.findHub = function(hubName) {

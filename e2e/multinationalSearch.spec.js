@@ -30,7 +30,7 @@ describe('SearchResults', function() {
     describe('search field', function() {
       it('should display name, logo and short description when searched by multinational name', function() {
         page.searchField.sendKeys("Facebook");
-        page.searchButton.click();
+        page.searchField.sendKeys(protractor.Key.ENTER);
 
         page.searchResults.then(function(items) {
           expect(items.length).toEqual(1);
@@ -43,7 +43,7 @@ describe('SearchResults', function() {
       it('should display the specific companies searched by the different keywords', function() {
         // Short Description
         page.searchField.sendKeys("Social Networking");
-        page.searchButton.click();
+        page.searchField.sendKeys(protractor.Key.ENTER);
 
         expect(page.searchResultsContainer.getText()).toContain('Facebook');
         expect(page.searchResultsContainer.getText()).not.toContain('Microsoft');

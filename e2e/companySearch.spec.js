@@ -30,7 +30,7 @@ describe('SearchResults', function() {
     describe('search field', function() {
       it('should display name, logo and short description when searched by company name', function() {
         page.searchField.sendKeys("Mustard");
-        page.searchButton.click();
+        page.searchField.sendKeys(protractor.Key.ENTER);
 
         page.searchResults.then(function(items) {
           expect(items.length).toEqual(1);
@@ -43,7 +43,7 @@ describe('SearchResults', function() {
       it('should display the specific companies searched by the different keywords', function() {
         // Short Description
         page.searchField.sendKeys("Real-time log");
-        page.searchButton.click();
+        page.searchField.sendKeys(protractor.Key.ENTER);
 
         expect(page.searchResultsContainer.getText()).toContain('Logentries');
         expect(page.searchResultsContainer.getText()).not.toContain('Mustard');
@@ -125,7 +125,7 @@ describe('SearchResults', function() {
         //TODO: Find a better way to access a particular company card
         items[3].element(by.css('.name')).click()
       });
-      expect(profilePage.body.getText()).toContain('Tags')
+      expect(profilePage.body.getText()).toContain('TAGS')
       expect(profilePage.body.getText()).toContain('Funding')
     });
 

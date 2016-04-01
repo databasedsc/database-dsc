@@ -1,21 +1,26 @@
 <div class="container">
+
   <div class="row">
 
-    <div class="row">
-      <h3 class="background-line"><span>Tech Companies</span></h3>
-    </div>
-    <div class="row col-xs-3 form-group filters">
+    <h1 class="col-md-6">Tech Companies</h1>
+    <form class="form-horizontal col-md-6" ng-submit="$ctrl.search()">
+      <div class="left-inner-addon">
+        <i class="fa fa-search"></i>
+        <input type="search" name="search-text" id="search-text-field" placeholder="Search companies" class="form-control" ng-model="$ctrl.query"
+               autocomplete="off"/>
+      </div>
+    </form>
+  </div>
+
+  <div class="row">
+    <div class="col-md-3 form-group filters">
       <form class="form-horizontal" ng-submit="$ctrl.search()">
-        <div class="form-group">
-          <input type="search" name="search-text" id="search-text-field" class="form-control" ng-model="$ctrl.query"
-                 autocomplete="off"/>
-        </div>
-        <button type="submit" href="#" id="search-button" class="btn btn-primary btn-lg btn-block">Search</button>
         <br/>
         <search-filters filters="$ctrl.filters" searchfn="$ctrl.search()"></search-filters>
       </form>
     </div>
-    <search-results collection="$ctrl.results" type="company" total-items="$ctrl.totalItems" current-page="currentPage"
+
+    <search-results class="col-md-8 col-md-offset-1" collection="$ctrl.results" type="company" total-items="$ctrl.totalItems" current-page="currentPage"
                     per-page="perPage"></search-results>
   </div>
 </div>
