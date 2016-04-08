@@ -125,7 +125,7 @@ describe('SearchResults', function() {
         //TODO: Find a better way to access a particular company card
         items[3].element(by.css('.name')).click()
       });
-      expect(profilePage.body.getText()).toContain('TAGS')
+      //expect(profilePage.body.getText()).toContain('TAGS')
       expect(profilePage.body.getText()).toContain('Funding')
     });
 
