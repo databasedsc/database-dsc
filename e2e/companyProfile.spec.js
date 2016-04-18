@@ -8,7 +8,7 @@ describe('CompanyProfile', function() {
     searchPage = require('./companySearch.po');
     page = require('./companyProfile.po');
 
-    browser.get('#/');
+    browser.get('#/companies');
 
     searchPage.findCompany('logentries').click();
   });

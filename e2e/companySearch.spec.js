@@ -5,7 +5,7 @@ describe('SearchResults', function() {
       profilePage;
 
   beforeEach(function() {
-    browser.get('#/');
+    browser.get('#/companies');
     page = require('./companySearch.po');
   });
 
@@ -19,7 +19,7 @@ describe('SearchResults', function() {
 
   describe('search form', function() {
     beforeEach(function() {
-      browser.get('#/').then(function () {
+      browser.get('#/companies').then(function () {
         // There's a PhantomJS issue that prevent the browser from clicking some element.
         // Resizing the window fix it .https://github.com/ariya/phantomjs/issues/11637
         browser.manage().window().maximize();
