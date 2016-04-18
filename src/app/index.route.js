@@ -50,11 +50,11 @@
           templateUrl: 'app/search.html'
         })
         .state('search.home', {
-          url: '/home',
+          url: '/',
           template: '<home></home>'
         })
         .state('search.searchCompanies', {
-          url: '/',
+          url: '/companies',
           template: '<search-companies></search-companies>'
         })
         .state('search.companyProfile', {
