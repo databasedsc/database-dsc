@@ -41,7 +41,7 @@
           "employees": 40,
           "funding_amount": 18000000,
           "product_stage": "Live",
-          "geo_markets": "G",
+          "target_markets": "G",
           "business_model": "B2B",
           "company_stage": "Acquired",
           "operational_status": "Active"

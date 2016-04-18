@@ -43,9 +43,13 @@
         Total Funding:
         <p id="total-funding">{{$ctrl.company.funding_amount | shortFmt:0}}</p>
       </label>
-      <label ng-show="$ctrl.company.geo_markets" for="geographical-markets" class="col-xs-12">
-        Geographical Markets:
-        <p id="geographical-markets">{{$ctrl.company.geo_markets | regionCodeToHuman}}</p>
+      <label ng-show="$ctrl.company.target_markets" for="target-markets" class="col-xs-12">
+        Target Markets:
+        <p id="target-markets">
+          <span ng-repeat="targetMarket in $ctrl.company.target_markets.split(',')">
+            {{targetMarket | regionCodeToHuman}}{{$last ? ' ' : ','}}
+          </span>
+        </p>
       </label>
       <label ng-show="$ctrl.company.office_locations" for="office-locations" class="col-xs-12">
         Office Locations:

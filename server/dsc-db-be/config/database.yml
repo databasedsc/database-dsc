@@ -1,6 +1,6 @@
 
 default: &default
-  adapter: postgresql
+  adapter: sqlite3
   pool: 5
   timeout: 5000
 
@@ -8,7 +8,10 @@ development: &development
   adapter: postgresql
   pool: 5
   timeout: 5000
-  database: dsc_development
+  host: 192.168.99.100
+  port: 32768
+  username: postgres
+  database: development
 
 test: &test
   <<: *development

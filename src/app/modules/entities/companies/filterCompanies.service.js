@@ -38,10 +38,10 @@
           selectedValue: '',
           values: ['', 'Development', 'Live']
         },
-        geographicalMarkets: {
+        targetMarkets: {
           type: 'checklist',
-          id: 'geographical-markets',
-          label: 'Geographical Markets',
+          id: 'target-markets',
+          label: 'Target Markets',
           selectedValue: '',
           values: [
             { label: 'Ireland', code: 'IE'},

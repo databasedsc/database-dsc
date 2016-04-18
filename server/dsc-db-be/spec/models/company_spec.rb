@@ -19,7 +19,7 @@
 #  funding_stage         :string
 #  funding_amount        :integer
 #  product_stage         :string
-#  geo_markets           :string
+#  target_markets        :string
 #  business_model        :string
 #  company_stage         :string
 #  operational_status    :string
@@ -42,7 +42,7 @@ RSpec.describe Company, :type => :model do
   [
     :name, :logo, :acquisitions, :founded,  :short_description,:long_description, :headquarters, :formerly_known_as,
     :founders, :categories, :investors, :office_locations, :incubator, :employees, :funding_stage, :funding_amount,
-    :product_stage, :geo_markets, :business_model, :contact, :company_stage, :operational_status, :government_assistance,
+    :product_stage, :target_markets, :business_model, :contact, :company_stage, :operational_status, :government_assistance,
     :looking_for, :funding_rounds
   ].each do |column|
     it { should have_db_column(column) }

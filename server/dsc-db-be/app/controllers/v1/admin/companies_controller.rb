@@ -42,7 +42,7 @@ module V1
 
       def company_params
         params.require(:company).permit(
-          :name, :logo, :short_description, :long_description, :acquisitions, :geo_markets, :headquarters,
+          :name, :logo, :short_description, :long_description, :acquisitions, :target_markets, :headquarters,
           :formerly_known_as, :founded, :categories, :incubator, :funding_stage, :employees, :funding_amount,
           :business_model, :company_stage, :operational_status, :government_assistance, :looking_for,
           :contact, :founders, :office_locations, :video_url, :website, :custom_field_1, :custom_field_2, :custom_field_3, :custom_field_4, social_accounts: [:twitter, :linkedin, :facebook],

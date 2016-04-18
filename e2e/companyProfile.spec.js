@@ -74,7 +74,7 @@ describe('CompanyProfile', function() {
       expect(page.details.getText()).toContain('18 M');
     });
 
-    it('should display Geographical markets', function() {
+    it('should display Target markets', function() {
       expect(page.details.getText()).toContain('Global');
     });
 
