@@ -25,7 +25,6 @@
 #  operational_status    :string
 #  funding_rounds        :jsonb
 #  looking_for           :text
-#  selling               :boolean
 #  government_assistance :string
 #  contact               :text
 #  long_description      :text

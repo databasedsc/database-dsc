@@ -36,7 +36,7 @@
           id: 'product-stage',
           label: 'Product Stage',
           selectedValue: '',
-          values: ['', 'Development', 'Complete']
+          values: ['', 'Development', 'Live']
         },
         geographicalMarkets: {
           type: 'checklist',

@@ -88,7 +88,7 @@ describe('CompanyProfile', function() {
     });
 
     it('should display Product stage', function() {
-      expect(page.details.getText()).toContain('Complete');
+      expect(page.details.getText()).toContain('Live');
     });
 
     it('should display Contact', function() {
@@ -111,10 +111,6 @@ describe('CompanyProfile', function() {
       expect(page.details.getText()).toContain('NDRC');
     });
 
-    it('should display Selling already', function() {
-      expect(page.details.getText()).toContain('Yes');
-    });
-
     it('should display We’re looking for', function() {
       expect(page.details.getText()).toContain('Senior technical talent');
     });
@@ -135,4 +131,3 @@ describe('CompanyProfile', function() {
   });
 
 });
-

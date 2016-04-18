@@ -20,13 +20,12 @@ RSpec.describe 'V1::Companies', :type => :request do
         "funding_stage": "Seed",
         "employees": 6,
         "funding_amount": 250000,
-        "product_stage": "Complete",
+        "product_stage": "Live",
         "geo_markets": "EU",
         "business_model": "B2B",
         "company_stage": "Growth",
         "operational_status": "Active",
         "government_assistance": "NDRC",
-        "selling": true,
         "looking_for": "Good Talent",
         "contact": "heya@mustard.ie",
         "founded": "2015",
@@ -59,13 +58,12 @@ RSpec.describe 'V1::Companies', :type => :request do
       expect(company_json['funding_stage']).to eq('Seed')
       expect(company_json['employees']).to eq(6)
       expect(company_json['funding_amount']).to eq(250000)
-      expect(company_json['product_stage']).to eq('Complete')
+      expect(company_json['product_stage']).to eq('Live')
       expect(company_json['geo_markets']).to eq('EU')
       expect(company_json['business_model']).to eq('B2B')
       expect(company_json['company_stage']).to eq('Growth')
       expect(company_json['operational_status']).to eq('Active')
       expect(company_json['government_assistance']).to eq('NDRC')
-      expect(company_json['selling']).to eq(true)
       expect(company_json['looking_for']).to eq('Good Talent')
       expect(company_json['contact']).to eq('heya@mustard.ie')
       expect(company_json['founded']).to eq('2015')
@@ -89,7 +87,7 @@ RSpec.describe 'V1::Companies', :type => :request do
         incubator: 'NDRC',
         employees: 140,
         funding_stage: 'Bootstrapped',
-        product_stage: 'Complete',
+        product_stage: 'Live',
         geo_markets: 'IE'
       )
       FactoryGirl.create(
@@ -232,7 +230,7 @@ RSpec.describe 'V1::Companies', :type => :request do
         end
 
         it 'should return companies filtered by product stage' do
-          get '/v1/companies?productStage=Complete'
+          get '/v1/companies?productStage=Live'
           companies_json = JSON.parse(response.body)
           expect(response).to have_http_status(200)
           expect(companies_json.size).to eq(1)
@@ -289,5 +287,3 @@ RSpec.describe 'V1::Companies', :type => :request do
 
   end
 end
-
-
