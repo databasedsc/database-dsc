@@ -1,276 +1,21 @@
 /**
- *  If you want to override some bootstrap variables, you have to change values here.
- *  The list of variables are listed here bower_components/bootstrap-sass/assets/stylesheets/bootstrap/_variables.scss
- */
-$navbar-inverse-link-color: #5AADBB;
-$icon-font-path: "../../bower_components/bootstrap-sass/assets/fonts/bootstrap/";
-
-/**
  *  Do not remove the comments below. It's the markers used by wiredep to inject
  *  sass dependencies when defined in the bower.json of your dependencies
  */
 // bower:scss
 // endbower
 
+/**
+ *  Do not remove the comments below. It's the markers used by gulp-inject to inject
+ *  all your sass files automatically
+ */
+// injector
+// endinjector
 
-//## Gray and brand colors for use across Bootstrap.
-$gray-base:              #000 !default;
-$gray:                   lighten($gray-base, 33.5%) !default; // #555
-$gray-lighter:           lighten($gray-base, 93.5%) !default; // #eee
-$gray-darker: #383737;
-$gray-dark: #666666;
-$gray-light:             #cacaca;
-
-$brand-primary:         darken(#428bca, 6.5%) !default; // #337ab7
-
-// Brand Colors
-$brand-pink: #F3008F;
-$brand-blue: #78acbf;
-
-// Social Network Brand Colors
-$facebook-blue: #3b5998;
-$twitter-blue: #55acee;
-$linkedin-blue: #007bb5;
-
-html {
-  background-color: $gray-darker;
+.multiselect-dropdown-button{
+  text-align: left;
+  padding: 6px 8px;
 }
-
-h1,
-h3{
-  margin-top:0;
-}
-
-.browsehappy {
-  margin: 0.2em 0;
-  background: #ccc;
-  color: #000;
-  padding: 0.2em 0;
-}
-
-.thumbnail {
-  height: 200px;
-
-  img.pull-right {
-    width: 50px;
-  }
-}
-
-.row .filters {
-  //padding: 0;
-}
-
-.short-desc {
-  overflow: hidden;
-  height: 46px;
-}
-
-.background-line {
-  position: relative;
-  z-index: 1;
-
-  &:before {
-    border-top: 2px solid #dfdfdf;
-    content: "";
-    margin: 0 auto; /* this centers the line to the full width specified */
-    position: absolute; /* positioning must be absolute here, and relative positioning must be applied to the parent */
-    top: 50%;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    width: 85%;
-    z-index: -1;
-  }
-
-  span {
-    /* to hide the lines from behind the text, you have to set the background color the same as the container */
-    background: #fff;
-    padding: 0 15px;
-  }
-}
-
-.v-center {
-  float: none !important;
-  vertical-align: middle !important;
-  display: table-cell !important;
-}
-
-
-.vertical-center {
-  display: flex;
-  align-items: center;
-}
-
-.absolute-vertical-center {
-  min-height: 100% !important;  /* Fallback for browsers do NOT support vh unit */
-  min-height: 100vh !important; /* These two lines are counted as one :-)       */
-
-  display: flex !important;
-  align-items: center !important;
-}
-
-.left-inner-addon {
-  position: relative;
-}
-.left-inner-addon input {
-  padding-left: 2em;
-}
-.left-inner-addon i {
-  position: absolute;
-  padding: 12px 12px;
-  pointer-events: none;
-}
-
-.right-inner-addon {
-  position: relative;
-}
-.right-inner-addon input {
-  padding-right: 30px;
-}
-.right-inner-addon i {
-  position: absolute;
-  right: 0px;
-  padding: 10px 12px;
-  pointer-events: none;
-}
-
-#search {
-  .contact-us{
-    font-size: 14px;
-    font-family: 'Helvetica Neue';
-    color: #FFFFFF;
-    border: 1px solid #FFFFFF;
-    border-radius: 6px;
-    padding: 0 40px;
-    margin: 40px 0 0 0;
-    &:hover {
-      color: #DF0386;
-      border: 1px solid #DF0386;
-    }
-  }
-
-  .main-wrapper:after {
-    content: "";
-    display: block;
-  }
-
-  footer {
-    background: $gray-darker;
-    padding: 2em 0;
-
-    .supporters {
-      color: white;
-      font-size: 24px;
-    }
-  }
-
-  .navbar {
-    min-height: 150px !important;
-    background: $gray-darker !important;
-
-  }
-
-  .navbar-nav {
-    padding: 44px 0 0 0 !important;
-    li {
-      padding: 0 80px 0 0;
-      > a {
-        text-transform: uppercase;
-        color: white !important;
-        font-size: 18px;
-        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-      }
-      > a:hover {
-        color: $brand-pink !important;
-      }
-    }
-  }
-
-  @media (min-width: 768px) {
-    .navbar .navbar-nav {
-      display: inline-block !important;
-      float: none;
-    }
-
-    .navbar .navbar-collapse {
-      text-align: center !important;
-    }
-  }
-
-  .navbar-brand {
-    padding: 0 !important;
-    > img {
-      margin-top: 40px;
-    }
-  }
-
-  .result-item {
-    .panel-thumbnail {
-      padding: 15px 0 0 0;
-    }
-  }
-
-  a.no-decoration * {
-    text-decoration: none !important;
-    color: $gray-dark;
-  }
-
-  a.no-decoration:hover {
-    text-decoration: none !important;
-    * {
-      color: $brand-blue;
-    }
-  }
-
-}
-
-td.base{
-  vertical-align: middle !important;
-}
-
-td.actions{
-  text-align: center;
-  vertical-align: middle !important;
-}
-
-tr.deleted {
-  color: #cacaca;
-  text-decoration: line-through;
-font-style: italic;
-}
-
-label{
-  font-size: 0.875em;
-  font-weight: normal;
-  text-transform: uppercase;
-  padding-left:0 !important;
-}
-
-#search-text-field{
-  margin-bottom: 3em;
-}
-
-.filters{
-  select,
-  .multiselect-dropdown-button{
-    -webkit-appearance:none;
-    border:1px solid #9B9B9B;
-    border-radius: 0;
-    background-color: white;
-    width: 100%;
-    text-align: left;
-    height: 40px;
-    margin-bottom: 1em;
-    padding-left:10px;
-    cursor: pointer;
-  }
-}
-
-
-.default-option {
-  color: $gray-light !important;
-}
-
 
 .multiselect-dropdown {
   padding-left: 30px;
@@ -281,11 +26,11 @@ label{
     font-size: 1em;
   }
 }
-
-
-/**
- *  Do not remove the comments below. It's the markers used by gulp-inject to inject
- *  all your sass files automatically
- */
-// injector
-// endinjector
+.filter-label {
+  color: #aaaaaa;
+  font-size: 12px;
+  font-style: normal;
+  text-transform: uppercase;
+  font-weight:300;
+  letter-spacing:.05em;
+}

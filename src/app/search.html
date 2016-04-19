@@ -1,52 +1,71 @@
-<!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.6/paper/bootstrap.min.css"/>-->
 <div id="search">
-  <nav class="navbar navbar-default">
+  <nav class="navbar navbar-default navbar-static-top navbar-padded text-uppercase app-navbar">
     <div class="container">
       <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
-                data-target="#bs-example-navbar-collapse-1">
+        <button type="button" class="navbar-toggle collapsed p-x-0" data-toggle="collapse" data-target="#navbar-collapse">
           <span class="sr-only">Toggle navigation</span>
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="#">
-          <img class="img-responsive" src="assets/images/DSC-logo.png"/>
+        <a class="navbar-brand" href="../">
+          <img src="assets/images/DSC-logo-inverted.png" style="height:80px;" >
         </a>
       </div>
-      <div class="row"><a href="mailto:info@StartupDublin.com"><p class="pull-right contact-us">Contact Us</p></a></div>
-      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
-        <ul class="nav navbar-nav">
-          <li><a href="#/companies">Companies</a></li>
-          <li><a href="#/mtns">Multinationals</a></li>
-          <li><a href="#/investors">Investors</a></li>
-          <li><a href="#/hubs">Hubs</a></li>
+      <div class="navbar-collapse collapse" id="navbar-collapse">
+        <ul class="nav navbar-nav navbar-right" style="margin-top:30px;">
+          <li >
+            <a href="/#/companies">Companies</a>
+          </li>
+          <li class="active">
+            <a href="/#/mtns">Multinationals</a>
+          </li>
+          <li >
+            <a href="/#/investors">Investors</a>
+          </li>
+          <li >
+            <a href="/#/hubs">Hubs</a>
+          </li>
         </ul>
-      </div>
+      </div><!--/.nav-collapse -->
     </div>
   </nav>
 
   <div class="main-wrapper" ui-view></div>
 
   <footer>
-    <div class="container footer-wrapper vertical-center">
-      <div class="col-md-2">
-        <span class="supporters">Supporters</span>
-      </div>
-      <div class="col-sm-2">
-        <img class="img-responsive" src="assets/images/Ibec-logo.png" alt=""/>
-      </div>
-      <div class="col-sm-2">
-        <img class="img-responsive" src="assets/images/DCC-logo.png" alt=""/>
-      </div>
-      <div class="col-sm-2">
-        <img class="img-responsive" src="assets/images/PCH-logo.png" alt=""/>
-      </div>
-      <div class="col-sm-2">
-        <img class="img-responsive" src="assets/images/Google-logo.png" alt=""/>
-      </div>
-      <div class="col-sm-2">
-        <img class="img-responsive" src="assets/images/Pivotal-logo.png" alt=""/>
+    <div class="block app-block-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-2 m-b">
+            <ul class="list-unstyled list-spaced">
+              <li><h6 class="text-uppercase">Listings</h6></li>
+              <li>Companies</li>
+              <li>Investors</li>
+              <li>Multinationals</li>
+              <li>Hubs</li>
+            </ul>
+          </div>
+          <div class="col-sm-2 m-b">
+            <ul class="list-unstyled list-spaced">
+              <li><h6 class="text-uppercase">Social</h6></li>
+              <li>Twitter</li>
+              <li>Facebook</li>
+              <li>Instagram</li>
+              <li>Snapchat</li>
+            </ul>
+          </div>
+          <div class="col-sm-2 m-b">
+            <ul class="list-unstyled list-spaced">
+              <li><h6 class="text-uppercase">Support</h6></li>
+              <li>Contact Us</li>
+            </ul>
+          </div>
+           <div class="col-sm-6">
+            <h6 class="text-uppercase">About</h6>
+            <p>Where Irish Innovation is Found</p>
+          </div>
+        </div>
       </div>
     </div>
   </footer>

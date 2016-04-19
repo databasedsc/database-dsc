@@ -2,9 +2,12 @@
 <html ng-app="dscFe">
 <head>
   <meta charset="utf-8">
-  <title>Dublin Commissioner for Startups Database</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="">
-  <meta name="viewport" content="width=device-width">
+  <meta name="keywords" content="">
+  <meta name="author" content="">
+  <title>Dublin Commissioner for Startups Database</title>
   <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
   <!-- build:css({.tmp/serve,src}) styles/vendor.css -->
@@ -20,8 +23,50 @@
   <!-- endinject -->
   <!-- endbuild -->
 
+  <link href="http://fonts.googleapis.com/css?family=Roboto:100,300,400,700" rel="stylesheet">
+  <style>
+    /* note: this is a hack for ios iframe for bootstrap themes shopify page */
+    /* this chunk of css is not part of the toolkit :) */
+    /* …curses ios, etc… */
+    @media (max-width: 768px) and (-webkit-min-device-pixel-ratio: 2) {
+      body {
+        width: 1px;
+        min-width: 100%;
+        *width: 100%;
+      }
+      #stage {
+        height: 1px;
+        overflow: auto;
+        min-height: 100vh;
+        -webkit-overflow-scrolling: touch;
+      }
+    }
 
+    .btn-primary {
+      background-color: #f0008c !important;
+      border-color: #CC0077 !important;
+    }
 
+    .btn-primary-outline {
+      color: #f0008c;
+      background-color: transparent;
+      border-color: #f0008c;
+    }
+
+    .btn-primary-outline:hover {
+      background-color: #f0008c !important;
+      color:#fff;
+    }
+
+    .panel-default:hover {
+      border-color: #B3B3B3;
+
+    }
+
+    .panel-default {
+      cursor: pointer;
+    }
+  </style>
 </head>
 <body>
 <!--[if lt IE 10]>

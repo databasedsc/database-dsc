@@ -40,7 +40,7 @@
           label: 'Product Stage',
           selectedValue: '',
           noSelectionString: 'Any stage',
-          values: ['', 'Development', 'Live']
+          values: ['Development', 'Live']
         },
         targetMarkets: {
           type: 'checklist',

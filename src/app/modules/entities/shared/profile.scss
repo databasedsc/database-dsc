@@ -1,269 +1,269 @@
-//you can delete this
-
-div {
-  //background-color: rgba(0,0,0,.03);
-}
-
-//not this
-
-#overview {
-  border-bottom: 1px solid #cacaca;
-  margin-bottom: 3em;
-
-  h1 {
-    margin-top: 0;
-  }
-}
-
-h4 {
-  font-weight: bold;
-  -webkit-margin-after: 0;
-  -webkit-margin-before: 0;
-  margin-bottom: 0;
-  margin-top:0;
-  line-height: 1.7em;
-}
-
-#details {
-
-  padding:0 15px;
-
-  p{
-    margin-bottom: 0;
-  }
-
-  & > div {
-    //display: block;
-    -webkit-column-break-inside: avoid;
-    overflow: hidden; /* fix for Firefox */
-    break-inside: avoid-column;
-    padding-bottom: 2em;
-  }
-
-  -webkit-column-count: 1; /* Chrome, Safari, Opera */
-  -moz-column-count: 1; /* Firefox */
-  column-count: 1;
-  -webkit-column-gap: 30px; /* Chrome, Safari, Opera */
-  -moz-column-gap: 30px; /* Firefox */
-  column-gap: 30px;
-
-  @media screen and (min-width: $container-sm) {
-    -webkit-column-count: 2; /* Chrome, Safari, Opera */
-    -moz-column-count: 2; /* Firefox */
-    column-count: 2;
-  }
-
-  @media screen and (min-width: $container-md) {
-    -webkit-column-count: 3; /* Chrome, Safari, Opera */
-    -moz-column-count: 3; /* Firefox */
-    column-count: 3;
-  }
-}
-
-.company-list {
-  padding-top: 1em;
-  padding-bottom: 2em;
-
-  -webkit-column-count: 2; /* Chrome, Safari, Opera */
-  -moz-column-count: 2; /* Firefox */
-  column-count: 2;
-
-  @media screen and (min-width: $container-sm) {
-    -webkit-column-count: 4; /* Chrome, Safari, Opera */
-    -moz-column-count: 4; /* Firefox */
-    column-count: 4;
-    -webkit-column-gap: 30px; /* Chrome, Safari, Opera */
-    -moz-column-gap: 30px; /* Firefox */
-    column-gap: 30px;
-  }
-
-  @media screen and (min-width: $container-md) {
-    -webkit-column-count: 5; /* Chrome, Safari, Opera */
-    -moz-column-count: 5; /* Firefox */
-    column-count: 5;
-  }
-
-  p{
-    margin-bottom: 0;
-    padding-top: 1em;
-  }
-}
-
-
-
-.logo {
-  margin: 0 auto 2em auto;
-}
-
-
-p.tagline {
-  font-size: 1.25em;
-  color: $gray-light;
-  line-height: 1.6em;
-}
-
-dsc-tag {
-  border-radius: 5px;
-  font-size: 0.875em; //14/16
-  //font-weight:bold;
-  border: 1px solid $brand-blue;
-  display: inline-block;
-  padding:0 .5em;
-  margin: 0 1em .5em 0;
-  color: $brand-blue;
-}
-
-dsc-tag:hover {
-  background-color: $brand-blue;
-  color:white;
-  cursor: pointer;
-}
-
-#links {
-  display: block;
-  margin-bottom: 1em;
-}
-
-#links:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-#tags {
-  margin-bottom: 3em;
-  color: #cacaca;
-}
-
-
-.embed-container {
-  position: relative;
-  padding-bottom: 56.25%;
-  height: 0;
-  overflow: hidden;
-  max-width: 100%;
-}
-
-.embed-container iframe, .embed-container object, .embed-container embed {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
-
-
-social-links {
-  text-align: right;
-
-  a {
-    padding-left: 1em;
-
-    &.twitter {
-      color: $twitter-blue;
-    }
-
-    &.facebook {
-      color: $facebook-blue;
-    }
-
-    &.linkedin {
-      color: $linkedin-blue;
-    }
-
-  }
-
-  a:hover {
-    text-decoration: none;
-
-    &.twitter {
-      color: lighten($twitter-blue, 10%);
-    }
-
-    &.facebook {
-      color: lighten($facebook-blue, 10%);
-    }
-
-    &.linkedin {
-      color: lighten($linkedin-blue, 10%);
-    }
-  }
-}
-
-
-.startup-packages, .alumni, .portfolio {
-  color: white;
-  background-color: $brand-blue;
-  overflow-x: hidden;
-
-  a, h3 {
-    font-weight: bold;
-    color: white;
-  }
-
-  .tile {
-    margin-bottom: 2em;
-  }
-}
-
-#funding > .row > div {
-  padding: 0;
-}
-
-.dsc-timeline {
-  color: white;
-  background-color: $brand-blue;
-  overflow-x: hidden;
-
-  p{
-    margin-top: -4px;
-  }
-
-  p:nth-child(1) {
-    font-weight: bold;
-    margin-bottom: 0px;
-  }
-}
-
-.dsc-timeline-dot {
-  margin: 0 auto;
-  width: 20px;
-  height: 20px;
-  border: 4px solid $gray-dark;
-  border-radius: 20px;
-}
-
-.dsc-timeline-line {
-  margin: 0 auto;
-  width: 4px;
-  height: 100px;
-  overflow: hidden;
-  background-color: $gray-dark;
-}
-
-.triangle-border {
-  text-align: center;
-  display: inline-block;
-  background-color: white;
-  color: $brand-blue;
-  position:relative;
-  padding:0 .5em;
-  border-radius:5px;
-  top:-4px;
-}
-
-/* creates the triangle */
-.triangle-border.right:after {
-  content:"";
-  position:absolute;
-  border-style:solid;
-  /* reduce the damage in FF3.0 */
-  display:block;
-  width:0;
-  top:5px; /* value = (:before top) + (:before border-top) - (:after border-top) */
-  bottom:auto;
-  left:auto;
-  right:-12px; /* value = - border-left-width - border-right-width */
-  border-width:9px 0 9px 16px;
-  border-color:transparent #fff;
-}
+// //you can delete this
+//
+// div {
+//   //background-color: rgba(0,0,0,.03);
+// }
+//
+// //not this
+//
+// #overview {
+//   border-bottom: 1px solid #cacaca;
+//   margin-bottom: 3em;
+//
+//   h1 {
+//     margin-top: 0;
+//   }
+// }
+//
+// h4 {
+//   font-weight: bold;
+//   -webkit-margin-after: 0;
+//   -webkit-margin-before: 0;
+//   margin-bottom: 0;
+//   margin-top:0;
+//   line-height: 1.7em;
+// }
+//
+// #details {
+//
+//   padding:0 15px;
+//
+//   p{
+//     margin-bottom: 0;
+//   }
+//
+//   & > div {
+//     //display: block;
+//     -webkit-column-break-inside: avoid;
+//     overflow: hidden; /* fix for Firefox */
+//     break-inside: avoid-column;
+//     padding-bottom: 2em;
+//   }
+//
+//   -webkit-column-count: 1; /* Chrome, Safari, Opera */
+//   -moz-column-count: 1; /* Firefox */
+//   column-count: 1;
+//   -webkit-column-gap: 30px; /* Chrome, Safari, Opera */
+//   -moz-column-gap: 30px; /* Firefox */
+//   column-gap: 30px;
+//
+//   @media screen and (min-width: $container-sm) {
+//     -webkit-column-count: 2; /* Chrome, Safari, Opera */
+//     -moz-column-count: 2; /* Firefox */
+//     column-count: 2;
+//   }
+//
+//   @media screen and (min-width: $container-md) {
+//     -webkit-column-count: 3; /* Chrome, Safari, Opera */
+//     -moz-column-count: 3; /* Firefox */
+//     column-count: 3;
+//   }
+// }
+//
+// .company-list {
+//   padding-top: 1em;
+//   padding-bottom: 2em;
+//
+//   -webkit-column-count: 2; /* Chrome, Safari, Opera */
+//   -moz-column-count: 2; /* Firefox */
+//   column-count: 2;
+//
+//   @media screen and (min-width: $container-sm) {
+//     -webkit-column-count: 4; /* Chrome, Safari, Opera */
+//     -moz-column-count: 4; /* Firefox */
+//     column-count: 4;
+//     -webkit-column-gap: 30px; /* Chrome, Safari, Opera */
+//     -moz-column-gap: 30px; /* Firefox */
+//     column-gap: 30px;
+//   }
+//
+//   @media screen and (min-width: $container-md) {
+//     -webkit-column-count: 5; /* Chrome, Safari, Opera */
+//     -moz-column-count: 5; /* Firefox */
+//     column-count: 5;
+//   }
+//
+//   p{
+//     margin-bottom: 0;
+//     padding-top: 1em;
+//   }
+// }
+//
+//
+//
+// .logo {
+//   margin: 0 auto 2em auto;
+// }
+//
+//
+// p.tagline {
+//   font-size: 1.25em;
+//   color: $gray-light;
+//   line-height: 1.6em;
+// }
+//
+// dsc-tag {
+//   border-radius: 5px;
+//   font-size: 0.875em; //14/16
+//   //font-weight:bold;
+//   border: 1px solid $brand-blue;
+//   display: inline-block;
+//   padding:0 .5em;
+//   margin: 0 1em .5em 0;
+//   color: $brand-blue;
+// }
+//
+// dsc-tag:hover {
+//   background-color: $brand-blue;
+//   color:white;
+//   cursor: pointer;
+// }
+//
+// #links {
+//   display: block;
+//   margin-bottom: 1em;
+// }
+//
+// #links:after {
+//   content: "";
+//   display: table;
+//   clear: both;
+// }
+//
+// #tags {
+//   margin-bottom: 3em;
+//   color: #cacaca;
+// }
+//
+//
+// .embed-container {
+//   position: relative;
+//   padding-bottom: 56.25%;
+//   height: 0;
+//   overflow: hidden;
+//   max-width: 100%;
+// }
+//
+// .embed-container iframe, .embed-container object, .embed-container embed {
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+//   width: 100%;
+//   height: 100%;
+// }
+//
+//
+// social-links {
+//   text-align: right;
+//
+//   a {
+//     padding-left: 1em;
+//
+//     &.twitter {
+//       color: $twitter-blue;
+//     }
+//
+//     &.facebook {
+//       color: $facebook-blue;
+//     }
+//
+//     &.linkedin {
+//       color: $linkedin-blue;
+//     }
+//
+//   }
+//
+//   a:hover {
+//     text-decoration: none;
+//
+//     &.twitter {
+//       color: lighten($twitter-blue, 10%);
+//     }
+//
+//     &.facebook {
+//       color: lighten($facebook-blue, 10%);
+//     }
+//
+//     &.linkedin {
+//       color: lighten($linkedin-blue, 10%);
+//     }
+//   }
+// }
+//
+//
+// .startup-packages, .alumni, .portfolio {
+//   color: white;
+//   background-color: $brand-blue;
+//   overflow-x: hidden;
+//
+//   a, h3 {
+//     font-weight: bold;
+//     color: white;
+//   }
+//
+//   .tile {
+//     margin-bottom: 2em;
+//   }
+// }
+//
+// #funding > .row > div {
+//   padding: 0;
+// }
+//
+// .dsc-timeline {
+//   color: white;
+//   background-color: $brand-blue;
+//   overflow-x: hidden;
+//
+//   p{
+//     margin-top: -4px;
+//   }
+//
+//   p:nth-child(1) {
+//     font-weight: bold;
+//     margin-bottom: 0px;
+//   }
+// }
+//
+// .dsc-timeline-dot {
+//   margin: 0 auto;
+//   width: 20px;
+//   height: 20px;
+//   border: 4px solid $gray-dark;
+//   border-radius: 20px;
+// }
+//
+// .dsc-timeline-line {
+//   margin: 0 auto;
+//   width: 4px;
+//   height: 100px;
+//   overflow: hidden;
+//   background-color: $gray-dark;
+// }
+//
+// .triangle-border {
+//   text-align: center;
+//   display: inline-block;
+//   background-color: white;
+//   color: $brand-blue;
+//   position:relative;
+//   padding:0 .5em;
+//   border-radius:5px;
+//   top:-4px;
+// }
+//
+// /* creates the triangle */
+// .triangle-border.right:after {
+//   content:"";
+//   position:absolute;
+//   border-style:solid;
+//   /* reduce the damage in FF3.0 */
+//   display:block;
+//   width:0;
+//   top:5px; /* value = (:before top) + (:before border-top) - (:after border-top) */
+//   bottom:auto;
+//   left:auto;
+//   right:-12px; /* value = - border-left-width - border-right-width */
+//   border-width:9px 0 9px 16px;
+//   border-color:transparent #fff;
+// }

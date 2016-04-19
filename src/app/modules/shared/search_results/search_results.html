@@ -1,21 +1,21 @@
-<div class="row">
-  <div ng-repeat="entity in $ctrl.collection" class="col-sm-4 col-xs-6 result-item">
+<div class="col-md-4" ng-repeat="entity in $ctrl.collection">
   <a ui-sref="search.{{$ctrl.type}}Profile({id: entity.id})" class="no-decoration">
-    <div class="panel panel-default">
-      <div class="panel-thumbnail"><img ng-src="{{entity.logo}}" class="logo img-responsive"></div>
+    <div class="panel panel-default" style="border-bottom: 5px solid #e92a8b;">
       <div class="panel-body">
-        <p id="{{entity.name | slugify}}-item" class="name lead">{{entity.name}}</p>
-        <p class="short-desc">{{entity.short_description}}</p>
+        <img ng-src="{{entity.logo}}" class="img-responsive" style="margin: 10px auto;">
+        <h2 class="text-left" style="margin-bottom:0;margin-top:30px;font-size:22px;font-weight:300;">{{entity.name}}</h2>
+        <p class="text-left" style="font-size:16px;font-weight:300;margin-bottom:0;color:#999999;">
+          {{entity.short_description}}
+        </p>
       </div>
     </div>
   </a>
-</div></div>
-
-<div class="center-block">
-  <uib-pagination
-    ng-model="$ctrl.currentPage"
-    total-items="$ctrl.totalItems"
-    items-per-page="$ctrl.perPage"
-    boundary-links="true">
-  </uib-pagination>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <div class="center-block">
+      <uib-pagination ng-model="$ctrl.currentPage" total-items="$ctrl.totalItems" items-per-page="$ctrl.perPage" boundary-links="true">
+      </uib-pagination>
+    </div>
+  </div>
 </div>

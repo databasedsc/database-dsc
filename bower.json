@@ -8,7 +8,6 @@
     "angular-sanitize": "~1.5.1",
     "angular-messages": "~1.5.1",
     "angular-ui-router": "~0.2.15",
-    "bootstrap-sass": "~3.3.5",
     "angular-bootstrap": "~1.2.4",
     "angular-filter": "~0.5.8",
     "animate.css": "~3.4.0",
