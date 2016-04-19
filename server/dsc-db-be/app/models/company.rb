@@ -58,7 +58,7 @@ class Company < ApplicationRecord
       tsearch: { any_word: true, prefix: true, dictionary: "english" }
     }
 
-  pg_search_scope :geographical_markets,
+  pg_search_scope :target_markets,
     against: {
       target_markets: 'A'
     },
