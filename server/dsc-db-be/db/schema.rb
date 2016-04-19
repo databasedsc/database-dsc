@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160330140608) do
+ActiveRecord::Schema.define(version: 20160418140710) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -33,13 +33,12 @@ ActiveRecord::Schema.define(version: 20160330140608) do
     t.string   "funding_stage"
     t.integer  "funding_amount"
     t.string   "product_stage"
-    t.string   "geo_markets"
+    t.string   "target_markets"
     t.string   "business_model"
     t.string   "company_stage"
     t.string   "operational_status"
     t.jsonb    "funding_rounds"
     t.text     "looking_for"
-    t.boolean  "selling"
     t.string   "government_assistance"
     t.text     "contact"
     t.text     "long_description"

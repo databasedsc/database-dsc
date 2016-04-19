@@ -40,12 +40,12 @@
           label: 'Product Stage',
           selectedValue: '',
           noSelectionString: 'Any stage',
-          values: ['Development', 'Complete']
+          values: ['', 'Development', 'Live']
         },
-        geographicalMarkets: {
+        targetMarkets: {
           type: 'checklist',
-          id: 'geographical-markets',
-          label: 'Geographical Markets',
+          id: 'target-markets',
+          label: 'Target Markets',
           selectedValue: '',
           selectedString: 'Any market',
           noSelectionString: 'Any market',

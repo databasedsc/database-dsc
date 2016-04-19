@@ -19,13 +19,12 @@
 #  funding_stage         :string
 #  funding_amount        :integer
 #  product_stage         :string
-#  geo_markets           :string
+#  target_markets        :string
 #  business_model        :string
 #  company_stage         :string
 #  operational_status    :string
 #  funding_rounds        :jsonb
 #  looking_for           :text
-#  selling               :boolean
 #  government_assistance :string
 #  contact               :text
 #  long_description      :text
@@ -59,9 +58,9 @@ class Company < ApplicationRecord
       tsearch: { any_word: true, prefix: true, dictionary: "english" }
     }
 
-  pg_search_scope :geographical_markets,
+  pg_search_scope :target_markets,
     against: {
-      geo_markets: 'A'
+      target_markets: 'A'
     },
     using: {
       tsearch: { any_word: true }

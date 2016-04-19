@@ -10,7 +10,7 @@
     .controller('AdminCompaniesEditController', function(getCompanyService, updateCompanyService, $stateParams, Notification) {
       var controller = this;
       this.tags = [];
-      this.geo_markets = {};
+      this.target_markets = {};
 
       function categoriesToArray() {
         controller.company.categories = controller.company.categories.split(',');
@@ -25,8 +25,8 @@
       }
 
       function loadGeoMarkets() {
-        controller.company.geo_markets.split(',').forEach(function(code) {
-          controller.geo_markets[code] = true
+        controller.company.target_markets.split(',').forEach(function(code) {
+          controller.target_markets[code] = true
         });
       }
 
@@ -52,19 +52,19 @@
         controller.company.categories = controller.company.categories.join(', ')
       };
 
-      function setGeoMarkets() {
-        controller.company.geo_markets = [];
-        for (var key in controller.geo_markets) {
-          if (controller.geo_markets.hasOwnProperty(key) && controller.geo_markets[key]) {
-            controller.company.geo_markets.push(key);
+      function setTargetMarkets() {
+        controller.company.target_markets = [];
+        for (var key in controller.target_markets) {
+          if (controller.target_markets.hasOwnProperty(key) && controller.target_markets[key]) {
+            controller.company.target_markets.push(key);
           }
         }
-        controller.company.geo_markets = controller.company.geo_markets.join(',')
+        controller.company.target_markets = controller.company.target_markets.join(',')
       }
 
       this.update = function() {
         joinCategories();
-        setGeoMarkets();
+        setTargetMarkets();
         updateCompanyService.update(controller.company)
           .then(function(company) {
             controller.company = company;

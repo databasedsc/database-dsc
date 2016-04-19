@@ -20,14 +20,14 @@
 
       setEmptyCompany();
 
-      var setGeoMarkets = function() {
-        controller.company.geo_markets = [];
-        for (var key in controller.geo_markets) {
-          if (controller.geo_markets.hasOwnProperty(key) && controller.geo_markets[key]) {
-            controller.company.geo_markets.push(key);
+      var setTargetMarkets = function() {
+        controller.company.target_markets = [];
+        for (var key in controller.target_markets) {
+          if (controller.target_markets.hasOwnProperty(key) && controller.target_markets[key]) {
+            controller.company.target_markets.push(key);
           }
         }
-        controller.company.geo_markets = controller.company.geo_markets.join(',')
+        controller.company.target_markets = controller.company.target_markets.join(',')
       };
 
       var joinCategories = function() {
@@ -48,7 +48,7 @@
 
       this.create = function() {
         $confirm({text: "Are you sure you want to submit?"}).then(function() {
-          setGeoMarkets();
+          setTargetMarkets();
           joinCategories();
           controller.createCompanyService.create(controller.company).then(function() {
             Notification.success('Company Saved sucessfully!');

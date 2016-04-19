@@ -43,8 +43,12 @@
       </div>
 
       <div ng-show="$ctrl.company.geo_markets ">
-        <h4>Geographical Markets:</h4>
-        <p>{{$ctrl.company.geo_markets | regionCodeToHuman}}</p>
+        <h4>Target Markets:</h4>
+        <p id="target-markets">
+          <span ng-repeat="targetMarket in $ctrl.company.target_markets.split(',')">
+            {{targetMarket | regionCodeToHuman}}{{$last ? ' ' : ','}}
+          </span>
+        </p>
       </div>
 
       <div ng-show="$ctrl.company.office_locations">
