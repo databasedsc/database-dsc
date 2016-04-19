@@ -48,7 +48,6 @@ describe('SearchResults', function() {
         expect(page.searchResultsContainer.getText()).toContain('Logentries');
         expect(page.searchResultsContainer.getText()).not.toContain('Mustard');
 
-
         // Headquarters
         page.searchField.clear().sendKeys("Cork").sendKeys(protractor.Key.ENTER);
         expect(page.searchResultsContainer.getText()).toContain('Trustev');
@@ -128,7 +127,6 @@ describe('SearchResults', function() {
       //expect(profilePage.body.getText()).toContain('TAGS')
       expect(profilePage.body.getText()).toContain('Funding')
     });
-
   });
 
 });

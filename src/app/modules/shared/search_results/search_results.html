@@ -1,10 +1,10 @@
-<div class="col-md-4" ng-repeat="entity in $ctrl.collection">
+<div class="col-md-4 result-item" ng-repeat="entity in $ctrl.collection">
   <a ui-sref="search.{{$ctrl.type}}Profile({id: entity.id})" class="no-decoration">
     <div class="panel panel-default" style="border-bottom: 5px solid #e92a8b;">
       <div class="panel-body">
-        <img ng-src="{{entity.logo}}" class="img-responsive" style="margin: 10px auto;">
-        <h2 class="text-left" style="margin-bottom:0;margin-top:30px;font-size:22px;font-weight:300;">{{entity.name}}</h2>
-        <p class="text-left" style="font-size:16px;font-weight:300;margin-bottom:0;color:#999999;">
+        <img ng-src="{{entity.logo}}" class="logo img-responsive" style="margin: 10px auto;">
+        <h2 id="{{entity.name | slugify}}-item" class="text-left name lead" style="margin-bottom:0;margin-top:30px;font-size:22px;font-weight:300;">{{entity.name}}</h2>
+        <p class="text-left short-desc" style="font-size:16px;font-weight:300;margin-bottom:0;color:#999999;">
           {{entity.short_description}}
         </p>
       </div>
