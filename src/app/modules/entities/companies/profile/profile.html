@@ -42,7 +42,7 @@
         <p>{{$ctrl.company.funding_amount | shortFmt:0}}</p>
       </div>
 
-      <div ng-show="$ctrl.company.geo_markets ">
+      <div ng-show="$ctrl.company.target_markets ">
         <h4>Target Markets:</h4>
         <p id="target-markets">
           <span ng-repeat="targetMarket in $ctrl.company.target_markets.split(',')">
