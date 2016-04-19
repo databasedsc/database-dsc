@@ -19,13 +19,12 @@ describe('CompanyProfile', function() {
       expect(page.overview.isElementPresent(by.css('.logo'))).toBe(true);
     });
 
-
     it('should display the name', function() {
       expect(page.overview.getText()).toContain('Logentries');
     });
 
     it('should display the tagline', function() {
-      expect(page.overview.getText()).toContain('Real-time log management and analytics');
+      expect(page.overview.getText()).toContain('Real-time log management and analytics'.toUpperCase());
     });
 
     it('should display the description', function() {

@@ -25,7 +25,7 @@ describe('HubProfile', function() {
     });
 
     it('should display the tagline', function() {
-      expect(page.overview.getText()).toContain('Dogpatch Labs is a pay to play co-working space for tech start-ups between seed and series a.');
+      expect(page.overview.getText()).toContain('Dogpatch Labs is a pay to play co-working space for tech start-ups between seed and series a.'.toUpperCase());
     });
 
     it('should display the description', function() {
@@ -61,4 +61,3 @@ describe('HubProfile', function() {
   });
 
 });
-

@@ -25,7 +25,7 @@ describe('InvestorProfile', function() {
     });
 
     it('should display the tagline', function() {
-      expect(page.overview.getText()).toContain('We are a pioneering early-stage venture capital firm, believing in ideas and investing in passion.');
+      expect(page.overview.getText()).toContain('We are a pioneering early-stage venture capital firm, believing in ideas and investing in passion.'.toUpperCase());
     });
 
     it('should display the description', function() {
@@ -122,4 +122,3 @@ describe('InvestorProfile', function() {
   });
 
 });
-
