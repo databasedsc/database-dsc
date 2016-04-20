@@ -1,55 +1,62 @@
 <div class="container">
   <profile-overview entity="$ctrl.multinational"></profile-overview>
-
-  <div class="row">
-    <div id="details" class="col-md-offset-2">
-      <div ng-show="$ctrl.multinational.headquarters">
-        <h4>Headquarters:</h4>
-        <p>{{$ctrl.multinational.headquarters}}</p>
-      </div>
-
-      <div ng-show="$ctrl.multinational.emea_hq">
-        <h4>EMEA HQ in Ireland:</h4>
-        <p>{{$ctrl.multinational.emea_hq ? 'Yes' : 'No'}}</p>
-      </div>
-
-      <div ng-show="$ctrl.multinational.local_office">
-        <h4>Irish Office Location:</h4>
-        <p>{{$ctrl.multinational.local_office}}</p>
-      </div>
-
-      <div ng-show="$ctrl.multinational.employees">
-        <h4>Employees in Ireland:</h4>
-        <p>{{$ctrl.multinational.employees}}</p>
-      </div>
-
-      <div ng-show="$ctrl.multinational.functions">
-        <h4>Functions in Ireland:</h4>
-        <p>
-          <span ng-repeat="functionCode in $ctrl.multinational.functions">
-            {{functionCode | functionCodeToHuman}}{{$last ? ' ' : ','}}
-          </span>
+  <div class="block block-bordered-lg" style="padding:40px 0;">
+    <div class="container text-center app-translate-15" data-transition="entrance" style="transition: transform 1200ms cubic-bezier(0.2, 0.7, 0.5, 1); transform: none;">
+      <blockquote class="pull-quote">
+        <cite style="margin-top:0;">Insight</cite>
+        <p style="margin-top:0px;font-size:26px;color:#e92a8b">
+          Multinational Overview
         </p>
-      </div>
-
-      <div ng-show="$ctrl.multinational.events_space">
-        <h4>Event space:</h4>
-        <p>{{$ctrl.multinational.events_space ? 'Yes' : 'No'}}</p>
-      </div>
-
-      <div ng-show="$ctrl.multinational.events_space_qualifiers">
-        <h4>Event space qualifiers:</h4>
-        <p>{{$ctrl.multinational.events_space_qualifiers}}</p>
-      </div>
-
-      <div ng-show="$ctrl.multinational.next_event">
-        <h4>Next event:</h4>
-        <p>{{$ctrl.multinational.next_event}}</p>
-      </div>
-
+      </blockquote>
     </div>
   </div>
+  <div id="details" class="row text-center" style="padding:40px 0;">
 
+    <div class="col-md-4" ng-show="$ctrl.multinational.headquarters">
+      <div class="company-info-title">Headquarters</div>
+      <div class="company-info-value">{{$ctrl.multinational.headquarters}}</div>
+    </div>
+
+    <div class="col-md-4" ng-show="$ctrl.multinational.emea_hq">
+      <div class="company-info-title">EMEA HQ in Ireland</div>
+      <div class="company-info-value">{{$ctrl.multinational.emea_hq}}</div>
+    </div>
+
+    <div class="col-md-4" ng-show="$ctrl.multinational.local_office">
+      <div class="company-info-title">Irish Office Location</div>
+      <div class="company-info-value">{{$ctrl.multinational.local_office}}</div>
+    </div>
+
+    <div class="col-md-4" ng-show="$ctrl.multinational.employees">
+      <div class="company-info-title">Employees in Ireland</div>
+      <div class="company-info-value">{{$ctrl.multinational.employees}}</div>
+    </div>
+
+    <div class="col-md-4" ng-show="$ctrl.multinational.functions">
+      <div class="company-info-title">Functions in Ireland</div>
+      <div class="company-info-value">
+        <span ng-repeat="functionCode in $ctrl.multinational.functions">
+          {{functionCode | functionCodeToHuman}}{{$last ? ' ' : ','}}
+        </span>
+      </div>
+    </div>
+
+    <div class="col-md-4" ng-show="$ctrl.multinational.events_space">
+      <div class="company-info-title">Event space</div>
+      <div class="company-info-value">{{$ctrl.multinational.events_space}}</div>
+    </div>
+
+    <div class="col-md-4" ng-show="$ctrl.multinational.events_space_qualifiers">
+      <div class="company-info-title">Event space qualifiers</div>
+      <div class="company-info-value">{{$ctrl.multinational.events_space_qualifiers}}</div>
+    </div>
+
+    <div class="col-md-4" ng-show="$ctrl.multinational.next_event">
+      <div class="company-info-title">Next event</div>
+      <div class="company-info-value">{{$ctrl.multinational.next_event}}</div>
+    </div>
+
+  </div>
 </div>
 
 <div ng-show="$ctrl.multinational.startup_packages" class="startup-packages">

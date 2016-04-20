@@ -1,26 +1,33 @@
-<div class="container">
-
-  <div class="row">
-
-    <h1 class="col-md-6">Investors</h1>
-    <form class="form-horizontal col-md-6" ng-submit="$ctrl.search()">
-      <div class="left-inner-addon">
-        <i class="fa fa-search"></i>
-        <input type="search" name="search-text" id="search-text-field" placeholder="Search investors" class="form-control" ng-model="$ctrl.query"
-               autocomplete="off"/>
+<div class="container-fluid">
+  <div class="row m-t-md">
+    <div class="col-md-3">
+      <div class="panel panel-default">
+        <div class="panel-heading">Search</div>
+        <div class="panel-body">
+          <div class="form-group">
+            <form class="form-horizontal" ng-submit="$ctrl.search()">
+              <div class="input-group">
+                <input type="search" name="search-text" id="search-text-field" placeholder="Search investors" class="form-control" ng-model="$ctrl.query" autocomplete="off" />
+                <span class="input-group-btn">
+                  <button name="button" type="submit" id="btnSearch" class="btn btn-ripple btn-primary has-ripple">Go</button>
+                </span>
+              </div>
+            </form>
+          </div>
+        </div>
       </div>
-    </form>
-  </div>
-
-  <div class="row">
-    <div class="col-md-3 form-group filters">
-      <form class="form-horizontal" ng-submit="$ctrl.search()">
-        <br/>
-        <search-filters filters="$ctrl.filters" searchfn="$ctrl.search()"></search-filters>
-      </form>
+      <div class="panel panel-default">
+        <div class="panel-heading">Filter Investors</div>
+        <div class="panel-body">
+          <form ng-submit="$ctrl.search()">
+            <search-filters filters="$ctrl.filters" searchfn="$ctrl.search()"></search-filters>
+          </form>
+        </div>
+      </div>
     </div>
-
-    <search-results class="col-md-8 col-md-offset-1" collection="$ctrl.results" type="investor" total-items="$ctrl.totalItems" current-page="currentPage"
-                    per-page="perPage"></search-results>
+    <div class="col-md-9 m-b-lg">
+      <h1 style="margin-top:0;">Investors</h1>
+      <search-results class="row m-t-md" collection="$ctrl.results" type="investor" total-items="$ctrl.totalItems" current-page="currentPage" per-page="perPage"></search-results>
+    </div>
   </div>
 </div>
