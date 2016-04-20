@@ -17,7 +17,10 @@
         </div>
       </div>
       <div class="panel panel-default">
-        <div class="panel-heading">Filter Companies</div>
+        <div class="panel-heading">
+          Filter Companies
+          <a href="" id="clear-filters" class="pull-right" ng-click="$ctrl.resetSearch()">Clear Filters</a>
+        </div>
         <div class="panel-body">
           <form ng-submit="$ctrl.search()">
             <search-filters filters="$ctrl.filters" searchfn="$ctrl.search()"></search-filters>

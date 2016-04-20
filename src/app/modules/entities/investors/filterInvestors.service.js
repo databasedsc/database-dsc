@@ -31,6 +31,7 @@
           id: 'investment-size',
           label: 'Investment Size',
           selectedValue: '',
+          defaultRange: {min: 10000, max: 100000000},
           range: {min: 10000, max: 100000000},
           options: {
             precision: 0,

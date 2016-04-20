@@ -13,7 +13,7 @@
       <div class="multiselect-dropdown" ng-show="show">
         <div class="checkbox" ng-repeat="value in filter.values">
           <label>
-            <input type="checkbox" ng-model="filter.selectedValue[value.code]" ng-change="$ctrl.update(filter)">{{value.label}}
+            <input name="filterCheckbox" type="checkbox" ng-model="filter.selectedValue[value.code]" ng-change="$ctrl.update(filter)">{{value.label}}
           </label>
         </div>
       </div>

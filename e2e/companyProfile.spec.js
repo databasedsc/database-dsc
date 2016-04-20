@@ -102,10 +102,6 @@ describe('CompanyProfile', function() {
       expect(page.details.getText()).toContain('NDRC');
     });
 
-    it('should display Status', function() {
-      expect(page.details.getText()).toContain('Active');
-    });
-
     it('should display Government Assistance', function() {
       expect(page.details.getText()).toContain('NDRC');
     });

@@ -7,7 +7,7 @@
       templateUrl: 'app/modules/entities/hubs/index.html',
       controller: 'SearchHubsController'
     })
-    .controller('SearchHubsController', function($scope, searchHubsService, filterHubsService) {
+    .controller('SearchHubsController', function($scope, $document, searchHubsService, filterHubsService) {
       var controller = this;
       this.searchHubsService = searchHubsService;
       this.filterHubsService = filterHubsService;
@@ -35,6 +35,32 @@
           currentPage: $scope.currentPage,
           perPage: $scope.perPage
         }
+      }
+
+      this.resetSearch = function() {
+        // reset the text search
+        this.query = "";
+        // reset all the filters
+        Object.keys(controller.filters).map(function(filterName) {
+          var filterObj = controller.filters[filterName];
+          filterObj.selectedValue = "";
+
+          switch (filterObj.type) {
+            case "dropdown":
+              $document[0].getElementById(filterObj.id).selectedIndex = 0;
+              break;
+            case "checklist":
+              filterObj.selectedString = filterObj.noSelectionString;
+              var checkboxes = $document[0].getElementsByName("filterCheckbox")
+              for (var i = 0; i < checkboxes.length; i++) {
+                checkboxes[i].checked = false;
+              }
+              break;
+            default:
+          }
+        });
+        // re-query for data with cleared search params
+        controller.search();
       }
 
       this.search = function() {

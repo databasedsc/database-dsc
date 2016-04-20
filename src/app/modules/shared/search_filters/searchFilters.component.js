@@ -31,14 +31,13 @@
           filter.selectedString = count + " selected";
         }
 
-
         this.search();
       };
 
       this.search = function() {
         this.searchfn();
       };
-
+      
       $scope.$on("slideEnded", function() {
         for (var filterKey in controller.filters){
           if (controller.filters.hasOwnProperty(filterKey)) {

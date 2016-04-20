@@ -74,14 +74,6 @@
           selectedValue: '',
           noSelectionString: 'Any stage',
           values: ['Early-stage', 'Growth', 'Late-stage', 'Public', 'Acquired']
-        },
-        operationalStatus: {
-          type: 'dropdown',
-          id: 'operational-status',
-          label: 'Status',
-          selectedValue: '',
-          noSelectionString: 'Any status',
-          values: ['Active', 'Inactive']
         }
       };
     })

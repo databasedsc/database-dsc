@@ -19,7 +19,7 @@
 
     <div class="col-md-4" ng-show="$ctrl.multinational.emea_hq">
       <div class="company-info-title">EMEA HQ in Ireland</div>
-      <div class="company-info-value">{{$ctrl.multinational.emea_hq}}</div>
+      <div class="company-info-value">{{$ctrl.multinational.emea_hq ? 'Yes' : 'No'}}</div>
     </div>
 
     <div class="col-md-4" ng-show="$ctrl.multinational.local_office">
@@ -43,7 +43,7 @@
 
     <div class="col-md-4" ng-show="$ctrl.multinational.events_space">
       <div class="company-info-title">Event space</div>
-      <div class="company-info-value">{{$ctrl.multinational.events_space}}</div>
+      <div class="company-info-value">{{$ctrl.multinational.events_space ? 'Yes' : 'No'}}</div>
     </div>
 
     <div class="col-md-4" ng-show="$ctrl.multinational.events_space_qualifiers">

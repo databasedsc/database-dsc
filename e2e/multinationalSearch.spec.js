@@ -60,18 +60,55 @@ describe('SearchResults', function() {
       });
     });
 
-    xdescribe('search filters', function() {
-
-      //TODO: find 'Yes' option without matching 'Yes & No' option
+    describe('search filters', function() {
 
       it("should filter search results using drop-downs for string filters", function() {
-        page.emeaHeadquarterFilter.element(by.cssContainingText('option', 'Yes')).click();
+        page.emeaHeadquarterFilter.element(by.xpath("//select[@id='emea-hq']//option[@value='Yes']")).click();
         expect(page.searchResults.count()).toEqual(3);
-      });
+      })
 
       it("should filter search results using drop-downs for numerical filters", function() {
         page.employeesFilter.element(by.cssContainingText('option', '101-250')).click();
         expect(page.searchResults.count()).toEqual(1);
+      });
+
+      it('should clear filters', function() {
+
+        // filter by emea hq in ireland
+        page.emeaHeadquarterFilter.element(by.xpath("//select[@id='emea-hq']//option[@value='Yes']")).click();
+        expect(page.searchResults.count()).toEqual(3);
+        // perform reset
+        page.clearFilters.click();
+        expect(page.searchResults.count()).toEqual(5);
+
+        // filter by startup package
+        page.startUpPackageFilter.element(by.xpath("//select[@id='startup-packages']//option[@value='Yes']")).click();
+        expect(page.searchResults.count()).toEqual(3);
+        // perform reset
+        page.clearFilters.click();
+        expect(page.searchResults.count()).toEqual(5);
+
+        // filter by employees in ireland
+        page.employeesFilter.element(by.cssContainingText('option', '101-250')).click();
+        expect(page.searchResults.count()).toEqual(1);
+        // perform reset
+        page.clearFilters.click();
+        expect(page.searchResults.count()).toEqual(5);
+
+        // filter by events space
+        page.eventSpaceFilter.element(by.xpath("//select[@id='events-space']//option[@value='No']")).click();
+        expect(page.searchResults.count()).toEqual(2);
+        // perform reset
+        page.clearFilters.click();
+        expect(page.searchResults.count()).toEqual(5);
+
+        // filter by functions in ireland
+        page.functionsInIrelandButton.click();
+        page.financeCheckbox.click();
+        expect(page.searchResults.count()).toEqual(3);
+        // perform reset
+        page.clearFilters.click();
+        expect(page.searchResults.count()).toEqual(5);
       });
     })
 
