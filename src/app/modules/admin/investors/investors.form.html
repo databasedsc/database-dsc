@@ -5,12 +5,25 @@
   <div class="panel-body">
     <div class="row">
       <div class="col-md-6">
-
         <div class="form-group">
           <label for="headquarters">Headquarters:</label>
           <input ng-model="$ctrl.investor.headquarters" id="headquarters" class="form-control" type="text">
         </div>
 
+        <div class="form-group">
+          <label for="founded">Founded:</label>
+          <input ng-model="$ctrl.investor.founded" id="founded" class="form-control" type="text">
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="local_office">Local Office:</label>
+          <input ng-model="$ctrl.investor.local_office" id="local_office" class="form-control" type="text">
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
         <div class="form-group">
           <label for="contact">Contact:</label>
           <input ng-model="$ctrl.investor.contact" id="contact" class="form-control" type="text">
@@ -25,11 +38,6 @@
       <div class="col-md-6">
 
         <div class="form-group">
-          <label for="founded">Founded:</label>
-          <input ng-model="$ctrl.investor.founded" id="founded" class="form-control" type="text">
-        </div>
-
-        <div class="form-group">
           <label for="preferred_contact">Preferred Contact:</label>
           <input ng-model="$ctrl.investor.preferred_contact" id="preferred_contact" class="form-control" type="text">
         </div>
@@ -40,6 +48,11 @@
       <div class="col-md-6">
 
         <div class="form-group">
+          <label for="funds_raised">Funds Raised:</label>
+          <input ng-model="$ctrl.investor.funds_raised" id="funds_raised" class="form-control" type="text">
+        </div>
+
+        <div class="form-group">
           <label for="exits_ipos">Exits/IPOs:</label>
           <input ng-model="$ctrl.investor.exits_ipos" id="exits_ipos" class="form-control" type="text">
         </div>
@@ -47,16 +60,6 @@
         <div class="form-group">
           <label for="regions">Regions:</label>
           <input ng-model="$ctrl.investor.regions" id="regions" class="form-control" type="text">
-        </div>
-
-        <div class="form-group">
-          <label for="board_members">Board Members:</label>
-          <input ng-model="$ctrl.investor.board_members" id="board_members" class="form-control" type="text">
-        </div>
-
-        <div class="form-group">
-          <label for="funds_raised">Funds Raised:</label>
-          <input ng-model="$ctrl.investor.funds_raised" id="funds_raised" class="form-control" type="text">
         </div>
 
         <div class="form-group">

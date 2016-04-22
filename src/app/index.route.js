@@ -53,6 +53,10 @@
           url: '/admin/investors',
           template: '<admin-investors-index></admin-investors-index>'
         })
+        .state('admin.investors.new', {
+          url: '/admin/investors/new',
+          template: '<admin-investors-new></admin-investors-new>'
+        })
         .state('admin.investors.edit', {
           url: '/admin/investors/:id/edit',
           template: '<admin-investors-edit></admin-investors-edit>'
