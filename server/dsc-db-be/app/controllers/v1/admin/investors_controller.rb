@@ -17,7 +17,6 @@ module V1
       end
 
       def update
-        puts params[:board_members]
         investor.update(investor_params)
         render json: investor
       end

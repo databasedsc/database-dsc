@@ -17,7 +17,6 @@ module V1
       end
 
       def update
-        puts params[:board_members]
         hub.update(hub_params)
         render json: hub
       end
@@ -40,11 +39,11 @@ module V1
       def hub_params
         params.require(:hub).permit(
           :name, :logo, :short_description, :long_description,
-          :headquarters, :founded,
-          :programs, :hub_type, :application_deadline, :contact,
-          :contact_detail, :address, :contact_urls,
-          :events, :alumni, :video_url, :website,
-          :custom_field_1, :custom_field_2, :custom_field_3, :custom_field_4,
+          :headquarters, :founded, :programs, { hub_type: [] },
+          :application_deadline, :contact, :contact_detail,
+          :address, { contact_urls: [:url] }, { events: [] },
+          { alumni: [:name] }, :video_url, :website, :custom_field_1,
+          :custom_field_2, :custom_field_3, :custom_field_4,
           { social_accounts: [:twitter, :linkedin, :facebook] }
         )
       end

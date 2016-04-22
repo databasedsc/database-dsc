@@ -1,117 +1,32 @@
-<admin-overview entity="$ctrl.investor"></admin-overview>
+<admin-overview entity="$ctrl.hub"></admin-overview>
 
 <div class="panel panel-default">
   <div class="panel-heading">Details</div>
   <div class="panel-body">
     <div class="row">
       <div class="col-md-6">
+
         <div class="form-group">
-          <label for="headquarters">Headquarters:</label>
-          <input ng-model="$ctrl.investor.headquarters" id="headquarters" class="form-control" type="text">
+          <label for="address">Address:</label>
+          <input ng-model="$ctrl.hub.address" id="address" class="form-control" type="text">
         </div>
+
+        <div class="form-group">
+          <label for="contact">Contact:</label>
+          <input ng-model="$ctrl.hub.contact" id="contact" class="form-control" type="text">
+        </div>
+
+      </div>
+      <div class="col-md-6">
 
         <div class="form-group">
           <label for="founded">Founded:</label>
-          <input ng-model="$ctrl.investor.founded" id="founded" class="form-control" type="text">
-        </div>
-      </div>
-      <div class="col-md-6">
-        <div class="form-group">
-          <label for="local_office">Local Office:</label>
-          <input ng-model="$ctrl.investor.local_office" id="local_office" class="form-control" type="text">
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-md-6">
-        <div class="form-group">
-          <label for="contact">Contact:</label>
-          <input ng-model="$ctrl.investor.contact" id="contact" class="form-control" type="text">
+          <input ng-model="$ctrl.hub.founded" id="founded" class="form-control" type="text">
         </div>
 
         <div class="form-group">
-          <label for="contact_email">Contact Email:</label>
-          <input ng-model="$ctrl.investor.contact_email" id="contact_email" class="form-control" type="text">
-        </div>
-
-      </div>
-      <div class="col-md-6">
-
-        <div class="form-group">
-          <label for="preferred_contact">Preferred Contact:</label>
-          <input ng-model="$ctrl.investor.preferred_contact" id="preferred_contact" class="form-control" type="text">
-        </div>
-
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-md-6">
-
-        <div class="form-group">
-          <label for="funds_raised">Funds Raised:</label>
-          <input ng-model="$ctrl.investor.funds_raised" id="funds_raised" class="form-control" type="text">
-        </div>
-
-        <div class="form-group">
-          <label for="exits_ipos">Exits/IPOs:</label>
-          <input ng-model="$ctrl.investor.exits_ipos" id="exits_ipos" class="form-control" type="text">
-        </div>
-
-        <div class="form-group">
-          <label for="regions">Regions:</label>
-          <input ng-model="$ctrl.investor.regions" id="regions" class="form-control" type="text">
-        </div>
-
-        <div class="form-group">
-          <label>Type of Funding</label>
-          <div class="checkbox">
-            <label>
-              <input ng-model="$ctrl.fundingTypes.PS" type="checkbox" value="PS"> Pre-seed
-            </label>
-            <br/>
-          </div>
-          <div class="checkbox">
-            <label>
-              <input ng-model="$ctrl.fundingTypes.S" type="checkbox" value="S"> Seed
-            </label>
-            <br/>
-          </div>
-          <div class="checkbox">
-            <label>
-              <input ng-model="$ctrl.fundingTypes.SA" type="checkbox" value="SA"> Series A
-            </label>
-            <br/>
-          </div>
-          <div class="checkbox">
-            <label>
-              <input ng-model="$ctrl.fundingTypes.SB" type="checkbox" value="SB"> Series B
-            </label>
-            <br/>
-          </div>
-          <div class="checkbox">
-            <label>
-              <input ng-model="$ctrl.fundingTypes.SC" type="checkbox" value="SC"> Series C
-            </label>
-            <br/>
-          </div>
-        </div>
-
-      </div>
-      <div class="col-md-6">
-
-        <div class="form-group">
-          <label for="investment_size">Investment Size:</label>
-          <input ng-model="$ctrl.investor.investment_size" id="investment_size" class="form-control" type="text">
-        </div>
-
-        <div class="form-group">
-          <label for="co_investors">Co Investors:</label>
-          <input ng-model="$ctrl.investor.co_investors" id="co_investors" class="form-control" type="text">
-        </div>
-
-        <div class="form-group">
-          <label for="similar_investors">Similar Investors:</label>
-          <input ng-model="$ctrl.investor.similar_investors" id="similar_investors" class="form-control" type="text">
+          <label for="contact_detail">Contact Detail:</label>
+          <input ng-model="$ctrl.hub.contact_detail" id="contact_detail" class="form-control" type="text">
         </div>
 
       </div>
@@ -119,7 +34,7 @@
   </div>
 </div>
 
-<div class="panel panel-default">
+<!-- <div class="panel panel-default">
   <div class="panel-heading">
     Office Locations
     <a ng-click="$ctrl.addOfficeLocation()" class="btn btn-primary btn-sm pull-right">Add Location</a>
@@ -219,4 +134,4 @@
       </div>
     </div>
   </div>
-</div>
+</div> -->
