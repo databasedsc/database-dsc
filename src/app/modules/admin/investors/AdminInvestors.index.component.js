@@ -31,7 +31,7 @@
       this.restoreInvestor = function(id) {
         controller.restoreInvestorService.restore(id).then(function() {
           getInvestors();
-          Notification.sucess('The entry has been restored!')
+          Notification.success('The entry has been restored!')
         })
       };
     });

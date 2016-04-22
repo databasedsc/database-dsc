@@ -34,6 +34,11 @@ Rails.application.routes.draw do
           put :restore
         end
       end
+      resources :hubs, only: [:create, :index, :show, :update, :destroy] do
+        member do
+          put :restore
+        end
+      end
     end
   end
 end

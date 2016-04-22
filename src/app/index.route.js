@@ -61,6 +61,13 @@
           url: '/admin/investors/:id/edit',
           template: '<admin-investors-edit></admin-investors-edit>'
         })
+        .state('admin.hubs', {
+          template: '<admin-hubs ui-view></admin-hubs>'
+        })
+        .state('admin.hubs.index', {
+          url: '/admin/hubs',
+          template: '<admin-hubs-index></admin-hubs-index>'
+        })
         .state('search', {
           templateUrl: 'app/search.html'
         })

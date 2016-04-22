@@ -45,6 +45,7 @@ module V1
           { office_locations: [] }, :contact, :contact_email, :preferred_contact,
           :co_investors, { board_members: [] }, :similar_investors, :similar_investors,
           { founders: [:name, :linkedin] }, :video_url, :website,
+          :custom_field_1, :custom_field_2, :custom_field_3, :custom_field_4,
           { social_accounts: [:twitter, :linkedin, :facebook] }
         )
       end

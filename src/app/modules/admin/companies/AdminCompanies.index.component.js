@@ -31,7 +31,7 @@
       this.restoreCompany = function(id) {
         controller.restoreCompanyService.restore(id).then(function() {
           getCompanies();
-          Notification.sucess('The entry has been restored!')
+          Notification.success('The entry has been restored!')
         })
       };
     });
