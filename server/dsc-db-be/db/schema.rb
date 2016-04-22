@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160418140710) do
+ActiveRecord::Schema.define(version: 20160422104602) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -116,11 +116,15 @@ ActiveRecord::Schema.define(version: 20160418140710) do
     t.text     "custom_field_2"
     t.text     "custom_field_3"
     t.text     "custom_field_4"
+    t.string   "website"
+    t.text     "video_url"
+    t.jsonb    "social_accounts"
   end
 
   add_index "investors", ["contact_urls"], name: "index_investors_on_contact_urls", using: :gin
   add_index "investors", ["deleted_at"], name: "index_investors_on_deleted_at", using: :btree
   add_index "investors", ["founders"], name: "index_investors_on_founders", using: :gin
+  add_index "investors", ["social_accounts"], name: "index_investors_on_social_accounts", using: :gin
 
   create_table "multinationals", force: :cascade do |t|
     t.string   "name"

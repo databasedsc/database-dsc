@@ -43,7 +43,7 @@
       <div class="company-info-value">{{$ctrl.investor.funding_types | fundingCodeToHuman : 'array' }}</div>
     </div>
 
-    <div class="col-md-4" ng-show="$ctrl.investor.funding_amount">
+    <div class="col-md-4" ng-show="$ctrl.investor.investment_size">
       <div class="company-info-title">Investment Size</div>
       <div class="company-info-value">{{$ctrl.investor.investment_size}}</div>
     </div>
@@ -101,7 +101,7 @@
       <h2 class="col-md-2">Irish Portfolio Companies</h2>
       <div class="col-md-10 row">
         <div class="tile col-md-6" ng-repeat="company in $ctrl.investor.portfolio">
-          <h3>{{package.name}}</h3>
+          <h3>{{company.name}}</h3>
         </div>
       </div>
     </div>

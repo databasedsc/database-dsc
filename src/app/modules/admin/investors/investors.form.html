@@ -1,0 +1,219 @@
+<admin-overview entity="$ctrl.investor" entity-type="investor"></admin-overview>
+
+<div class="panel panel-default">
+  <div class="panel-heading">Details</div>
+  <div class="panel-body">
+    <div class="row">
+      <div class="col-md-6">
+
+        <div class="form-group">
+          <label for="headquarters">Headquarters:</label>
+          <input ng-model="$ctrl.investor.headquarters" id="headquarters" class="form-control" type="text">
+        </div>
+
+        <div class="form-group">
+          <label for="contact">Contact:</label>
+          <input ng-model="$ctrl.investor.contact" id="contact" class="form-control" type="text">
+        </div>
+
+        <div class="form-group">
+          <label for="contact_email">Contact Email:</label>
+          <input ng-model="$ctrl.investor.contact_email" id="contact_email" class="form-control" type="text">
+        </div>
+
+      </div>
+      <div class="col-md-6">
+
+        <div class="form-group">
+          <label for="founded">Founded:</label>
+          <input ng-model="$ctrl.investor.founded" id="founded" class="form-control" type="text">
+        </div>
+
+        <div class="form-group">
+          <label for="preferred_contact">Preferred Contact:</label>
+          <input ng-model="$ctrl.investor.preferred_contact" id="preferred_contact" class="form-control" type="text">
+        </div>
+
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+
+        <div class="form-group">
+          <label for="exits_ipos">Exits/IPOs:</label>
+          <input ng-model="$ctrl.investor.exits_ipos" id="exits_ipos" class="form-control" type="text">
+        </div>
+
+        <div class="form-group">
+          <label for="regions">Regions:</label>
+          <input ng-model="$ctrl.investor.regions" id="regions" class="form-control" type="text">
+        </div>
+
+        <div class="form-group">
+          <label for="board_members">Board Members:</label>
+          <input ng-model="$ctrl.investor.board_members" id="board_members" class="form-control" type="text">
+        </div>
+
+        <div class="form-group">
+          <label for="funds_raised">Funds Raised:</label>
+          <input ng-model="$ctrl.investor.funds_raised" id="funds_raised" class="form-control" type="text">
+        </div>
+
+        <div class="form-group">
+          <label>Type of Funding</label>
+          <div class="checkbox">
+            <label>
+              <input ng-model="$ctrl.fundingTypes.PS" type="checkbox" value="PS"> Pre-seed
+            </label>
+            <br/>
+          </div>
+          <div class="checkbox">
+            <label>
+              <input ng-model="$ctrl.fundingTypes.S" type="checkbox" value="S"> Seed
+            </label>
+            <br/>
+          </div>
+          <div class="checkbox">
+            <label>
+              <input ng-model="$ctrl.fundingTypes.SA" type="checkbox" value="SA"> Series A
+            </label>
+            <br/>
+          </div>
+          <div class="checkbox">
+            <label>
+              <input ng-model="$ctrl.fundingTypes.SB" type="checkbox" value="SB"> Series B
+            </label>
+            <br/>
+          </div>
+          <div class="checkbox">
+            <label>
+              <input ng-model="$ctrl.fundingTypes.SC" type="checkbox" value="SC"> Series C
+            </label>
+            <br/>
+          </div>
+        </div>
+
+      </div>
+      <div class="col-md-6">
+
+        <div class="form-group">
+          <label for="investment_size">Investment Size:</label>
+          <input ng-model="$ctrl.investor.investment_size" id="investment_size" class="form-control" type="text">
+        </div>
+
+        <div class="form-group">
+          <label for="co_investors">Co Investors:</label>
+          <input ng-model="$ctrl.investor.co_investors" id="co_investors" class="form-control" type="text">
+        </div>
+
+        <div class="form-group">
+          <label for="similar_investors">Similar Investors:</label>
+          <input ng-model="$ctrl.investor.similar_investors" id="similar_investors" class="form-control" type="text">
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    Office Locations
+    <a ng-click="$ctrl.addOfficeLocation()" class="btn btn-primary btn-sm pull-right">Add Location</a>
+  </div>
+  <div class="panel-body">
+    <div ng-if="$ctrl.officeLocations.length == 0">
+      <p>There are no office locations.</p>
+    </div>
+    <div ng-if="$ctrl.officeLocations.length > 0" ng-repeat="location in $ctrl.officeLocations track by $index">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          Location
+          <a ng-click="$ctrl.removeOfficeLocation(location)" class="pull-right"><i class="fa fa-2x fa-trash"></i></a>
+        </div>
+        <div class="panel-body">
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="form-group">
+                <label for="location-address">Address</label>
+                <input type="text" ng-model="$ctrl.officeLocations[$index]" id="location-address" class="form-control">
+                </textarea>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    Founders
+    <a ng-click="$ctrl.addFounder()" class="btn btn-primary btn-sm pull-right">Add Founder</a>
+  </div>
+  <div class="panel-body">
+    <div ng-if="$ctrl.investor.founders.length == 0">
+      <p>There are no founders.</p>
+    </div>
+    <div ng-if="$ctrl.investor.founders.length > 0" ng-repeat="founder in $ctrl.investor.founders track by $index">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          Founder
+          <a ng-click="$ctrl.removeFounder(founder)" class="pull-right"><i class="fa fa-2x fa-trash"></i></a>
+        </div>
+        <div class="panel-body">
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="form-group">
+                <label for="package-name">Name</label>
+                <input type="text" ng-model="founder.name" id="founder-name" class="form-control">
+                </textarea>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="form-group">
+                <label for="founder-linkedin">LinkedIn</label>
+                <input type="text" ng-model="founder.linkedin" id="founder-linkedin" class="form-control">
+                </textarea>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    Board Members
+    <a ng-click="$ctrl.addBoardMember()" class="btn btn-primary btn-sm pull-right">Add Member</a>
+  </div>
+  <div class="panel-body">
+    <div ng-if="$ctrl.boardMembers.length == 0">
+      <p>There are no board members.</p>
+    </div>
+    <div ng-if="$ctrl.boardMembers.length > 0" ng-repeat="member in $ctrl.boardMembers track by $index">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          Board Member
+          <a ng-click="$ctrl.removeBoardMember(member)" class="pull-right"><i class="fa fa-2x fa-trash"></i></a>
+        </div>
+        <div class="panel-body">
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="form-group">
+                <label for="member">Name</label>
+                <input type="text" ng-model="$ctrl.boardMembers[$index]" id="member" class="form-control">
+                </textarea>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

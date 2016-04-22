@@ -73,21 +73,46 @@
 
         <div class="form-group">
           <label>Target Markets</label>
-          <div class="checkbox"><label> <input ng-model="$ctrl.target_markets.IE" type="checkbox"
-                                               value="IE">Ireland</label><br/></div>
-          <div class="checkbox"><label> <input ng-model="$ctrl.target_markets.UK" type="checkbox"
-                                               value="UK">UK</label><br/></div>
-          <div class="checkbox"><label> <input ng-model="$ctrl.target_markets.EU" type="checkbox"
-                                               value="EU">Europe</label><br/></div>
-          <div class="checkbox"><label> <input ng-model="$ctrl.target_markets.NA" type="checkbox" value="NA">North
-            America </label><br/></div>
-          <div class="checkbox"><label> <input ng-model="$ctrl.target_markets.AS" type="checkbox" value="AS">Asia</label><br/>
+          <div class="checkbox">
+            <label>
+              <input ng-model="$ctrl.target_markets.IE" type="checkbox" value="IE">Ireland</label>
+            <br/>
           </div>
-          <div class="checkbox"><label> <input ng-model="$ctrl.target_markets.AF" type="checkbox"
-                                               value="AF">Africa</label><br/></div>
-          <div class="checkbox"><label> <input ng-model="$ctrl.target_markets.SA" type="checkbox" value="SA">South
-            America</label><br/></div>
-          <div class="checkbox"><label> <input ng-model="$ctrl.target_markets.G" type="checkbox" value="G">Global</label><br/>
+          <div class="checkbox">
+            <label>
+              <input ng-model="$ctrl.target_markets.UK" type="checkbox" value="UK">UK</label>
+            <br/>
+          </div>
+          <div class="checkbox">
+            <label>
+              <input ng-model="$ctrl.target_markets.EU" type="checkbox" value="EU">Europe</label>
+            <br/>
+          </div>
+          <div class="checkbox">
+            <label>
+              <input ng-model="$ctrl.target_markets.NA" type="checkbox" value="NA">North America </label>
+            <br/>
+          </div>
+          <div class="checkbox">
+            <label>
+              <input ng-model="$ctrl.target_markets.AS" type="checkbox" value="AS">Asia</label>
+            <br/>
+          </div>
+          <div class="checkbox">
+            <label>
+              <input ng-model="$ctrl.target_markets.AF" type="checkbox" value="AF">Africa</label>
+            <br/>
+          </div>
+          <div class="checkbox">
+            <label>
+              <input ng-model="$ctrl.target_markets.SA" type="checkbox" value="SA">South America
+            </label>
+            <br/>
+          </div>
+          <div class="checkbox">
+            <label>
+              <input ng-model="$ctrl.target_markets.G" type="checkbox" value="G">Global</label>
+            <br/>
           </div>
         </div>
 
@@ -151,8 +176,7 @@
 
         <div class="form-group">
           <label for="government-assistance">Government Assistance</label>
-          <input ng-model="$ctrl.company.government_assistance" id="government-assistance" class="form-control"
-                 type="text">
+          <input ng-model="$ctrl.company.government_assistance" id="government-assistance" class="form-control" type="text">
         </div>
 
         <div class="form-group">
@@ -178,42 +202,32 @@
 
 <div class="panel panel-default">
   <div class="panel-heading">Funding</div>
-
   <div class="panel-body">
     <div class="row">
       <div class="col-sm-12">
         <p><a ng-click="$ctrl.addFundingRound()" class="btn btn-primary pull-right">Add round</a></p>
-
       </div>
     </div>
-
     <div class="" ng-repeat="round in $ctrl.company.funding_rounds">
-
       <div class="panel panel-default">
-
         <div class="panel-heading">
           Round
-
           <a ng-click="$ctrl.removeFundingRound(round)" class="pull-right"><i class="fa fa-2x fa-trash"></i></a>
         </div>
-
         <div class="panel-body">
           <div class="row">
             <div class="col-sm-6">
               <div class="form-group">
                 <label for="funding-type">Funding type</label>
-                <input ng-model="round.type" id="funding-type" class="form-control"
-                       type="text">
+                <input ng-model="round.type" id="funding-type" class="form-control" type="text">
               </div>
               <div class="form-group">
                 <label for="funding-amount">Funding amount</label>
-                <input ng-model="round.amount" id="funding-amount" class="form-control"
-                       type="text">
+                <input ng-model="round.amount" id="funding-amount" class="form-control" type="text">
               </div>
               <div class="form-group">
                 <label for="funding-date">Funding date</label>
-                <input ng-model="round.date" id="funding-date" class="form-control"
-                       type="text">
+                <input ng-model="round.date" id="funding-date" class="form-control" type="text">
               </div>
             </div>
           </div>

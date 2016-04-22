@@ -46,6 +46,17 @@
           url: '/admin/multinationals/:id/edit',
           template: '<admin-multinationals-edit></admin-multinationals-edit>'
         })
+        .state('admin.investors', {
+          template: '<admin-investors ui-view></admin-investors>'
+        })
+        .state('admin.investors.index', {
+          url: '/admin/investors',
+          template: '<admin-investors-index></admin-investors-index>'
+        })
+        .state('admin.investors.edit', {
+          url: '/admin/investors/:id/edit',
+          template: '<admin-investors-edit></admin-investors-edit>'
+        })
         .state('search', {
           templateUrl: 'app/search.html'
         })
