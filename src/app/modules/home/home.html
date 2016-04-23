@@ -5,9 +5,9 @@
     <div class="row">
       <div class="col-md-offset-2 col-md-8">
         <div class="form-group">
-          <ui-select ng-model="ctrl.person.selected" theme="bootstrap">
+          <ui-select ng-model="ctrl.availableOptions.selected" theme="bootstrap">
             <ui-select-match placeholder="Search for Irish Startups, Investors, Multinationals and Hubs">{{$select.selected.name}}</ui-select-match>
-            <ui-select-choices group-by="'itemType'" repeat="item in ctrl.people | filter: $select.search">
+            <ui-select-choices group-by="'itemType'" repeat="item in ctrl.availableOptions | filter: $select.search">
               <span ng-bind-html="item.name | highlight: $select.search"></span>
             </ui-select-choices>
           </ui-select>

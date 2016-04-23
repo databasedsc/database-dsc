@@ -37,11 +37,9 @@
       templateUrl: 'app/modules/home/home.html',
       controller: 'HomeController'
     })
-    .controller('HomeController', function ($scope, $interval, searchCompaniesService, searchInvestorsService, searchHubsService, searchMultinationalsService) {
+    .controller('HomeController', function ($scope, $location, $interval, searchCompaniesService, searchInvestorsService, searchHubsService, searchMultinationalsService) {
       var controller = this;
       this.searchCompaniesService = searchCompaniesService;
-
-
 
       $scope.currentPage = 1;
       $scope.perPage = 4;
@@ -54,6 +52,24 @@
         controller.gatherMtns();
       }, true);
 
+      $scope.$watch('ctrl.availableOptions.selected', function (selectedOption) {
+        switch (selectedOption['itemType'])
+        {
+           case 'Company': $location.path('/company/' + selectedOption['id'])
+           break;
+
+           case 'Investor': $location.path('/investor/' + selectedOption['id'])
+           break;
+
+           case 'Multinationals': $location.path('/mtns/' + selectedOption['id'])
+           break;
+
+           case 'Hub': $location.path('/hub/' + selectedOption['id'])
+           break;
+        }
+        console.log(selectedOption);
+      });
+
       function getPaginationDetails() {
         return {
           currentPage: $scope.currentPage,
@@ -61,7 +77,7 @@
         }
       }
 
-      controller.people = [];
+      controller.availableOptions = [];
 
       this.gatherCompanies = function() {
         searchCompaniesService.getCompanies({searchText: this.query}, getPaginationDetails()).then(function(companies) {
@@ -69,7 +85,7 @@
           controller.totalCompanyItems = companies.headers('Total')
 
           angular.forEach(companies.data, function(company){
-            controller.people.push({name: company.name, itemType: 'Company'});
+            controller.availableOptions.push({name: company.name, itemType: 'Company', id: company.id});
           });
         });
       };
@@ -80,7 +96,7 @@
           controller.totalInvestorItems = investors.headers('Total');
 
           angular.forEach(investors.data, function(investor){
-            controller.people.push({name: investor.name, itemType: 'Investor'});
+            controller.availableOptions.push({name: investor.name, itemType: 'Investor', id: investor.id});
           });
         });
       };
@@ -91,7 +107,7 @@
           controller.totalHubItems = hubs.headers('Total');
 
           angular.forEach(hubs.data, function(hub){
-            controller.people.push({name: hub.name, itemType: 'Hubs'});
+            controller.availableOptions.push({name: hub.name, itemType: 'Hubs', id: hub.id});
           });
         })
       }
@@ -102,7 +118,7 @@
           controller.totalMtnsItems = multinationals.headers('Total');
 
           angular.forEach(multinationals.data, function(multinational){
-            controller.people.push({name: multinational.name, itemType: 'Multinationals'});
+            controller.availableOptions.push({name: multinational.name, itemType: 'Multinationals', id: multinational.id});
           });
         })
       }
