@@ -6,6 +6,14 @@
       <div class="col-md-offset-2 col-md-8">
         <div class="form-group">
           <div class="input-group">
+            <ui-select ng-model="selected.value">
+              <ui-select-match>
+                  <span ng-bind="$select.selected.name"></span>
+              </ui-select-match>
+              <ui-select-choices repeat="item in ($ctrl.companyResults | filter: $select.search) track by item.id">
+                  <span ng-bind="item.name"></span>
+              </ui-select-choices>
+            </ui-select>
             <input type="text" name="code" value="" placeholder="Search for Irish Startups, Investors, Multinationals and Hubs" class="form-control input-lg" maxlength="10">
             <span class="input-group-btn">
               <button name="button" type="submit" id="btnFetch" class="btn btn-ripple btn-primary btn-lg has-ripple">Search</button>
@@ -30,7 +38,7 @@
       <div class="col-md-3 col-sm-6 company-tile" ng-repeat="entity in $ctrl.companyResults | limitTo:4">
         <a ui-sref="search.companyProfile({id: entity.id})" class="no-decoration">
         <div class="panel panel-default" style="border-bottom: 5px solid #e92a8b;">
-          <div class="panel-body" style="min-height: 335px;">
+          <div class="panel-body home-panel">
             <img src="{{entity.logo}}" class="img-responsive" style="margin: 10px auto;">
             <h2 class="text-left" style="margin-bottom:0;margin-top:30px;font-size:22px;font-weight:300;">{{entity.name}}</h2>
             <p class="text-left" style="font-size:16px;font-weight:300;margin-bottom:0;color:#999999;">
@@ -60,7 +68,7 @@
       <div class="col-md-3 col-sm-6 company-tile" ng-repeat="entity in $ctrl.companyResults | limitTo:4">
         <a ui-sref="search.companyProfile({id: entity.id})" class="no-decoration">
         <div class="panel panel-default" style="border-bottom: 5px solid #e92a8b;">
-          <div class="panel-body" style="min-height: 335px;">
+          <div class="panel-body home-panel">
             <img src="{{entity.logo}}" class="img-responsive" style="margin: 10px auto;">
             <h2 class="text-left" style="margin-bottom:0;margin-top:30px;font-size:22px;font-weight:300;">{{entity.name}}</h2>
             <p class="text-left" style="font-size:16px;font-weight:300;margin-bottom:0;color:#999999;">
@@ -89,7 +97,7 @@
       <div class="col-md-3 col-sm-6 company-tile" ng-repeat="entity in $ctrl.mtnsResults | limitTo:4">
         <a ui-sref="search.multinationalProfile({id: entity.id})" class="no-decoration">
         <div class="panel panel-default" style="border-bottom: 5px solid #e92a8b;">
-          <div class="panel-body" style="min-height: 335px;">
+          <div class="panel-body home-panel">
             <img src="{{entity.logo}}" class="img-responsive" style="margin: 10px auto;">
             <h2 class="text-left" style="margin-bottom:0;margin-top:30px;font-size:22px;font-weight:300;">{{entity.name}}</h2>
             <p class="text-left" style="font-size:16px;font-weight:300;margin-bottom:0;color:#999999;">
@@ -118,7 +126,7 @@
       <div class="col-md-3 col-sm-6 company-tile" ng-repeat="entity in $ctrl.investorResults | limitTo:4">
         <a ui-sref="search.investorProfile({id: entity.id})" class="no-decoration">
         <div class="panel panel-default" style="border-bottom: 5px solid #e92a8b;">
-          <div class="panel-body" style="min-height: 335px;">
+          <div class="panel-body home-panel">
             <img src="{{entity.logo}}" class="img-responsive" style="margin: 10px auto;">
             <h2 class="text-left" style="margin-bottom:0;margin-top:30px;font-size:22px;font-weight:300;">{{entity.name}}</h2>
             <p class="text-left" style="font-size:16px;font-weight:300;margin-bottom:0;color:#999999;">
@@ -147,7 +155,7 @@
       <div class="col-md-3 col-sm-6 company-tile" ng-repeat="entity in $ctrl.hubResults | limitTo:4">
         <a ui-sref="search.hubProfile({id: entity.id})" class="no-decoration">
         <div class="panel panel-default" style="border-bottom: 5px solid #e92a8b;">
-          <div class="panel-body" style="min-height: 335px;">
+          <div class="panel-body home-panel">
             <img src="{{entity.logo}}" class="img-responsive" style="margin: 10px auto;">
             <h2 class="text-left" style="margin-bottom:0;margin-top:30px;font-size:22px;font-weight:300;">{{entity.name}}</h2>
             <p class="text-left" style="font-size:16px;font-weight:300;margin-bottom:0;color:#999999;">
