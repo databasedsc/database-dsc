@@ -35,16 +35,33 @@
   letter-spacing:.05em;
 }
 
-.company-tile a {
+.company-tile a, .result-item a {
   text-decoration: none;
   color:#000;
 }
 
-.company-tile a:hover {
+.company-tile a:hover, .result-item a:hover {
   text-decoration: none;
   color:#000;
 }
 
 .app-block-footer a {
   color:#fff;
+}
+
+.result-item-panel {
+  min-height:350px;
+}
+
+.pagination > .active > a, .pagination > .active > span, .pagination > .active > a:hover, .pagination > .active > span:hover, .pagination > .active > a:focus, .pagination > .active > span:focus {
+  background-color: #e92a8b;
+  border-color: #e92a8b;
+}
+
+.pagination > li > a:hover, .pagination > li > span:hover, .pagination > li > a:focus, .pagination > li > span:focus {
+  color:#000;
+}
+
+.pagination > li > a, .pagination > li > span {
+  color:#000;
 }

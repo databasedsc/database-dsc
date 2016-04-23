@@ -1,4 +1,4 @@
-<div class="container-fluid">
+<div class="container">
   <div class="row m-t-md">
     <div class="col-md-3">
       <div class="panel panel-default">
@@ -19,7 +19,7 @@
       <div class="panel panel-default">
         <div class="panel-heading">
           Filter Hubs
-          <a href="" id="clear-filters" class="pull-right" ng-click="$ctrl.resetSearch()">Clear Filters</a>
+          <a href="" id="clear-filters" class="pull-right btn btn-xs btn-primary" ng-click="$ctrl.resetSearch()">Clear Filters</a>
         </div>
         <div class="panel-body">
           <form ng-submit="$ctrl.search()">
@@ -30,6 +30,7 @@
     </div>
     <div class="col-md-9 m-b-lg">
       <h1 style="margin-top:0;">Hubs</h1>
+      <hr style="margin-bottom:0;">
       <search-results class="row m-t-md" collection="$ctrl.results" type="hub" total-items="$ctrl.totalItems" current-page="currentPage" per-page="perPage"></search-results>
     </div>
   </div>
