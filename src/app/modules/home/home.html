@@ -27,8 +27,8 @@
       </p>
     </blockquote>
     <div class="row m-t-md">
-      <div class="col-md-3 company-tile" ng-repeat="entity in $ctrl.companyResults | limitTo:4">
-        <a ui-sref="search.{{$ctrl.type}}Profile({id: entity.id})" class="no-decoration">
+      <div class="col-md-3 col-sm-6 company-tile" ng-repeat="entity in $ctrl.companyResults | limitTo:4">
+        <a ui-sref="search.companyProfile({id: entity.id})" class="no-decoration">
         <div class="panel panel-default" style="border-bottom: 5px solid #e92a8b;">
           <div class="panel-body" style="min-height: 335px;">
             <img src="{{entity.logo}}" class="img-responsive" style="margin: 10px auto;">
@@ -57,8 +57,8 @@
       </p>
     </blockquote>
     <div class="row m-t-md">
-      <div class="col-md-3 company-tile" ng-repeat="entity in $ctrl.companyResults | limitTo:4">
-        <a ui-sref="search.{{$ctrl.type}}Profile({id: entity.id})" class="no-decoration">
+      <div class="col-md-3 col-sm-6 company-tile" ng-repeat="entity in $ctrl.companyResults | limitTo:4">
+        <a ui-sref="search.companyProfile({id: entity.id})" class="no-decoration">
         <div class="panel panel-default" style="border-bottom: 5px solid #e92a8b;">
           <div class="panel-body" style="min-height: 335px;">
             <img src="{{entity.logo}}" class="img-responsive" style="margin: 10px auto;">
@@ -86,8 +86,8 @@
       </p>
     </blockquote>
     <div class="row m-t-md">
-      <div class="col-md-3 company-tile" ng-repeat="entity in $ctrl.mtnsResults | limitTo:4">
-        <a ui-sref="search.{{$ctrl.type}}Profile({id: entity.id})" class="no-decoration">
+      <div class="col-md-3 col-sm-6 company-tile" ng-repeat="entity in $ctrl.mtnsResults | limitTo:4">
+        <a ui-sref="search.multinationalProfile({id: entity.id})" class="no-decoration">
         <div class="panel panel-default" style="border-bottom: 5px solid #e92a8b;">
           <div class="panel-body" style="min-height: 335px;">
             <img src="{{entity.logo}}" class="img-responsive" style="margin: 10px auto;">
@@ -115,8 +115,8 @@
       </p>
     </blockquote>
     <div class="row m-t-md">
-      <div class="col-md-3 company-tile" ng-repeat="entity in $ctrl.investorResults | limitTo:4">
-        <a ui-sref="search.{{$ctrl.type}}Profile({id: entity.id})" class="no-decoration">
+      <div class="col-md-3 col-sm-6 company-tile" ng-repeat="entity in $ctrl.investorResults | limitTo:4">
+        <a ui-sref="search.investorProfile({id: entity.id})" class="no-decoration">
         <div class="panel panel-default" style="border-bottom: 5px solid #e92a8b;">
           <div class="panel-body" style="min-height: 335px;">
             <img src="{{entity.logo}}" class="img-responsive" style="margin: 10px auto;">
@@ -144,8 +144,8 @@
       </p>
     </blockquote>
     <div class="row m-t-md">
-      <div class="col-md-3 company-tile" ng-repeat="entity in $ctrl.hubResults | limitTo:4">
-        <a ui-sref="search.{{$ctrl.type}}Profile({id: entity.id})" class="no-decoration">
+      <div class="col-md-3 col-sm-6 company-tile" ng-repeat="entity in $ctrl.hubResults | limitTo:4">
+        <a ui-sref="search.hubProfile({id: entity.id})" class="no-decoration">
         <div class="panel panel-default" style="border-bottom: 5px solid #e92a8b;">
           <div class="panel-body" style="min-height: 335px;">
             <img src="{{entity.logo}}" class="img-responsive" style="margin: 10px auto;">
