@@ -27,7 +27,7 @@
       </p>
     </blockquote>
     <div class="row m-t-md">
-      <div class="col-md-3 company-tile" ng-repeat="entity in $ctrl.results | limitTo:4">
+      <div class="col-md-3 company-tile" ng-repeat="entity in $ctrl.companyResults | limitTo:4">
         <a ui-sref="search.{{$ctrl.type}}Profile({id: entity.id})" class="no-decoration">
         <div class="panel panel-default" style="border-bottom: 5px solid #e92a8b;">
           <div class="panel-body" style="min-height: 335px;">
@@ -57,49 +57,18 @@
       </p>
     </blockquote>
     <div class="row m-t-md">
-      <div class="col-md-3">
+      <div class="col-md-3 company-tile" ng-repeat="entity in $ctrl.companyResults | limitTo:4">
+        <a ui-sref="search.{{$ctrl.type}}Profile({id: entity.id})" class="no-decoration">
         <div class="panel panel-default" style="border-bottom: 5px solid #e92a8b;">
-          <div class="panel-body">
-            <img src="../assets/img/boxever.jpg" class="img-responsive" style="margin: 10px auto;">
-            <h2 class="text-left" style="margin-bottom:0;margin-top:30px;font-size:22px;font-weight:300;">Boxever</h2>
+          <div class="panel-body" style="min-height: 335px;">
+            <img src="{{entity.logo}}" class="img-responsive" style="margin: 10px auto;">
+            <h2 class="text-left" style="margin-bottom:0;margin-top:30px;font-size:22px;font-weight:300;">{{entity.name}}</h2>
             <p class="text-left" style="font-size:16px;font-weight:300;margin-bottom:0;color:#999999;">
-              The on demand staffing network.
+              {{entity.short_description}}
             </p>
           </div>
         </div>
-      </div>
-      <div class="col-md-3">
-        <div class="panel panel-default" style="border-bottom: 5px solid #e92a8b;">
-          <div class="panel-body">
-            <img src="../assets/img/bizimply.jpg" class="img-responsive" style="margin: 10px auto;">
-            <h2 class="text-left" style="margin-bottom:0;margin-top:30px;font-size:22px;font-weight:300;">Bizimply</h2>
-            <p class="text-left" style="font-size:16px;font-weight:300;margin-bottom:0;color:#999999;">
-              The on demand staffing network.
-            </p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-3">
-        <div class="panel panel-default" style="border-bottom: 5px solid #e92a8b;">
-          <div class="panel-body">
-            <img src="../assets/img/soundwave.png" class="img-responsive" style="margin: 10px auto;">
-            <h2 class="text-left" style="margin-bottom:0;margin-top:30px;font-size:22px;font-weight:300;">Soundwave</h2>
-            <p class="text-left" style="font-size:16px;font-weight:300;margin-bottom:0;color:#999999;">
-              The on demand staffing network.
-            </p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-3">
-        <div class="panel panel-default" style="border-bottom: 5px solid #e92a8b;">
-          <div class="panel-body">
-            <img src="../assets/img/logentries.png" class="img-responsive" style="margin: 10px auto;">
-            <h2 class="text-left" style="margin-bottom:0;margin-top:30px;font-size:22px;font-weight:300;">Logentries</h2>
-            <p class="text-left" style="font-size:16px;font-weight:300;margin-bottom:0;color:#999999;">
-              The on demand staffing network.
-            </p>
-          </div>
-        </div>
+        </a>
       </div>
     </div>
     <div class="row m-t-md">
@@ -117,49 +86,18 @@
       </p>
     </blockquote>
     <div class="row m-t-md">
-      <div class="col-md-3">
+      <div class="col-md-3 company-tile" ng-repeat="entity in $ctrl.mtnsResults | limitTo:4">
+        <a ui-sref="search.{{$ctrl.type}}Profile({id: entity.id})" class="no-decoration">
         <div class="panel panel-default" style="border-bottom: 5px solid #e92a8b;">
-          <div class="panel-body">
-            <img src="../assets/img/facebook.png" class="img-responsive" style="margin: 10px auto;">
-            <h2 class="text-left" style="margin-bottom:0;margin-top:30px;font-size:22px;font-weight:300;">Facebook</h2>
+          <div class="panel-body" style="min-height: 335px;">
+            <img src="{{entity.logo}}" class="img-responsive" style="margin: 10px auto;">
+            <h2 class="text-left" style="margin-bottom:0;margin-top:30px;font-size:22px;font-weight:300;">{{entity.name}}</h2>
             <p class="text-left" style="font-size:16px;font-weight:300;margin-bottom:0;color:#999999;">
-              The on demand staffing network.
+              {{entity.short_description}}
             </p>
           </div>
         </div>
-      </div>
-      <div class="col-md-3">
-        <div class="panel panel-default" style="border-bottom: 5px solid #e92a8b;">
-          <div class="panel-body">
-            <img src="../assets/img/squarespace.png" class="img-responsive" style="margin: 10px auto;">
-            <h2 class="text-left" style="margin-bottom:0;margin-top:30px;font-size:22px;font-weight:300;">SquareSpace</h2>
-            <p class="text-left" style="font-size:16px;font-weight:300;margin-bottom:0;color:#999999;">
-              The on demand staffing network.
-            </p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-3">
-        <div class="panel panel-default" style="border-bottom: 5px solid #e92a8b;">
-          <div class="panel-body">
-            <img src="../assets/img/airbnb.png" class="img-responsive" style="margin: 10px auto;">
-            <h2 class="text-left" style="margin-bottom:0;margin-top:30px;font-size:22px;font-weight:300;">AirBnb</h2>
-            <p class="text-left" style="font-size:16px;font-weight:300;margin-bottom:0;color:#999999;">
-              The on demand staffing network.
-            </p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-3">
-        <div class="panel panel-default" style="border-bottom: 5px solid #e92a8b;">
-          <div class="panel-body">
-            <img src="../assets/img/google.png" class="img-responsive" style="margin: 10px auto;">
-            <h2 class="text-left" style="margin-bottom:0;margin-top:30px;font-size:22px;font-weight:300;">Google</h2>
-            <p class="text-left" style="font-size:16px;font-weight:300;margin-bottom:0;color:#999999;">
-              The on demand staffing network.
-            </p>
-          </div>
-        </div>
+        </a>
       </div>
     </div>
     <div class="row m-t-md">
@@ -177,27 +115,18 @@
       </p>
     </blockquote>
     <div class="row m-t-md">
-      <div class="col-md-3">
+      <div class="col-md-3 company-tile" ng-repeat="entity in $ctrl.investorResults | limitTo:4">
+        <a ui-sref="search.{{$ctrl.type}}Profile({id: entity.id})" class="no-decoration">
         <div class="panel panel-default" style="border-bottom: 5px solid #e92a8b;">
-          <div class="panel-body">
-            <img src="../assets/img/frontline.png" class="img-responsive" style="margin: 10px auto;">
-            <h2 class="text-left" style="margin-bottom:0;margin-top:30px;font-size:22px;font-weight:300;">Frontline Ventures</h2>
+          <div class="panel-body" style="min-height: 335px;">
+            <img src="{{entity.logo}}" class="img-responsive" style="margin: 10px auto;">
+            <h2 class="text-left" style="margin-bottom:0;margin-top:30px;font-size:22px;font-weight:300;">{{entity.name}}</h2>
             <p class="text-left" style="font-size:16px;font-weight:300;margin-bottom:0;color:#999999;">
-              The on demand staffing network.
+              {{entity.short_description}}
             </p>
           </div>
         </div>
-      </div>
-      <div class="col-md-3">
-        <div class="panel panel-default" style="border-bottom: 5px solid #e92a8b;">
-          <div class="panel-body">
-            <img src="../assets/img/polaris.jpg" class="img-responsive" style="margin: 10px auto;">
-            <h2 class="text-left" style="margin-bottom:0;margin-top:30px;font-size:22px;font-weight:300;">Polaris Partners</h2>
-            <p class="text-left" style="font-size:16px;font-weight:300;margin-bottom:0;color:#999999;">
-              The on demand staffing network.
-            </p>
-          </div>
-        </div>
+        </a>
       </div>
     </div>
     <div class="row m-t-md">
@@ -215,31 +144,22 @@
       </p>
     </blockquote>
     <div class="row m-t-md">
-      <div class="col-md-3">
+      <div class="col-md-3 company-tile" ng-repeat="entity in $ctrl.hubResults | limitTo:4">
+        <a ui-sref="search.{{$ctrl.type}}Profile({id: entity.id})" class="no-decoration">
         <div class="panel panel-default" style="border-bottom: 5px solid #e92a8b;">
-          <div class="panel-body">
-            <img src="../assets/img/ndrc.jpg" class="img-responsive" style="margin: 10px auto;">
-            <h2 class="text-left" style="margin-bottom:0;margin-top:30px;font-size:22px;font-weight:300;">NDRC</h2>
+          <div class="panel-body" style="min-height: 335px;">
+            <img src="{{entity.logo}}" class="img-responsive" style="margin: 10px auto;">
+            <h2 class="text-left" style="margin-bottom:0;margin-top:30px;font-size:22px;font-weight:300;">{{entity.name}}</h2>
             <p class="text-left" style="font-size:16px;font-weight:300;margin-bottom:0;color:#999999;">
-              The on demand staffing network.
+              {{entity.short_description}}
             </p>
           </div>
         </div>
-      </div>
-      <div class="col-md-3">
-        <div class="panel panel-default" style="border-bottom: 5px solid #e92a8b;">
-          <div class="panel-body">
-            <img src="../assets/img/dog.png" class="img-responsive" style="margin: 10px auto;">
-            <h2 class="text-left" style="margin-bottom:0;margin-top:30px;font-size:22px;font-weight:300;">Dogpatch Labs</h2>
-            <p class="text-left" style="font-size:16px;font-weight:300;margin-bottom:0;color:#999999;">
-              The on demand staffing network.
-            </p>
-          </div>
-        </div>
+        </a>
       </div>
     </div>
     <div class="row m-t-md">
-      <a href="#" class="btn btn-primary-outline btn-lg">View More Hubs</a>
+      <a href="/#/hubs" class="btn btn-primary-outline btn-lg">View More Hubs</a>
     </div>
   </div>
 </div>
