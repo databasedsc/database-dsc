@@ -41,18 +41,7 @@
       var controller = this;
       this.searchCompaniesService = searchCompaniesService;
 
-      controller.people = [
-        { name: 'Adam2',      email: 'adam@email.com',      age: 12, country: 'United States' },
-        { name: 'Amalie',    email: 'amalie@email.com',    age: 12, country: 'Argentina' },
-        { name: 'Estefanía', email: 'estefania@email.com', age: 21, country: 'Argentina' },
-        { name: 'Adrian',    email: 'adrian@email.com',    age: 21, country: 'Ecuador' },
-        { name: 'Wladimir',  email: 'wladimir@email.com',  age: 30, country: 'Ecuador' },
-        { name: 'Samantha',  email: 'samantha@email.com',  age: 30, country: 'United States' },
-        { name: 'Nicole',    email: 'nicole@email.com',    age: 43, country: 'Colombia' },
-        { name: 'Natasha',   email: 'natasha@email.com',   age: 54, country: 'Ecuador' },
-        { name: 'Michael',   email: 'michael@email.com',   age: 15, country: 'Colombia' },
-        { name: 'Nicolás',   email: 'nicolas@email.com',    age: 43, country: 'Colombia' }
-      ];
+
 
       $scope.currentPage = 1;
       $scope.perPage = 4;
@@ -72,10 +61,16 @@
         }
       }
 
+      controller.people = [];
+
       this.gatherCompanies = function() {
         searchCompaniesService.getCompanies({searchText: this.query}, getPaginationDetails()).then(function(companies) {
           controller.companyResults = companies.data;
           controller.totalCompanyItems = companies.headers('Total')
+
+          angular.forEach(companies.data, function(company){
+            controller.people.push({name: company.name, itemType: 'Company'});
+          });
         });
       };
 
@@ -83,6 +78,10 @@
         searchInvestorsService.get({searchText: this.query}, getPaginationDetails()).then(function(investors) {
           controller.investorResults = investors.data;
           controller.totalInvestorItems = investors.headers('Total');
+
+          angular.forEach(investors.data, function(investor){
+            controller.people.push({name: investor.name, itemType: 'Investor'});
+          });
         });
       };
 
@@ -90,6 +89,10 @@
         searchHubsService.get({searchText: controller.query}, getPaginationDetails()).then(function(hubs) {
           controller.hubResults = hubs.data;
           controller.totalHubItems = hubs.headers('Total');
+
+          angular.forEach(hubs.data, function(hub){
+            controller.people.push({name: hub.name, itemType: 'Hubs'});
+          });
         })
       }
 
@@ -97,6 +100,10 @@
         searchMultinationalsService.get({searchText: controller.query}, getPaginationDetails()).then(function(multinationals) {
           controller.mtnsResults = multinationals.data;
           controller.totalMtnsItems = multinationals.headers('Total');
+
+          angular.forEach(multinationals.data, function(multinational){
+            controller.people.push({name: multinational.name, itemType: 'Multinationals'});
+          });
         })
       }
 
