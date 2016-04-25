@@ -64,13 +64,6 @@
       </div>
     </div>
 
-    <div class="col-md-4 m-b-md" ng-show="$ctrl.company.office_locations">
-      <div class="company-info-title">Office Locations</div>
-      <div class="company-info-value">
-        <span ng-repeat="location in $ctrl.company.office_locations">{{location}}</span>
-      </div>
-    </div>
-
     <div class="col-md-4 m-b-md" ng-show="$ctrl.company.business_model">
       <div class="company-info-title">Business Model</div>
       <div class="company-info-value">{{$ctrl.company.business_model}}</div>
@@ -104,6 +97,23 @@
     <div class="col-md-4 m-b-md" ng-show="$ctrl.company.looking_for">
       <div class="company-info-title">We're looking for</div>
       <div class="company-info-value">{{$ctrl.company.looking_for}}</div>
+    </div>
+  </div>
+  <div ng-show="!!$ctrl.company.office_locations.length > 0" class="portfolio">
+    <div class="block block-bordered-lg" style="padding:40px 0;">
+      <div class="container text-center app-translate-15" data-transition="entrance" style="transition: transform 1200ms cubic-bezier(0.2, 0.7, 0.5, 1); transform: none;">
+        <blockquote class="pull-quote">
+          <cite style="margin-top:0;">Locations</cite>
+          <p style="margin-top:0px;font-size:26px;color:#e92a8b">
+            Map View
+          </p>
+        </blockquote>
+      </div>
+    </div>
+    <div class="m-b-lg">
+      <ng-map zoom="11" center="[{{$ctrl.company.office_locations[0].lat}}, {{$ctrl.company.office_locations[0].lng}}]">
+        <marker position="[{{office.lat}}, {{office.lng}}]" ng-repeat="office in $ctrl.company.office_locations" />
+      </ng-map>
     </div>
   </div>
   <div ng-show="$ctrl.company.funding_rounds" class="row block block-bordered-lg" style="padding:40px 0;">

@@ -47,7 +47,7 @@ module V1
           :categories, :incubator, :funding_stage, :employees, :funding_amount,
           :business_model, :company_stage, :operational_status,
           :government_assistance, :looking_for, :contact, :founders,
-          :office_locations, :video_url, :website, :custom_field_1,
+          { office_locations: [:address, :lat, :lng] }, :video_url, :website, :custom_field_1,
           :custom_field_2, :custom_field_3, :custom_field_4,
           { social_accounts: [:twitter, :linkedin, :facebook] },
           { funding_rounds: [:type, :amount, :date] }
