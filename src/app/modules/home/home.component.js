@@ -64,7 +64,7 @@
            case 'Multinationals': $location.path('/mtns/' + selectedOption['id'])
            break;
 
-           case 'Hub': $location.path('/hub/' + selectedOption['id'])
+           case 'Hubs': $location.path('/hub/' + selectedOption['id'])
            break;
         }
         console.log(selectedOption);

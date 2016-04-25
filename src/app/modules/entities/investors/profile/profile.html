@@ -56,7 +56,7 @@
     <div class="col-md-4" ng-show="$ctrl.investor.office_locations">
       <div class="company-info-title">Office Locations</div>
       <div class="company-info-value">
-        <p ng-repeat="office in $ctrl.investor.office_locations">{{office}}</p>
+        <p ng-repeat="office in $ctrl.investor.office_locations">{{office.address}}</p>
       </div>
     </div>
 
@@ -93,6 +93,25 @@
     </div>
 
   </div>
+
+  <div ng-show="!!$ctrl.investor.office_locations.length > 0" class="portfolio">
+    <div class="block block-bordered-lg" style="padding:40px 0;">
+      <div class="container text-center app-translate-15" data-transition="entrance" style="transition: transform 1200ms cubic-bezier(0.2, 0.7, 0.5, 1); transform: none;">
+        <blockquote class="pull-quote">
+          <cite style="margin-top:0;">Locations</cite>
+          <p style="margin-top:0px;font-size:26px;color:#e92a8b">
+            Map View
+          </p>
+        </blockquote>
+      </div>
+    </div>
+    <div class="m-b-lg">
+      <ng-map zoom="11" center="[{{$ctrl.investor.office_locations[0].lat}}, {{$ctrl.investor.office_locations[0].lng}}]">
+        <marker position="[{{office.lat}}, {{office.lng}}]" ng-repeat="office in $ctrl.investor.office_locations" />
+      </ng-map>
+    </div>
+  </div>
+
 </div>
 
 <div ng-show="!!$ctrl.investor.portfolio.length" class="portfolio">
