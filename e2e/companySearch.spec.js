@@ -60,7 +60,7 @@ describe('SearchResults', function() {
         expect(page.searchResultsContainer.getText()).toContain('Mustard');
         expect(page.searchResultsContainer.getText()).not.toContain('Trustev');
 
-        // Categories/Tags/Sector
+        // Tags/Sector
         page.searchField.clear().sendKeys("Personalization").sendKeys(protractor.Key.ENTER);
         expect(page.searchResultsContainer.getText()).toContain('Boxever');
         expect(page.searchResultsContainer.getText()).not.toContain('Mustard');

@@ -13,7 +13,7 @@
 
       function setEmptyMultinational() {
         controller.multinational = {
-          categories: [],
+          tags: [],
           functions: [],
           startup_packages: []
         };
@@ -35,8 +35,8 @@
         controller.multinational.startup_packages.splice(controller.multinational.startup_packages.indexOf(startupPackage), 1);
       };
 
-      controller.addCategory = function(tag) {
-        this.multinational.categories.push(tag.text);
+      controller.addTag = function(tag) {
+        this.multinational.tags.push(tag.text);
       };
 
       this.create = function() {

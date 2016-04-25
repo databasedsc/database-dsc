@@ -88,8 +88,14 @@
 <div class="panel panel-default">
   <div class="panel-heading">Tags</div>
   <div class="row">
-    <tags-input ng-model="$ctrl.tags" on-tag-added="$ctrl.addCategory($tag)" min-tags="1"></tags-input>
-    <span ng-show="create.newTag.$invalid" class="label label-danger">At least 1 category is required.</span>
+    <tags-input ng-model="$ctrl.tags"
+                add-on-enter="false"
+                on-tag-added="$ctrl.addTag($tag)"
+                on-tag-removed="$ctrl.removeTag($tag)"
+                min-tags="1">
+      <auto-complete source="$ctrl.queryTags($query)"></auto-complete>
+    </tags-input>
+    <span ng-show="create.newTag.$invalid" class="label label-danger">At least 1 tag is required.</span>
   </div>
 </div>
 

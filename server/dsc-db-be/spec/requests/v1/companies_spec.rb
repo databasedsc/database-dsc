@@ -13,7 +13,7 @@ RSpec.describe 'V1::Companies', :type => :request do
         "headquarters": "Dublin",
         "formerly_known_as": "Ketchup",
         "founders": "Gavin Fogarty",
-        "categories": "Technology, Social Recruiting, Event Management",
+        "tags": "Technology, Social Recruiting, Event Management",
         "investors": "Undisclosed",
         "office_locations": "NDRC at the Digital Exchange, Crane Street, Dublin 8",
         "incubator": "NDRC",
@@ -51,7 +51,7 @@ RSpec.describe 'V1::Companies', :type => :request do
       expect(company_json['headquarters']).to eq('Dublin')
       expect(company_json['formerly_known_as']).to eq('Ketchup')
       expect(company_json['founders']).to eq('Gavin Fogarty')
-      expect(company_json['categories']).to eq('Technology, Social Recruiting, Event Management')
+      expect(company_json['tags']).to eq('Technology, Social Recruiting, Event Management')
       expect(company_json['investors']).to eq('Undisclosed')
       expect(company_json['office_locations']).to eq('NDRC at the Digital Exchange, Crane Street, Dublin 8')
       expect(company_json['incubator']).to eq('NDRC')
@@ -81,7 +81,7 @@ RSpec.describe 'V1::Companies', :type => :request do
         headquarters: 'Dublin',
         formerly_known_as: 'ketchup',
         founders: 'Kevin Fogarty',
-        categories: 'Personalisation',
+        tags: 'Personalisation',
         investors: '',
         office_locations: '',
         incubator: 'NDRC',
@@ -96,7 +96,7 @@ RSpec.describe 'V1::Companies', :type => :request do
         short_description: 'another search',
         headquarters: 'Cork',
         formerly_known_as: '',
-        categories: 'Event Management',
+        tags: 'Event Management',
         investors: 'Delta Partners',
         office_locations: 'Tara Street',
         incubator: '',
@@ -179,7 +179,7 @@ RSpec.describe 'V1::Companies', :type => :request do
         expect(companies_json.size).to eq(1)
       end
 
-      it 'should return companies filtered by categories field' do
+      it 'should return companies filtered by tags field' do
         get '/v1/companies?searchText=Event+Management'
         companies_json = JSON.parse(response.body)
         expect(response).to have_http_status(200)

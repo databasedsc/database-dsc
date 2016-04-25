@@ -59,12 +59,11 @@ module V1
           :events_space_qualifiers,
           :custom_field_1, :custom_field_2, :custom_field_3, :custom_field_4,
           functions: [],
-          categories: [],
           startup_packages: [:name, :link, :description],
-          social_accounts: [:twitter, :linkedin, :facebook]
+          social_accounts: [:twitter, :linkedin, :facebook],
+          tags: []
         )
       end
-
     end
   end
 end

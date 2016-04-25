@@ -14,7 +14,7 @@
       var setEmptyCompany = function() {
         controller.company = {
           funding_rounds: [],
-          categories: []
+          tags: []
         }
       };
 
@@ -30,8 +30,8 @@
         controller.company.target_markets = controller.company.target_markets.join(',')
       };
 
-      var joinCategories = function() {
-        controller.company.categories = controller.company.categories.join(',')
+      var joinTags = function() {
+        controller.company.tags = controller.company.tags.join(',')
       };
 
       controller.addFundingRound = function() {
@@ -42,14 +42,14 @@
         controller.company.funding_rounds.splice(controller.company.funding_rounds.indexOf(round), 1);
       };
 
-      controller.addCategory = function(tag) {
-        this.company.categories.push(tag.text);
+      controller.addTag = function(tag) {
+        this.company.tags.push(tag.text);
       };
 
       this.create = function() {
         $confirm({text: "Are you sure you want to submit?"}).then(function() {
           setTargetMarkets();
-          joinCategories();
+          joinTags();
           controller.createCompanyService.create(controller.company).then(function() {
             Notification.success('Company Saved sucessfully!');
             setEmptyCompany();

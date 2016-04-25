@@ -7,7 +7,7 @@
       templateUrl: 'app/modules/entities/companies/index.html',
       controller: 'SearchCompaniesController'
     })
-    .controller('SearchCompaniesController', function($scope, $document, searchCompaniesService, filterCompaniesService) {
+    .controller('SearchCompaniesController', function($scope, $location, $document, searchCompaniesService, filterCompaniesService) {
       var controller = this;
       this.searchCompaniesService = searchCompaniesService;
       this.filterCompaniesService = filterCompaniesService;
@@ -65,7 +65,17 @@
 
       // search
       this.search = function() {
-        searchCompaniesService.getCompanies({searchText: this.query}, getSelectedFilter(), getPaginationDetails()).then(function(companies) {
+        var params = $location.search();
+
+        var query = {};
+        if (this.query != undefined) {
+          query.searchText = this.query;
+        }
+        if (params["tag"] != undefined) {
+          query.tag = params["tag"];
+        }
+
+        searchCompaniesService.getCompanies(query, getSelectedFilter(), getPaginationDetails()).then(function(companies) {
           controller.results = companies.data;
           controller.totalItems = companies.headers('Total')
         });

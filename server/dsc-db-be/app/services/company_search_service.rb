@@ -8,6 +8,8 @@ class CompanySearchService
   def call
     if @params[:searchText].present?
       companies = Company.search(@params[:searchText])
+    elsif @params[:tag].present?
+      companies = Company.search_by_tag(@params[:tag])
     else
       companies = Company.all
     end

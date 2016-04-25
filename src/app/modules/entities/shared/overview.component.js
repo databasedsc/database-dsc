@@ -7,7 +7,8 @@
       templateUrl: 'app/modules/entities/shared/overview.html',
       controller: 'OverviewController',
       bindings: {
-        entity: '='
+        entity: '=',
+        entityType: '@'
       }
     })
     .controller('OverviewController', function($scope, $sce) {

@@ -11,7 +11,7 @@
 #  headquarters          :string
 #  formerly_known_as     :string
 #  founders              :text
-#  categories            :text
+#  tags            :text
 #  investors             :text
 #  office_locations      :text
 #  incubator             :string
@@ -42,6 +42,14 @@ class Company < ApplicationRecord
 
   using Utils
 
+  pg_search_scope :search_by_tag,
+    against: {
+      tags: 'A',
+    },
+    using: {
+      tsearch: { any_word: true }
+    }
+
   pg_search_scope :search,
     against: {
       name: 'A',
@@ -49,7 +57,7 @@ class Company < ApplicationRecord
       headquarters: 'C',
       formerly_known_as: 'A',
       founders: 'D',
-      categories: 'D',
+      tags: 'D',
       investors: 'D',
       office_locations: 'D',
       incubator: 'D'

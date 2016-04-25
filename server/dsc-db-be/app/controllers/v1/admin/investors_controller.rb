@@ -45,7 +45,8 @@ module V1
           :co_investors, { board_members: [] }, :similar_investors, :similar_investors,
           { founders: [:name, :linkedin] }, :video_url, :website,
           :custom_field_1, :custom_field_2, :custom_field_3, :custom_field_4,
-          { social_accounts: [:twitter, :linkedin, :facebook] }
+          { social_accounts: [:twitter, :linkedin, :facebook] },
+          { tags: [] }
         )
       end
 

@@ -7,13 +7,13 @@
       templateUrl: 'app/modules/admin/companies/companies.edit.html',
       controller: 'AdminCompaniesEditController'
     })
-    .controller('AdminCompaniesEditController', function(getCompanyService, updateCompanyService, $stateParams, Notification) {
+    .controller('AdminCompaniesEditController', function(getCompanyService, updateCompanyService, $stateParams, Notification, listTagsService) {
       var controller = this;
       this.tags = [];
       this.target_markets = {};
 
       function loadTags() {
-        controller.company.categories.forEach(function(tag) {
+        controller.company.tags.forEach(function(tag) {
           controller.tags.push({text: tag})
         });
       }
@@ -30,12 +30,16 @@
         loadGeoMarkets();
       });
 
-      controller.addCategory = function(tag) {
-        controller.company.categories.push(tag.text);
+      controller.queryTags = function(query) {
+        return listTagsService.filter(query);
       };
 
-      controller.removeCategory = function(tag) {
-        controller.company.categories.splice(controller.company.categories.indexOf(tag.text), 1);
+      controller.addTag = function(tag) {
+        controller.company.tags.push(tag.text);
+      };
+
+      controller.removeTag = function(tag) {
+        controller.company.tags.splice(controller.company.tags.indexOf(tag.text), 1);
       };
 
       controller.addFundingRound = function() {

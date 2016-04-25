@@ -7,14 +7,14 @@
       templateUrl: 'app/modules/admin/multinationals/multinationals.edit.html',
       controller: 'AdminMultinationalsEditController'
     })
-    .controller('AdminMultinationalsEditController', function(getMultinationalService, updateMultinationalService, $stateParams, Notification) {
+    .controller('AdminMultinationalsEditController', function(getMultinationalService, updateMultinationalService, $stateParams, Notification, listTagsService) {
       var controller = this;
       this.functions = [];
       this.tags = [];
 
 
       function loadTags() {
-        controller.multinational.categories.forEach(function(tag) {
+        controller.multinational.tags.forEach(function(tag) {
           controller.tags.push({text: tag})
         });
       }
@@ -34,10 +34,17 @@
         });
       }
 
-      controller.addCategory = function(tag) {
-        controller.multinational.categories.push(tag.text);
+      controller.queryTags = function(query) {
+        return listTagsService.filter(query);
       };
 
+      controller.addTag = function(tag) {
+        controller.multinational.tags.push(tag.text);
+      };
+
+      controller.removeTag = function(tag) {
+        controller.multinational.tags.splice(controller.multinational.tags.indexOf(tag.text), 1);
+      };
 
       getMultinationalService.find($stateParams.id).then(function(multinational) {
         controller.multinational = multinational;

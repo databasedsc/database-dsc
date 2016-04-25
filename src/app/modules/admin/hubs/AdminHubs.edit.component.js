@@ -8,12 +8,19 @@
       controller: 'AdminHubsEditController'
     })
     .controller('AdminHubsEditController', function(getHubService,
-      updateHubService, $stateParams, Notification) {
+      updateHubService, $stateParams, Notification, listTagsService) {
 
       var controller = this;
+      this.tags = [];
       this.fundingTypes = [];
       this.officeLocations = [];
       this.boardMembers = [];
+
+      function loadTags() {
+        controller.hub.tags.forEach(function(tag) {
+          controller.tags.push({text: tag})
+        });
+      }
 
       function loadFundingTypes() {
         controller.hub.funding_types.forEach(function(fType) {
@@ -60,6 +67,18 @@
         };
       }
 
+      controller.queryTags = function(query) {
+        return listTagsService.filter(query);
+      };
+
+      controller.addTag = function(tag) {
+        controller.hub.tags.push(tag.text);
+      };
+
+      controller.removeTag = function(tag) {
+        controller.hub.tags.splice(controller.hub.tags.indexOf(tag.text), 1);
+      };
+
       controller.addFounder = function() {
         controller.hub.founders.push({
           name: "",
@@ -89,15 +108,10 @@
 
       getHubService.find($stateParams.id).then(function(hub) {
         controller.hub = hub;
-        // loadFundingTypes();
-        // loadOfficeLocations();
-        // loadBoardMembers();
+        loadTags();
       });
 
       this.update = function() {
-        // setFundingTypes();
-        // setOfficeLocations();
-        // setBoardMembers();
         updateHubService.update(controller.hub)
           .then(function(hub) {
             controller.hub = hub;

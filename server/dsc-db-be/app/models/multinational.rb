@@ -21,7 +21,7 @@
 #  deleted_at              :datetime
 #  website                 :string
 #  social_accounts         :jsonb
-#  categories              :string           default([]), is an Array
+#  tags              :string           default([]), is an Array
 #
 
 class Multinational < ApplicationRecord

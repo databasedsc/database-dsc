@@ -39,6 +39,7 @@ Rails.application.routes.draw do
           put :restore
         end
       end
+      resources :tags, only: [:index]
     end
   end
 end

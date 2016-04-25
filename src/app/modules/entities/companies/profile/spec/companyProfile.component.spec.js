@@ -33,7 +33,7 @@
           "headquarters": "Dublin",
           "formerly_known_as": "",
           "founders": "Viliam Holub, Trevor Parsons",
-          "categories": "Business Analytics, Application Performance Monitoring, Big Data Analytics",
+          "tags": "Business Analytics, Application Performance Monitoring, Big Data Analytics",
           "investors": "NDRC, Seed Polaris Partners - Seed, Series A; Floodgate - Seed, Series A; Frontline Ventures - Series A; RRE Ventures - Series A",
           "office_locations": "26-28 Lomard Street, Dublin 2, Dublin; 34 Farnsworth Street, Floor 4, Boston, MA 02110, USA",
           "incubator": "NDRC",

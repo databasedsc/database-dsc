@@ -8,11 +8,18 @@
       controller: 'AdminInvestorsEditController'
     })
     .controller('AdminInvestorsEditController', function(getInvestorService,
-      updateInvestorService, $stateParams, Notification) {
+      updateInvestorService, $stateParams, Notification, listTagsService) {
 
       var controller = this;
+      this.tags = [];
       this.fundingTypes = [];
       this.boardMembers = [];
+
+      function loadTags() {
+        controller.investor.tags.forEach(function(tag) {
+          controller.tags.push({text: tag})
+        });
+      }
 
       function loadFundingTypes() {
         controller.investor.funding_types.forEach(function(fType) {
@@ -43,6 +50,18 @@
             controller.investor.board_members.push(member);
         };
       }
+
+      controller.queryTags = function(query) {
+        return listTagsService.filter(query);
+      };
+
+      controller.addTag = function(tag) {
+        controller.investor.tags.push(tag.text);
+      };
+
+      controller.removeTag = function(tag) {
+        controller.investor.tags.splice(controller.investor.tags.indexOf(tag.text), 1);
+      };
 
       controller.addFounder = function() {
         controller.investor.founders.push({
@@ -78,6 +97,7 @@
 
       getInvestorService.find($stateParams.id).then(function(investor) {
         controller.investor = investor;
+        loadTags();
         loadFundingTypes();
         loadBoardMembers();
       });
