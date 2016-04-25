@@ -233,7 +233,7 @@
 <div class="panel panel-default">
   <div class="panel-heading">Tags</div>
   <div class="row">
-    <tags-input ng-model="$ctrl.tags" on-tag-added="$ctrl.addCategory($tag)" min-tags="1"></tags-input>
+    <tags-input ng-model="$ctrl.tags" on-tag-added="$ctrl.addCategory($tag)" on-tag-removed="$ctrl.removeCategory($tag)" min-tags="1"></tags-input>
     <span ng-show="create.newTag.$invalid" class="label label-danger">At least 1 category is required.</span>
   </div>
 </div>

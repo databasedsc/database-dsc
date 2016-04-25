@@ -12,7 +12,6 @@
 
       var controller = this;
       this.fundingTypes = [];
-      this.officeLocations = [];
       this.boardMembers = [];
 
       function loadFundingTypes() {
@@ -28,21 +27,6 @@
             controller.investor.funding_types.push(fType);
           }
         });
-      }
-
-      function loadOfficeLocations() {
-        controller.investor.office_locations.forEach(function(location) {
-          controller.officeLocations.push(location);
-        });
-      }
-
-      function setOfficeLocations() {
-        controller.investor.office_locations = [];
-        for (var i=0;i<controller.officeLocations.length;i++) {
-          var location = controller.officeLocations[i];
-          if (location.trim().length > 0)
-            controller.investor.office_locations.push(location);
-        };
       }
 
       function loadBoardMembers() {
@@ -72,11 +56,16 @@
       };
 
       controller.addOfficeLocation = function() {
-        controller.officeLocations.push("");
+        controller.investor.office_locations.push({
+          id: controller.investor.office_locations.length + 1,
+          address: "",
+          lat: null,
+          lng: null
+        });
       };
 
       controller.removeOfficeLocation = function(location) {
-        controller.officeLocations.splice(controller.officeLocations.indexOf(location), 1);
+        controller.investor.office_locations.splice(controller.investor.office_locations.indexOf(location), 1);
       };
 
       controller.addBoardMember = function() {
@@ -90,13 +79,11 @@
       getInvestorService.find($stateParams.id).then(function(investor) {
         controller.investor = investor;
         loadFundingTypes();
-        loadOfficeLocations();
         loadBoardMembers();
       });
 
       this.update = function() {
         setFundingTypes();
-        setOfficeLocations();
         setBoardMembers();
         updateInvestorService.update(controller.investor)
           .then(function(investor) {

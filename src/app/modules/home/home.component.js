@@ -72,7 +72,6 @@
            case 'Hubs': $location.path('/hub/' + selectedOption['id'])
            break;
         }
-        console.log(selectedOption);
       });
 
       function getPaginationDetails() {

@@ -13,7 +13,6 @@
     "animate.css": "~3.4.0",
     "angularjs-slider": "~2.10.2",
     "angular": "~1.5.1",
-    "components-font-awesome": "^4.5.0",
     "a0-angular-storage": "^0.0.13",
     "angular-jwt": "^0.0.9",
     "angular-confirm-modal": "^1.2.3",
@@ -36,13 +35,5 @@
         "assets/fonts/bootstrap/glyphicons-halflings-regular.woff2"
       ]
     }
-  },
-  "resolutions": {
-    "angular": "~1.5.1",
-    "angular-animate": "~1.5.1",
-    "angular-cookies": "~1.5.1",
-    "angular-touch": "~1.5.1",
-    "angular-sanitize": "~1.5.1",
-    "angular-bootstrap": "~1.2.4"
   }
 }

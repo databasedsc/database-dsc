@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160425073458) do
+ActiveRecord::Schema.define(version: 20160425141003) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,7 +25,6 @@ ActiveRecord::Schema.define(version: 20160425073458) do
     t.string   "headquarters"
     t.string   "formerly_known_as"
     t.text     "founders"
-    t.text     "categories"
     t.text     "investors"
     t.string   "incubator"
     t.integer  "employees"
@@ -52,6 +51,7 @@ ActiveRecord::Schema.define(version: 20160425073458) do
     t.text     "custom_field_3"
     t.text     "custom_field_4"
     t.jsonb    "office_locations",      default: {}
+    t.string   "tags",                  default: [],              array: true
   end
 
   add_index "companies", ["deleted_at"], name: "index_companies_on_deleted_at", using: :btree
@@ -83,6 +83,7 @@ ActiveRecord::Schema.define(version: 20160425073458) do
     t.string   "website"
     t.text     "video_url"
     t.jsonb    "social_accounts"
+    t.string   "tags",                 default: [],              array: true
   end
 
   add_index "hubs", ["alumni"], name: "index_hubs_on_alumni", using: :gin
@@ -148,12 +149,13 @@ ActiveRecord::Schema.define(version: 20160425073458) do
     t.datetime "deleted_at"
     t.string   "website"
     t.jsonb    "social_accounts"
-    t.string   "categories",              default: [],                 array: true
     t.text     "custom_field_1"
     t.text     "custom_field_2"
     t.text     "custom_field_3"
     t.text     "custom_field_4"
     t.jsonb    "startup_packages"
+    t.text     "video_url"
+    t.string   "tags",                    default: [],                 array: true
   end
 
   add_index "multinationals", ["deleted_at"], name: "index_multinationals_on_deleted_at", using: :btree
@@ -168,6 +170,10 @@ ActiveRecord::Schema.define(version: 20160425073458) do
   end
 
   add_index "pg_search_documents", ["searchable_type", "searchable_id"], name: "index_pg_search_documents_on_searchable_type_and_searchable_id", using: :btree
+
+  create_table "tags", force: :cascade do |t|
+    t.string "name", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email"

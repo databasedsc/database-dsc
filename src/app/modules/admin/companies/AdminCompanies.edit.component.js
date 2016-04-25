@@ -12,13 +12,7 @@
       this.tags = [];
       this.target_markets = {};
 
-      function categoriesToArray() {
-        controller.company.categories = controller.company.categories.split(',');
-      }
-
       function loadTags() {
-        categoriesToArray();
-
         controller.company.categories.forEach(function(tag) {
           controller.tags.push({text: tag})
         });
@@ -38,6 +32,10 @@
 
       controller.addCategory = function(tag) {
         controller.company.categories.push(tag.text);
+      };
+
+      controller.removeCategory = function(tag) {
+        controller.company.categories.splice(controller.company.categories.indexOf(tag.text), 1);
       };
 
       controller.addFundingRound = function() {
@@ -61,10 +59,6 @@
         controller.company.office_locations.splice(controller.company.office_locations.indexOf(location), 1);
       };
 
-      var joinCategories = function() {
-        controller.company.categories = controller.company.categories.join(', ')
-      };
-
       function setTargetMarkets() {
         controller.company.target_markets = [];
         for (var key in controller.target_markets) {
@@ -76,12 +70,10 @@
       }
 
       this.update = function() {
-        joinCategories();
         setTargetMarkets();
         updateCompanyService.update(controller.company)
           .then(function(company) {
             controller.company = company;
-            categoriesToArray();
             Notification.success('Company Updated!')
           }, function() {
             Notification.error('Error: Company could not be saved!')

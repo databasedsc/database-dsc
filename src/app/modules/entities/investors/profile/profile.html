@@ -48,11 +48,6 @@
       <div class="company-info-value">{{$ctrl.investor.investment_size}}</div>
     </div>
 
-    <div class="col-md-4 m-b-md" ng-show="$ctrl.investor.regions">
-      <div class="company-info-title">Regions</div>
-      <div class="company-info-value">{{$ctrl.investor.regions}}</div>
-    </div>
-
     <div class="col-md-4 m-b-md" ng-show="$ctrl.investor.office_locations">
       <div class="company-info-title">Office Locations</div>
       <div class="company-info-value">
@@ -87,11 +82,6 @@
       </div>
     </div>
 
-    <div class="col-md-4 m-b-md" ng-show="$ctrl.investor.similar_investors">
-      <div class="company-info-title">Similar Investors</div>
-      <div class="company-info-value">{{$ctrl.investor.similar_investors}}</div>
-    </div>
-
   </div>
 
   <div ng-show="!!$ctrl.investor.office_locations.length > 0" class="portfolio">
@@ -106,8 +96,22 @@
       </div>
     </div>
     <div class="m-b-lg">
-      <ng-map zoom="11" center="[{{$ctrl.investor.office_locations[0].lat}}, {{$ctrl.investor.office_locations[0].lng}}]">
-        <marker position="[{{office.lat}}, {{office.lng}}]" ng-repeat="office in $ctrl.investor.office_locations" />
+      <ng-map zoom-to-include-markers="auto" maximum-zoom="16">
+        <marker id='ol{{officeLocation.id}}'
+                position="[{{officeLocation.lat}}, {{officeLocation.lng}}]"
+                ng-repeat="officeLocation in $ctrl.investor.office_locations"
+                on-click="$ctrl.showOfficeLocationDetail(officeLocation)" />
+
+        <info-window id="foo-iw">
+          <div ng-non-bindable="">
+            {{$ctrl.officeLocation.address}}<br/>
+            <a ng-if="$ctrl.investor.office_locations.length > 1"
+               href=""
+               ng-click="$ctrl.zoomTo()">
+               Zoom to location
+            </a>
+          </div>
+        </info-window>
       </ng-map>
     </div>
   </div>

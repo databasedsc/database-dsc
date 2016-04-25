@@ -58,11 +58,6 @@
         </div>
 
         <div class="form-group">
-          <label for="regions">Regions:</label>
-          <input ng-model="$ctrl.investor.regions" id="regions" class="form-control" type="text">
-        </div>
-
-        <div class="form-group">
           <label>Type of Funding</label>
           <div class="checkbox">
             <label>
@@ -109,15 +104,12 @@
           <input ng-model="$ctrl.investor.co_investors" id="co_investors" class="form-control" type="text">
         </div>
 
-        <div class="form-group">
-          <label for="similar_investors">Similar Investors:</label>
-          <input ng-model="$ctrl.investor.similar_investors" id="similar_investors" class="form-control" type="text">
-        </div>
-
       </div>
     </div>
   </div>
 </div>
+
+<custom-fields entity="$ctrl.investor"></custom-fields>
 
 <div class="panel panel-default">
   <div class="panel-heading">
@@ -125,10 +117,10 @@
     <a ng-click="$ctrl.addOfficeLocation()" class="btn btn-primary btn-sm pull-right">Add Location</a>
   </div>
   <div class="panel-body">
-    <div ng-if="$ctrl.officeLocations.length == 0">
+    <div ng-if="$ctrl.investor.office_locations.length == 0">
       <p>There are no office locations.</p>
     </div>
-    <div ng-if="$ctrl.officeLocations.length > 0" ng-repeat="location in $ctrl.officeLocations track by $index">
+    <div ng-if="$ctrl.investor.office_locations.length > 0" ng-repeat="location in $ctrl.investor.office_locations track by $index">
       <div class="panel panel-default">
         <div class="panel-heading">
           Location

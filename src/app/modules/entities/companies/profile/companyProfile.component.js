@@ -12,7 +12,6 @@
       this.getCompanyService = getCompanyService;
 
       NgMap.getMap().then(function(map) {
-        console.log('map', map);
         controller.map = map;
       });
 

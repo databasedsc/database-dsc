@@ -112,14 +112,19 @@
     </div>
     <div class="m-b-lg">
       <ng-map zoom-to-include-markers="auto" maximum-zoom="16">
-        <marker id='ol{{officeLocation.id}}' position="[{{officeLocation.lat}}, {{officeLocation.lng}}]"
-                ng-repeat="officeLocation in $ctrl.company.office_locations track by $index"
+        <marker id='ol{{officeLocation.id}}'
+                position="[{{officeLocation.lat}}, {{officeLocation.lng}}]"
+                ng-repeat="officeLocation in $ctrl.company.office_locations"
                 on-click="$ctrl.showOfficeLocationDetail(officeLocation)" />
 
         <info-window id="foo-iw">
           <div ng-non-bindable="">
             {{$ctrl.officeLocation.address}}<br/>
-            <a ng-if="$ctrl.company.office_locations.length > 1" href="" ng-click="$ctrl.zoomTo()">Zoom to location</a>
+            <a ng-if="$ctrl.company.office_locations.length > 1"
+               href=""
+               ng-click="$ctrl.zoomTo()">
+               Zoom to location
+            </a>
           </div>
         </info-window>
       </ng-map>
