@@ -11,83 +11,83 @@
     </div>
   </div>
   <div id="details" class="row text-center" style="padding:40px 0;">
-    <div class="col-md-4" ng-show="$ctrl.investor.exits_ipos">
+    <div class="col-md-4 m-b-md" ng-show="$ctrl.investor.exits_ipos">
       <div class="company-info-title">Exits/IPOs</div>
       <div class="company-info-value">{{$ctrl.investor.exits_ipos}}</div>
     </div>
 
-    <div class="col-md-4" ng-show="$ctrl.investor.headquarters">
+    <div class="col-md-4 m-b-md" ng-show="$ctrl.investor.headquarters">
       <div class="company-info-title">Headquarters</div>
       <div class="company-info-value">{{$ctrl.investor.headquarters}}</div>
     </div>
 
-    <div class="col-md-4" ng-show="$ctrl.investor.founders">
+    <div class="col-md-4 m-b-md" ng-show="$ctrl.investor.founders">
       <div class="company-info-title">Founders</div>
       <div class="company-info-value">
-        <p ng-repeat="founder in $ctrl.investor.founders">{{founder.name}}</p>
+        <span ng-repeat="founder in $ctrl.investor.founders">{{founder.name}}</span>
       </div>
     </div>
 
-    <div class="col-md-4" ng-show="$ctrl.investor.founded">
+    <div class="col-md-4 m-b-md" ng-show="$ctrl.investor.founded">
       <div class="company-info-title">Founded</div>
       <div class="company-info-value">{{$ctrl.investor.founded}}</div>
     </div>
 
-    <div class="col-md-4" ng-show="$ctrl.investor.funds_raised">
+    <div class="col-md-4 m-b-md" ng-show="$ctrl.investor.funds_raised">
       <div class="company-info-title">Funds Raised</div>
       <div class="company-info-value">${{$ctrl.investor.funds_raised}}</div>
     </div>
 
-    <div class="col-md-4" ng-show="$ctrl.investor.funding_types">
+    <div class="col-md-4 m-b-md" ng-show="$ctrl.investor.funding_types">
       <div class="company-info-title">Type of Funding</div>
       <div class="company-info-value">{{$ctrl.investor.funding_types | fundingCodeToHuman : 'array' }}</div>
     </div>
 
-    <div class="col-md-4" ng-show="$ctrl.investor.investment_size">
+    <div class="col-md-4 m-b-md" ng-show="$ctrl.investor.investment_size">
       <div class="company-info-title">Investment Size</div>
       <div class="company-info-value">{{$ctrl.investor.investment_size}}</div>
     </div>
 
-    <div class="col-md-4" ng-show="$ctrl.investor.regions">
+    <div class="col-md-4 m-b-md" ng-show="$ctrl.investor.regions">
       <div class="company-info-title">Regions</div>
       <div class="company-info-value">{{$ctrl.investor.regions}}</div>
     </div>
 
-    <div class="col-md-4" ng-show="$ctrl.investor.office_locations">
+    <div class="col-md-4 m-b-md" ng-show="$ctrl.investor.office_locations">
       <div class="company-info-title">Office Locations</div>
       <div class="company-info-value">
         <p ng-repeat="office in $ctrl.investor.office_locations">{{office.address}}</p>
       </div>
     </div>
 
-    <div class="col-md-4" ng-show="$ctrl.investor.contact">
+    <div class="col-md-4 m-b-md" ng-show="$ctrl.investor.contact">
       <div class="company-info-title">Contact</div>
       <div class="company-info-value">{{$ctrl.investor.contact}}</div>
     </div>
 
-    <div class="col-md-4" ng-show="$ctrl.investor.contact_email">
+    <div class="col-md-4 m-b-md" ng-show="$ctrl.investor.contact_email">
       <div class="company-info-title">Contact Number</div>
       <div class="company-info-value">{{$ctrl.investor.contact_email}}</div>
     </div>
 
-    <div class="col-md-4" ng-show="$ctrl.investor.preferred_contact">
+    <div class="col-md-4 m-b-md" ng-show="$ctrl.investor.preferred_contact">
       <div class="company-info-title">Preferred Contact</div>
       <div class="company-info-value">{{$ctrl.investor.preferred_contact}}</div>
     </div>
 
-    <div class="col-md-4" ng-show="$ctrl.investor.co_investors">
+    <div class="col-md-4 m-b-md" ng-show="$ctrl.investor.co_investors">
       <div class="company-info-title">Co-Investors</div>
       <div class="company-info-value">{{$ctrl.investor.co_investors}}</div>
     </div>
 
-    <div class="col-md-4" ng-show="!!$ctrl.investor.board_members.length">
+    <div class="col-md-4 m-b-md" ng-show="!!$ctrl.investor.board_members.length">
       <div class="company-info-title">Board Members</div>
       <div class="company-info-value">
         <p ng-repeat="member in $ctrl.investor.board_members">{{member}}</p>
       </div>
     </div>
 
-    <div class="col-md-4" ng-show="$ctrl.investor.similar_investors">
+    <div class="col-md-4 m-b-md" ng-show="$ctrl.investor.similar_investors">
       <div class="company-info-title">Similar Investors</div>
       <div class="company-info-value">{{$ctrl.investor.similar_investors}}</div>
     </div>
