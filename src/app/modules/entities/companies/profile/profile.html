@@ -111,7 +111,9 @@
       </div>
     </div>
     <div class="m-b-lg">
-      <ng-map zoom="11" center="[{{$ctrl.company.office_locations[0].lat}}, {{$ctrl.company.office_locations[0].lng}}]">
+      <ng-map zoom="11"
+              center="[{{$ctrl.company.office_locations[0].lat}}, {{$ctrl.company.office_locations[0].lng}}]"
+              zoom-to-include-markers="auto">
         <marker position="[{{office.lat}}, {{office.lng}}]" ng-repeat="office in $ctrl.company.office_locations" />
       </ng-map>
     </div>

@@ -53,6 +53,11 @@
       }, true);
 
       $scope.$watch('ctrl.availableOptions.selected', function (selectedOption) {
+
+        if (selectedOption == undefined) {
+          return;
+        }
+
         switch (selectedOption['itemType'])
         {
            case 'Company': $location.path('/company/' + selectedOption['id'])
