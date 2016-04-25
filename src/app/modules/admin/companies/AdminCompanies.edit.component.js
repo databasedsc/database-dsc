@@ -49,7 +49,12 @@
       };
 
       controller.addOfficeLocation = function() {
-        controller.company.office_locations.push({});
+        controller.company.office_locations.push({
+          id: controller.company.office_locations.length + 1,
+          address: "",
+          lat: null,
+          lng: null
+        });
       };
 
       controller.removeOfficeLocation = function(location) {
