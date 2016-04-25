@@ -191,6 +191,51 @@
 </div>
 
 <div class="panel panel-default">
+  <div class="panel-heading">
+    Office Locations
+    <a ng-click="$ctrl.addOfficeLocation()" class="btn btn-primary btn-sm pull-right">Add Location</a>
+  </div>
+  <div class="panel-body">
+    <div ng-if="$ctrl.company.office_locations.length == 0">
+      <p>There are no office locations.</p>
+    </div>
+    <div ng-if="$ctrl.company.office_locations.length > 0" ng-repeat="location in $ctrl.company.office_locations track by $index">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          Location
+          <a ng-click="$ctrl.removeOfficeLocation(location)" class="pull-right"><i class="fa fa-2x fa-trash"></i></a>
+        </div>
+        <div class="panel-body">
+          <div class="row">
+            <div class="col-sm-12">
+
+              <div class="form-group">
+                <label for="location-address">Address</label>
+                <input type="text" ng-model="location.address" id="location-address" class="form-control">
+                </textarea>
+              </div>
+
+              <div class="form-group">
+                <label for="location-lat">Latitude</label>
+                <input type="text" ng-model="location.lat" id="location-lat" class="form-control">
+                </textarea>
+              </div>
+
+              <div class="form-group">
+                <label for="location-lng">Longitude</label>
+                <input type="text" ng-model="location.lng" id="location-lng" class="form-control">
+                </textarea>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="panel panel-default">
   <div class="panel-heading">Tags</div>
   <div class="row">
     <tags-input ng-model="$ctrl.tags" on-tag-added="$ctrl.addCategory($tag)" min-tags="1"></tags-input>

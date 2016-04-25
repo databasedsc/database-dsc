@@ -1,6 +1,6 @@
 <div class="container">
   <profile-overview entity="$ctrl.company"></profile-overview>
-  <div class="block block-bordered-lg" style="padding:40px 0;">
+  <div class="block block-bordered-lg" style="padding-top:40px;padding-bottom:30px;">
     <div class="container text-center app-translate-15" data-transition="entrance" style="transition: transform 1200ms cubic-bezier(0.2, 0.7, 0.5, 1); transform: none;">
       <blockquote class="pull-quote">
         <cite style="margin-top:0;">Insight</cite>
@@ -10,50 +10,50 @@
       </blockquote>
     </div>
   </div>
-  <div id="details" class="row text-center" style="padding:40px 0;">
-    <div class="col-md-4" ng-show="$ctrl.company.acquisitions">
+  <div id="details" class="row text-center">
+    <div class="col-md-4 m-b-md" ng-show="$ctrl.company.acquisitions">
       <div class="company-info-title">Acquisitions</div>
       <div class="company-info-value">{{$ctrl.company.acquisitions}}</div>
     </div>
 
-    <div class="col-md-4" ng-show="$ctrl.company.headquarters">
+    <div class="col-md-4 m-b-md" ng-show="$ctrl.company.headquarters">
       <div class="company-info-title">Headquarters</div>
       <div class="company-info-value">{{$ctrl.company.headquarters}}</div>
     </div>
 
-    <div class="col-md-4" ng-show="$ctrl.company.formerly_known_as">
+    <div class="col-md-4 m-b-md" ng-show="$ctrl.company.formerly_known_as">
       <div class="company-info-title">Headquarters</div>
       <div class="company-info-value">{{$ctrl.company.headquarters}}</div>
       <h4>Formerly known as:</h4>
       <p>{{$ctrl.company.formerly_known_as}}</p>
     </div>
 
-    <div class="col-md-4" ng-show="$ctrl.company.founders">
+    <div class="col-md-4 m-b-md" ng-show="$ctrl.company.founders">
       <div class="company-info-title">Founders</div>
       <div class="company-info-value">{{$ctrl.company.founders}}</div>
     </div>
 
-    <div class="col-md-4" ng-show="$ctrl.company.founded">
+    <div class="col-md-4 m-b-md" ng-show="$ctrl.company.founded">
       <div class="company-info-title">Founded</div>
       <div class="company-info-value">{{$ctrl.company.founded}}</div>
     </div>
 
-    <div class="col-md-4" ng-show="$ctrl.company.employees">
+    <div class="col-md-4 m-b-md" ng-show="$ctrl.company.employees">
       <div class="company-info-title">Employees</div>
       <div class="company-info-value">{{$ctrl.company.employees}}</div>
     </div>
 
-    <div class="col-md-4" ng-show="$ctrl.company.funding_stage">
+    <div class="col-md-4 m-b-md" ng-show="$ctrl.company.funding_stage">
       <div class="company-info-title">Funding Stage</div>
       <div class="company-info-value">{{$ctrl.company.funding_stage}}</div>
     </div>
 
-    <div class="col-md-4" ng-show="$ctrl.company.funding_amount">
+    <div class="col-md-4 m-b-md" ng-show="$ctrl.company.funding_amount">
       <div class="company-info-title">Total Funding</div>
       <div class="company-info-value">{{$ctrl.company.funding_amount | shortFmt:0}}</div>
     </div>
 
-    <div class="col-md-4" ng-show="$ctrl.company.target_markets">
+    <div class="col-md-4 m-b-md" ng-show="$ctrl.company.target_markets">
       <div class="company-info-title">Target Markets</div>
       <div class="company-info-value">
         <p id="target-markets">
@@ -64,44 +64,44 @@
       </div>
     </div>
 
-    <div class="col-md-4" ng-show="$ctrl.company.office_locations">
+    <div class="col-md-4 m-b-md" ng-show="$ctrl.company.office_locations">
       <div class="company-info-title">Office Locations</div>
       <div class="company-info-value">
-        <p ng-repeat="location in $ctrl.company.office_locations">{{location}}</p>
+        <span ng-repeat="location in $ctrl.company.office_locations">{{location}}</span>
       </div>
     </div>
 
-    <div class="col-md-4" ng-show="$ctrl.company.business_model">
+    <div class="col-md-4 m-b-md" ng-show="$ctrl.company.business_model">
       <div class="company-info-title">Business Model</div>
       <div class="company-info-value">{{$ctrl.company.business_model}}</div>
     </div>
 
-    <div class="col-md-4" ng-show="$ctrl.company.product_stage">
+    <div class="col-md-4 m-b-md" ng-show="$ctrl.company.product_stage">
       <div class="company-info-title">Product Stage</div>
       <div class="company-info-value">{{$ctrl.company.product_stage}}</div>
     </div>
 
-    <div class="col-md-4" ng-show="$ctrl.company.contact">
+    <div class="col-md-4 m-b-md" ng-show="$ctrl.company.contact">
       <div class="company-info-title">Contact</div>
       <div class="company-info-value">{{$ctrl.company.contact}}</div>
     </div>
 
-    <div class="col-md-4" ng-show="$ctrl.company.company_stage">
+    <div class="col-md-4 m-b-md" ng-show="$ctrl.company.company_stage">
       <div class="company-info-title">Company Stage</div>
       <div class="company-info-value">{{$ctrl.company.company_stage}}</div>
     </div>
 
-    <div class="col-md-4" ng-show="$ctrl.company.incubator">
+    <div class="col-md-4 m-b-md" ng-show="$ctrl.company.incubator">
       <div class="company-info-title">Incubator/Accelerator</div>
       <div class="company-info-value">{{$ctrl.company.incubator}}</div>
     </div>
 
-    <div class="col-md-4" ng-show="$ctrl.company.government_assistance">
+    <div class="col-md-4 m-b-md" ng-show="$ctrl.company.government_assistance">
       <div class="company-info-title">Government Assistance</div>
       <div class="company-info-value">{{$ctrl.company.government_assistance}}</div>
     </div>
 
-    <div class="col-md-4" ng-show="$ctrl.company.looking_for">
+    <div class="col-md-4 m-b-md" ng-show="$ctrl.company.looking_for">
       <div class="company-info-title">We're looking for</div>
       <div class="company-info-value">{{$ctrl.company.looking_for}}</div>
     </div>

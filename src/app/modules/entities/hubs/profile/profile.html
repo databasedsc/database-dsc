@@ -1,6 +1,6 @@
 <div class="container">
   <profile-overview entity="$ctrl.hub"></profile-overview>
-  <div class="block block-bordered-lg" style="padding:40px 0;">
+  <div class="block block-bordered-lg" style="padding-top:40px;padding-bottom:30px;">
     <div class="container text-center app-translate-15" data-transition="entrance" style="transition: transform 1200ms cubic-bezier(0.2, 0.7, 0.5, 1); transform: none;">
       <blockquote class="pull-quote">
         <cite style="margin-top:0;">Insight</cite>
@@ -10,24 +10,24 @@
       </blockquote>
     </div>
   </div>
-  <div id="details" class="row text-center" style="padding:40px 0;">
+  <div id="details" class="row text-center">
 
-    <div class="col-md-4" ng-show="$ctrl.hub.hub_type">
+    <div class="col-md-4 m-b-md" ng-show="$ctrl.hub.hub_type">
       <div class="company-info-title">Hub Type</div>
       <div class="company-info-value">{{$ctrl.hub.hub_type | join: ', '}}</div>
     </div>
 
-    <div class="col-md-4" ng-show="$ctrl.hub.founded">
+    <div class="col-md-4 m-b-md" ng-show="$ctrl.hub.founded">
       <div class="company-info-title">Founded</div>
       <div class="company-info-value">{{$ctrl.hub.founded}}</div>
     </div>
 
-    <div class="col-md-4" ng-show="$ctrl.hub.contact">
+    <div class="col-md-4 m-b-md" ng-show="$ctrl.hub.contact">
       <div class="company-info-title">Contact</div>
       <div class="company-info-value">{{$ctrl.hub.contact}}</div>
     </div>
 
-    <div class="col-md-4" ng-show="$ctrl.hub.contact_detail">
+    <div class="col-md-4 m-b-md" ng-show="$ctrl.hub.contact_detail">
       <div class="company-info-title">Contact Details</div>
       <div class="company-info-value">{{$ctrl.hub.contact_detail}}</div>
     </div>

@@ -235,7 +235,9 @@ unless Rails.env.production?
         "founders": "Gavin Fogarty",
         "categories": "Technology, Social Recruiting, Event Management",
         "investors": "Undisclosed",
-        "office_locations": "NDRC at the Digital Exchange, Crane Street, Dublin 8",
+        "office_locations": [
+          {"address": "NDRC at the Digital Exchange, Crane Street, Dublin 8", "lat": 42.4076806, "lng": -71.2764524}
+        ],
         "incubator": "NDRC",
         "funding_stage": "Seed",
         "employees": 6,
@@ -268,7 +270,10 @@ unless Rails.env.production?
         "founders": "Dave O'Flanagan, Alan Giles, Dermot O'Connor",
         "categories": "Travel, Big Data Analytics, Personalization",
         "investors": "NDRC - Seed, Series A; Tadhgh O'Toole - Angel; Bloom Equity - Angel; Conor Stanley - Angel; Delta Partners - Angel, Series A; Frontline Ventures - Series B; Polaris Partners - Series B; Silicon Valley Bank - Series B",
-        "office_locations": "Ashford House, Tara Street, Dublin, Dublin 2; 34 Farnsworth Street, Floor 4, Boston, MA 02110, USA",
+        "office_locations": [
+          {"address": "Ashford House, Tara Street, Dublin, Dublin 2", "lat": 42.4076806, "lng": -71.2764524},
+          {"address": "34 Farnsworth Street, Floor 4, Boston, MA 02110, USA", "lat": 42.4076806, "lng": -71.2764524}
+        ],
         "incubator": "NDRC",
         "funding_stage": "Series B",
         "employees": 150,
@@ -313,7 +318,9 @@ unless Rails.env.production?
         "founders": "Viliam Holub, Trevor Parsons",
         "categories": "Business Analytics, Application Performance Monitoring, Big Data Analytics",
         "investors": "NDRC, Seed Polaris Partners - Seed, Series A; Floodgate - Seed, Series A; Frontline Ventures - Series A; RRE Ventures - Series A",
-        "office_locations": "26-28 Lomard Street, Dublin 2, Dublin; 34 Farnsworth Street, Floor 4, Boston, MA 02110, USA",
+        "office_locations": [
+          {"address": "26-28 Lomard Street, Dublin 2, Dublin; 34 Farnsworth Street, Floor 4, Boston, MA 02110, USA", "lat": 42.4076806, "lng": -71.2764524}
+        ],
         "incubator": "NDRC",
         "funding_stage": "Acquired",
         "employees": 40,
@@ -344,7 +351,11 @@ unless Rails.env.production?
         "founders": "Pat Phelan, Chris Kennedy",
         "categories": "Security, E-Commerce, Fraud Detection, Software",
         "investors": "Wayra - Angel, Seed, Convertible Note; Shane Naughton - Seed; Notion Capital - Seed; Mangrove Capital Partners - Seed, Convertible Note; Kevin Abosch - Seed; Greycroft Partners - Seed, Convertible Note; Enterprise Ireland - Seed; David Coallier - Seed; ACT Venture Capital - Seed, Convertible Note",
-        "office_locations": "2100 Cork Airport Business Park, Cork; 355 Lexington Avenue, New York, NY 10017, USA; 15 West 28th Street, Floor 8, New York, NY 10001, USA",
+        "office_locations": [
+          {"address": "2100 Cork Airport Business Park, Cork", "lat": 42.4076806, "lng": -71.2764524},
+          {"address": "355 Lexington Avenue, New York, NY 10017, USA", "lat": 42.4076806, "lng": -71.2764524},
+          {"address": "15 West 28th Street, Floor 8, New York, NY 10001, USA", "lat": 42.4076806, "lng": -71.2764524}
+        ],
         "incubator": "NDRC",
         "funding_stage": "Acquired",
         "employees": 29,
@@ -376,7 +387,9 @@ unless Rails.env.production?
         "founders": "Aidan Sliney, Craig Watson, Brendan O'Driscoll",
         "categories": "Music, Apps, Analytics, Local, Social Media, Real Time, Location Based Services",
         "investors": "ACT Venture Captal - Seed, Venture; Colin Wiel - Venture; Enterprise Ireland - Seed; Iain MacDonald - Venture; Matthew Le Merle - Seed; Mike Ryan - Venture; NDRC - Seed; Paddy Holahan - Venture; Per Brilloth - Venture; Radical Investments - Seed; Spark Labs Global - Venture; Trevor Bowen - Venture; Xandez Investments LLP - Venture",
-        "office_locations": "1 Rathmines Road Upper, Rathmines, Dublin 6, Dublin",
+        "office_locations": [
+          {"address": "1 Rathmines Road Upper, Rathmines, Dublin 6, Dublin", "lat": 42.4076806, "lng": -71.2764524}
+        ],
         "incubator": "NDRC",
         "funding_stage": "Acquired",
         "employees": 23,
@@ -409,7 +422,9 @@ unless Rails.env.production?
         "founders": "Mikey Cannon, Norman Hewson,John Forde",
         "categories": "Enterprise Software, SaaS, Restaurants, Online Scheduling",
         "investors": "NDRC - Seed",
-        "office_locations": "St. Martin's House, Waterloo Road, Dublin 4, Dublin",
+        "office_locations": [
+          {"address": "St. Martin's House, Waterloo Road, Dublin 4, Dublin", "lat": 42.4076806, "lng": -71.2764524}
+        ],
         "incubator": "NDRC",
         "funding_stage": "Series A",
         "employees": 14,
@@ -442,7 +457,9 @@ unless Rails.env.production?
       "founders": "Mark Little",
       "categories": "News, Publishing, Media, Social Media",
       "investors": "SOSV - Seed; ACT Venture Capital - Venture",
-      "office_locations": "Ferry House, 48 Lower Mount Street, Dublin 2, Dublin",
+      "office_locations": [
+        {"address": "Ferry House, 48 Lower Mount Street, Dublin 2, Dublin", "lat": 42.4076806, "lng": -71.2764524}
+      ],
       "incubator": "",
       "funding_stage": "Acquired",
       "employees": 93,
@@ -475,7 +492,9 @@ unless Rails.env.production?
       "founders": "Sean Barrett, Jonathan Potter, Brett Meyers",
       "categories": "Finance, Virtualization, Peer-to-Peer, P2P Money Transfer",
       "investors": "Frontline Ventures - Seed, Series A; Enterprise Ireland - Venture; Octopus Ventures - Series A",
-      "office_locations": "Colm House, 91 Pembroke Rd, Ballsbridge, Dublin 4, Dublin",
+      "office_locations": [
+        {"address": "Colm House, 91 Pembroke Rd, Ballsbridge, Dublin 4, Dublin", "lat": 42.4076806, "lng": -71.2764524}
+      ],
       "incubator": "",
       "funding_stage": "Series A",
       "employees": 75,
@@ -508,7 +527,9 @@ unless Rails.env.production?
       "founders": "Neil O'Connor, Brian McDonnell, Sean Blanchfield",
       "categories": "Advertising, Software, Digital Media",
       "investors": "Tribal Ventures - Angel, Seed; Frontline Ventures - Angel; Enterprise Ireland - Angel",
-      "office_locations": "Unit D, Mount Pleasant Business Park, Mount Pleasant Avenue, Ranelagh, Dublin 6, Dublin",
+      "office_locations": [
+        {"address": "Unit D, Mount Pleasant Business Park, Mount Pleasant Avenue, Ranelagh, Dublin 6, Dublin", "lat": 42.4076806, "lng": -71.2764524}
+      ],
       "incubator": "",
       "funding_stage": "Seed",
       "employees": 12,
@@ -541,7 +562,9 @@ unless Rails.env.production?
       "founders": "Mark Cummins, Charles Bibby",
       "categories": "Wireless, Internet, Services",
       "investors": "Frontline Ventures - Seed",
-      "office_locations": "National College of Ireland Business Centre, Mayor Square, IFSC, Dublin 1, Dublin",
+      "office_locations": [
+        {"address": "National College of Ireland Business Centre, Mayor Square, IFSC, Dublin 1, Dublin", "lat": 42.4076806, "lng": -71.2764524}
+      ],
       "incubator": "",
       "funding_stage": "Seed",
       "employees": 4,

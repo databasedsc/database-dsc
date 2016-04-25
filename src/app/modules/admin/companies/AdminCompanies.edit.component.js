@@ -48,6 +48,14 @@
         controller.company.funding_rounds.splice(controller.company.funding_rounds.indexOf(round), 1);
       };
 
+      controller.addOfficeLocation = function() {
+        controller.office_locations.push("");
+      };
+
+      controller.removeOfficeLocation = function(location) {
+        controller.office_locations.splice(controller.office_locations.indexOf(location), 1);
+      };
+
       var joinCategories = function() {
         controller.company.categories = controller.company.categories.join(', ')
       };

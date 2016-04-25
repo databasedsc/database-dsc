@@ -11,14 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160424100400) do
+ActiveRecord::Schema.define(version: 20160425073458) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "companies", force: :cascade do |t|
-    t.datetime "created_at",            null: false
-    t.datetime "updated_at",            null: false
+    t.datetime "created_at",                         null: false
+    t.datetime "updated_at",                         null: false
     t.string   "name"
     t.string   "logo"
     t.text     "short_description"
@@ -27,7 +27,6 @@ ActiveRecord::Schema.define(version: 20160424100400) do
     t.text     "founders"
     t.text     "categories"
     t.text     "investors"
-    t.text     "office_locations"
     t.string   "incubator"
     t.integer  "employees"
     t.string   "funding_stage"
@@ -52,6 +51,7 @@ ActiveRecord::Schema.define(version: 20160424100400) do
     t.text     "custom_field_2"
     t.text     "custom_field_3"
     t.text     "custom_field_4"
+    t.jsonb    "office_locations",      default: {}
   end
 
   add_index "companies", ["deleted_at"], name: "index_companies_on_deleted_at", using: :btree
