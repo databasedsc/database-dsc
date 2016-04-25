@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160422144411) do
+ActiveRecord::Schema.define(version: 20160424100400) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -98,7 +98,6 @@ ActiveRecord::Schema.define(version: 20160422144411) do
     t.text     "short_description"
     t.string   "local_office"
     t.text     "tags",              default: [],              array: true
-    t.text     "office_locations",  default: [],              array: true
     t.datetime "created_at",                     null: false
     t.datetime "updated_at",                     null: false
     t.text     "funding_types",     default: [],              array: true
@@ -123,6 +122,7 @@ ActiveRecord::Schema.define(version: 20160422144411) do
     t.string   "website"
     t.text     "video_url"
     t.jsonb    "social_accounts"
+    t.jsonb    "office_locations",  default: {}
   end
 
   add_index "investors", ["contact_urls"], name: "index_investors_on_contact_urls", using: :gin
