@@ -51,7 +51,7 @@
       };
 
       controller.addOfficeLocation = function() {
-        controller.officeLocations.push("");
+        controller.officeLocations.push({});
       };
 
       controller.removeOfficeLocation = function(location) {

@@ -7,12 +7,14 @@
       controller: 'AdminCompaniesNewController',
       templateUrl: 'app/modules/admin/companies/companies.new.html'
     })
-    .controller('AdminCompaniesNewController', function(createCompanyService, $confirm, Notification) {
+    .controller('AdminCompaniesNewController', function(createCompanyService, $confirm, Notification, listInvestorsService, listTagsService) {
       this.createCompanyService = createCompanyService;
       var controller = this;
 
       var setEmptyCompany = function() {
         controller.company = {
+          office_locations: [],
+          founders: [],
           funding_rounds: [],
           tags: []
         }
@@ -34,6 +36,25 @@
         controller.company.tags = controller.company.tags.join(',')
       };
 
+      controller.queryInvestors = function(query) {
+        return listInvestorsService.filter(query);
+      };
+
+      controller.queryTags = function(query) {
+        return listTagsService.filter(query);
+      };
+
+      controller.addFounder = function() {
+        controller.company.founders.push({
+          name: "",
+          linkedin: ""
+        });
+      };
+
+      controller.removeFounder = function(founder) {
+        controller.company.founders.splice(controller.company.founders.indexOf(founder), 1);
+      };
+
       controller.addFundingRound = function() {
         controller.company.funding_rounds.push({type: ""});
       };
@@ -42,8 +63,25 @@
         controller.company.funding_rounds.splice(controller.company.funding_rounds.indexOf(round), 1);
       };
 
+      controller.addOfficeLocation = function() {
+        controller.company.office_locations.push({
+          id: controller.company.office_locations.length + 1,
+          address: "",
+          lat: null,
+          lng: null
+        });
+      };
+
+      controller.removeOfficeLocation = function(location) {
+        controller.company.office_locations.splice(controller.company.office_locations.indexOf(location), 1);
+      };
+
       controller.addTag = function(tag) {
-        this.company.tags.push(tag.text);
+        controller.company.tags.push(tag.text);
+      };
+
+      controller.removeTag = function(tag) {
+        controller.company.tags.splice(controller.company.tags.indexOf(tag.text), 1);
       };
 
       this.create = function() {

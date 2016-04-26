@@ -32,7 +32,7 @@
 
         <div class="form-group">
           <label for="formerly-known">Formerly known as</label>
-          <input ng-model="$ctrl.formerly_known_as" id="formerly-known" class="form-control" type="text">
+          <input ng-model="$ctrl.company.formerly_known_as" id="formerly-known" class="form-control" type="text">
         </div>
 
         <div class="form-group">
@@ -292,7 +292,10 @@
     <a ng-click="$ctrl.addFundingRound()" class="btn btn-primary btn-sm pull-right">Add round</a>
   </div>
   <div class="panel-body">
-    <div class="" ng-repeat="round in $ctrl.company.funding_rounds">
+    <div ng-if="$ctrl.company.funding_rounds.length == 0">
+      <p>There are no funding rounds.</p>
+    </div>
+    <div ng-if="$ctrl.company.funding_rounds.length > 0" ng-repeat="round in $ctrl.company.funding_rounds">
       <div class="panel panel-default">
         <div class="panel-heading">
           Round

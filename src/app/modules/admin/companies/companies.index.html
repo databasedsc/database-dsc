@@ -29,7 +29,7 @@
           <a ng-hide="company.deleted_at" ui-sref="admin.companies.edit({id: company.id})">{{company.name}}</a>
           <span ng-show="company.deleted_at">{{company.name}}</span>
         </strong>
-        <p style="color:#acacac"><i>{{company.short_description}}</i> <a href="{{company.website}}" ng-show="company.website"><i class="fa fa-link"></i></a></p>
+        <p style="color:#acacac"><i>{{company.short_description}}</i> <a ng-href="{{company.website}}" ng-show="company.website"><i class="fa fa-link"></i></a></p>
 
       </td>
       <td class="base">{{company.headquarters}}</td>

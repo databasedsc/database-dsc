@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160426142236) do
+ActiveRecord::Schema.define(version: 20160426154200) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -52,6 +52,7 @@ ActiveRecord::Schema.define(version: 20160426142236) do
     t.jsonb    "office_locations",      default: {}
     t.string   "tags",                  default: [],              array: true
     t.jsonb    "founders"
+    t.string   "acquired"
   end
 
   add_index "companies", ["deleted_at"], name: "index_companies_on_deleted_at", using: :btree
