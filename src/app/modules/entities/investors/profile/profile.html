@@ -24,7 +24,10 @@
     <div class="col-md-4 m-b-md" ng-show="$ctrl.investor.founders">
       <div class="company-info-title">Founders</div>
       <div class="company-info-value">
-        <span ng-repeat="founder in $ctrl.investor.founders">{{founder.name}}</span>
+        <span ng-repeat="founder in $ctrl.investor.founders">
+          <div ng-if="founder.linkedin"><a href="https://www.linkedin.com/in/{{founder.linkedin}}" target="_blank">{{founder.name}}</a></div>
+          <div ng-if="!founder.linkedin">{{founder.name}}</div>
+        </span>
       </div>
     </div>
 
