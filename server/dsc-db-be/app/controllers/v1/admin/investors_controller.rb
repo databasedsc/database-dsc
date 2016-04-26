@@ -8,7 +8,13 @@ module V1
       end
 
       def index
-        investors = Investor.with_deleted.order(:id)
+
+        if params[:filter].present?
+          investors = Investor.select(:id, :name).where("name ILIKE ?", "%#{params[:filter]}%")
+        else
+          investors = Investor.with_deleted.order(:id)
+        end
+
         render json: investors
       end
 

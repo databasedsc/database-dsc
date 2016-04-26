@@ -10,5 +10,10 @@
           return responseObject.data;
         })
       };
+
+      this.filter = function(query) {
+        var basePath = serverUrl + '/admin/investors?filter=' + query;
+        return $http.get(basePath);
+      };
     });
 })();

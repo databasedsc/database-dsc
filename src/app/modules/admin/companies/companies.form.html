@@ -232,7 +232,7 @@
 
 <div class="panel panel-default">
   <div class="panel-heading">Tags</div>
-  <div class="row">
+  <div class="panel-body">
     <tags-input ng-model="$ctrl.tags"
                 add-on-enter="false"
                 on-tag-added="$ctrl.addTag($tag)"
@@ -242,18 +242,17 @@
     </tags-input>
     <span ng-show="create.newTag.$invalid" class="label label-danger">At least 1 tag is required.</span>
   </div>
+  </div>
 </div>
 
 <custom-fields entity="$ctrl.company"></custom-fields>
 
 <div class="panel panel-default">
-  <div class="panel-heading">Funding</div>
+  <div class="panel-heading">
+    Funding
+    <a ng-click="$ctrl.addFundingRound()" class="btn btn-primary btn-sm pull-right">Add round</a>
+  </div>
   <div class="panel-body">
-    <div class="row">
-      <div class="col-sm-12">
-        <p><a ng-click="$ctrl.addFundingRound()" class="btn btn-primary pull-right">Add round</a></p>
-      </div>
-    </div>
     <div class="" ng-repeat="round in $ctrl.company.funding_rounds">
       <div class="panel panel-default">
         <div class="panel-heading">
@@ -274,6 +273,19 @@
               <div class="form-group">
                 <label for="funding-date">Funding date</label>
                 <input ng-model="round.date" id="funding-date" class="form-control" type="text">
+              </div>
+              <div class="form-group">
+                <label for="funding-date">Investors</label>
+                <tags-input ng-model="round.investors"
+                            replace-spaces-with-dashes="false"
+                            placeholder="Add an investor"
+                            add-on-enter="false"
+                            add-from-auto-complete-only="true"
+                            key-property="id"
+                            display-property="name">
+                  <auto-complete source="$ctrl.queryInvestors($query)" display-property="name">
+                  </auto-complete>
+                </tags-input>
               </div>
             </div>
           </div>

@@ -7,7 +7,7 @@
       templateUrl: 'app/modules/admin/companies/companies.edit.html',
       controller: 'AdminCompaniesEditController'
     })
-    .controller('AdminCompaniesEditController', function(getCompanyService, updateCompanyService, $stateParams, Notification, listTagsService) {
+    .controller('AdminCompaniesEditController', function(getCompanyService, updateCompanyService, $stateParams, Notification, listTagsService, listInvestorsService) {
       var controller = this;
       this.tags = [];
       this.target_markets = {};
@@ -30,6 +30,10 @@
         loadGeoMarkets();
       });
 
+      controller.queryInvestors = function(query) {
+        return listInvestorsService.filter(query);
+      };
+
       controller.queryTags = function(query) {
         return listTagsService.filter(query);
       };
@@ -43,7 +47,7 @@
       };
 
       controller.addFundingRound = function() {
-        controller.company.funding_rounds.push({type: ""});
+        controller.company.funding_rounds.push({});
       };
 
       controller.removeFundingRound = function(round) {
@@ -75,6 +79,7 @@
 
       this.update = function() {
         setTargetMarkets();
+
         updateCompanyService.update(controller.company)
           .then(function(company) {
             controller.company = company;
