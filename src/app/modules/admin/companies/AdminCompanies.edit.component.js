@@ -46,6 +46,17 @@
         controller.company.tags.splice(controller.company.tags.indexOf(tag.text), 1);
       };
 
+      controller.addFounder = function() {
+        controller.company.founders.push({
+          name: "",
+          linkedin: ""
+        });
+      };
+
+      controller.removeFounder = function(founder) {
+        controller.company.founders.splice(controller.company.founders.indexOf(founder), 1);
+      };
+
       controller.addFundingRound = function() {
         controller.company.funding_rounds.push({});
       };

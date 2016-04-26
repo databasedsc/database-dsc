@@ -22,15 +22,18 @@
     </div>
 
     <div class="col-md-4 m-b-md" ng-show="$ctrl.company.formerly_known_as">
-      <div class="company-info-title">Headquarters</div>
-      <div class="company-info-value">{{$ctrl.company.headquarters}}</div>
-      <h4>Formerly known as:</h4>
-      <p>{{$ctrl.company.formerly_known_as}}</p>
+      <div class="company-info-title">Formerly known as</div>
+      <div class="company-info-value">{{$ctrl.company.formerly_known_as}}</div>
     </div>
 
     <div class="col-md-4 m-b-md" ng-show="$ctrl.company.founders">
       <div class="company-info-title">Founders</div>
-      <div class="company-info-value">{{$ctrl.company.founders}}</div>
+      <div class="company-info-value">
+        <span ng-repeat="founder in $ctrl.company.founders">
+          <div ng-if="founder.linkedin"><a href="https://www.linkedin.com/in/{{founder.linkedin}}" target="_blank">{{founder.name}}</a></div>
+          <div ng-if="!founder.linkedin">{{founder.name}}</div>
+        </span>
+      </div>
     </div>
 
     <div class="col-md-4 m-b-md" ng-show="$ctrl.company.founded">

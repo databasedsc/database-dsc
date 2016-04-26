@@ -234,7 +234,12 @@ unless Rails.env.production?
         "headquarters": "Dublin",
         "formerly_known_as": "",
         "founded": "2015",
-        "founders": "Gavin Fogarty",
+        "founders": [
+          {
+            "name": "Gavin Fogarty",
+            "linkedin": "fogartygavin"
+          }
+        ],
         "tags": ["Technology", "Social Recruiting", "Event Management"],
         "investors": "Undisclosed",
         "office_locations": [
@@ -269,7 +274,20 @@ unless Rails.env.production?
         "headquarters": "Dublin",
         "formerly_known_as": "",
         "founded": "2011",
-        "founders": "Dave O'Flanagan, Alan Giles, Dermot O'Connor",
+        "founders": [
+          {
+            "name": "Dave O'Flanagan",
+            "linkedin": "daveof"
+          },
+          {
+            "name": "Alan Giles",
+            "linkedin": "alankgiles"
+          },
+          {
+            "name": "Dermot O'Connor",
+            "linkedin": "dermotoc"
+          }
+        ],
         "tags": ["Travel", "Big Data Analytics", "Personalization"],
         "investors": "NDRC - Seed, Series A; Tadhgh O'Toole - Angel; Bloom Equity - Angel; Conor Stanley - Angel; Delta Partners - Angel, Series A; Frontline Ventures - Series B; Polaris Partners - Series B; Silicon Valley Bank - Series B",
         "office_locations": [
@@ -317,7 +335,16 @@ unless Rails.env.production?
         "headquarters": "Dublin",
         "formerly_known_as": "",
         "founded": "2010",
-        "founders": "Viliam Holub, Trevor Parsons",
+        "founders": [
+          {
+            "name": "Viliam Holub",
+            "linkedin": "viliamholub"
+          },
+          {
+            "name": "Trevor Parsons",
+            "linkedin": "trevparsons"
+          }
+        ],
         "tags": ["Business Analytics", "Application Performance Monitoring", "Big Data Analytics"],
         "investors": "NDRC, Seed Polaris Partners - Seed, Series A; Floodgate - Seed, Series A; Frontline Ventures - Series A; RRE Ventures - Series A",
         "office_locations": [
@@ -350,7 +377,16 @@ unless Rails.env.production?
         "headquarters": "Cork",
         "formerly_known_as": "",
         "founded": "2013",
-        "founders": "Pat Phelan, Chris Kennedy",
+        "founders": [
+          {
+            "name": "Pat Phelan",
+            "linkedin": "patphelan"
+          },
+          {
+            "name": "Chris Kennedy",
+            "linkedin": "kennedychris"
+          }
+        ],
         "tags": ["Security", "E-Commerce", "Fraud Detection", "Software"],
         "investors": "Wayra - Angel, Seed, Convertible Note; Shane Naughton - Seed; Notion Capital - Seed; Mangrove Capital Partners - Seed, Convertible Note; Kevin Abosch - Seed; Greycroft Partners - Seed, Convertible Note; Enterprise Ireland - Seed; David Coallier - Seed; ACT Venture Capital - Seed, Convertible Note",
         "office_locations": [
@@ -386,7 +422,20 @@ unless Rails.env.production?
         "headquarters": "Dublin",
         "formerly_known_as": "",
         "founded": "2012",
-        "founders": "Aidan Sliney, Craig Watson, Brendan O'Driscoll",
+        "founders": [
+          {
+            "name": "Aidan Sliney",
+            "linkedin": "aidan-sliney-41878745"
+          },
+          {
+            "name": "Craig Watson",
+            "linkedin": "craigcwatson"
+          },
+          {
+            "name": "Brendan O'Driscoll",
+            "linkedin": "brendanodriscoll"
+          }
+        ],
         "tags": ["Music", "Apps", "Analytics", "Local", "Social Media", "Real Time", "Location Based Services"],
         "investors": "ACT Venture Captal - Seed, Venture; Colin Wiel - Venture; Enterprise Ireland - Seed; Iain MacDonald - Venture; Matthew Le Merle - Seed; Mike Ryan - Venture; NDRC - Seed; Paddy Holahan - Venture; Per Brilloth - Venture; Radical Investments - Seed; Spark Labs Global - Venture; Trevor Bowen - Venture; Xandez Investments LLP - Venture",
         "office_locations": [
@@ -421,7 +470,20 @@ unless Rails.env.production?
         "headquarters": "Dublin",
         "formerly_known_as": "",
         "founded": "2011",
-        "founders": "Mikey Cannon, Norman Hewson,John Forde",
+        "founders": [
+          {
+            "name": "Mikey Cannon",
+            "linkedin": "mikeycannon"
+          },
+          {
+            "name": "Norman Hewson",
+            "linkedin": "norman-hewson-b5047923"
+          },
+          {
+            "name": "John Forde",
+            "linkedin": ""
+          }
+        ],
         "tags": ["Enterprise Software", "SaaS", "Restaurants", "Online Scheduling"],
         "investors": "NDRC - Seed",
         "office_locations": [
@@ -456,7 +518,12 @@ unless Rails.env.production?
       "headquarters": "Dublin",
       "formerly_known_as": "",
       "founded": "2009",
-      "founders": "Mark Little",
+      "founders": [
+        {
+          "name": "Mark Little",
+          "linkedin": "marklittlenews"
+        }
+      ],
       "tags": ["News", "Publishing", "Media", "Social Media"],
       "investors": "SOSV - Seed; ACT Venture Capital - Venture",
       "office_locations": [
@@ -491,7 +558,20 @@ unless Rails.env.production?
       "headquarters": "Dublin",
       "formerly_known_as": "",
       "founded": "2009",
-      "founders": "Sean Barrett, Jonathan Potter, Brett Meyers",
+      "founders": [
+        {
+          "name": "Sean Barrett",
+          "linkedin": "sean-barrett-b6b64722"
+        },
+        {
+          "name": "Jonathan Potter",
+          "linkedin": ""
+        },
+        {
+          "name": "Brett Meyers",
+          "linkedin": "meyersbrett"
+        }
+      ],
       "tags": ["Finance", "Virtualization", "Peer-to-Peer", "P2P Money Transfer"],
       "investors": "Frontline Ventures - Seed, Series A; Enterprise Ireland - Venture; Octopus Ventures - Series A",
       "office_locations": [
@@ -526,7 +606,20 @@ unless Rails.env.production?
       "headquarters": "Dublin",
       "formerly_known_as": "",
       "founded": "2012",
-      "founders": "Neil O'Connor, Brian McDonnell, Sean Blanchfield",
+      "founders": [
+        {
+          "name": "Neil O'Connor",
+          "linkedin": "neil-o-connor-9ba2b816"
+        },
+        {
+          "name": "Brian McDonnell",
+          "linkedin": "brianmcdonnell1"
+        },
+        {
+          "name": "Sean Blanchfield",
+          "linkedin": "seanblanchfield"
+        }
+      ],
       "tags": ["Advertising", "Software", "Digital Media"],
       "investors": "Tribal Ventures - Angel, Seed; Frontline Ventures - Angel; Enterprise Ireland - Angel",
       "office_locations": [
@@ -561,7 +654,16 @@ unless Rails.env.production?
       "headquarters": "Dublin",
       "formerly_known_as": "",
       "founded": "2014",
-      "founders": "Mark Cummins, Charles Bibby",
+      "founders": [
+        {
+          "name": "Mark Cummins",
+          "linkedin": "markjcummins"
+        },
+        {
+          "name": "Charles Bibby",
+          "linkedin": "charles-bibby-bb80b594"
+        }
+      ],
       "tags": ["Wireless", "Internet", "Services"],
       "investors": "Frontline Ventures - Seed",
       "office_locations": [

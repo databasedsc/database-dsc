@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160426105617) do
+ActiveRecord::Schema.define(version: 20160426135121) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,7 +24,6 @@ ActiveRecord::Schema.define(version: 20160426105617) do
     t.text     "short_description"
     t.string   "headquarters"
     t.string   "formerly_known_as"
-    t.text     "founders"
     t.text     "investors"
     t.string   "incubator"
     t.integer  "employees"
@@ -52,9 +51,11 @@ ActiveRecord::Schema.define(version: 20160426105617) do
     t.text     "custom_field_4"
     t.jsonb    "office_locations",      default: {}
     t.string   "tags",                  default: [],              array: true
+    t.jsonb    "founders"
   end
 
   add_index "companies", ["deleted_at"], name: "index_companies_on_deleted_at", using: :btree
+  add_index "companies", ["founders"], name: "index_companies_on_founders", using: :gin
   add_index "companies", ["funding_rounds"], name: "index_companies_on_funding_rounds", using: :gin
   add_index "companies", ["social_accounts"], name: "index_companies_on_social_accounts", using: :gin
 

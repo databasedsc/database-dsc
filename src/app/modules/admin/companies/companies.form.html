@@ -249,6 +249,46 @@
 
 <div class="panel panel-default">
   <div class="panel-heading">
+    Founders
+    <a ng-click="$ctrl.addFounder()" class="btn btn-primary btn-sm pull-right">Add Founder</a>
+  </div>
+  <div class="panel-body">
+    <div ng-if="$ctrl.company.founders.length == 0">
+      <p>There are no founders.</p>
+    </div>
+    <div ng-if="$ctrl.company.founders.length > 0" ng-repeat="founder in $ctrl.company.founders track by $index">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          Founder
+          <a ng-click="$ctrl.removeFounder(founder)" class="pull-right"><i class="fa fa-2x fa-trash"></i></a>
+        </div>
+        <div class="panel-body">
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="form-group">
+                <label for="package-name">Name</label>
+                <input type="text" ng-model="founder.name" id="founder-name" class="form-control">
+                </textarea>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="form-group">
+                <label for="founder-linkedin">LinkedIn</label>
+                <input type="text" ng-model="founder.linkedin" id="founder-linkedin" class="form-control">
+                </textarea>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="panel panel-default">
+  <div class="panel-heading">
     Funding
     <a ng-click="$ctrl.addFundingRound()" class="btn btn-primary btn-sm pull-right">Add round</a>
   </div>
