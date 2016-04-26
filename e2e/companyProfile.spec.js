@@ -77,11 +77,6 @@ describe('CompanyProfile', function() {
       expect(page.details.getText()).toContain('Global');
     });
 
-    it('should display Office locations', function() {
-      expect(page.details.getText()).toContain('34 Farnsworth Street, Floor 4, Boston, MA 02110, USA');
-      expect(page.details.getText()).toContain('26-28 Lomard Street, Dublin 2, Dublin');
-    });
-
     it('should display Business model', function() {
       expect(page.details.getText()).toContain('B2B');
     });

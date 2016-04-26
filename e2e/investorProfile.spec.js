@@ -78,10 +78,6 @@ describe('InvestorProfile', function() {
       expect(page.details.getText()).toContain('Global');
     });
 
-    it('should display Office locations', function() {
-      expect(page.details.getText()).toContain('26-28 Lombard Street East, First Floor, Dublin 2');
-    });
-
     it('should display Contact', function() {
       expect(page.details.getText()).toContain('info@frontline.vc');
     });
