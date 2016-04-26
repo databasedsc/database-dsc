@@ -33,6 +33,14 @@ class Hub < ApplicationRecord
     'Over Three Months' => DateTime.now..5.years.from_now
   }
 
+  pg_search_scope :search_by_tag,
+    against: {
+      tags: 'A',
+    },
+    using: {
+      tsearch: { any_word: true }
+    }
+
   pg_search_scope :search,
     against: {
       name: 'A',

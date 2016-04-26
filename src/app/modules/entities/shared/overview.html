@@ -18,10 +18,10 @@
           <cite ng-show="$ctrl.entity.tags.length > 0" style="margin-top:20px;margin-bottom:0;">Tags</cite>
           <p id="tags" style="font-size:14px;margin-top:10px" ng-show="$ctrl.entity.tags.length > 0">
             <dsc-tag ng-repeat="tag in $ctrl.entity.tags" class="text-center">
-              <a ng-if="$ctrl.entityType == 'company'" href="/#/companies?tag={{tag}}" class="btn btn-primary btn-xs btn-outline">{{tag}}</a>
-              <a ng-if="$ctrl.entityType == 'multinational'" href="/#/mtns?tag={{tag}}" class="btn btn-primary btn-xs btn-outline">{{tag}}</a>
-              <a ng-if="$ctrl.entityType == 'investor'" href="/#/investors?tag={{tag}}" class="btn btn-primary btn-xs btn-outline">{{tag}}</a>
-              <a ng-if="$ctrl.entityType == 'hub'" href="/#/hubs?tag={{tag}}" class="btn btn-primary btn-xs btn-outline">{{tag}}</a>
+              <a ng-if="$ctrl.entityType == 'company'" ui-sref="search.searchCompanies({tag: '{{tag}}'})" class="btn btn-primary btn-xs btn-outline">{{tag}}</a>
+              <a ng-if="$ctrl.entityType == 'multinational'" ui-sref="search.searchMultinationals({tag: '{{tag}}'})" class="btn btn-primary btn-xs btn-outline">{{tag}}</a>
+              <a ng-if="$ctrl.entityType == 'investor'" ui-sref="search.searchInvestors({tag: '{{tag}}'})" class="btn btn-primary btn-xs btn-outline">{{tag}}</a>
+              <a ng-if="$ctrl.entityType == 'hub'" ui-sref="search.searchHubs({tag: '{{tag}}'})" class="btn btn-primary btn-xs btn-outline">{{tag}}</a>
             </dsc-tag>
           </p>
         </blockquote>

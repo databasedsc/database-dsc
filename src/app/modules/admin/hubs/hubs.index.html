@@ -21,9 +21,9 @@
       <tr ng-class="{deleted: hub.deleted_at}" ng-repeat="hub in $ctrl.hubs">
         <td>
           <a ng-hide="hub.deleted_at" ui-sref="admin.hubs.edit({id: hub.id})">
-            <img src="{{hub.logo}}" alt="{{hub.name}}" width="80" height="50">
+            <img ng-src="{{hub.logo}}" alt="{{hub.name}}" width="80" height="50">
           </a>
-          <img ng-show="hub.deleted_at" src="{{hub.logo}}" alt="{{hub.name}}" width="80" height="50">
+          <img ng-show="hub.deleted_at" ng-src="{{hub.logo}}" alt="{{hub.name}}" width="80" height="50">
         </td>
         <td>
           <strong>

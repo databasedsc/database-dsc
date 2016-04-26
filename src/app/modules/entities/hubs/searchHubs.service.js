@@ -13,6 +13,9 @@
           if (query.searchText) {
             params["searchText"] = query.searchText
           }
+          else if (query.tag) {
+            params["tag"] = query.tag
+          }
           if (filters) {
             Object.keys(filters).forEach(function(name){
               if (filters[name] !== '') {

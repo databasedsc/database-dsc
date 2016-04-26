@@ -7,10 +7,14 @@
       templateUrl: 'app/modules/entities/hubs/index.html',
       controller: 'SearchHubsController'
     })
-    .controller('SearchHubsController', function($scope, $document, searchHubsService, filterHubsService) {
+    .controller('SearchHubsController', function($scope, $stateParams, $document, searchHubsService, filterHubsService) {
       var controller = this;
       this.searchHubsService = searchHubsService;
       this.filterHubsService = filterHubsService;
+
+      if ($stateParams.tag) {
+        this.tag = $stateParams.tag;
+      }
 
       this.filters = filterHubsService.filtersData();
 
@@ -40,6 +44,8 @@
       this.resetSearch = function() {
         // reset the text search
         this.query = "";
+        // reset 'tag' if exists
+        this.tag = null;
         // reset all the filters
         Object.keys(controller.filters).map(function(filterName) {
           var filterObj = controller.filters[filterName];
@@ -64,7 +70,16 @@
       }
 
       this.search = function() {
-        searchHubsService.get({searchText: controller.query}, getSelectedFilter(), getPaginationDetails()).then(function(hubs) {
+
+        var query = {};
+        if (this.query != undefined) {
+          query.searchText = this.query;
+        }
+        if (this.tag != undefined) {
+          query.tag = this.tag;
+        }
+
+        searchHubsService.get(query, getSelectedFilter(), getPaginationDetails()).then(function(hubs) {
           controller.results = hubs.data;
           controller.totalItems = hubs.headers('Total');
         })

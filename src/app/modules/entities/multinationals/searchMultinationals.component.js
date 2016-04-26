@@ -7,10 +7,18 @@
       templateUrl: 'app/modules/entities/multinationals/index.html',
       controller: 'SearchMultinationalsController'
     })
-    .controller('SearchMultinationalsController', function($scope, $document, searchMultinationalsService, filterMultinationalsService) {
+    .controller('SearchMultinationalsController', function($scope, $stateParams, $document, searchMultinationalsService, filterMultinationalsService) {
       var controller = this;
       this.searchMultinationalsService = searchMultinationalsService;
       this.filterCompaniesService = filterMultinationalsService;
+
+      if ($stateParams.tag) {
+        this.tag = $stateParams.tag;
+      }
+
+      if ($stateParams.tag) {
+        this.tag = $stateParams.tag;
+      }
 
       // filters
       this.filters = filterMultinationalsService.filtersData();
@@ -41,6 +49,8 @@
       this.resetSearch = function() {
         // reset the text search
         this.query = "";
+        // reset 'tag' if exists
+        this.tag = null;
         // reset all the filters
         Object.keys(controller.filters).map(function(filterName) {
           var filterObj = controller.filters[filterName];
@@ -66,11 +76,19 @@
 
       // search
       this.search = function() {
-          searchMultinationalsService.get({searchText: this.query}, getSelectedFilter(), getPaginationDetails()).then(function(multinationals) {
-            controller.results = multinationals.data;
-            controller.totalItems = multinationals.headers('Total')
-          });
-        //});
+
+        var query = {};
+        if (this.query != undefined) {
+          query.searchText = this.query;
+        }
+        if (this.tag != undefined) {
+          query.tag = this.tag;
+        }
+
+        searchMultinationalsService.get(query, getSelectedFilter(), getPaginationDetails()).then(function(multinationals) {
+          controller.results = multinationals.data;
+          controller.totalItems = multinationals.headers('Total')
+        });
       };
     });
 })();

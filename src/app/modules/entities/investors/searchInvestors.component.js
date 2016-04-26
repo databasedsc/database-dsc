@@ -7,10 +7,14 @@
       templateUrl: 'app/modules/entities/investors/index.html',
       controller: 'SearchInvestorsController'
     })
-    .controller('SearchInvestorsController', function($scope, $document, searchInvestorsService, filterInvestorsService) {
+    .controller('SearchInvestorsController', function($scope, $stateParams, $document, searchInvestorsService, filterInvestorsService) {
       var controller = this;
       this.searchInvestorsService = searchInvestorsService;
       this.filterInvestorsService = filterInvestorsService;
+
+      if ($stateParams.tag) {
+        this.tag = $stateParams.tag;
+      }
 
       // filters
       this.filters = filterInvestorsService.filtersData();
@@ -41,6 +45,8 @@
       this.resetSearch = function() {
         // reset the text search
         this.query = "";
+        // reset 'tag' if exists
+        this.tag = null;
         // reset all the filters
         Object.keys(controller.filters).map(function(filterName) {
           var filterObj = controller.filters[filterName];
@@ -72,7 +78,16 @@
       // search
 
       this.search = function() {
-        searchInvestorsService.get({searchText: this.query}, getSelectedFilter(), getPaginationDetails()).then(function(investors) {
+
+        var query = {};
+        if (this.query != undefined) {
+          query.searchText = this.query;
+        }
+        if (this.tag != undefined) {
+          query.tag = this.tag;
+        }
+
+        searchInvestorsService.get(query, getSelectedFilter(), getPaginationDetails()).then(function(investors) {
           controller.results = investors.data;
           controller.totalItems = investors.headers('Total');
         });

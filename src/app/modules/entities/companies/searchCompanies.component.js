@@ -7,10 +7,14 @@
       templateUrl: 'app/modules/entities/companies/index.html',
       controller: 'SearchCompaniesController'
     })
-    .controller('SearchCompaniesController', function($scope, $location, $document, searchCompaniesService, filterCompaniesService) {
+    .controller('SearchCompaniesController', function($scope, $stateParams, $location, $document, searchCompaniesService, filterCompaniesService) {
       var controller = this;
       this.searchCompaniesService = searchCompaniesService;
       this.filterCompaniesService = filterCompaniesService;
+
+      if ($stateParams.tag) {
+        this.tag = $stateParams.tag;
+      }
 
       // filter
       this.filters = filterCompaniesService.filtersData();
@@ -41,6 +45,8 @@
       this.resetSearch = function() {
         // reset the text search
         this.query = "";
+        // reset 'tag' if exists
+        this.tag = null;
         // reset all the filters
         Object.keys(controller.filters).map(function(filterName) {
           var filterObj = controller.filters[filterName];
@@ -65,14 +71,13 @@
 
       // search
       this.search = function() {
-        var params = $location.search();
 
         var query = {};
         if (this.query != undefined) {
           query.searchText = this.query;
         }
-        if (params["tag"] != undefined) {
-          query.tag = params["tag"];
+        if (this.tag != undefined) {
+          query.tag = this.tag;
         }
 
         searchCompaniesService.getCompanies(query, getSelectedFilter(), getPaginationDetails()).then(function(companies) {

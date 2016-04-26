@@ -81,6 +81,14 @@
         })
         .state('search.searchCompanies', {
           url: '/companies',
+          params: {
+            tag : {
+              value: ''
+            },
+            // this param is not part of url
+            // it can be passed with $state.go or ui-sref
+            hiddenParam: 'YES',
+          },
           template: '<search-companies></search-companies>'
         })
         .state('search.companyProfile', {
@@ -89,6 +97,14 @@
         })
         .state('search.searchMultinationals', {
           url: '/mtns',
+          params: {
+            tag : {
+              value: ''
+            },
+            // this param is not part of url
+            // it can be passed with $state.go or ui-sref
+            hiddenParam: 'YES',
+          },
           template: '<search-multinationals></search-multinationals>'
         })
         .state('search.multinationalProfile', {
@@ -97,6 +113,14 @@
         })
         .state('search.searchInvestors', {
           url: '/investors',
+          params: {
+            tag : {
+              value: ''
+            },
+            // this param is not part of url
+            // it can be passed with $state.go or ui-sref
+            hiddenParam: 'YES',
+          },
           template: '<search-investors></search-investors>'
         })
         .state('search.investorProfile', {
@@ -105,6 +129,14 @@
         })
         .state('search.searchHubs', {
           url: '/hubs',
+          params: {
+            tag : {
+              value: ''
+            },
+            // this param is not part of url
+            // it can be passed with $state.go or ui-sref
+            hiddenParam: 'YES',
+          },
           template: '<search-hubs></search-hubs>'
         })
         .state('search.hubProfile', {

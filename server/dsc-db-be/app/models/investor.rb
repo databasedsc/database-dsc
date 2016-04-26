@@ -34,6 +34,14 @@ class Investor < ApplicationRecord
   acts_as_paranoid
   include PgSearch
 
+  pg_search_scope :search_by_tag,
+    against: {
+      tags: 'A',
+    },
+    using: {
+      tsearch: { any_word: true }
+    }
+
   pg_search_scope :search,
     against: {
       name: 'A',

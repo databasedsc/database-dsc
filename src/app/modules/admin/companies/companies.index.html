@@ -21,8 +21,8 @@
     <tbody>
     <tr ng-class="{deleted: company.deleted_at}" ng-repeat="company in $ctrl.companies">
       <td>
-        <a ng-hide="company.deleted_at" ui-sref="admin.companies.edit({id: company.id})"><img src="{{company.logo}}" alt="{{company.name}}" width="80" height="50"></a>
-        <img ng-show="company.deleted_at" src="{{company.logo}}" alt="{{company.name}}" width="80" height="50">
+        <a ng-hide="company.deleted_at" ui-sref="admin.companies.edit({id: company.id})"><img ng-src="{{company.logo}}" alt="{{company.name}}" width="80" height="50"></a>
+        <img ng-show="company.deleted_at" ng-src="{{company.logo}}" alt="{{company.name}}" width="80" height="50">
       </td>
       <td>
         <strong>
