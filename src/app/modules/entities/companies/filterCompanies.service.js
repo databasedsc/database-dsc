@@ -55,6 +55,7 @@
             { label: 'Europe', code: 'EU' },
             { label: 'North America', code: 'NA' },
             { label: 'Asia', code: 'AS'},
+            { label: 'Australasia', code: 'AA'},
             { label: 'Africa', code: 'AF' },
             { label: 'South America', code: 'SA' },
             { label: 'Global', code: 'G' }]
