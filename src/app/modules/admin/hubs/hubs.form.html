@@ -16,6 +16,14 @@
           <input ng-model="$ctrl.hub.contact" id="contact" class="form-control" type="text">
         </div>
 
+        <div class="form-group">
+          <label for="contact">Funding Provided:</label>
+          <br>
+          <input type="radio" ng-model="$ctrl.hub.funding_provided" ng-value="true"> Yes
+          &nbsp;
+          <input type="radio" ng-model="$ctrl.hub.funding_provided" ng-value="false"> No
+        </div>
+
       </div>
       <div class="col-md-6">
 
@@ -40,8 +48,7 @@
     <tags-input ng-model="$ctrl.tags"
                 add-on-enter="false"
                 on-tag-added="$ctrl.addTag($tag)"
-                on-tag-removed="$ctrl.removeTag($tag)"
-                min-tags="1">
+                on-tag-removed="$ctrl.removeTag($tag)">
       <auto-complete source="$ctrl.queryTags($query)"></auto-complete>
     </tags-input>
     <span ng-show="create.newTag.$invalid" class="label label-danger">At least 1 tag is required.</span>

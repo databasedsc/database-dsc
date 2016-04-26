@@ -36,11 +36,6 @@
         </div>
 
         <div class="form-group">
-          <label for="founders">Founders:</label>
-          <input ng-model="$ctrl.company.founders" id="founders" class="form-control" type="text">
-        </div>
-
-        <div class="form-group">
           <label for="founded">Founded:</label>
           <input integer ng-model="$ctrl.company.founded" id="founded" class="form-control" type="text">
         </div>
@@ -236,8 +231,7 @@
     <tags-input ng-model="$ctrl.tags"
                 add-on-enter="false"
                 on-tag-added="$ctrl.addTag($tag)"
-                on-tag-removed="$ctrl.removeTag($tag)"
-                min-tags="1">
+                on-tag-removed="$ctrl.removeTag($tag)">
       <auto-complete source="$ctrl.queryTags($query)"></auto-complete>
     </tags-input>
     <span ng-show="create.newTag.$invalid" class="label label-danger">At least 1 tag is required.</span>

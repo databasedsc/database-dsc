@@ -10,22 +10,6 @@
       };
 
       this.data = {
-        emeaHq: {
-          type: 'dropdown',
-          id: 'emea-hq',
-          label: 'EMEA Headquarters in Ireland',
-          selectedValue: '',
-          noSelectionString: 'Yes & No',
-          values: ['Yes', 'No']
-        },
-        startupPackages: {
-          type: 'dropdown',
-          id: 'startup-packages',
-          label: 'Startup Package',
-          selectedValue: '',
-          noSelectionString: 'Yes & No',
-          values: ['Yes', 'No']
-        },
         employees: {
           type: 'dropdown',
           id: 'employees',
@@ -33,14 +17,6 @@
           selectedValue: '',
           noSelectionString: 'Any number',
           values: ['1-5', '6-10', '11-25', '26-50', '50-100', '101-250', '250-500', '501-1000', '1000+']
-        },
-        eventsSpace: {
-          type: 'dropdown',
-          id: 'events-space',
-          label: 'Events Space',
-          selectedValue: '',
-          noSelectionString: 'Yes & No',
-          values: ['Yes', 'No']
         },
         functions: {
           type: 'checklist',
@@ -62,10 +38,31 @@
             {label: 'Operations', code: 'O'},
             {label: 'Product Development', code: 'PD'}
           ]
+        },
+        emeaHq: {
+          type: 'dropdown',
+          id: 'emea-hq',
+          label: 'EMEA Headquarters in Ireland',
+          selectedValue: '',
+          noSelectionString: 'Yes & No',
+          values: ['Yes', 'No']
+        },
+        startupPackages: {
+          type: 'dropdown',
+          id: 'startup-packages',
+          label: 'Startup Package',
+          selectedValue: '',
+          noSelectionString: 'Yes & No',
+          values: ['Yes', 'No']
+        },
+        eventsSpace: {
+          type: 'dropdown',
+          id: 'events-space',
+          label: 'Events Space',
+          selectedValue: '',
+          noSelectionString: 'Yes & No',
+          values: ['Yes', 'No']
         }
       };
     })
 })();
-
-
-

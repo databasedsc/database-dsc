@@ -45,7 +45,7 @@ module V1
           { alumni: [:name] }, :video_url, :website, :custom_field_1,
           :custom_field_2, :custom_field_3, :custom_field_4,
           { social_accounts: [:twitter, :linkedin, :facebook] },
-          { tags: [] }
+          { tags: [] }, :funding_provided
         )
       end
 

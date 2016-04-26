@@ -32,6 +32,11 @@
       <div class="company-info-value">{{$ctrl.hub.contact_detail}}</div>
     </div>
 
+    <div class="col-md-4 m-b-md" ng-show="$ctrl.hub.funding_provided">
+      <div class="company-info-title">Funding Provided</div>
+      <div class="company-info-value">{{$ctrl.hub.funding_provided ? 'Yes' : 'No'}}</div>
+    </div>
+
   </div>
 </div>
 
