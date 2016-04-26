@@ -102,15 +102,11 @@
 <custom-fields entity="$ctrl.multinational"></custom-fields>
 
 <div class="panel panel-default">
-  <div class="panel-heading">Startup Packages</div>
-
+  <div class="panel-heading">
+    Startup Packages
+    <a ng-click="$ctrl.addStartupPackage()" class="btn btn-primary btn-sm pull-right">Add Package</a>
+  </div>
   <div class="panel-body">
-    <div class="row">
-      <div class="col-sm-12">
-        <p><a ng-click="$ctrl.addStartupPackage()" class="btn btn-primary pull-right">Add Package</a></p>
-
-      </div>
-    </div>
     <div class="" ng-repeat="p in $ctrl.multinational.startup_packages track by $index">
       <div class="panel panel-default">
         <div class="panel-heading">
