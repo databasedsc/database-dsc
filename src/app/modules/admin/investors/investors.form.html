@@ -58,6 +58,18 @@
         </div>
 
         <div class="form-group">
+          <label for="deal-structure">Deal Structure</label>
+          <select ng-model="$ctrl.investor.deal_structure" id="deal-structure" class="form-control">
+            <option></option>
+            <option>Equity (Minority)</option>
+            <option>Equity (Majority)</option>
+            <option>Venture Debt</option>
+            <option>Convertible Debt</option>
+            <option>Mezzanine</option>
+          </select>
+        </div>
+
+        <div class="form-group">
           <label>Type of Funding</label>
           <div class="checkbox">
             <label>

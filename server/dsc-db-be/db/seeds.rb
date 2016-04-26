@@ -75,6 +75,7 @@ unless Rails.env.production?
         "co_investors": "Polaris Partners",
         "preferred_contact": "Referral Only",
         "contact_email": "info@frontline.vc",
+        "deal_structure": "Equity (Minority)",
         "contact_urls": {
           "website": "http://www.frontline.vc",
           "facebook": "https://www.facebook.com/frontlineventures/",
@@ -111,6 +112,7 @@ unless Rails.env.production?
         "co_investors": "Frontline Ventures",
         "preferred_contact": "Referral",
         "contact_email": "nruane@polarispartners.com",
+        "deal_structure": "Mezzanine",
         "contact_urls": {
           "website": "http://polarispartners.com",
           "facebook": "http://www.facebook.com/pages/Polaris-Partners/404737049642094",

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160425141003) do
+ActiveRecord::Schema.define(version: 20160426103034) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -124,6 +124,7 @@ ActiveRecord::Schema.define(version: 20160425141003) do
     t.text     "video_url"
     t.jsonb    "social_accounts"
     t.jsonb    "office_locations",  default: {}
+    t.string   "deal_structure"
   end
 
   add_index "investors", ["contact_urls"], name: "index_investors_on_contact_urls", using: :gin

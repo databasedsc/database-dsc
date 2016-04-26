@@ -18,6 +18,6 @@ class V1::InvestorsController < ApplicationController
   end
 
   def filter_params
-    params.permit(:searchText, :fundingTypes, :investmentSize, :tag)
+    params.permit(:searchText, :fundingTypes, :investmentSize, :dealStructure, :tag)
   end
 end

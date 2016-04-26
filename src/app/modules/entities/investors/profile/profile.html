@@ -43,6 +43,11 @@
       <div class="company-info-value">{{$ctrl.investor.funding_types | fundingCodeToHuman : 'array' }}</div>
     </div>
 
+    <div class="col-md-4 m-b-md" ng-show="$ctrl.investor.deal_structure">
+      <div class="company-info-title">Deal Structure</div>
+      <div class="company-info-value">{{$ctrl.investor.deal_structure}}</div>
+    </div>
+
     <div class="col-md-4 m-b-md" ng-show="$ctrl.investor.investment_size">
       <div class="company-info-title">Investment Size</div>
       <div class="company-info-value">{{$ctrl.investor.investment_size}}</div>
