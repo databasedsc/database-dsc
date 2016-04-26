@@ -87,7 +87,7 @@
             },
             // this param is not part of url
             // it can be passed with $state.go or ui-sref
-            hiddenParam: 'YES',
+            hiddenParam: 'YES'
           },
           template: '<search-companies></search-companies>'
         })
@@ -103,7 +103,7 @@
             },
             // this param is not part of url
             // it can be passed with $state.go or ui-sref
-            hiddenParam: 'YES',
+            hiddenParam: 'YES'
           },
           template: '<search-multinationals></search-multinationals>'
         })
@@ -119,7 +119,7 @@
             },
             // this param is not part of url
             // it can be passed with $state.go or ui-sref
-            hiddenParam: 'YES',
+            hiddenParam: 'YES'
           },
           template: '<search-investors></search-investors>'
         })
@@ -135,7 +135,7 @@
             },
             // this param is not part of url
             // it can be passed with $state.go or ui-sref
-            hiddenParam: 'YES',
+            hiddenParam: 'YES'
           },
           template: '<search-hubs></search-hubs>'
         })

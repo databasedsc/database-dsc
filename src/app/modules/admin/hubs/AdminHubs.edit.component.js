@@ -47,9 +47,10 @@
         controller.hub.office_locations = [];
         for (var i=0;i<controller.officeLocations.length;i++) {
           var location = controller.officeLocations[i];
-          if (location.trim().length > 0)
-            controller.hub.office_locations.push(location);
-        };
+          if (location.trim().length > 0) {
+            controller.hub.office_locations.push(location)
+          }
+        }
       }
 
       function loadBoardMembers() {
@@ -64,7 +65,7 @@
           var member = controller.boardMembers[i];
           if (member.trim().length > 0)
             controller.hub.board_members.push(member);
-        };
+        }
       }
 
       controller.queryTags = function(query) {

@@ -37,7 +37,7 @@
           var location = controller.officeLocations[i];
           if (location.trim().length > 0)
             controller.investor.office_locations.push(location);
-        };
+        }
       }
 
       function setBoardMembers() {
@@ -46,7 +46,7 @@
           var member = controller.boardMembers[i];
           if (member.trim().length > 0)
             controller.investor.board_members.push(member);
-        };
+        }
       }
 
       controller.addFounder = function() {
