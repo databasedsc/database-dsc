@@ -80,13 +80,6 @@
       <div class="company-info-value">{{$ctrl.investor.co_investors}}</div>
     </div>
 
-    <div class="col-md-4 m-b-md" ng-show="!!$ctrl.investor.board_members.length">
-      <div class="company-info-title">Board Members</div>
-      <div class="company-info-value">
-        <p ng-repeat="member in $ctrl.investor.board_members">{{member}}</p>
-      </div>
-    </div>
-
   </div>
 
   <div ng-show="!!$ctrl.investor.office_locations.length > 0" class="portfolio">

@@ -12,7 +12,6 @@
       var controller = this;
       this.fundingTypes = [];
       this.officeLocations = [];
-      this.boardMembers = [];
 
       var setEmptyInvestor = function() {
         controller.investor = {
@@ -40,15 +39,6 @@
         }
       }
 
-      function setBoardMembers() {
-        controller.investor.board_members = [];
-        for (var i=0;i<controller.boardMembers.length;i++) {
-          var member = controller.boardMembers[i];
-          if (member.trim().length > 0)
-            controller.investor.board_members.push(member);
-        }
-      }
-
       controller.addFounder = function() {
         controller.investor.founders.push({
           name: "",
@@ -68,20 +58,11 @@
         controller.officeLocations.splice(controller.officeLocations.indexOf(location), 1);
       };
 
-      controller.addBoardMember = function() {
-        controller.boardMembers.push("");
-      };
-
-      controller.removeBoardMember = function(member) {
-        controller.boardMembers.splice(controller.boardMembers.indexOf(member), 1);
-      };
-
       this.create = function() {
         $confirm({text: "Are you sure you want to submit?"}).then(function() {
 
           setFundingTypes();
           setOfficeLocations();
-          setBoardMembers();
           controller.createInvestorService.create(controller.investor).then(function() {
             Notification.success('Investor Saved sucessfully!');
             setEmptyInvestor();

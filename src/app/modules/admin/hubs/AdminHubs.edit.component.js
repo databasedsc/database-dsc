@@ -14,7 +14,6 @@
       this.tags = [];
       this.fundingTypes = [];
       this.officeLocations = [];
-      this.boardMembers = [];
 
       function loadTags() {
         controller.hub.tags.forEach(function(tag) {
@@ -53,21 +52,6 @@
         }
       }
 
-      function loadBoardMembers() {
-        controller.hub.board_members.forEach(function(member) {
-          controller.boardMembers.push(member);
-        });
-      }
-
-      function setBoardMembers() {
-        controller.hub.board_members = [];
-        for (var i=0;i<controller.boardMembers.length;i++) {
-          var member = controller.boardMembers[i];
-          if (member.trim().length > 0)
-            controller.hub.board_members.push(member);
-        }
-      }
-
       controller.queryTags = function(query) {
         return listTagsService.filter(query);
       };
@@ -97,14 +81,6 @@
 
       controller.removeOfficeLocation = function(location) {
         controller.officeLocations.splice(controller.officeLocations.indexOf(location), 1);
-      };
-
-      controller.addBoardMember = function() {
-        controller.boardMembers.push("");
-      };
-
-      controller.removeBoardMember = function(member) {
-        controller.boardMembers.splice(controller.boardMembers.indexOf(member), 1);
       };
 
       getHubService.find($stateParams.id).then(function(hub) {

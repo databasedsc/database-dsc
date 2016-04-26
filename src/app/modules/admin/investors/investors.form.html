@@ -221,34 +221,3 @@
     </div>
   </div>
 </div>
-
-<div class="panel panel-default">
-  <div class="panel-heading">
-    Board Members
-    <a ng-click="$ctrl.addBoardMember()" class="btn btn-primary btn-sm pull-right">Add Member</a>
-  </div>
-  <div class="panel-body">
-    <div ng-if="$ctrl.boardMembers.length == 0">
-      <p>There are no board members.</p>
-    </div>
-    <div ng-if="$ctrl.boardMembers.length > 0" ng-repeat="member in $ctrl.boardMembers track by $index">
-      <div class="panel panel-default">
-        <div class="panel-heading">
-          Board Member
-          <a ng-click="$ctrl.removeBoardMember(member)" class="pull-right"><i class="fa fa-2x fa-trash"></i></a>
-        </div>
-        <div class="panel-body">
-          <div class="row">
-            <div class="col-sm-12">
-              <div class="form-group">
-                <label for="member">Name</label>
-                <input type="text" ng-model="$ctrl.boardMembers[$index]" id="member" class="form-control">
-                </textarea>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>

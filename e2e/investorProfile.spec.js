@@ -99,16 +99,6 @@ describe('InvestorProfile', function() {
     it('should display Co-Investors', function() {
       expect(page.details.getText()).toContain('Polaris Partners');
     });
-
-    xit('should display Board Members', function() {
-      //TODO: No data
-      expect(page.details.getText()).toContain('');
-    });
-
-    xit('should display Similar Investors', function() {
-      //TODO: No data
-      expect(page.details.getText()).toContain('');
-    });
   });
 
   describe('Portfolio', function() {

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160426103034) do
+ActiveRecord::Schema.define(version: 20160426105617) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -109,7 +109,6 @@ ActiveRecord::Schema.define(version: 20160426103034) do
     t.string   "contact_email"
     t.text     "preferred_contact"
     t.text     "co_investors"
-    t.text     "board_members",     default: [],              array: true
     t.text     "similar_investors"
     t.text     "long_description"
     t.string   "exits_ipos"

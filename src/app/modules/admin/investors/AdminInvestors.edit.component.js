@@ -13,7 +13,6 @@
       var controller = this;
       this.tags = [];
       this.fundingTypes = [];
-      this.boardMembers = [];
 
       function loadTags() {
         controller.investor.tags.forEach(function(tag) {
@@ -34,21 +33,6 @@
             controller.investor.funding_types.push(fType);
           }
         });
-      }
-
-      function loadBoardMembers() {
-        controller.investor.board_members.forEach(function(member) {
-          controller.boardMembers.push(member);
-        });
-      }
-
-      function setBoardMembers() {
-        controller.investor.board_members = [];
-        for (var i=0;i<controller.boardMembers.length;i++) {
-          var member = controller.boardMembers[i];
-          if (member.trim().length > 0)
-            controller.investor.board_members.push(member);
-        }
       }
 
       controller.queryTags = function(query) {
@@ -87,24 +71,14 @@
         controller.investor.office_locations.splice(controller.investor.office_locations.indexOf(location), 1);
       };
 
-      controller.addBoardMember = function() {
-        controller.boardMembers.push("");
-      };
-
-      controller.removeBoardMember = function(member) {
-        controller.boardMembers.splice(controller.boardMembers.indexOf(member), 1);
-      };
-
       getInvestorService.find($stateParams.id).then(function(investor) {
         controller.investor = investor;
         loadTags();
         loadFundingTypes();
-        loadBoardMembers();
       });
 
       this.update = function() {
         setFundingTypes();
-        setBoardMembers();
         updateInvestorService.update(controller.investor)
           .then(function(investor) {
             controller.investor = investor;
