@@ -82,6 +82,7 @@ class Company < ApplicationRecord
   scope :operational_status, -> (operational_status) { where operational_status: operational_status }
   scope :greater_than, -> (column, limit) { where "#{column} > #{limit}" }
   scope :range_scope, -> (column, range) { where("#{column}" => range) }
+  scope :recently_funded, -> { where recently_funded: true }
 
   def self.select_numeric_scope(column, range_as_string)
     if range_as_string == '>500' || range_as_string == '>100m'

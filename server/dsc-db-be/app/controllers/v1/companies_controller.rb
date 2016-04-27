@@ -14,7 +14,9 @@ module V1
     private
 
     def filter_params
-      params.permit(:searchText, :employees, :fundingStage, :fundingAmount, :productStage, :companyStage, :targetMarkets, :businessModel, :operationalStatus, :tag)
+      params.permit(:searchText, :employees, :fundingStage, :fundingAmount,
+        :productStage, :companyStage, :targetMarkets, :businessModel,
+        :operationalStatus, :tag, :recently_funded)
     end
   end
 end

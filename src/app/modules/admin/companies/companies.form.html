@@ -67,6 +67,11 @@
         </div>
 
         <div class="form-group">
+          <label for="revenue">Revenue (admin purposes only)</label>
+          <input ng-model="$ctrl.company.revenue" id="revenue" class="form-control" type="number">
+        </div>
+
+        <div class="form-group">
           <label>Target Markets</label>
           <div class="checkbox">
             <label>
@@ -177,6 +182,14 @@
         <div class="form-group">
           <label for="looking-for">We're looking for</label>
           <input ng-model="$ctrl.company.looking_for" id="looking-for" class="form-control" type="text">
+        </div>
+
+        <div class="form-group">
+          <label>Recently Funded?</label>
+          <br>
+          <input type="radio" ng-model="$ctrl.company.recently_funded" ng-value="true"> Yes
+          &nbsp;
+          <input type="radio" ng-model="$ctrl.company.recently_funded" ng-value="false"> No
         </div>
 
       </div>

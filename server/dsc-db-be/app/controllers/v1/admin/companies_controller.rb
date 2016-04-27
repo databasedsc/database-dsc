@@ -51,7 +51,8 @@ module V1
           { office_locations: [:id, :address, :lat, :lng] }, :video_url, :website, :custom_field_1,
           :custom_field_2, :custom_field_3, :custom_field_4, :acquired,
           { social_accounts: [:twitter, :linkedin, :facebook] }, :product_stage,
-          { funding_rounds: [:type, :amount, :date, investors: [:id, :name] ] }
+          { funding_rounds: [:type, :amount, :date, investors: [:id, :name] ] },
+          :revenue, :recently_funded
         )
       end
 

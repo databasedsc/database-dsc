@@ -18,7 +18,7 @@
   </div>
 </div>
 
-<div class="block block-bordered-lg" style="padding-top:60px;padding-bottom:60px;">
+<div ng-if="$ctrl.recentlyFunded.length > 0" class="block block-bordered-lg" style="padding-top:60px;padding-bottom:60px;">
   <div class="container text-center app-translate-15" data-transition="entrance">
     <blockquote class="pull-quote">
       <cite style="margin-top:0;">Explore Ireland's Recently Funded Companies</cite>
@@ -27,7 +27,7 @@
       </p>
     </blockquote>
     <div class="row m-t-md">
-      <div class="col-md-3 col-sm-6 company-tile" ng-repeat="entity in $ctrl.companyResults | limitTo:4">
+      <div class="col-md-3 col-sm-6 company-tile" ng-repeat="entity in $ctrl.recentlyFunded | limitTo:4">
         <a ui-sref="search.companyProfile({id: entity.id})" class="no-decoration">
         <div class="panel panel-default" style="border-bottom: 5px solid #e92a8b;">
           <div class="panel-body home-panel">

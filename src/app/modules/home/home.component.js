@@ -46,6 +46,7 @@
       this.query = "";
 
       $scope.$watch('currentPage', function () {
+        controller.gatherRecentlyFundedCompanies();
         controller.gatherCompanies();
         controller.gatherInvestors();
         controller.gatherHubs();
@@ -82,6 +83,12 @@
       }
 
       controller.availableOptions = [];
+
+      this.gatherRecentlyFundedCompanies = function() {
+        searchCompaniesService.getCompanies({ recently_funded: true }, getPaginationDetails()).then(function(companies) {
+          controller.recentlyFunded = companies.data;
+        });
+      };
 
       this.gatherCompanies = function() {
         searchCompaniesService.getCompanies({searchText: this.query}, getPaginationDetails()).then(function(companies) {

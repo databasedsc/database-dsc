@@ -15,6 +15,9 @@
           else if (query.tag) {
             params["tag"] = query.tag
           }
+          else if (query.recently_funded) {
+            params["recently_funded"] = query.recently_funded
+          }
           if (filters) {
             Object.keys(filters).forEach(function(name){
               if (filters[name] !== '') {

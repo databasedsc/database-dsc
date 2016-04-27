@@ -10,6 +10,8 @@ class CompanySearchService
       companies = Company.search(@params[:searchText])
     elsif @params[:tag].present?
       companies = Company.search_by_tag(@params[:tag])
+    elsif @params[:recently_funded].present?
+      companies = Company.recently_funded
     else
       companies = Company.all
     end
