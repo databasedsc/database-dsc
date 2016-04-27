@@ -42,7 +42,7 @@ module V1
           :headquarters, :founded, :programs, { hub_type: [] },
           :application_deadline, :contact, :contact_detail,
           :address, { contact_urls: [:name, :email, :phone] }, { events: [] },
-          { alumni: [:name] }, :video_url, :website, :custom_field_1,
+          { alumni: [:id, :name] }, :video_url, :website, :custom_field_1,
           :custom_field_2, :custom_field_3, :custom_field_4,
           { social_accounts: [:twitter, :linkedin, :facebook] },
           { tags: [] }, :funding_provided

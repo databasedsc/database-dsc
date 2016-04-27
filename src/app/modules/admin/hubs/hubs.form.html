@@ -127,6 +127,22 @@
 </div>
 
 <div class="panel panel-default">
+  <div class="panel-heading">Alumni</div>
+  <div class="panel-body">
+    <tags-input ng-model="$ctrl.hub.alumni"
+                replace-spaces-with-dashes="false"
+                placeholder="Add a company"
+                add-on-enter="false"
+                add-from-auto-complete-only="true"
+                key-property="id"
+                display-property="name">
+      <auto-complete source="$ctrl.queryCompanies($query)" display-property="name">
+      </auto-complete>
+    </tags-input>
+  </div>
+</div>
+
+<div class="panel panel-default">
   <div class="panel-heading">Tags</div>
   <div class="panel-body">
     <tags-input ng-model="$ctrl.tags"

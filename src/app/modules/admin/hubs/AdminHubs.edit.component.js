@@ -8,7 +8,7 @@
       controller: 'AdminHubsEditController'
     })
     .controller('AdminHubsEditController', function(getHubService,
-      updateHubService, $stateParams, Notification, listTagsService) {
+      updateHubService, $stateParams, Notification, listTagsService, listCompaniesService) {
 
       var controller = this;
       this.tags = [];
@@ -69,6 +69,10 @@
         }
       }
 
+      controller.queryCompanies = function(query) {
+        return listCompaniesService.filter(query);
+      };
+
       controller.toggleCalendar = function() {
         controller.appDeadlineDatePicker.opened = true;
       };
@@ -99,7 +103,7 @@
 
       getHubService.find($stateParams.id).then(function(hub) {
         controller.hub = hub;
-        
+
         if (!Array.isArray(controller.hub.contact_urls)) {
           controller.hub.contact_urls = []
         }
