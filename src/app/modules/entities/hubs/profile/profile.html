@@ -37,6 +37,10 @@
       <div class="company-info-value">{{$ctrl.hub.funding_provided ? 'Yes' : 'No'}}</div>
     </div>
 
+    <div class="col-md-4 m-b-md" ng-show="$ctrl.hub.programs && $ctrl.hub.application_deadline">
+      <div class="company-info-title">Application Deadline</div>
+      <div class="company-info-value">{{$ctrl.hub.programs}} - {{$ctrl.hub.application_deadline | date : "dd/MM/yyyy"}}</div>
+    </div>
   </div>
 </div>
 

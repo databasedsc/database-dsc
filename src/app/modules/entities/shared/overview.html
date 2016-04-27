@@ -11,6 +11,13 @@
           <p>
             {{$ctrl.entity.long_description}}
           </p>
+          <p>
+            <div class="video-player" ng-show="$ctrl.entity.video_url">
+              <div class="embed-responsive embed-responsive-16by9">
+                <iframe ng-src="{{trustSrc($ctrl.entity.video_url)}}" frameborder="0" allowfullscreen></iframe>
+              </div>
+            </div>
+          </p>
           <div id="links">
             <p ng-show="$ctrl.entity.website"><a ng-href="{{$ctrl.entity.website}}" target="_blank">{{$ctrl.entity.website}}</a></p>
             <social-links social-accounts="$ctrl.entity.social_accounts"></social-links>

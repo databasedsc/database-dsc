@@ -43,6 +43,41 @@
 </div>
 
 <div class="panel panel-default">
+  <div class="panel-heading">Details</div>
+  <div class="panel-body">
+    <div class="row">
+      <div class="col-md-6">
+
+        <div class="form-group">
+          <label for="application-deadline-name">Application Title:</label>
+          <input ng-model="$ctrl.hub.programs" id="application-deadline-name" class="form-control" type="text">
+        </div>
+
+      </div>
+      <div class="col-md-6">
+
+        <div class="form-group col-md-3">
+          <label for="application-deadline-date">Application Deadline:</label>
+          <p class="input-group">
+            <input id="application-deadline-date"
+                   class="form-control"
+                   type="text"
+                   ng-model="$ctrl.hub.application_deadline"
+                   uib-datepicker-popup="dd/MM/yyyy"
+                   is-open="$ctrl.appDeadlineDatePicker.opened"
+                   close-text="Close">
+            <span class="input-group-btn">
+              <button type="button" class="btn btn-default" ng-click="$ctrl.toggleCalendar()"><i class="fa fa-calendar"></i></button>
+            </span>
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="panel panel-default">
   <div class="panel-heading">Tags</div>
   <div class="panel-body">
     <tags-input ng-model="$ctrl.tags"

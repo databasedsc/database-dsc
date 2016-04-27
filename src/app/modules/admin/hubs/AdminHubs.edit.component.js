@@ -14,6 +14,11 @@
       this.tags = [];
       this.fundingTypes = [];
       this.officeLocations = [];
+      this.appDeadlineDatePicker = {
+        opened: false
+      };
+
+      this.currentAppDeadlineDate;
 
       function loadTags() {
         controller.hub.tags.forEach(function(tag) {
@@ -52,6 +57,22 @@
         }
       }
 
+      function convertDateForDisplay() {
+        if (controller.hub.application_deadline) {
+          controller.hub.application_deadline = Date.parse(controller.hub.application_deadline);
+        }
+      }
+
+      function convertDateForUpdate() {
+        if (controller.hub.application_deadline == controller.currentAppDeadlineDate) {
+          controller.hub.application_deadline = new Date(controller.hub.application_deadline)
+        }
+      }
+
+      controller.toggleCalendar = function() {
+        controller.appDeadlineDatePicker.opened = true;
+      };
+
       controller.queryTags = function(query) {
         return listTagsService.filter(query);
       };
@@ -85,13 +106,17 @@
 
       getHubService.find($stateParams.id).then(function(hub) {
         controller.hub = hub;
+        convertDateForDisplay();
+        controller.currentAppDeadlineDate = hub.application_deadline;
         loadTags();
       });
 
       this.update = function() {
+        convertDateForUpdate();
         updateHubService.update(controller.hub)
           .then(function(hub) {
             controller.hub = hub;
+            convertDateForDisplay();
             Notification.success('Hub Updated!')
           }, function() {
             Notification.error('Error: Hub could not be saved!')
