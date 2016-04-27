@@ -88,21 +88,6 @@
 </div>
 
 <div class="panel panel-default">
-  <div class="panel-heading">Tags</div>
-  <div class="panel-body">
-    <tags-input ng-model="$ctrl.tags"
-                add-on-enter="false"
-                on-tag-added="$ctrl.addTag($tag)"
-                on-tag-removed="$ctrl.removeTag($tag)">
-      <auto-complete source="$ctrl.queryTags($query)"></auto-complete>
-    </tags-input>
-    <span ng-show="create.newTag.$invalid" class="label label-danger">At least 1 tag is required.</span>
-  </div>
-</div>
-
-<custom-fields entity="$ctrl.multinational"></custom-fields>
-
-<div class="panel panel-default">
   <div class="panel-heading">
     Startup Packages
     <a ng-click="$ctrl.addStartupPackage()" class="btn btn-primary btn-sm pull-right">Add Package</a>
@@ -146,3 +131,18 @@
     </div>
   </div>
 </div>
+
+<div class="panel panel-default">
+  <div class="panel-heading">Tags</div>
+  <div class="panel-body">
+    <tags-input ng-model="$ctrl.tags"
+                add-on-enter="false"
+                on-tag-added="$ctrl.addTag($tag)"
+                on-tag-removed="$ctrl.removeTag($tag)">
+      <auto-complete source="$ctrl.queryTags($query)"></auto-complete>
+    </tags-input>
+    <span ng-show="create.newTag.$invalid" class="label label-danger">At least 1 tag is required.</span>
+  </div>
+</div>
+
+<custom-fields entity="$ctrl.multinational"></custom-fields>

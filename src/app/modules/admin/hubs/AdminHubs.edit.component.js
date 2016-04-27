@@ -77,6 +77,18 @@
         return listTagsService.filter(query);
       };
 
+      controller.addPrivateContact = function() {
+        controller.hub.contact_urls.push({
+          name: "",
+          email: "",
+          phone: ""
+        });
+      };
+
+      controller.removePrivateContact = function(contact) {
+        controller.hub.contact_urls.splice(controller.hub.contact_urls.indexOf(contact), 1);
+      };
+
       controller.addTag = function(tag) {
         controller.hub.tags.push(tag.text);
       };
@@ -85,27 +97,13 @@
         controller.hub.tags.splice(controller.hub.tags.indexOf(tag.text), 1);
       };
 
-      controller.addFounder = function() {
-        controller.hub.founders.push({
-          name: "",
-          linkedin: ""
-        });
-      };
-
-      controller.removeFounder = function(founder) {
-        controller.hub.founders.splice(controller.hub.founders.indexOf(founder), 1);
-      };
-
-      controller.addOfficeLocation = function() {
-        controller.officeLocations.push("");
-      };
-
-      controller.removeOfficeLocation = function(location) {
-        controller.officeLocations.splice(controller.officeLocations.indexOf(location), 1);
-      };
-
       getHubService.find($stateParams.id).then(function(hub) {
         controller.hub = hub;
+        
+        if (!Array.isArray(controller.hub.contact_urls)) {
+          controller.hub.contact_urls = []
+        }
+
         convertDateForDisplay();
         controller.currentAppDeadlineDate = hub.application_deadline;
         loadTags();

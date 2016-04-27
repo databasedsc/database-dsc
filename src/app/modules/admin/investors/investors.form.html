@@ -122,21 +122,6 @@
 </div>
 
 <div class="panel panel-default">
-  <div class="panel-heading">Tags</div>
-  <div class="panel-body">
-    <tags-input ng-model="$ctrl.tags"
-                add-on-enter="false"
-                on-tag-added="$ctrl.addTag($tag)"
-                on-tag-removed="$ctrl.removeTag($tag)">
-      <auto-complete source="$ctrl.queryTags($query)"></auto-complete>
-    </tags-input>
-    <span ng-show="create.newTag.$invalid" class="label label-danger">At least 1 tag is required.</span>
-  </div>
-</div>
-
-<custom-fields entity="$ctrl.investor"></custom-fields>
-
-<div class="panel panel-default">
   <div class="panel-heading">
     Office Locations
     <a ng-click="$ctrl.addOfficeLocation()" class="btn btn-primary btn-sm pull-right">Add Location</a>
@@ -220,3 +205,18 @@
     </div>
   </div>
 </div>
+
+<div class="panel panel-default">
+  <div class="panel-heading">Tags</div>
+  <div class="panel-body">
+    <tags-input ng-model="$ctrl.tags"
+                add-on-enter="false"
+                on-tag-added="$ctrl.addTag($tag)"
+                on-tag-removed="$ctrl.removeTag($tag)">
+      <auto-complete source="$ctrl.queryTags($query)"></auto-complete>
+    </tags-input>
+    <span ng-show="create.newTag.$invalid" class="label label-danger">At least 1 tag is required.</span>
+  </div>
+</div>
+
+<custom-fields entity="$ctrl.investor"></custom-fields>

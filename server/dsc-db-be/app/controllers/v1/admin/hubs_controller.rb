@@ -41,7 +41,7 @@ module V1
           :name, :logo, :short_description, :long_description,
           :headquarters, :founded, :programs, { hub_type: [] },
           :application_deadline, :contact, :contact_detail,
-          :address, { contact_urls: [:url] }, { events: [] },
+          :address, { contact_urls: [:name, :email, :phone] }, { events: [] },
           { alumni: [:name] }, :video_url, :website, :custom_field_1,
           :custom_field_2, :custom_field_3, :custom_field_4,
           { social_accounts: [:twitter, :linkedin, :facebook] },

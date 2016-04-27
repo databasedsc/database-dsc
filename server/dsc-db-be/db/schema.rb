@@ -70,7 +70,6 @@ ActiveRecord::Schema.define(version: 20160427093042) do
     t.datetime "created_at",                        null: false
     t.datetime "updated_at",                        null: false
     t.text     "hub_type",             default: [],              array: true
-    t.date     "application_deadline"
     t.text     "long_description"
     t.string   "founded"
     t.string   "contact"
@@ -89,6 +88,7 @@ ActiveRecord::Schema.define(version: 20160427093042) do
     t.jsonb    "social_accounts"
     t.string   "tags",                 default: [],              array: true
     t.boolean  "funding_provided"
+    t.date     "application_deadline"
   end
 
   add_index "hubs", ["alumni"], name: "index_hubs_on_alumni", using: :gin

@@ -43,7 +43,7 @@
 </div>
 
 <div class="panel panel-default">
-  <div class="panel-heading">Details</div>
+  <div class="panel-heading">Application Details</div>
   <div class="panel-body">
     <div class="row">
       <div class="col-md-6">
@@ -72,6 +72,55 @@
           </p>
         </div>
 
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    Private Contacts (for admin purposes only)
+    <a ng-click="$ctrl.addPrivateContact()" class="btn btn-primary btn-sm pull-right">Add Contact</a>
+  </div>
+  <div class="panel-body">
+    <div ng-if="$ctrl.hub.contact_urls.length == 0">
+      <p>There are no private contacts.</p>
+    </div>
+    <div ng-if="$ctrl.hub.contact_urls.length > 0" ng-repeat="contact in $ctrl.hub.contact_urls track by $index">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          Contact
+          <a ng-click="$ctrl.removePrivateContact(contact)" class="pull-right"><i class="fa fa-2x fa-trash"></i></a>
+        </div>
+        <div class="panel-body">
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="form-group">
+                <label for="contact-name">Name</label>
+                <input type="text" ng-model="contact.name" id="contact-name" class="form-control">
+                </textarea>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="form-group">
+                <label for="contact-email">Email</label>
+                <input type="text" ng-model="contact.email" id="contact-email" class="form-control">
+                </textarea>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="form-group">
+                <label for="contact-phone">Phone</label>
+                <input type="number" ng-model="contact.phone" id="contact-phone" class="form-control">
+                </textarea>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
