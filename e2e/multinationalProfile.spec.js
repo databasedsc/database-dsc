@@ -37,7 +37,7 @@ describe('MultinationalProfile', function() {
     it('should display HQ', function() {
       expect(page.details.getText()).toContain('Redmond, WA');
     });
-    it('should display EMEA HQ in Ireland', function() {
+    it('should display European HQ in Ireland', function() {
       expect(page.details.getText()).toContain('Yes');
     });
     it('should display Irish Office Location', function() {

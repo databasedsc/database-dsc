@@ -74,7 +74,7 @@ describe('SearchResults', function() {
 
       it('should clear filters', function() {
 
-        // filter by emea hq in ireland
+        // filter by European HQ in Ireland
         page.emeaHeadquarterFilter.element(by.xpath("//select[@id='emea-hq']//option[@value='Yes']")).click();
         expect(page.searchResults.count()).toEqual(3);
         // perform reset
