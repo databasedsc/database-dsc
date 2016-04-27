@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160427093042) do
+ActiveRecord::Schema.define(version: 20160427141050) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -100,13 +100,13 @@ ActiveRecord::Schema.define(version: 20160427093042) do
     t.string   "name"
     t.string   "logo"
     t.string   "headquarters"
-    t.jsonb    "founders",          default: {}
+    t.jsonb    "founders",              default: {}
     t.text     "short_description"
     t.string   "local_office"
-    t.text     "tags",              default: [],              array: true
-    t.datetime "created_at",                     null: false
-    t.datetime "updated_at",                     null: false
-    t.text     "funding_types",     default: [],              array: true
+    t.text     "tags",                  default: [],              array: true
+    t.datetime "created_at",                         null: false
+    t.datetime "updated_at",                         null: false
+    t.text     "funding_types",         default: [],              array: true
     t.integer  "investment_size"
     t.string   "funds_raised"
     t.text     "regions"
@@ -127,10 +127,12 @@ ActiveRecord::Schema.define(version: 20160427093042) do
     t.string   "website"
     t.text     "video_url"
     t.jsonb    "social_accounts"
-    t.jsonb    "office_locations",  default: {}
+    t.jsonb    "office_locations",      default: {}
     t.string   "deal_structure"
+    t.jsonb    "companies_invested_in", default: []
   end
 
+  add_index "investors", ["companies_invested_in"], name: "index_investors_on_companies_invested_in", using: :gin
   add_index "investors", ["contact_urls"], name: "index_investors_on_contact_urls", using: :gin
   add_index "investors", ["deleted_at"], name: "index_investors_on_deleted_at", using: :btree
   add_index "investors", ["founders"], name: "index_investors_on_founders", using: :gin

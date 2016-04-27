@@ -9,7 +9,12 @@ module V1
       end
 
       def index
-        companies = Company.with_deleted.order(:id)
+
+        if params[:filter].present?
+          companies = Company.select(:id, :name).where("name ILIKE ?", "%#{params[:filter]}%")
+        else
+          companies = Company.with_deleted.order(:id)
+        end
 
         render json: companies
       end

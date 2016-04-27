@@ -207,6 +207,22 @@
 </div>
 
 <div class="panel panel-default">
+  <div class="panel-heading">Companies Invested In</div>
+  <div class="panel-body">
+    <tags-input ng-model="$ctrl.investor.companies_invested_in"
+                replace-spaces-with-dashes="false"
+                placeholder="Add a company"
+                add-on-enter="false"
+                add-from-auto-complete-only="true"
+                key-property="id"
+                display-property="name">
+      <auto-complete source="$ctrl.queryCompanies($query)" display-property="name">
+      </auto-complete>
+    </tags-input>
+  </div>
+</div>
+
+<div class="panel panel-default">
   <div class="panel-heading">Tags</div>
   <div class="panel-body">
     <tags-input ng-model="$ctrl.tags"
@@ -215,7 +231,6 @@
                 on-tag-removed="$ctrl.removeTag($tag)">
       <auto-complete source="$ctrl.queryTags($query)"></auto-complete>
     </tags-input>
-    <span ng-show="create.newTag.$invalid" class="label label-danger">At least 1 tag is required.</span>
   </div>
 </div>
 

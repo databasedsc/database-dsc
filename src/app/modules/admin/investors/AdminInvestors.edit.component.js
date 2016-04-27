@@ -8,7 +8,7 @@
       controller: 'AdminInvestorsEditController'
     })
     .controller('AdminInvestorsEditController', function(getInvestorService,
-      updateInvestorService, $stateParams, Notification, listTagsService) {
+      updateInvestorService, $stateParams, Notification, listTagsService, listCompaniesService) {
 
       var controller = this;
       this.tags = [];
@@ -34,6 +34,10 @@
           }
         });
       }
+
+      controller.queryCompanies = function(query) {
+        return listCompaniesService.filter(query);
+      };
 
       controller.queryTags = function(query) {
         return listTagsService.filter(query);

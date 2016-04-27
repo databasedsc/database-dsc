@@ -68,6 +68,10 @@
           url: '/admin/hubs',
           template: '<admin-hubs-index></admin-hubs-index>'
         })
+        .state('admin.hubs.new', {
+          url: '/admin/hubs/new',
+          template: '<admin-hubs-new></admin-hubs-new>'
+        })
         .state('admin.hubs.edit', {
           url: '/admin/hubs/:id/edit',
           template: '<admin-hubs-edit></admin-hubs-edit>'
