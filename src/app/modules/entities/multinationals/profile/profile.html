@@ -65,11 +65,13 @@
       <h2 class="col-md-2">Start Up Packages</h2>
       <div class="col-md-10 row">
         <div class="tile col-md-6" ng-repeat="package in $ctrl.multinational.startup_packages">
-          <a href="{{package.link}}"><h3>{{package.name}}</h3></a>
+          <a ng-href="{{package.link}}"><h3>{{package.name}}</h3></a>
           <p>{{package.description}}</p>
-          <a ng-show="{{package.link}}" href="{{package.link}}">More &#155;</a>
+          <span ng-show="package.link"><a ng-href="{{package.link}}">More &#155;</a></span>
         </div>
       </div>
     </div>
   </div>
 </div>
+
+<br/>

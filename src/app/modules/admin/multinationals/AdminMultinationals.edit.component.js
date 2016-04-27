@@ -9,9 +9,8 @@
     })
     .controller('AdminMultinationalsEditController', function(getMultinationalService, updateMultinationalService, $stateParams, Notification, listTagsService) {
       var controller = this;
-      this.functions = [];
       this.tags = [];
-
+      this.functions = [];
 
       function loadTags() {
         controller.multinational.tags.forEach(function(tag) {
@@ -33,6 +32,19 @@
           }
         });
       }
+
+      controller.addStartupPackage = function() {
+        controller.multinational.startup_packages.push({
+          name: "",
+          description: "",
+          link: ""
+        });
+      };
+
+      controller.removeStartupPackage = function(startupPackage) {
+        debugger;
+        controller.multinational.startup_packages.splice(controller.multinational.startup_packages.indexOf(startupPackage), 1);
+      };
 
       controller.queryTags = function(query) {
         return listTagsService.filter(query);

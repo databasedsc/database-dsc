@@ -93,11 +93,13 @@
     <a ng-click="$ctrl.addStartupPackage()" class="btn btn-primary btn-sm pull-right">Add Package</a>
   </div>
   <div class="panel-body">
-    <div class="" ng-repeat="p in $ctrl.multinational.startup_packages track by $index">
+    <div ng-if="$ctrl.multinational.startup_packages.length == 0">
+      <p>There are no startup packages.</p>
+    </div>
+    <div ng-if="$ctrl.multinational.startup_packages.length > 0" ng-repeat="p in $ctrl.multinational.startup_packages track by $index">
       <div class="panel panel-default">
         <div class="panel-heading">
           Package
-
           <a ng-click="$ctrl.removeStartupPackage(p)" class="pull-right"><i
             class="fa fa-2x fa-trash"></i></a>
         </div>
@@ -141,8 +143,7 @@
                 on-tag-removed="$ctrl.removeTag($tag)">
       <auto-complete source="$ctrl.queryTags($query)"></auto-complete>
     </tags-input>
-    <span ng-show="create.newTag.$invalid" class="label label-danger">At least 1 tag is required.</span>
+  </div>
   </div>
 </div>
-
 <custom-fields entity="$ctrl.multinational"></custom-fields>

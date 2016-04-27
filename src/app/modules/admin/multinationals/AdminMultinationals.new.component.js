@@ -7,7 +7,7 @@
       templateUrl: 'app/modules/admin/multinationals/multinationals.new.html',
       controller: 'AdminMultinationalsNewController'
     })
-    .controller('AdminMultinationalsNewController', function(createMultinationalService, Notification, $confirm) {
+    .controller('AdminMultinationalsNewController', function(createMultinationalService, Notification, $confirm, listTagsService) {
       var controller = this;
       this.functions = [];
 
@@ -27,12 +27,20 @@
         });
       }
 
-      this.addStartupPackage = function() {
-        controller.multinational.startup_packages.push('');
+      controller.addStartupPackage = function() {
+        controller.multinational.startup_packages.push({
+          name: "",
+          description: "",
+          link: ""
+        });
       };
 
-      this.removeStartupPackage = function(startupPackage) {
+      controller.removeStartupPackage = function(startupPackage) {
         controller.multinational.startup_packages.splice(controller.multinational.startup_packages.indexOf(startupPackage), 1);
+      };
+
+      controller.queryTags = function(query) {
+        return listTagsService.filter(query);
       };
 
       controller.addTag = function(tag) {
