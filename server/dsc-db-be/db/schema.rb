@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160427142621) do
+ActiveRecord::Schema.define(version: 20160427143538) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -75,7 +75,7 @@ ActiveRecord::Schema.define(version: 20160427142621) do
     t.string   "contact"
     t.string   "contact_detail"
     t.text     "address"
-    t.jsonb    "contact_urls"
+    t.jsonb    "contact_urls",         default: []
     t.text     "events",               default: [],              array: true
     t.jsonb    "alumni",               default: []
     t.datetime "deleted_at"
