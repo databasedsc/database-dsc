@@ -7,7 +7,7 @@
       controller: 'AdminInvestorsIndexController',
       templateUrl: 'app/modules/admin/investors/investors.index.html'
     })
-    .controller('AdminInvestorsIndexController', function(listInvestorsService, deleteInvestorService, restoreInvestorService, Notification) {
+    .controller('AdminInvestorsIndexController', function(listInvestorsService, deleteInvestorService, restoreInvestorService, Notification, exportToCSV) {
       this.listInvestorsService = listInvestorsService;
       this.deleteInvestorService = deleteInvestorService;
       this.restoreInvestorService = restoreInvestorService;
@@ -34,5 +34,17 @@
           Notification.success('The entry has been restored!')
         })
       };
+
+      this.export = function() {
+        exportToCSV.export('investors').then(function(data) {
+          var anchor = angular.element('<a/>');
+          anchor.attr({
+            href: 'data:attachment/csv;charset=utf-8,' + encodeURI(data),
+            target: '_blank',
+            download: 'investors.csv'
+          })[0].click();
+        })
+      };
+
     });
 })();

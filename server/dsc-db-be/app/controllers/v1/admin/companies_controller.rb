@@ -16,7 +16,14 @@ module V1
           companies = Company.with_deleted.order(:id)
         end
 
-        render json: companies
+        respond_to do |format|
+          format.html {
+            render json: companies
+          }
+          format.csv do
+            send_data companies.to_csv
+          end
+        end
       end
 
       def show

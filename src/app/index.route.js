@@ -23,6 +23,10 @@
           url: '/admin/companies',
           template: '<admin-companies-index></admin-companies-index>'
         })
+        // .state('admin.companies.index.csv', {
+        //   url: '/admin/companies.csv'//,
+        //   // template: '<admin-companies-index></admin-companies-index>'
+        // })
         .state('admin.companies.new', {
           url: '/admin/companies/new',
           template: '<admin-companies-new></admin-companies-new>'

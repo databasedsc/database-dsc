@@ -42,7 +42,6 @@
       };
 
       controller.removeStartupPackage = function(startupPackage) {
-        debugger;
         controller.multinational.startup_packages.splice(controller.multinational.startup_packages.indexOf(startupPackage), 1);
       };
 

@@ -7,7 +7,7 @@
       controller: 'AdminHubsIndexController',
       templateUrl: 'app/modules/admin/hubs/hubs.index.html'
     })
-    .controller('AdminHubsIndexController', function(listHubsService, deleteHubService, restoreHubService, Notification) {
+    .controller('AdminHubsIndexController', function(listHubsService, deleteHubService, restoreHubService, Notification, exportToCSV) {
       this.listHubsService = listHubsService;
       this.deleteHubService = deleteHubService;
       this.restoreHubService = restoreHubService;
@@ -34,5 +34,17 @@
           Notification.success('The entry has been restored!')
         })
       };
+
+      this.export = function() {
+        exportToCSV.export('hubs').then(function(data) {
+          var anchor = angular.element('<a/>');
+          anchor.attr({
+            href: 'data:attachment/csv;charset=utf-8,' + encodeURI(data),
+            target: '_blank',
+            download: 'hubs.csv'
+          })[0].click();
+        })
+      };
+
     });
 })();

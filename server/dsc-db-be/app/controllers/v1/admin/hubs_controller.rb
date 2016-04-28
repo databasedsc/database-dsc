@@ -9,7 +9,15 @@ module V1
 
       def index
         hubs = Hub.with_deleted.order(:id)
-        render json: hubs
+
+        respond_to do |format|
+          format.html {
+            render json: hubs
+          }
+          format.csv do
+            send_data hubs.to_csv
+          end
+        end
       end
 
       def show

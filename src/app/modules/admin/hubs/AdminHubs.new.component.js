@@ -40,7 +40,6 @@
 
       this.create = function() {
         $confirm({text: "Are you sure you want to submit?"}).then(function() {
-          setTargetMarkets();
           joinTags();
           controller.createHubService.create(controller.hub).then(function() {
             Notification.success('Hub Saved sucessfully!');

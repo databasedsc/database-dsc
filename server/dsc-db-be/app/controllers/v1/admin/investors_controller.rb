@@ -15,7 +15,14 @@ module V1
           investors = Investor.with_deleted.order(:id)
         end
 
-        render json: investors
+        respond_to do |format|
+          format.html {
+            render json: investors
+          }
+          format.csv do
+            send_data investors.to_csv
+          end
+        end
       end
 
       def show

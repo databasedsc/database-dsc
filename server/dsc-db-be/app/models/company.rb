@@ -93,4 +93,5 @@ class Company < ApplicationRecord
       self.range_scope(column, lower..upper)
     end
   end
+
 end

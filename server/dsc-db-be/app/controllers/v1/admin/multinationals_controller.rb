@@ -11,7 +11,14 @@ module V1
       def index
         multinationals = Multinational.with_deleted.order(:id)
 
-        render json: multinationals
+        respond_to do |format|
+          format.html {
+            render json: multinationals
+          }
+          format.csv do
+            send_data multinationals.to_csv
+          end
+        end
       end
 
       def show
