@@ -11,6 +11,7 @@
       updateHubService, $stateParams, Notification, listTagsService, listCompaniesService) {
 
       var controller = this;
+      this.hub_type = {};
       this.tags = [];
       this.fundingTypes = [];
       this.officeLocations = [];
@@ -101,14 +102,37 @@
         controller.hub.tags.splice(controller.hub.tags.indexOf(tag.text), 1);
       };
 
+      function loadHubTypes() {
+        controller.hub.hub_type.forEach(function(code) {
+          controller.hub_type[code] = true
+        });
+      }
+
+      function setHubTypes() {
+        controller.hub.hub_type = [];
+        for (var key in controller.hub_type) {
+          if (controller.hub_type.hasOwnProperty(key) && controller.hub_type[key]) {
+            controller.hub.hub_type.push(key);
+          }
+        }
+        controller.hub.hub_type = controller.hub.hub_type
+      }
+
       getHubService.find($stateParams.id).then(function(hub) {
         controller.hub = hub;
+
+        if (!Array.isArray(controller.hub.contact_urls)) {
+          controller.hub.contact_urls = [];
+        }
+
         convertDateForDisplay();
         controller.currentAppDeadlineDate = hub.application_deadline;
         loadTags();
+        loadHubTypes();
       });
 
       this.update = function() {
+        setHubTypes();
         convertDateForUpdate();
         updateHubService.update(controller.hub)
           .then(function(hub) {

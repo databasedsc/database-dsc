@@ -14,7 +14,13 @@
 
     <div class="col-md-4 m-b-md" ng-show="$ctrl.hub.hub_type">
       <div class="company-info-title">Hub Type</div>
-      <div class="company-info-value">{{$ctrl.hub.hub_type | join: ', '}}</div>
+      <div class="company-info-value">
+        <p id="hub-type">
+          <span ng-repeat="hubType in $ctrl.hub.hub_type">
+            {{hubType | hubTypeCodeToHuman}}{{$last ? ' ' : ','}}
+          </span>
+        </p>
+      </div>
     </div>
 
     <div class="col-md-4 m-b-md" ng-show="$ctrl.hub.founded">
@@ -50,7 +56,7 @@
       <h2 class="col-md-2">Alumni</h2>
       <div class="col-md-10 company-list">
         <div ng-repeat="company in $ctrl.hub.alumni">
-          <p>{{company}}</p>
+          <p>{{company.name}}</p>
         </div>
       </div>
     </div>

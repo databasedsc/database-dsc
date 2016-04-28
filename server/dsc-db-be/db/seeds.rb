@@ -28,11 +28,10 @@ unless Rails.env.production?
         "contact": "",
         "contact_detail": "info@ndrc.ie",
         "address": "",
-        "alumni": ["Building eye", "Commutable", "Cityhook", "Gigstarter", "ParkYa", "Bragbet", "Busy Moos", "Voice", "Balls.ie", "Shotclip", "Soundwave", "Mobstats", "Twiddle", "Loylap", "Localmint", "Adyuka", "Tubett", "Digifeye", "Adaptics", "Aftering", "YapMe", "travayl"],
         "contact_urls": {},
         "events": [],
         "programs": "",
-        "hub_type": ["Accelerator/Incubator"]
+        "hub_type": ["A","I"]
       },
       {
         "name": "Dogpatch Labs",
@@ -43,11 +42,10 @@ unless Rails.env.production?
         "contact": "Patrick Walsh",
         "contact_detail": "patrick@dogpatchlabs.com",
         "address": "",
-        "alumni": ["Trustev", "CoderDojo", "Twilio", "Pivotal"],
         "contact_urls": {},
         "events": [],
         "programs": "",
-        "hub_type": ["Co-Working"]
+        "hub_type": ["CW"]
       }
     ]
   )

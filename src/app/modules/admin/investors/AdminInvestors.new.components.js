@@ -7,7 +7,7 @@
       controller: 'AdminInvestorsNewController',
       templateUrl: 'app/modules/admin/investors/investors.new.html'
     })
-    .controller('AdminInvestorsNewController', function(createInvestorService, $confirm, Notification) {
+    .controller('AdminInvestorsNewController', function(createInvestorService, $confirm, Notification, listTagsService, listCompaniesService) {
       this.createInvestorService = createInvestorService;
       var controller = this;
       this.fundingTypes = [];
@@ -15,7 +15,9 @@
 
       var setEmptyInvestor = function() {
         controller.investor = {
-          founders: []
+          office_locations: [],
+          founders: [],
+          tags: []
         }
       };
 
@@ -30,14 +32,21 @@
         });
       }
 
-      function setOfficeLocations() {
-        controller.investor.office_locations = [];
-        for (var i=0;i<controller.officeLocations.length;i++) {
-          var location = controller.officeLocations[i];
-          if (location.trim().length > 0)
-            controller.investor.office_locations.push(location);
-        }
-      }
+      controller.queryCompanies = function(query) {
+        return listCompaniesService.filter(query);
+      };
+
+      controller.queryTags = function(query) {
+        return listTagsService.filter(query);
+      };
+
+      controller.addTag = function(tag) {
+        controller.investor.tags.push(tag.text);
+      };
+
+      controller.removeTag = function(tag) {
+        controller.investor.tags.splice(controller.investor.tags.indexOf(tag.text), 1);
+      };
 
       controller.addFounder = function() {
         controller.investor.founders.push({
@@ -51,18 +60,21 @@
       };
 
       controller.addOfficeLocation = function() {
-        controller.officeLocations.push({});
+        controller.investor.office_locations.push({
+          id: controller.investor.office_locations.length + 1,
+          address: "",
+          lat: null,
+          lng: null
+        });
       };
 
       controller.removeOfficeLocation = function(location) {
-        controller.officeLocations.splice(controller.officeLocations.indexOf(location), 1);
+        controller.investor.office_locations.splice(controller.investor.office_locations.indexOf(location), 1);
       };
 
       this.create = function() {
         $confirm({text: "Are you sure you want to submit?"}).then(function() {
-
           setFundingTypes();
-          setOfficeLocations();
           controller.createInvestorService.create(controller.investor).then(function() {
             Notification.success('Investor Saved sucessfully!');
             setEmptyInvestor();

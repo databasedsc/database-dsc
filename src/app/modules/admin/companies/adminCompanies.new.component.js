@@ -30,11 +30,7 @@
           }
         }
         controller.company.target_markets = controller.company.target_markets.join(',')
-      };
-
-      var joinTags = function() {
-        controller.company.tags = controller.company.tags.join(',')
-      };
+      }
 
       controller.queryInvestors = function(query) {
         return listInvestorsService.filter(query);
@@ -87,7 +83,6 @@
       this.create = function() {
         $confirm({text: "Are you sure you want to submit?"}).then(function() {
           setTargetMarkets();
-          joinTags();
           controller.createCompanyService.create(controller.company).then(function() {
             Notification.success('Company Saved sucessfully!');
             setEmptyCompany();

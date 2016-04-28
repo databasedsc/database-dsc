@@ -18,7 +18,7 @@
         });
       }
 
-      function loadGeoMarkets() {
+      function loadTargetMarkets() {
         controller.company.target_markets.split(',').forEach(function(code) {
           controller.target_markets[code] = true
         });
@@ -27,7 +27,7 @@
       getCompanyService.find($stateParams.id).then(function(company) {
         controller.company = company;
         loadTags();
-        loadGeoMarkets();
+        loadTargetMarkets();
       });
 
       controller.queryInvestors = function(query) {

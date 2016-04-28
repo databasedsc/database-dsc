@@ -18,10 +18,12 @@
           noSelectionString: 'All types',
           selectedString: 'All types',
           values: [
-            {label: 'Education', code: 'E'},
-            {label: 'Co-working', code: 'CW'},
+            {label: 'Incubator', code: 'I'},
             {label: 'Accelerator', code: 'A'},
-            {label: 'Incubator', code: 'I'}
+            {label: 'Co-working', code: 'CW'},
+            {label: 'Education', code: 'E'},
+            {label: 'Government', code: 'G'},
+            {label: 'Community', code: 'C'}
           ]
         },
         applicationDeadlines: {
@@ -35,6 +37,3 @@
       };
     })
 })();
-
-
-
