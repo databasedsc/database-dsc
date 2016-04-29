@@ -31,7 +31,8 @@ unless Rails.env.production?
         "contact_urls": {},
         "events": [],
         "programs": "",
-        "hub_type": ["A","I"]
+        "hub_type": ["A","I"],
+        "funding_provided": false
       },
       {
         "name": "Dogpatch Labs",
@@ -45,7 +46,8 @@ unless Rails.env.production?
         "contact_urls": {},
         "events": [],
         "programs": "",
-        "hub_type": ["CW"]
+        "hub_type": ["CW"],
+        "funding_provided": true
       }
     ]
   )

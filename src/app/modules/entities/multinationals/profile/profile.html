@@ -32,7 +32,7 @@
       <div class="company-info-value">{{$ctrl.multinational.employees}}</div>
     </div>
 
-    <div class="col-md-4 m-b-md" ng-show="$ctrl.multinational.functions">
+    <div class="col-md-4 m-b-md" ng-show="$ctrl.multinational.functions.length > 0">
       <div class="company-info-title">Functions in Ireland</div>
       <div class="company-info-value">
         <span ng-repeat="functionCode in $ctrl.multinational.functions">

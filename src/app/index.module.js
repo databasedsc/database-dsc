@@ -17,6 +17,7 @@
       'rzModule',
       'home',
       'login',
+      'ngMap',
       'admin',
       'searchCompanies',
       'searchResults',
