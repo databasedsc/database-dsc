@@ -12,6 +12,8 @@
       var controller = this;
 
       this.getHubService = getHubService;
+      this.searchCompaniesService = searchCompaniesService;
+
       getHubService.find($stateParams.id).then(function(hub){
         controller.hub = hub;
 

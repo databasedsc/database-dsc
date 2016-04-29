@@ -54,9 +54,9 @@ describe('HubProfile', function() {
   describe('Alumni', function() {
     it("should display the hub alumni", function() {
       expect(page.alumni.getText()).toContain('Trustev')
-      expect(page.alumni.getText()).toContain('CoderDojo')
-      expect(page.alumni.getText()).toContain('Twilio')
-      expect(page.alumni.getText()).toContain('Pivotal')
+      expect(page.alumni.getText()).toContain('Logentries')
+      expect(page.alumni.getText()).toContain('Boxever')
+      expect(page.alumni.getText()).toContain('Mustard')
     });
   });
 

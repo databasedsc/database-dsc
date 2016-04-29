@@ -6,7 +6,7 @@
       $scope,
       resultsDeferred;
 
-    beforeEach(module('companyProfile'));
+    beforeEach(module('companyProfile', 'ngMap'));
 
     beforeEach(inject(function($componentController, $rootScope,  $stateParams, $q, getCompanyService) {
       $scope = $rootScope.$new();

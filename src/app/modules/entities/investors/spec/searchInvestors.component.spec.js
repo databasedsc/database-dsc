@@ -4,12 +4,14 @@
   describe('Search Investors', function() {
     var $ctrl,
       $scope,
+      $stateParams,
       resultsDeferred;
 
     beforeEach(module('searchInvestors'));
 
     beforeEach(inject(function($componentController, $rootScope, $q, searchInvestorsService) {
       $scope = $rootScope.$new();
+      $stateParams = {};
       resultsDeferred = $q.defer();
 
       spyOn(searchInvestorsService, 'get').and.callFake(function() {
@@ -18,6 +20,7 @@
 
       $ctrl = $componentController('searchInvestors', {
         $scope: $scope,
+        $stateParams: $stateParams,
         searchInvestorsService: searchInvestorsService
       })
     }));

@@ -3,17 +3,20 @@
 
   describe('Filters', function () {
     var $ctrl,
-      $scope;
+      $scope,
+      $stateParams;
 
     beforeEach(module('searchCompanies'));
 
     beforeEach(inject(function($componentController, $rootScope, filterCompaniesService) {
       $scope = $rootScope.$new();
+      $stateParams = {};
 
       spyOn(filterCompaniesService, 'filtersData').and.returnValue([{label: "1-5", value: 1}]);
 
       $ctrl = $componentController('searchCompanies', {
         $scope: $scope,
+        $stateParams: $stateParams,
         filterCompaniesService: filterCompaniesService
       })
     }));
@@ -27,12 +30,14 @@
   describe('Search Companies', function() {
     var $ctrl,
       $scope,
+      $stateParams,
       resultsDeferred;
 
     beforeEach(module('searchCompanies'));
 
     beforeEach(inject(function($componentController, $rootScope, $q, searchCompaniesService) {
       $scope = $rootScope.$new();
+      $stateParams = {};
 
       resultsDeferred = $q.defer();
       spyOn(searchCompaniesService, 'getCompanies').and.callFake(function() {
@@ -42,6 +47,7 @@
 
       $ctrl = $componentController('searchCompanies', {
         $scope: $scope,
+        $stateParams: $stateParams,
         searchCompaniesService: searchCompaniesService
       })
     }));
@@ -88,7 +94,7 @@
       $scope.$apply();
 
       //expect($ctrl.searchCompaniesService.getCompanies.calls.count()).toEqual(1); //TODO: enable this test once we deal with the controller initialization
-      expect($ctrl.searchCompaniesService.getCompanies).toHaveBeenCalledWith({searchText: 'mustard'}, { employees: '', fundingStage: '', fundingAmount: '', productStage: '', targetMarkets: '', businessModel: '', companyStage: '', operationalStatus: '' }, { currentPage: 1, perPage: 5});
+      expect($ctrl.searchCompaniesService.getCompanies).toHaveBeenCalledWith({searchText: 'mustard'}, { employees: '', fundingStage: '', fundingAmount: '', productStage: '', targetMarkets: '', businessModel: '', companyStage: '' }, { currentPage: 1, perPage: 5});
       expect($ctrl.results.length).toEqual(1);
     });
 

@@ -47,7 +47,13 @@ unless Rails.env.production?
         "events": [],
         "programs": "",
         "hub_type": ["CW"],
-        "funding_provided": true
+        "funding_provided": true,
+        "alumni": [
+          { "id": 1, "name": "Trustev" },
+          { "id": 2, "name": "CoderDojo" },
+          { "id": 3, "name": "Twilio" },
+          { "id": 4, "name": "Pivotal" },
+        ]
       }
     ]
   )

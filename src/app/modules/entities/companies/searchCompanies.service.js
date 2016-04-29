@@ -4,6 +4,7 @@
   angular
     .module('searchCompanies')
     .service('searchCompaniesService', function($http, $httpParamSerializer, serverUrl) {
+
       this.getCompanies = function(query, filters, pagination) {
         var basePath = serverUrl + '/companies';
         var params = {}
