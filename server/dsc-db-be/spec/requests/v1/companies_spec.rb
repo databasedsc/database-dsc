@@ -12,10 +12,17 @@ RSpec.describe 'V1::Companies', :type => :request do
         "long_description": "Mustard instantly connects those with short term positions to fill, with the best available candidates. A data-science focussed company, pairing gamification and on demand technology to build the worlds largest and most functional network of instant talent.",
         "headquarters": "Dublin",
         "formerly_known_as": "Ketchup",
-        "founders": "Gavin Fogarty",
-        "tags": "Technology, Social Recruiting, Event Management",
+        "founders": [
+          {
+            "name": "Gavin Fogarty",
+            "linkedin": "fogartygavin"
+          }
+        ],
+        "tags": ["Technology, Social Recruiting, Event Management"],
         "investors": "Undisclosed",
-        "office_locations": "NDRC at the Digital Exchange, Crane Street, Dublin 8",
+        "office_locations": [
+          {"id": 1, "address": "NDRC at the Digital Exchange, Crane Street, Dublin 8", "lat": 42.4076806, "lng": -71.2764524}
+        ],
         "incubator": "NDRC",
         "funding_stage": "Seed",
         "employees": 6,
@@ -50,10 +57,10 @@ RSpec.describe 'V1::Companies', :type => :request do
       expect(company_json['long_description']).to eq('Mustard instantly connects those with short term positions to fill, with the best available candidates. A data-science focussed company, pairing gamification and on demand technology to build the worlds largest and most functional network of instant talent.')
       expect(company_json['headquarters']).to eq('Dublin')
       expect(company_json['formerly_known_as']).to eq('Ketchup')
-      expect(company_json['founders']).to eq('Gavin Fogarty')
-      expect(company_json['tags']).to eq('Technology, Social Recruiting, Event Management')
+      expect(company_json['founders'].size).to eq(1)
+      expect(company_json['tags']).to match_array(['Technology, Social Recruiting, Event Management'])
       expect(company_json['investors']).to eq('Undisclosed')
-      expect(company_json['office_locations']).to eq('NDRC at the Digital Exchange, Crane Street, Dublin 8')
+      expect(company_json['office_locations'].size).to eq(1)
       expect(company_json['incubator']).to eq('NDRC')
       expect(company_json['funding_stage']).to eq('Seed')
       expect(company_json['employees']).to eq(6)
@@ -80,7 +87,12 @@ RSpec.describe 'V1::Companies', :type => :request do
         short_description: 'something',
         headquarters: 'Dublin',
         formerly_known_as: 'ketchup',
-        founders: 'Kevin Fogarty',
+        founders: [
+          {
+            "name": "Gavin Fogarty",
+            "linkedin": "fogartygavin"
+          }
+        ],
         tags: 'Personalisation',
         investors: '',
         office_locations: '',
@@ -96,9 +108,11 @@ RSpec.describe 'V1::Companies', :type => :request do
         short_description: 'another search',
         headquarters: 'Cork',
         formerly_known_as: '',
-        tags: 'Event Management',
+        tags: ['Event Management'],
         investors: 'Delta Partners',
-        office_locations: 'Tara Street',
+        office_locations: [
+          {"id": 1, "address": "Tara Street", "lat": 42.4076806, "lng": -71.2764524}
+        ],
         incubator: '',
         business_model: 'B2C',
         operational_status: 'Active',

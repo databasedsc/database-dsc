@@ -54,7 +54,8 @@ describe('CompanyProfile', function() {
     });
 
     it('should display Founders', function() {
-      expect(page.details.getText()).toContain('Viliam Holub, Trevor Parsons');
+      expect(page.details.getText()).toContain('Viliam Holub');
+      expect(page.details.getText()).toContain('Trevor Parsons');
     });
 
     it('should display Founded', function() {

@@ -151,8 +151,8 @@
                   <h4 class="timeline-title">{{round.type}}</h4>
                   <p><small class="text-muted">{{round.date}}</small></p>
                 </div>
+                <p>{{round.amount}}</p>
                 <div ng-if="round.investors.length > 0" class="timeline-body">
-                  <p>{{round.amount}}</p>
                   <p ng-repeat="investor in round.investors">
                     <a ui-sref="search.investorProfile({id: {{investor.id}}})">{{investor.name}}</a>
                   </p>
