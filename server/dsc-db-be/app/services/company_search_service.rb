@@ -12,6 +12,8 @@ class CompanySearchService
       companies = Company.search_by_tag(@params[:tag])
     elsif @params[:recently_funded].present?
       companies = Company.recently_funded
+    elsif @params[:company_ids].present?
+      companies = Company.withIds(@params[:company_ids].split(','))
     else
       companies = Company.all
     end

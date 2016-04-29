@@ -2,8 +2,14 @@ module V1
   class CompaniesController < ApplicationController
 
     def index
-      companies = CompanySearchService.new(filter_params).call
-      paginate json: companies, status: 200
+      if params[:company_ids].present?
+        companies = CompanySearchService.new(filter_params).call
+        render json: companies, status: 200
+      else
+        companies = CompanySearchService.new(filter_params).call
+        paginate json: companies, status: 200
+      end
+
     end
 
     def show
@@ -16,7 +22,7 @@ module V1
     def filter_params
       params.permit(:searchText, :employees, :fundingStage, :fundingAmount,
         :productStage, :companyStage, :targetMarkets, :businessModel,
-        :operationalStatus, :tag, :recently_funded)
+        :operationalStatus, :tag, :recently_funded, :company_ids)
     end
   end
 end

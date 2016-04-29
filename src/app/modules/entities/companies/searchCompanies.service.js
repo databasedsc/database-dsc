@@ -35,5 +35,14 @@
           return responseObject;
         });
       };
+
+      this.getCompaniesWithIDs = function(ids) {
+        var basePath = serverUrl + '/companies';
+        var params = {company_ids: ids}
+
+        return $http.get(basePath, {params: params}).then(function(responseObject) {
+          return responseObject;
+        });
+      };
     });
 })();
