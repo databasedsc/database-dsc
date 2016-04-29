@@ -10,6 +10,7 @@
 
     .controller('HubProfileController', function($stateParams, getHubService){
       var controller = this;
+
       this.getHubService = getHubService;
       getHubService.find($stateParams.id).then(function(hub){
         controller.hub = hub;
