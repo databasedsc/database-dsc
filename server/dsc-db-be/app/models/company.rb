@@ -74,7 +74,7 @@ class Company < ApplicationRecord
       tsearch: { any_word: true }
     }
 
-
+  scope :withIds, -> (company_ids) { where id: company_ids }
   scope :funding_stage, -> (funding_stage) { where funding_stage: funding_stage }
   scope :product_stage, -> (product_stage) { where product_stage: product_stage }
   scope :company_stage, -> (company_stage) { where company_stage: company_stage }
