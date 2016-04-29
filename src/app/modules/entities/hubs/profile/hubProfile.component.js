@@ -16,9 +16,7 @@
         controller.hub = hub;
 
         var companyIds = hub.alumni.map(function(a) { return a.id; });
-        debugger;
         searchCompaniesService.getCompaniesWithIDs(companyIds.join(',')).then(function(companies){
-          debugger;
           var alumniCompanies = companies.data;
           controller.hub.alumniCompanies = alumniCompanies;
         });

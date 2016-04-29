@@ -7,7 +7,7 @@
       templateUrl: 'app/modules/entities/investors/profile/profile.html',
       controller: 'InvestorProfileController'
     })
-    .controller('InvestorProfileController', function($scope, $stateParams, getInvestorService, NgMap) {
+    .controller('InvestorProfileController', function($scope, $stateParams, getInvestorService, NgMap, searchCompaniesService) {
       var controller = this;
       this.getInvestorService = getInvestorService;
 
@@ -29,6 +29,12 @@
 
       this.investor = getInvestorService.find($stateParams.id).then(function(investor) {
         controller.investor = investor;
+
+        var companyIds = investor.companies_invested_in.map(function(a) { return a.id; });
+        searchCompaniesService.getCompaniesWithIDs(companyIds.join(',')).then(function(companies){
+          var investedInCompanies = companies.data;
+          controller.investor.investedInCompanies = investedInCompanies;
+        });
       });
     });
 
