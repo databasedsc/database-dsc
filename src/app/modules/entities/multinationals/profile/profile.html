@@ -81,10 +81,19 @@
 </div>
 
 <div ng-show="$ctrl.multinational.startup_packages" class="startup-packages">
+  <div class="block block-bordered-lg" style="padding:40px 0;">
+    <div class="container text-center app-translate-15" data-transition="entrance" style="transition: transform 1200ms cubic-bezier(0.2, 0.7, 0.5, 1); transform: none;">
+      <blockquote class="pull-quote">
+        <cite style="margin-top:0;">Packages</cite>
+        <p style="margin-top:0px;font-size:26px;color:#e92a8b">
+          Start Up Packages
+        </p>
+      </blockquote>
+    </div>
+  </div>
   <div class="container">
-    <div class="row">
-      <h2 class="col-md-2">Start Up Packages</h2>
-      <div class="col-md-10 row">
+    <div class="row m-b-md">
+      <div class="col-md-12 row">
         <div class="tile col-md-6" ng-repeat="package in $ctrl.multinational.startup_packages">
           <a ng-href="{{package.link}}"><h3>{{package.name}}</h3></a>
           <p>{{package.description}}</p>
