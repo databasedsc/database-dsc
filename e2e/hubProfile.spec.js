@@ -35,7 +35,7 @@ describe('HubProfile', function() {
 
   describe('Details', function() {
     it('should display Type', function() {
-      expect(page.details.getText()).toContain('Co-Working');
+      expect(page.details.getText()).toContain('Co-working');
     });
 
     it('should display Founded', function() {

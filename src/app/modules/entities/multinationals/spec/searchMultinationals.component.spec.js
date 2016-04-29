@@ -12,15 +12,10 @@
       $scope = $rootScope.$new();
       resultsDeferred = $q.defer();
 
-      console.log("SCOPE: " + $scope);
-      console.log("resultsDeferred: " + resultsDeferred);
-      console.log("searchMultinationalsService: " + searchMultinationalsService);
-
       spyOn(searchMultinationalsService, 'get').and.callFake(function() {
         return resultsDeferred.promise
       });
 
-      console.log("Before Ctrl: " + $ctrl);
       $ctrl = $componentController('searchMultinationals', {
         $scope: $scope,
         searchMultinationalsService: searchMultinationalsService
@@ -29,7 +24,6 @@
     }));
 
     it('should do the initial load of multinationals', function() {
-      console.log("After Ctrl: " + $ctrl);
       resultsDeferred.resolve({
         data: [{
           "name": "Microsoft",
