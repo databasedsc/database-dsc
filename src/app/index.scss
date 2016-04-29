@@ -94,3 +94,14 @@ a {
   background-color: #e92a8b;
   color:#fff;
 }
+
+@media only screen and (max-width: 767px) {
+  .navbar-nav {
+    margin-top:50px !important;
+    border-bottom:1px solid #e6e6e6;
+  }
+
+  .navbar-nav a {
+    text-align: center;
+  }
+}
