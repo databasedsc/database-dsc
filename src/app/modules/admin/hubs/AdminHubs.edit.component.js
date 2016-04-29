@@ -121,7 +121,7 @@
       getHubService.find($stateParams.id).then(function(hub) {
         controller.hub = hub;
 
-        if (!Array.isArray(controller.hub.contact_urls)) {
+        if (!angular.isArray(controller.hub.contact_urls)) {
           controller.hub.contact_urls = [];
         }
 

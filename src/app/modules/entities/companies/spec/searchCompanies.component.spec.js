@@ -16,7 +16,6 @@
         $scope: $scope,
         filterCompaniesService: filterCompaniesService
       })
-
     }));
 
     it('should load the employees number filters data', function () {

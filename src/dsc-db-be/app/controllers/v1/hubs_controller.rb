@@ -18,7 +18,7 @@ class V1::HubsController < ApplicationController
   end
 
   def filter_params
-    params.permit(:searchText, :founded, :contact_details, :hubType, :contact, :tag, :fundingProvided, :applicationDeadlines)
+    params.permit(:searchText, :founded, :contact_details, :hubType, :contact, :tag, :fundingProvided)
   end
 
 end

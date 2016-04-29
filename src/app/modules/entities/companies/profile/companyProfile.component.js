@@ -20,7 +20,7 @@
         controller.map.showInfoWindow('foo-iw', "ol" + officeLocation.id);
       };
 
-      controller.zoomTo = function(evt) {
+      controller.zoomTo = function() {
         var marker = this.map.markers["ol" + this.officeLocation.id];
         var markerPosition = marker.getPosition();
         this.map.setZoom(16);
