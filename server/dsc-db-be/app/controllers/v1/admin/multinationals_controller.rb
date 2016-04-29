@@ -63,6 +63,8 @@ module V1
           :local_office,
           :video_url,
           :website,
+          :lat,
+          :lng,
           :events_space_qualifiers,
           :custom_field_1, :custom_field_2, :custom_field_3, :custom_field_4,
           functions: [],

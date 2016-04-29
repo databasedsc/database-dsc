@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160427143538) do
+ActiveRecord::Schema.define(version: 20160429070858) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -89,6 +89,8 @@ ActiveRecord::Schema.define(version: 20160427143538) do
     t.jsonb    "social_accounts"
     t.string   "tags",                 default: [],              array: true
     t.boolean  "funding_provided"
+    t.float    "lat"
+    t.float    "lng"
   end
 
   add_index "hubs", ["alumni"], name: "index_hubs_on_alumni", using: :gin
@@ -163,6 +165,8 @@ ActiveRecord::Schema.define(version: 20160427143538) do
     t.jsonb    "startup_packages"
     t.text     "video_url"
     t.string   "tags",                    default: [],                 array: true
+    t.float    "lat"
+    t.float    "lng"
   end
 
   add_index "multinationals", ["deleted_at"], name: "index_multinationals_on_deleted_at", using: :btree
