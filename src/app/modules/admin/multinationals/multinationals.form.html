@@ -30,6 +30,14 @@
         </div>
 
         <div class="form-group">
+          <label>Building Product In Ireland</label>
+          <br>
+          <input type="radio" ng-model="$ctrl.multinational.building_product_in_ireland" ng-value="true"> Yes
+          &nbsp;
+          <input type="radio" ng-model="$ctrl.multinational.building_product_in_ireland" ng-value="false"> No
+        </div>
+
+        <div class="form-group">
           <label for="irish-office-locations">Irish Office Locations</label>
           <textarea ng-model="$ctrl.multinational.local_office" id="irish-office-locations"
                     class="form-control"></textarea>

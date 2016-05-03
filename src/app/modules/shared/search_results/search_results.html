@@ -1,5 +1,5 @@
 <div  ng-show="$ctrl.collection.length > 0">
-  <div class="row">
+  <div class="row" iln-match-height>
     <div class="col-md-4 col-sm-6 result-item" ng-repeat="entity in $ctrl.collection">
       <a ui-sref="search.{{$ctrl.type}}Profile({id: entity.id})" class="no-decoration">
         <div class="panel panel-default" style="border-bottom: 5px solid #e92a8b;">

@@ -59,8 +59,10 @@ class Multinational < ApplicationRecord
 
 
   scope :empty_startup_packages, -> { where(startup_packages: '{}') }
-  scope :have_startup_packages , -> { where.not(startup_packages: '{}') }
-
+  scope :have_startup_packages, -> { where.not(startup_packages: '{}') }
+  scope :building_product_in_ireland, -> (building_product_in_ireland) {
+    where(building_product_in_ireland: building_product_in_ireland)
+  }
   scope :events_space, -> (events_space) { where(events_space: events_space) }
 
   scope :greater_than, -> (column, limit) { where "#{column} > #{limit}" }

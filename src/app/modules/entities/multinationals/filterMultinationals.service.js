@@ -55,6 +55,14 @@
           noSelectionString: 'Yes & No',
           values: ['Yes', 'No']
         },
+        buildingProductInIreland: {
+          type: 'dropdown',
+          id: 'building-product-in-ireland',
+          label: 'Building Product in Ireland',
+          selectedValue: '',
+          noSelectionString: 'Yes & No',
+          values: ['Yes', 'No']
+        },
         eventsSpace: {
           type: 'dropdown',
           id: 'events-space',

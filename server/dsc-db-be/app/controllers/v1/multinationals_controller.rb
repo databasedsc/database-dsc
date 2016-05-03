@@ -26,7 +26,7 @@ class V1::MultinationalsController < ApplicationController
   end
 
   def filter_params
-    params.permit(:searchText, :emeaHq, :startupPackages, :employees, :eventsSpace, :functions, :tag)
+    params.permit(:searchText, :emeaHq, :startupPackages, :employees, :eventsSpace, :functions, :tag, :buildingProductInIreland)
   end
 
 end

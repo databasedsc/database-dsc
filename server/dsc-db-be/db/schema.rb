@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160429070858) do
+ActiveRecord::Schema.define(version: 20160503124114) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -146,12 +146,12 @@ ActiveRecord::Schema.define(version: 20160429070858) do
     t.text     "short_description"
     t.string   "headquarters"
     t.string   "local_office"
-    t.datetime "created_at",                              null: false
-    t.datetime "updated_at",                              null: false
-    t.boolean  "emea_hq",                 default: false
+    t.datetime "created_at",                                  null: false
+    t.datetime "updated_at",                                  null: false
+    t.boolean  "emea_hq",                     default: false
     t.integer  "employees"
-    t.boolean  "events_space",            default: false
-    t.text     "functions",               default: [],                 array: true
+    t.boolean  "events_space",                default: false
+    t.text     "functions",                   default: [],                 array: true
     t.text     "long_description"
     t.text     "events_space_qualifiers"
     t.string   "next_event"
@@ -164,9 +164,10 @@ ActiveRecord::Schema.define(version: 20160429070858) do
     t.text     "custom_field_4"
     t.jsonb    "startup_packages"
     t.text     "video_url"
-    t.string   "tags",                    default: [],                 array: true
+    t.string   "tags",                        default: [],                 array: true
     t.float    "lat"
     t.float    "lng"
+    t.boolean  "building_product_in_ireland", default: false
   end
 
   add_index "multinationals", ["deleted_at"], name: "index_multinationals_on_deleted_at", using: :btree
