@@ -6,17 +6,23 @@
     .service('searchCompaniesService', function($http, $httpParamSerializer, serverUrl) {
 
       this.getCompanies = function(query, filters, pagination) {
+
         var basePath = serverUrl + '/companies';
         var params = {}
 
         if (query || filters) {
+
           if (query.searchText) {
+            params["searchText"] = query.searchText
+            params["recently_funded"] = query.recently_funded
+          }
+          else if (query.searchText) {
             params["searchText"] = query.searchText
           }
           else if (query.tag) {
             params["tag"] = query.tag
           }
-          else if (query.recently_funded) {
+          else if (query.recently_funded != undefined) {
             params["recently_funded"] = query.recently_funded
           }
           if (filters) {
@@ -32,6 +38,7 @@
           params['per_page'] = pagination.perPage;
         }
 
+        console.table(params);
         return $http.get(basePath, {params: params}).then(function(responseObject) {
           return responseObject;
         });

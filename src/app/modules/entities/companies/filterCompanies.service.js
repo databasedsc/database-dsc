@@ -75,6 +75,14 @@
           selectedValue: '',
           noSelectionString: 'Any stage',
           values: ['Early-stage', 'Growth', 'Late-stage', 'Public', 'Acquired']
+        },
+        recently_funded: {
+          type: 'dropdown',
+          id: 'recently-funded',
+          label: 'Recently Funded',
+          selectedValue: '',
+          noSelectionString: 'Yes & No',
+          values: ['Yes', 'No']
         }
       };
     })

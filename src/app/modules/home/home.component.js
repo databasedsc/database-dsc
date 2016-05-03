@@ -91,7 +91,7 @@
       };
 
       this.gatherCompanies = function() {
-        searchCompaniesService.getCompanies({searchText: this.query}, getPaginationDetails()).then(function(companies) {
+        searchCompaniesService.getCompanies({ recently_funded: false }, getPaginationDetails()).then(function(companies) {
           controller.companyResults = companies.data;
           controller.totalCompanyItems = companies.headers('Total')
 
