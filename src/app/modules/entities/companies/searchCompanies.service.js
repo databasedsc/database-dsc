@@ -38,7 +38,6 @@
           params['per_page'] = pagination.perPage;
         }
 
-        console.table(params);
         return $http.get(basePath, {params: params}).then(function(responseObject) {
           return responseObject;
         });

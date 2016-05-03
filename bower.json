@@ -21,7 +21,8 @@
     "angular-ui-notification": "^0.1.0",
     "angular-ui-select": "^0.16.1",
     "ngmap": "1.17.3",
-    "bootstrap-sass": "^3.3.6"
+    "bootstrap-sass": "^3.3.6",
+    "angular-truncate": "*"
   },
   "devDependencies": {
     "angular-mocks": "~1.5.1"

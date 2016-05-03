@@ -53,7 +53,7 @@
         controller.gatherMtns();
       }, true);
 
-      $scope.$watch('ctrl.availableOptions.selected', function (selectedOption) {
+      $scope.$watch('$ctrl.availableOptions.selected', function (selectedOption) {
 
         if (selectedOption == undefined) {
           return;

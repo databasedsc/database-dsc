@@ -30,7 +30,8 @@
       'searchHubs',
       'hubProfile',
       'searchFilters',
-      'socialLinks'
+      'socialLinks',
+      'truncate'
     ]);
 
 })();

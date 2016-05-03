@@ -173,7 +173,7 @@ unless Rails.env.production?
           "twitter": "microsoft",
         },
         "logo": "https://crunchbase-production-res.cloudinary.com/image/upload/c_pad,h_140,w_250/v1397182206/6835990abacfb4d14ecdbfc87641e469.jpg",
-        "short_description": "Microsoft, a software corporation, develops licensed and support products and services ranging from personal use to enterprise application.",
+        "short_description": "Microsoft, a software corporation, develops licensed and support products and services ranging from personal use to enterprise application. Other good stuff too which we won't go into!",
         "long_description": "Our mission is to empower every person and every organization on the planet to achieve more.  Our strategy is to build best-in-class platforms and productivity services for a mobile-first, cloud-first world. Our ambitions are to reinvent productivity & business processes, build the intelligent cloud platform and to create more personal computing.",
         "headquarters": "Redmond, WA",
         "local_office": "Block B, Atrium Building, Sandyford Industrial Estate, Carmangall Road, Dublin 18",

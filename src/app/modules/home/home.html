@@ -5,9 +5,9 @@
     <div class="row">
       <div class="col-md-offset-2 col-md-8">
         <div class="form-group">
-          <ui-select ng-model="ctrl.availableOptions.selected" theme="bootstrap">
+          <ui-select ng-model="$ctrl.availableOptions.selected" theme="bootstrap">
             <ui-select-match placeholder="Search for Irish Startups, Investors, Multinationals and Hubs">{{$select.selected.name}}</ui-select-match>
-            <ui-select-choices group-by="'itemType'" repeat="item in ctrl.availableOptions | filter: $select.search">
+            <ui-select-choices group-by="'itemType'" repeat="item in $ctrl.availableOptions | filter: $select.search">
               <span ng-bind-html="item.name | highlight: $select.search"></span>
             </ui-select-choices>
           </ui-select>
@@ -30,11 +30,11 @@
       <div class="col-md-3 col-sm-6 company-tile" ng-repeat="entity in $ctrl.recentlyFunded | limitTo:4">
         <a ui-sref="search.companyProfile({id: entity.id})" class="no-decoration">
         <div class="panel panel-default" style="border-bottom: 5px solid #e92a8b;">
-          <div class="panel-body home-panel">
+          <div class="panel-body result-item-panel">
             <img ng-src="{{entity.logo}}" class="img-responsive" style="margin: 10px auto;">
             <h2 class="text-left" style="margin-bottom:0;margin-top:30px;font-size:22px;font-weight:300;">{{entity.name}}</h2>
             <p class="text-left" style="font-size:16px;font-weight:300;margin-bottom:0;color:#999999;">
-              {{entity.short_description}}
+              {{entity.short_description | characters:140 }}
             </p>
           </div>
         </div>
@@ -60,11 +60,11 @@
       <div class="col-md-3 col-sm-6 company-tile" ng-repeat="entity in $ctrl.companyResults | limitTo:4">
         <a ui-sref="search.companyProfile({id: entity.id})" class="no-decoration">
         <div class="panel panel-default" style="border-bottom: 5px solid #e92a8b;">
-          <div class="panel-body home-panel">
+          <div class="panel-body result-item-panel">
             <img ng-src="{{entity.logo}}" class="img-responsive" style="margin: 10px auto;">
             <h2 class="text-left" style="margin-bottom:0;margin-top:30px;font-size:22px;font-weight:300;">{{entity.name}}</h2>
             <p class="text-left" style="font-size:16px;font-weight:300;margin-bottom:0;color:#999999;">
-              {{entity.short_description}}
+              {{entity.short_description | characters:140 }}
             </p>
           </div>
         </div>
@@ -89,11 +89,11 @@
       <div class="col-md-3 col-sm-6 company-tile" ng-repeat="entity in $ctrl.mtnsResults | limitTo:4">
         <a ui-sref="search.multinationalProfile({id: entity.id})" class="no-decoration">
         <div class="panel panel-default" style="border-bottom: 5px solid #e92a8b;">
-          <div class="panel-body home-panel">
+          <div class="panel-body result-item-panel">
             <img ng-src="{{entity.logo}}" class="img-responsive" style="margin: 10px auto;">
             <h2 class="text-left" style="margin-bottom:0;margin-top:30px;font-size:22px;font-weight:300;">{{entity.name}}</h2>
             <p class="text-left" style="font-size:16px;font-weight:300;margin-bottom:0;color:#999999;">
-              {{entity.short_description}}
+              {{entity.short_description | characters:140 }}
             </p>
           </div>
         </div>
@@ -118,11 +118,11 @@
       <div class="col-md-3 col-sm-6 company-tile" ng-repeat="entity in $ctrl.investorResults | limitTo:4">
         <a ui-sref="search.investorProfile({id: entity.id})" class="no-decoration">
         <div class="panel panel-default" style="border-bottom: 5px solid #e92a8b;">
-          <div class="panel-body home-panel">
+          <div class="panel-body result-item-panel">
             <img ng-src="{{entity.logo}}" class="img-responsive" style="margin: 10px auto;">
             <h2 class="text-left" style="margin-bottom:0;margin-top:30px;font-size:22px;font-weight:300;">{{entity.name}}</h2>
             <p class="text-left" style="font-size:16px;font-weight:300;margin-bottom:0;color:#999999;">
-              {{entity.short_description}}
+              {{entity.short_description | characters:140 }}
             </p>
           </div>
         </div>
@@ -147,11 +147,11 @@
       <div class="col-md-3 col-sm-6 company-tile" ng-repeat="entity in $ctrl.hubResults | limitTo:4">
         <a ui-sref="search.hubProfile({id: entity.id})" class="no-decoration">
         <div class="panel panel-default" style="border-bottom: 5px solid #e92a8b;">
-          <div class="panel-body home-panel">
+          <div class="panel-body result-item-panel">
             <img ng-src="{{entity.logo}}" class="img-responsive" style="margin: 10px auto;">
             <h2 class="text-left" style="margin-bottom:0;margin-top:30px;font-size:22px;font-weight:300;">{{entity.name}}</h2>
             <p class="text-left" style="font-size:16px;font-weight:300;margin-bottom:0;color:#999999;">
-              {{entity.short_description}}
+              {{entity.short_description | characters:140 }}
             </p>
           </div>
         </div>
