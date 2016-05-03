@@ -102,37 +102,6 @@
       <div class="company-info-value">{{$ctrl.company.looking_for}}</div>
     </div>
   </div>
-  <div ng-show="!!$ctrl.company.office_locations.length > 0" class="portfolio">
-    <div class="block block-bordered-lg" style="padding:40px 0;">
-      <div class="container text-center app-translate-15" data-transition="entrance" style="transition: transform 1200ms cubic-bezier(0.2, 0.7, 0.5, 1); transform: none;">
-        <blockquote class="pull-quote">
-          <cite style="margin-top:0;">Locations</cite>
-          <p style="margin-top:0px;font-size:26px;color:#e92a8b">
-            Map View
-          </p>
-        </blockquote>
-      </div>
-    </div>
-    <div class="m-b-lg">
-      <ng-map zoom-to-include-markers="auto" maximum-zoom="16">
-        <marker id='ol{{officeLocation.id}}'
-                position="[{{officeLocation.lat}}, {{officeLocation.lng}}]"
-                ng-repeat="officeLocation in $ctrl.company.office_locations"
-                on-click="$ctrl.showOfficeLocationDetail(officeLocation)" />
-
-        <info-window id="foo-iw">
-          <div ng-non-bindable="">
-            {{$ctrl.officeLocation.address}}<br/>
-            <a ng-if="$ctrl.company.office_locations.length > 1"
-               href=""
-               ng-click="$ctrl.zoomTo()">
-               Zoom to location
-            </a>
-          </div>
-        </info-window>
-      </ng-map>
-    </div>
-  </div>
   <div ng-show="$ctrl.company.funding_rounds" class="row block block-bordered-lg" style="padding:40px 0;">
     <div id="funding" class="container text-center app-translate-15" data-transition="entrance">
       <blockquote class="pull-quote">
@@ -162,6 +131,37 @@
           </ul>
         </div>
       </div>
+    </div>
+  </div>
+  <div ng-show="!!$ctrl.company.office_locations.length > 0" class="portfolio">
+    <div class="block block-bordered-lg" style="padding:40px 0;">
+      <div class="container text-center app-translate-15" data-transition="entrance" style="transition: transform 1200ms cubic-bezier(0.2, 0.7, 0.5, 1); transform: none;">
+        <blockquote class="pull-quote">
+          <cite style="margin-top:0;">Locations</cite>
+          <p style="margin-top:0px;font-size:26px;color:#e92a8b">
+            Map View
+          </p>
+        </blockquote>
+      </div>
+    </div>
+    <div class="m-b-lg">
+      <ng-map zoom-to-include-markers="auto" maximum-zoom="16">
+        <marker id='ol{{officeLocation.id}}'
+                position="[{{officeLocation.lat}}, {{officeLocation.lng}}]"
+                ng-repeat="officeLocation in $ctrl.company.office_locations"
+                on-click="$ctrl.showOfficeLocationDetail(officeLocation)" />
+
+        <info-window id="foo-iw">
+          <div ng-non-bindable="">
+            {{$ctrl.officeLocation.address}}<br/>
+            <a ng-if="$ctrl.company.office_locations.length > 1"
+               href=""
+               ng-click="$ctrl.zoomTo()">
+               Zoom to location
+            </a>
+          </div>
+        </info-window>
+      </ng-map>
     </div>
   </div>
 </div>
