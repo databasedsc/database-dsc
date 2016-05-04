@@ -38,5 +38,13 @@
         "assets/fonts/bootstrap/glyphicons-halflings-regular.woff2"
       ]
     }
+  },
+  "resolutions": {
+    "angular": "~1.5.1",
+    "angular-animate": "~1.5.1",
+    "angular-cookies": "~1.5.1",
+    "angular-touch": "~1.5.1",
+    "angular-sanitize": "~1.5.1",
+    "angular-bootstrap": "~1.2.4"
   }
 }
