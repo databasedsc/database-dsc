@@ -4,12 +4,15 @@
   describe('Search Hubs', function() {
     var $ctrl,
       $scope,
+      $stateParams,
       resultsDeferred;
 
     beforeEach(module('searchHubs'));
 
     beforeEach(inject(function($componentController, $rootScope, $q, searchHubsService) {
       $scope = $rootScope.$new();
+      $stateParams = {};
+
       resultsDeferred = $q.defer();
 
       spyOn(searchHubsService, 'get').and.callFake(function() {
@@ -18,6 +21,7 @@
 
       $ctrl = $componentController('searchHubs', {
         $scope: $scope,
+        $stateParams: $stateParams,
         searchHubsService: searchHubsService
       })
     }));
@@ -63,6 +67,7 @@
 
       expect($ctrl.searchHubsService.get).toHaveBeenCalledWith({searchText: 'NDRC'}, {
         hubType: '',
+        fundingProvided: '',
         applicationDeadlines: ''
       }, {currentPage: 5, perPage: 20});
       expect($ctrl.results.length).toEqual(1);

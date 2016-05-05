@@ -44,6 +44,10 @@ module.exports = function(config) {
   var configuration = {
     files: listFiles(),
 
+    client: {
+      captureConsole: true
+    },
+
     singleRun: true,
 
     autoWatch: false,

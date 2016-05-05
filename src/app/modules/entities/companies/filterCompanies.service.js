@@ -40,12 +40,12 @@
           label: 'Product Stage',
           selectedValue: '',
           noSelectionString: 'Any stage',
-          values: ['Development', 'Complete']
+          values: ['Development', 'Live']
         },
-        geographicalMarkets: {
+        targetMarkets: {
           type: 'checklist',
-          id: 'geographical-markets',
-          label: 'Geographical Markets',
+          id: 'target-markets',
+          label: 'Target Markets',
           selectedValue: '',
           selectedString: 'Any market',
           noSelectionString: 'Any market',
@@ -55,6 +55,7 @@
             { label: 'Europe', code: 'EU' },
             { label: 'North America', code: 'NA' },
             { label: 'Asia', code: 'AS'},
+            { label: 'Australasia', code: 'AA'},
             { label: 'Africa', code: 'AF' },
             { label: 'South America', code: 'SA' },
             { label: 'Global', code: 'G' }]
@@ -75,13 +76,13 @@
           noSelectionString: 'Any stage',
           values: ['Early-stage', 'Growth', 'Late-stage', 'Public', 'Acquired']
         },
-        operationalStatus: {
+        recently_funded: {
           type: 'dropdown',
-          id: 'operational-status',
-          label: 'Status',
+          id: 'recently-funded',
+          label: 'Recently Funded',
           selectedValue: '',
-          noSelectionString: 'Any status',
-          values: ['Active', 'Inactive']
+          noSelectionString: 'Yes & No',
+          values: ['Yes', 'No']
         }
       };
     })

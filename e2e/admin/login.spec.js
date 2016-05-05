@@ -34,7 +34,7 @@ describe('Login Page', function() {
     it('should return to login page', function() {
       browser.get('#/admin');
 
-      expect(page.body.getText()).toContain('Please sign in');
+      expect(page.body.getText()).toContain('Sign in');
     })
   })
 
@@ -48,7 +48,7 @@ describe('Login Page', function() {
 
       page.logoutButton.click();
 
-      expect(page.body.getText()).toContain('Please sign in');
+      expect(page.body.getText()).toContain('Sign in');
     })
   })
 

@@ -1,36 +1,38 @@
 <div id="overview" class="row">
-
-  <img class="col-md-2 logo img-responsive" ng-show="$ctrl.entity.logo" ng-src="{{$ctrl.entity.logo}}">
-
-  <div class="col-md-6">
-
-    <h1 ng-show="$ctrl.entity.name" id="name">{{$ctrl.entity.name}}</h1>
-
-    <p ng-show="$ctrl.entity.short_description" class="tagline">{{$ctrl.entity.short_description}}</p>
-
-    <p id="description">{{$ctrl.entity.long_description}}</p>
-
-    <div id="links">
-      <p ng-show="$ctrl.entity.website" class="pull-left"><a href="$ctrl.entity.website">{{$ctrl.entity.website}}</a></p>
-
-      <social-links class="pull-right" social-accounts="$ctrl.entity.social_accounts"></social-links>
-    </div>
-
-    <div ng-show="$ctrl.entity.categories" id="tags">
-      <div class="row">
-        <label ng-show="$ctrl.entity.categories" class="col-md-1">Tags:</label>
-        <div class="col-md-11">
-          <dsc-tag ng-repeat="tag in $ctrl.entity.categories.split(',')" class="text-center">{{tag}}</dsc-tag>
-        </div>
+  <div class="col-md-12">
+    <div class="block" style="padding:40px 0;">
+      <div class="container text-center app-translate-15" data-transition="entrance" style="transition: transform 1200ms cubic-bezier(0.2, 0.7, 0.5, 1); transform: none;">
+        <img class="logo img-responsive" ng-show="$ctrl.entity.logo" ng-src="{{$ctrl.entity.logo}}" style="margin:0 auto">
+        <blockquote class="pull-quote">
+          <h1 ng-show="$ctrl.entity.name" id="name" style="margin-top:30px;">
+            {{$ctrl.entity.name}}
+          </h1>
+          <cite ng-show="$ctrl.entity.short_description" style="margin-top:10px;">{{$ctrl.entity.short_description}}</cite>
+          <p>
+            {{$ctrl.entity.long_description}}
+          </p>
+          <p>
+            <div class="video-player" ng-show="$ctrl.entity.video_url">
+              <div class="embed-responsive embed-responsive-16by9">
+                <iframe ng-src="{{trustSrc($ctrl.entity.video_url)}}" frameborder="0" allowfullscreen></iframe>
+              </div>
+            </div>
+          </p>
+          <div id="links">
+            <p ng-show="$ctrl.entity.website"><a ng-href="{{$ctrl.entity.website}}" target="_blank">{{$ctrl.entity.website}}</a></p>
+            <social-links social-accounts="$ctrl.entity.social_accounts"></social-links>
+          </div>
+          <cite ng-show="$ctrl.entity.tags.length > 0" style="margin-top:20px;margin-bottom:0;">Tags</cite>
+          <p id="tags" style="font-size:14px;margin-top:10px" ng-show="$ctrl.entity.tags.length > 0">
+            <dsc-tag ng-repeat="tag in $ctrl.entity.tags" class="text-center">
+              <a ng-if="$ctrl.entityType == 'company'" ui-sref="search.searchCompanies({tag: '{{tag}}'})" class="btn btn-primary btn-xs btn-outline">{{tag}}</a>
+              <a ng-if="$ctrl.entityType == 'multinational'" ui-sref="search.searchMultinationals({tag: '{{tag}}'})" class="btn btn-primary btn-xs btn-outline">{{tag}}</a>
+              <a ng-if="$ctrl.entityType == 'investor'" ui-sref="search.searchInvestors({tag: '{{tag}}'})" class="btn btn-primary btn-xs btn-outline">{{tag}}</a>
+              <a ng-if="$ctrl.entityType == 'hub'" ui-sref="search.searchHubs({tag: '{{tag}}'})" class="btn btn-primary btn-xs btn-outline">{{tag}}</a>
+            </dsc-tag>
+          </p>
+        </blockquote>
       </div>
     </div>
   </div>
-
-  <!--<div class="col-md-4 video-player"><iframe width="400" height="250" ng-src="{{trustSrc($ctrl.entity.video_url)}}" frameborder="0" allowfullscreen></iframe></div>-->
-  <div class="col-md-4 video-player" ng-show="$ctrl.entity.video_url">
-    <div class="embed-container">
-      <iframe ng-src="{{trustSrc($ctrl.entity.video_url)}}" frameborder="0" allowfullscreen></iframe>
-    </div>
-  </div>
-
 </div>

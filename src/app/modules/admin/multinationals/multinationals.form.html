@@ -12,10 +12,29 @@
         </div>
 
         <div class="form-group">
-          <label>EMEA Headquarters in Ireland</label>
+          <label for="headquarters">Latitude:</label>
+          <input ng-model="$ctrl.multinational.lat" id="headquarters" class="form-control" type="text">
+        </div>
+
+        <div class="form-group">
+          <label for="headquarters">Longitude:</label>
+          <input ng-model="$ctrl.multinational.lng" id="headquarters" class="form-control" type="text">
+        </div>
+
+        <div class="form-group">
+          <label>European HQ in Ireland</label>
           <br>
           <input type="radio" ng-model="$ctrl.multinational.emea_hq" ng-value="true"> Yes
+          &nbsp;
           <input type="radio" ng-model="$ctrl.multinational.emea_hq" ng-value="false"> No
+        </div>
+
+        <div class="form-group">
+          <label>Building Product In Ireland</label>
+          <br>
+          <input type="radio" ng-model="$ctrl.multinational.building_product_in_ireland" ng-value="true"> Yes
+          &nbsp;
+          <input type="radio" ng-model="$ctrl.multinational.building_product_in_ireland" ng-value="false"> No
         </div>
 
         <div class="form-group">
@@ -67,6 +86,7 @@
           <label for="events-space">Events Space</label>
           <br>
           <input type="radio" ng-model="$ctrl.multinational.events_space" ng-value="true"> Yes
+          &nbsp;
           <input type="radio" ng-model="$ctrl.multinational.events_space" ng-value="false"> No
         </div>
 
@@ -86,30 +106,18 @@
 </div>
 
 <div class="panel panel-default">
-  <div class="panel-heading">Tags</div>
-  <div class="row">
-    <tags-input ng-model="$ctrl.tags" on-tag-added="$ctrl.addCategory($tag)" min-tags="1"></tags-input>
-    <span ng-show="create.newTag.$invalid" class="label label-danger">At least 1 category is required.</span>
+  <div class="panel-heading">
+    Startup Packages
+    <a ng-click="$ctrl.addStartupPackage()" class="btn btn-primary btn-sm pull-right">Add Package</a>
   </div>
-</div>
-
-<custom-fields entity="$ctrl.multinational"></custom-fields>
-
-<div class="panel panel-default">
-  <div class="panel-heading">Startup Packages</div>
-
   <div class="panel-body">
-    <div class="row">
-      <div class="col-sm-12">
-        <p><a ng-click="$ctrl.addStartupPackage()" class="btn btn-primary pull-right">Add Package</a></p>
-
-      </div>
+    <div ng-if="$ctrl.multinational.startup_packages.length == 0">
+      <p>There are no startup packages.</p>
     </div>
-    <div class="" ng-repeat="p in $ctrl.multinational.startup_packages track by $index">
+    <div ng-if="$ctrl.multinational.startup_packages.length > 0" ng-repeat="p in $ctrl.multinational.startup_packages track by $index">
       <div class="panel panel-default">
         <div class="panel-heading">
           Package
-
           <a ng-click="$ctrl.removeStartupPackage(p)" class="pull-right"><i
             class="fa fa-2x fa-trash"></i></a>
         </div>
@@ -143,3 +151,17 @@
     </div>
   </div>
 </div>
+
+<div class="panel panel-default">
+  <div class="panel-heading">Tags</div>
+  <div class="panel-body">
+    <tags-input ng-model="$ctrl.tags"
+                add-on-enter="false"
+                on-tag-added="$ctrl.addTag($tag)"
+                on-tag-removed="$ctrl.removeTag($tag)">
+      <auto-complete source="$ctrl.queryTags($query)"></auto-complete>
+    </tags-input>
+  </div>
+  </div>
+</div>
+<custom-fields entity="$ctrl.multinational"></custom-fields>

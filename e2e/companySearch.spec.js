@@ -5,7 +5,7 @@ describe('SearchResults', function() {
       profilePage;
 
   beforeEach(function() {
-    browser.get('#/');
+    browser.get('#/companies');
     page = require('./companySearch.po');
   });
 
@@ -19,7 +19,7 @@ describe('SearchResults', function() {
 
   describe('search form', function() {
     beforeEach(function() {
-      browser.get('#/').then(function () {
+      browser.get('#/companies').then(function () {
         // There's a PhantomJS issue that prevent the browser from clicking some element.
         // Resizing the window fix it .https://github.com/ariya/phantomjs/issues/11637
         browser.manage().window().maximize();
@@ -48,7 +48,6 @@ describe('SearchResults', function() {
         expect(page.searchResultsContainer.getText()).toContain('Logentries');
         expect(page.searchResultsContainer.getText()).not.toContain('Mustard');
 
-
         // Headquarters
         page.searchField.clear().sendKeys("Cork").sendKeys(protractor.Key.ENTER);
         expect(page.searchResultsContainer.getText()).toContain('Trustev');
@@ -61,7 +60,7 @@ describe('SearchResults', function() {
         expect(page.searchResultsContainer.getText()).toContain('Mustard');
         expect(page.searchResultsContainer.getText()).not.toContain('Trustev');
 
-        // Categories/Tags/Sector
+        // Tags/Sector
         page.searchField.clear().sendKeys("Personalization").sendKeys(protractor.Key.ENTER);
         expect(page.searchResultsContainer.getText()).toContain('Boxever');
         expect(page.searchResultsContainer.getText()).not.toContain('Mustard');
@@ -101,18 +100,74 @@ describe('SearchResults', function() {
         expect(page.searchResults.count()).toEqual(1);
       });
 
-      xit('should filter search results using checkbox', function() {
+      it('should filter search results using checkbox', function() {
         page.searchField.clear().sendKeys("customer").sendKeys(protractor.Key.ENTER);
         expect(page.searchResults.count()).toEqual(2);
 
-        //TODO: Remove pending when changing CI service or finding a way to make it work on travis.
-        browser.driver.sleep(10);
-        browser.waitForAngular();
+        page.targetMarketsButton.click();
+        page.europeCheckbox.click();
 
-        element(by.css('input#Europe')).click();
-        expect(page.searchResults.count()).toEqual(false);
-      }).pend("This test is failing on Travis CI with 'Element is not currently visible and so may not be interacted with' need to figure out why.");
+        expect(page.searchResults.count()).toEqual(1);
+      });
 
+      it('should clear filters', function() {
+        // do a text search
+        page.searchField.clear().sendKeys("Mustard").sendKeys(protractor.Key.ENTER);
+        expect(page.searchResults.count()).toEqual(1);
+        // perform reset
+        page.clearFilters.click();
+        expect(page.searchResults.count()).toEqual(9);
+
+        // filter by no. employeesFilter
+        page.employeesFilter.element(by.cssContainingText('option', '101-250')).click();
+        expect(page.searchResults.count()).toEqual(1);
+        // perform reset
+        page.clearFilters.click();
+        expect(page.searchResults.count()).toEqual(9);
+
+        // filter by funding stage
+        page.fundingStageFilter.element(by.cssContainingText('option', 'Series B')).click();
+        expect(page.searchResults.count()).toEqual(1);
+        // perform reset
+        page.clearFilters.click();
+        expect(page.searchResults.count()).toEqual(9);
+
+        // filter by funding amount
+        page.fundingAmountFilter.element(by.cssContainingText('option', '51k-500k')).click();
+        expect(page.searchResults.count()).toEqual(1);
+        // perform reset
+        page.clearFilters.click();
+        expect(page.searchResults.count()).toEqual(9);
+
+        // filter by product stage
+        page.productStageFilter.element(by.cssContainingText('option', 'Development')).click();
+        expect(page.searchResults.count()).toEqual(0);
+        // perform reset
+        page.clearFilters.click();
+        expect(page.searchResults.count()).toEqual(9);
+
+        // filter by business model
+        page.businessModelFilter.element(by.xpath("//option[@value='B2C']")).click();
+        expect(page.searchResults.count()).toEqual(2);
+        // perform reset
+        page.clearFilters.click();
+        expect(page.searchResults.count()).toEqual(9);
+
+        // filter by target market
+        page.targetMarketsButton.click();
+        page.europeCheckbox.click();
+        expect(page.searchResults.count()).toEqual(2);
+        // perform reset
+        page.clearFilters.click();
+        expect(page.searchResults.count()).toEqual(9);
+
+        // filter by company stage
+        page.companyStageFilter.element(by.cssContainingText('option', 'Acquired')).click();
+        expect(page.searchResults.count()).toEqual(2);
+        // perform reset
+        page.clearFilters.click();
+        expect(page.searchResults.count()).toEqual(9);
+      });
     });
 
   });
@@ -128,7 +183,6 @@ describe('SearchResults', function() {
       //expect(profilePage.body.getText()).toContain('TAGS')
       expect(profilePage.body.getText()).toContain('Funding')
     });
-
   });
 
 });

@@ -10,5 +10,10 @@
           return responseObject.data;
         })
       };
+
+      this.filter = function(query) {
+        var basePath = serverUrl + '/admin/companies?filter=' + query;
+        return $http.get(basePath);
+      };
     });
 })();

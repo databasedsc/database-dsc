@@ -25,7 +25,7 @@ describe('HubProfile', function() {
     });
 
     it('should display the tagline', function() {
-      expect(page.overview.getText()).toContain('Dogpatch Labs is a pay to play co-working space for tech start-ups between seed and series a.');
+      expect(page.overview.getText()).toContain('Dogpatch Labs is a pay to play co-working space for tech start-ups between seed and series a.'.toUpperCase());
     });
 
     it('should display the description', function() {
@@ -35,7 +35,7 @@ describe('HubProfile', function() {
 
   describe('Details', function() {
     it('should display Type', function() {
-      expect(page.details.getText()).toContain('Co-Working');
+      expect(page.details.getText()).toContain('Co-working');
     });
 
     it('should display Founded', function() {
@@ -54,11 +54,10 @@ describe('HubProfile', function() {
   describe('Alumni', function() {
     it("should display the hub alumni", function() {
       expect(page.alumni.getText()).toContain('Trustev')
-      expect(page.alumni.getText()).toContain('CoderDojo')
-      expect(page.alumni.getText()).toContain('Twilio')
-      expect(page.alumni.getText()).toContain('Pivotal')
+      expect(page.alumni.getText()).toContain('Logentries')
+      expect(page.alumni.getText()).toContain('Boxever')
+      expect(page.alumni.getText()).toContain('Mustard')
     });
   });
 
 });
-

@@ -4,6 +4,7 @@
 <div class="row">
   <div class="pull-right">
     <p>
+      <button ng-click="$ctrl.export()" class="btn btn-primary">Export</button>
       <a ui-sref="admin.multinationals.new" class="btn btn-primary">New Multinational</a>
     </p>
   </div>
@@ -23,8 +24,8 @@
     <tr ng-class="{deleted: multinational.deleted_at}" ng-repeat="multinational in $ctrl.multinationals">
       <td>
         <a ng-hide="multinational.deleted_at" ui-sref="admin.multinationals.edit({id: multinational.id})"><img
-          src="{{multinational.logo}}" alt="{{multinational.name}}" width="80" height="50"></a>
-        <img ng-show="multinational.deleted_at" src="{{multinational.logo}}" alt="{{multinational.name}}" width="80"
+          ng-src="{{multinational.logo}}" alt="{{multinational.name}}" width="80" height="50"></a>
+        <img ng-show="multinational.deleted_at" ng-src="{{multinational.logo}}" alt="{{multinational.name}}" width="80"
              height="50">
       </td>
       <td>

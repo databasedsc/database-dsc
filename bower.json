@@ -8,7 +8,6 @@
     "angular-sanitize": "~1.5.1",
     "angular-messages": "~1.5.1",
     "angular-ui-router": "~0.2.15",
-    "bootstrap-sass": "~3.3.5",
     "angular-bootstrap": "~1.2.4",
     "angular-filter": "~0.5.8",
     "animate.css": "~3.4.0",
@@ -19,7 +18,11 @@
     "angular-jwt": "^0.0.9",
     "angular-confirm-modal": "^1.2.3",
     "ng-tags-input": "^3.0.0",
-    "angular-ui-notification": "^0.1.0"
+    "angular-ui-notification": "^0.1.0",
+    "angular-ui-select": "^0.16.1",
+    "ngmap": "1.17.3",
+    "bootstrap-sass": "^3.3.6",
+    "angular-truncate": "*"
   },
   "devDependencies": {
     "angular-mocks": "~1.5.1"

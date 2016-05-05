@@ -21,12 +21,20 @@
 #  deleted_at              :datetime
 #  website                 :string
 #  social_accounts         :jsonb
-#  categories              :string           default([]), is an Array
+#  tags              :string           default([]), is an Array
 #
 
 class Multinational < ApplicationRecord
   acts_as_paranoid
   include PgSearch
+
+  pg_search_scope :search_by_tag,
+    against: {
+      tags: 'A',
+    },
+    using: {
+      tsearch: { any_word: true }
+    }
 
   pg_search_scope :search,
     against: {
@@ -51,8 +59,10 @@ class Multinational < ApplicationRecord
 
 
   scope :empty_startup_packages, -> { where(startup_packages: '{}') }
-  scope :have_startup_packages , -> { where.not(startup_packages: '{}') }
-
+  scope :have_startup_packages, -> { where.not(startup_packages: '{}') }
+  scope :building_product_in_ireland, -> (building_product_in_ireland) {
+    where(building_product_in_ireland: building_product_in_ireland)
+  }
   scope :events_space, -> (events_space) { where(events_space: events_space) }
 
   scope :greater_than, -> (column, limit) { where "#{column} > #{limit}" }

@@ -1,1 +1,165 @@
-<a href="#" class="btn btn-primary btn-lg btn-block">Go to search page</a>
+<div class="block app-block-intro" style="overflow:visible;">
+  <div class="container text-center m-t-lg">
+    <h1 class="statcard-number block-title m-b-md" style="font-size:56px;">Where <span style="color:#f0008c">Irish</span> Innovation is Found</h1>
+
+    <div class="row">
+      <div class="col-md-offset-2 col-md-8">
+        <div class="form-group">
+          <ui-select ng-model="$ctrl.availableOptions.selected" theme="bootstrap">
+            <ui-select-match placeholder="Search for Irish Startups, Investors, Multinationals and Hubs">{{$select.selected.name}}</ui-select-match>
+            <ui-select-choices group-by="'itemType'" repeat="item in $ctrl.availableOptions | filter: $select.search">
+              <span ng-bind-html="item.name | highlight: $select.search"></span>
+            </ui-select-choices>
+          </ui-select>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div ng-if="$ctrl.recentlyFunded.length > 0" class="block block-bordered-lg" style="padding-top:60px;padding-bottom:60px;">
+  <div class="container text-center app-translate-15" data-transition="entrance">
+    <blockquote class="pull-quote">
+      <cite style="margin-top:0;">Explore Ireland's Recently Funded Companies</cite>
+      <p style="margin-top:0px;font-size:26px;">
+        Recently Funded
+      </p>
+    </blockquote>
+    <div class="row m-t-md">
+      <div class="col-md-3 col-sm-6 company-tile" ng-repeat="entity in $ctrl.recentlyFunded | limitTo:4">
+        <a ui-sref="search.companyProfile({id: entity.id})" class="no-decoration">
+        <div class="panel panel-default" style="border-bottom: 5px solid #e92a8b;">
+          <div class="panel-body result-item-panel">
+            <img ng-src="{{entity.logo}}" class="img-responsive" style="margin: 10px auto;">
+            <h2 class="text-left" style="margin-bottom:0;margin-top:30px;font-size:22px;font-weight:300;">{{entity.name}}</h2>
+            <p class="text-left" style="font-size:16px;font-weight:300;margin-bottom:0;color:#999999;">
+              {{entity.short_description | characters:140 }}
+            </p>
+          </div>
+        </div>
+        </a>
+      </div>
+    </div>
+
+    <div class="row m-t-md">
+      <a href="/#/companies" class="btn btn-primary-outline btn-lg">View More Companies</a>
+    </div>
+  </div>
+</div>
+
+<div class="block block-bordered-lg" style="padding-top:60px;padding-bottom:60px;">
+  <div class="container text-center app-translate-15" data-transition="entrance">
+    <blockquote class="pull-quote">
+      <cite style="margin-top:0;">Explore Irish Companies</cite>
+      <p style="margin-top:0px;font-size:26px;">
+        Companies
+      </p>
+    </blockquote>
+    <div class="row m-t-md">
+      <div class="col-md-3 col-sm-6 company-tile" ng-repeat="entity in $ctrl.companyResults | limitTo:4">
+        <a ui-sref="search.companyProfile({id: entity.id})" class="no-decoration">
+        <div class="panel panel-default" style="border-bottom: 5px solid #e92a8b;">
+          <div class="panel-body result-item-panel">
+            <img ng-src="{{entity.logo}}" class="img-responsive" style="margin: 10px auto;">
+            <h2 class="text-left" style="margin-bottom:0;margin-top:30px;font-size:22px;font-weight:300;">{{entity.name}}</h2>
+            <p class="text-left" style="font-size:16px;font-weight:300;margin-bottom:0;color:#999999;">
+              {{entity.short_description | characters:140 }}
+            </p>
+          </div>
+        </div>
+        </a>
+      </div>
+    </div>
+    <div class="row m-t-md">
+      <a href="/#/companies" class="btn btn-primary-outline btn-lg">View More Companies</a>
+    </div>
+  </div>
+</div>
+
+<div class="block block-bordered-lg" style="padding-top:60px;padding-bottom:60px;">
+  <div class="container text-center app-translate-15" data-transition="entrance">
+    <blockquote class="pull-quote">
+      <cite style="margin-top:0;">Explore Multinations in Ireland</cite>
+      <p style="margin-top:0px;font-size:26px;">
+        Multinationals
+      </p>
+    </blockquote>
+    <div class="row m-t-md">
+      <div class="col-md-3 col-sm-6 company-tile" ng-repeat="entity in $ctrl.mtnsResults | limitTo:4">
+        <a ui-sref="search.multinationalProfile({id: entity.id})" class="no-decoration">
+        <div class="panel panel-default" style="border-bottom: 5px solid #e92a8b;">
+          <div class="panel-body result-item-panel">
+            <img ng-src="{{entity.logo}}" class="img-responsive" style="margin: 10px auto;">
+            <h2 class="text-left" style="margin-bottom:0;margin-top:30px;font-size:22px;font-weight:300;">{{entity.name}}</h2>
+            <p class="text-left" style="font-size:16px;font-weight:300;margin-bottom:0;color:#999999;">
+              {{entity.short_description | characters:140 }}
+            </p>
+          </div>
+        </div>
+        </a>
+      </div>
+    </div>
+    <div class="row m-t-md">
+      <a href="/#/mtns" class="btn btn-primary-outline btn-lg">View More Multinationals</a>
+    </div>
+  </div>
+</div>
+
+<div class="block block-bordered-lg" style="padding-top:60px;padding-bottom:60px;">
+  <div class="container text-center app-translate-15" data-transition="entrance">
+    <blockquote class="pull-quote">
+      <cite style="margin-top:0;">Explore Investors in Ireland</cite>
+      <p style="margin-top:0px;font-size:26px;">
+        Investors
+      </p>
+    </blockquote>
+    <div class="row m-t-md">
+      <div class="col-md-3 col-sm-6 company-tile" ng-repeat="entity in $ctrl.investorResults | limitTo:4">
+        <a ui-sref="search.investorProfile({id: entity.id})" class="no-decoration">
+        <div class="panel panel-default" style="border-bottom: 5px solid #e92a8b;">
+          <div class="panel-body result-item-panel">
+            <img ng-src="{{entity.logo}}" class="img-responsive" style="margin: 10px auto;">
+            <h2 class="text-left" style="margin-bottom:0;margin-top:30px;font-size:22px;font-weight:300;">{{entity.name}}</h2>
+            <p class="text-left" style="font-size:16px;font-weight:300;margin-bottom:0;color:#999999;">
+              {{entity.short_description | characters:140 }}
+            </p>
+          </div>
+        </div>
+        </a>
+      </div>
+    </div>
+    <div class="row m-t-md">
+      <a href="/#/investors" class="btn btn-primary-outline btn-lg">View More Investors</a>
+    </div>
+  </div>
+</div>
+
+<div class="block block-bordered-lg" style="padding-top:60px;padding-bottom:60px;">
+  <div class="container text-center app-translate-15" data-transition="entrance">
+    <blockquote class="pull-quote">
+      <cite style="margin-top:0;">Explore Digial Hubs in Ireland</cite>
+      <p style="margin-top:0px;font-size:26px;">
+        Hubs
+      </p>
+    </blockquote>
+    <div class="row m-t-md">
+      <div class="col-md-3 col-sm-6 company-tile" ng-repeat="entity in $ctrl.hubResults | limitTo:4">
+        <a ui-sref="search.hubProfile({id: entity.id})" class="no-decoration">
+        <div class="panel panel-default" style="border-bottom: 5px solid #e92a8b;">
+          <div class="panel-body result-item-panel">
+            <img ng-src="{{entity.logo}}" class="img-responsive" style="margin: 10px auto;">
+            <h2 class="text-left" style="margin-bottom:0;margin-top:30px;font-size:22px;font-weight:300;">{{entity.name}}</h2>
+            <p class="text-left" style="font-size:16px;font-weight:300;margin-bottom:0;color:#999999;">
+              {{entity.short_description | characters:140 }}
+            </p>
+          </div>
+        </div>
+        </a>
+      </div>
+    </div>
+    <div class="row m-t-md">
+      <a href="/#/hubs" class="btn btn-primary-outline btn-lg">View More Hubs</a>
+    </div>
+  </div>
+</div>

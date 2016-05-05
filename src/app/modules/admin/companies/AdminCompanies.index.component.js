@@ -7,7 +7,7 @@
       controller: 'AdminCompaniesIndexController',
       templateUrl: 'app/modules/admin/companies/companies.index.html'
     })
-    .controller('AdminCompaniesIndexController', function(listCompaniesService, deleteCompanyService, restoreCompanyService, Notification) {
+    .controller('AdminCompaniesIndexController', function(listCompaniesService, deleteCompanyService, restoreCompanyService, Notification, exportToCSV) {
       this.listCompaniesService = listCompaniesService;
       this.deleteCompanyService = deleteCompanyService;
       this.restoreCompanyService = restoreCompanyService;
@@ -31,7 +31,18 @@
       this.restoreCompany = function(id) {
         controller.restoreCompanyService.restore(id).then(function() {
           getCompanies();
-          Notification.sucess('The entry has been restored!')
+          Notification.success('The entry has been restored!')
+        })
+      };
+
+      this.export = function() {
+        exportToCSV.export('companies').then(function(data) {
+          var anchor = angular.element('<a/>');
+          anchor.attr({
+            href: 'data:attachment/csv;charset=utf-8,' + encodeURI(data),
+            target: '_blank',
+            download: 'companies.csv'
+          })[0].click();
         })
       };
     });

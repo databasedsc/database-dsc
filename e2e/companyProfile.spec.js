@@ -8,7 +8,7 @@ describe('CompanyProfile', function() {
     searchPage = require('./companySearch.po');
     page = require('./companyProfile.po');
 
-    browser.get('#/');
+    browser.get('#/companies');
 
     searchPage.findCompany('logentries').click();
   });
@@ -19,13 +19,12 @@ describe('CompanyProfile', function() {
       expect(page.overview.isElementPresent(by.css('.logo'))).toBe(true);
     });
 
-
     it('should display the name', function() {
       expect(page.overview.getText()).toContain('Logentries');
     });
 
     it('should display the tagline', function() {
-      expect(page.overview.getText()).toContain('Real-time log management and analytics');
+      expect(page.overview.getText()).toContain('Real-time log management and analytics'.toUpperCase());
     });
 
     it('should display the description', function() {
@@ -55,7 +54,8 @@ describe('CompanyProfile', function() {
     });
 
     it('should display Founders', function() {
-      expect(page.details.getText()).toContain('Viliam Holub, Trevor Parsons');
+      expect(page.details.getText()).toContain('Viliam Holub');
+      expect(page.details.getText()).toContain('Trevor Parsons');
     });
 
     it('should display Founded', function() {
@@ -74,13 +74,8 @@ describe('CompanyProfile', function() {
       expect(page.details.getText()).toContain('18 M');
     });
 
-    it('should display Geographical markets', function() {
+    it('should display Target markets', function() {
       expect(page.details.getText()).toContain('Global');
-    });
-
-    it('should display Office locations', function() {
-      expect(page.details.getText()).toContain('34 Farnsworth Street, Floor 4, Boston, MA 02110, USA');
-      expect(page.details.getText()).toContain('26-28 Lomard Street, Dublin 2, Dublin');
     });
 
     it('should display Business model', function() {
@@ -88,7 +83,7 @@ describe('CompanyProfile', function() {
     });
 
     it('should display Product stage', function() {
-      expect(page.details.getText()).toContain('Complete');
+      expect(page.details.getText()).toContain('Live');
     });
 
     it('should display Contact', function() {
@@ -103,16 +98,8 @@ describe('CompanyProfile', function() {
       expect(page.details.getText()).toContain('NDRC');
     });
 
-    it('should display Status', function() {
-      expect(page.details.getText()).toContain('Active');
-    });
-
     it('should display Government Assistance', function() {
       expect(page.details.getText()).toContain('NDRC');
-    });
-
-    it('should display Selling already', function() {
-      expect(page.details.getText()).toContain('Yes');
     });
 
     it('should display We’re looking for', function() {
@@ -135,4 +122,3 @@ describe('CompanyProfile', function() {
   });
 
 });
-

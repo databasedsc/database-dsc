@@ -4,12 +4,15 @@
   describe('Search Multinationals', function() {
     var $ctrl,
       $scope,
+      $stateParams,
       resultsDeferred;
 
     beforeEach(module('searchMultinationals'));
 
     beforeEach(inject(function($componentController, $rootScope, $q, searchMultinationalsService) {
       $scope = $rootScope.$new();
+      $stateParams = {};
+
       resultsDeferred = $q.defer();
 
       spyOn(searchMultinationalsService, 'get').and.callFake(function() {
@@ -18,8 +21,10 @@
 
       $ctrl = $componentController('searchMultinationals', {
         $scope: $scope,
+        $stateParams: $stateParams,
         searchMultinationalsService: searchMultinationalsService
       })
+
     }));
 
     it('should do the initial load of multinationals', function() {
@@ -62,7 +67,7 @@
       $ctrl.search();
       $scope.$apply();
 
-      expect($ctrl.searchMultinationalsService.get).toHaveBeenCalledWith({searchText: 'microsoft'},{ emeaHq: '', startupPackages: '', employees: '', eventsSpace: '', functions: '' }, { currentPage: 1, perPage: 5 });
+      expect($ctrl.searchMultinationalsService.get).toHaveBeenCalledWith({searchText: 'microsoft'},{ emeaHq: '', startupPackages: '', employees: '', buildingProductInIreland: '', eventsSpace: '', functions: '' }, { currentPage: 1, perPage: 5 });
       expect($ctrl.results.length).toEqual(1);
     });
 

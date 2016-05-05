@@ -7,7 +7,8 @@
       templateUrl: 'app/modules/admin/shared/overview.html',
       controller: 'OverviewController',
       bindings: {
-        entity: '='
+        entity: '=',
+        entityType: "@"
       }
     })
     .controller('OverviewController', function() {

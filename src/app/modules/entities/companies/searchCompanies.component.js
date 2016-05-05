@@ -7,10 +7,14 @@
       templateUrl: 'app/modules/entities/companies/index.html',
       controller: 'SearchCompaniesController'
     })
-    .controller('SearchCompaniesController', function($scope, searchCompaniesService, filterCompaniesService) {
+    .controller('SearchCompaniesController', function($scope, $stateParams, $location, $document, searchCompaniesService, filterCompaniesService) {
       var controller = this;
       this.searchCompaniesService = searchCompaniesService;
       this.filterCompaniesService = filterCompaniesService;
+
+      if ($stateParams.tag) {
+        this.tag = $stateParams.tag;
+      }
 
       // filter
       this.filters = filterCompaniesService.filtersData();
@@ -38,9 +42,45 @@
         }
       }
 
+      this.resetSearch = function() {
+        // reset the text search
+        this.query = "";
+        // reset 'tag' if exists
+        this.tag = null;
+        // reset all the filters
+        Object.keys(controller.filters).map(function(filterName) {
+          var filterObj = controller.filters[filterName];
+          filterObj.selectedValue = "";
+          switch (filterObj.type) {
+            case "dropdown":
+              $document[0].getElementById(filterObj.id).selectedIndex = 0;
+              break;
+            case "checklist":
+              filterObj.selectedString = filterObj.noSelectionString;
+              var checkboxes = $document[0].getElementsByName("filterCheckbox");
+              for (var i = 0; i < checkboxes.length; i++) {
+                checkboxes[i].checked = false;
+              }
+              break;
+            default:
+          }
+        });
+        // re-query for data with cleared search params
+        controller.search();
+      }
+
       // search
       this.search = function() {
-        searchCompaniesService.getCompanies({searchText: this.query}, getSelectedFilter(), getPaginationDetails()).then(function(companies) {
+
+        var query = {};
+        if (this.query != undefined) {
+          query.searchText = this.query;
+        }
+        if (this.tag != undefined) {
+          query.tag = this.tag;
+        }
+
+        searchCompaniesService.getCompanies(query, getSelectedFilter(), getPaginationDetails()).then(function(companies) {
           controller.results = companies.data;
           controller.totalItems = companies.headers('Total')
         });

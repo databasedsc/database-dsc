@@ -4,6 +4,7 @@
 <div class="row">
   <div class="pull-right">
     <p>
+      <button ng-click="$ctrl.export()" class="btn btn-primary">Export</button>
       <a ui-sref="admin.companies.new" class="btn btn-primary">New Company</a>
     </p>
   </div>
@@ -15,26 +16,24 @@
       <th></th>
       <th>Name</th>
       <th>Headquarters</th>
-      <th>Status</th>
       <th>Actions</th>
     </tr>
     </thead>
     <tbody>
     <tr ng-class="{deleted: company.deleted_at}" ng-repeat="company in $ctrl.companies">
       <td>
-        <a ng-hide="company.deleted_at" ui-sref="admin.companies.edit({id: company.id})"><img src="{{company.logo}}" alt="{{company.name}}" width="80" height="50"></a>
-        <img ng-show="company.deleted_at" src="{{company.logo}}" alt="{{company.name}}" width="80" height="50">
+        <a ng-hide="company.deleted_at" ui-sref="admin.companies.edit({id: company.id})"><img ng-src="{{company.logo}}" alt="{{company.name}}" width="80" height="50"></a>
+        <img ng-show="company.deleted_at" ng-src="{{company.logo}}" alt="{{company.name}}" width="80" height="50">
       </td>
       <td>
         <strong>
           <a ng-hide="company.deleted_at" ui-sref="admin.companies.edit({id: company.id})">{{company.name}}</a>
           <span ng-show="company.deleted_at">{{company.name}}</span>
         </strong>
-        <p style="color:#acacac"><i>{{company.short_description}}</i> <a href="{{company.website}}" ng-show="company.website"><i class="fa fa-link"></i></a></p>
+        <p style="color:#acacac"><i>{{company.short_description}}</i> <a ng-href="{{company.website}}" ng-show="company.website"><i class="fa fa-link"></i></a></p>
 
       </td>
       <td class="base">{{company.headquarters}}</td>
-      <td class="base">{{company.status}}</td>
       <td class="actions">
         <!--<button class="btn"><i class="fa fa-2x fa-edit"></button>-->
         <!--<button class="btn btn-danger"><i class="fa fa-2x fa-trash"></button>-->

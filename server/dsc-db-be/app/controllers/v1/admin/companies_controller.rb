@@ -9,9 +9,21 @@ module V1
       end
 
       def index
-        companies = Company.with_deleted.order(:id)
 
-        render json: companies
+        if params[:filter].present?
+          companies = Company.select(:id, :name).where("name ILIKE ?", "%#{params[:filter]}%")
+        else
+          companies = Company.with_deleted.order(:id)
+        end
+
+        respond_to do |format|
+          format.html {
+            render json: companies
+          }
+          format.csv do
+            send_data companies.to_csv
+          end
+        end
       end
 
       def show
@@ -42,11 +54,17 @@ module V1
 
       def company_params
         params.require(:company).permit(
-          :name, :logo, :short_description, :long_description, :acquisitions, :geo_markets, :headquarters,
-          :formerly_known_as, :founded, :categories, :incubator, :funding_stage, :employees, :funding_amount,
-          :business_model, :company_stage, :operational_status, :government_assistance, :selling, :looking_for,
-          :contact, :founders, :office_locations, :video_url, :website, :custom_field_1, :custom_field_2, :custom_field_3, :custom_field_4, social_accounts: [:twitter, :linkedin, :facebook],
-          funding_rounds: [:type, :amount, :date],
+          :name, :logo, :short_description, :long_description, :acquisitions,
+          :target_markets, :headquarters, :formerly_known_as, :founded,
+          { tags: [] }, :incubator, :funding_stage, :employees, :funding_amount,
+          :business_model, :company_stage, :operational_status,
+          :government_assistance, :looking_for, :contact,
+          { founders: [:name, :linkedin] },
+          { office_locations: [:id, :address, :lat, :lng] }, :video_url, :website, :custom_field_1,
+          :custom_field_2, :custom_field_3, :custom_field_4, :acquired,
+          { social_accounts: [:twitter, :linkedin, :facebook] }, :product_stage,
+          { funding_rounds: [:type, :amount, :date, investors: [:id, :name] ] },
+          :revenue, :recently_funded
         )
       end
 

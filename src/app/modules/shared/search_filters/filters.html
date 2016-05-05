@@ -1,43 +1,27 @@
-<fieldset>
-  <h3>Filter by:</h3>
-
-  <div ng-repeat="filter in $ctrl.filters">
-
-    <label class="col-xs-12" for="{{filter.id}}">{{filter.label}}</label>
-
+<div ng-repeat="filter in $ctrl.filters">
+  <div class="form-group">
+    <label class="filter-label" for="{{filter.id}}">{{filter.label}}</label>
     <!--dropdown-->
-
-    <select ng-if="filter.type == 'dropdown'"  name="{{filter.id}}" id="{{filter.id}}"
-            class="form-control col-xs-12 {{filter.selectedValue == '' ? 'default-option' : ''}}"
-            ng-model="filter.selectedValue" ng-change="$ctrl.search()">
+    <select ng-if="filter.type == 'dropdown'" name="{{filter.id}}" id="{{filter.id}}" class="form-control col-xs-12" ng-model="filter.selectedValue" ng-change="$ctrl.search()">
       <option ng-show="filter.noSelectionString" value="">{{filter.noSelectionString}}</option>
       <option ng-repeat="option in filter.values" value="{{option}}">{{option}}</option>
     </select>
     <!--ng-options="option for option in filter.values"-->
-
     <!--checkbox-->
-
     <div ng-if="filter.type == 'checklist'">
-
-      <button class="multiselect-dropdown-button {{filter.selectedString == filter.noSelectionString ? 'default-option' : ''}}" ng-click="show=!show">{{filter.selectedString}}</button>
-
+      <button class="form-control multiselect-dropdown-button" ng-click="show=!show">{{filter.selectedString}}</button>
       <div class="multiselect-dropdown" ng-show="show">
         <div class="checkbox" ng-repeat="value in filter.values">
           <label>
-            <input type="checkbox" ng-model="filter.selectedValue[value.code]" ng-change="$ctrl.update(filter)">{{value.label}}
+            <input name="filterCheckbox" type="checkbox" ng-model="filter.selectedValue[value.code]" ng-change="$ctrl.update(filter)">{{value.label}}
           </label>
         </div>
       </div>
     </div>
-
     <!--slider-->
-
     <div ng-if="filter.type == 'slider'">
       <!--<custom-slider slider-model="filter.selectedValue"></custom-slider>-->
-
       <rzslider rz-slider-model="filter.range.min" rz-slider-high="filter.range.max" rz-slider-options="filter.options"></rzslider>
     </div>
-
-
   </div>
-</fieldset>
+</div>

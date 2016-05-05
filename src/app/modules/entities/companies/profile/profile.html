@@ -1,137 +1,167 @@
 <div class="container">
-  <profile-overview entity="$ctrl.company"></profile-overview>
-  <div class="row">
-    <div id="details" class="col-md-offset-2">
-      <div ng-show="$ctrl.company.acquisitions">
-        <h4>Acquisitions:</h4>
-        <p>{{$ctrl.company.acquisitions}}</p>
-      </div>
-
-      <div ng-show="$ctrl.company.headquarters">
-        <h4>Headquarters:</h4>
-        <p>{{$ctrl.company.headquarters}}</p>
-      </div>
-
-      <div ng-show="$ctrl.company.formerly_known_as">
-        <h4>Formerly known as:</h4>
-        <p>{{$ctrl.company.formerly_known_as}}</p>
-      </div>
-
-      <div ng-show="$ctrl.company.founders">
-        <h4>Founders:</h4>
-        <p>{{$ctrl.company.founders}}</p>
-      </div>
-
-      <div ng-show="$ctrl.company.founded">
-        <h4>Founded:</h4>
-        <p>{{$ctrl.company.founded}}</p>
-      </div>
-
-      <div ng-show="$ctrl.company.employees">
-        <h4>Employees:</h4>
-        <p>{{$ctrl.company.employees}}</p>
-      </div>
-
-      <div ng-show="$ctrl.company.funding_stage">
-        <h4>Funding Stage:</h4>
-        <p>{{$ctrl.company.funding_stage}}</p>
-      </div>
-
-      <div ng-show="$ctrl.company.funding_amount ">
-        <h4>Total Funding:</h4>
-        <p>{{$ctrl.company.funding_amount | shortFmt:0}}</p>
-      </div>
-
-      <div ng-show="$ctrl.company.geo_markets ">
-        <h4>Geographical Markets:</h4>
-        <p>{{$ctrl.company.geo_markets | regionCodeToHuman}}</p>
-      </div>
-
-      <div ng-show="$ctrl.company.office_locations">
-        <h4>Office Locations:</h4>
-        <p ng-repeat="location in $ctrl.company.office_locations">{{location}}</p>
-      </div>
-
-      <div ng-show="$ctrl.company.business_model">
-        <h4>Business Model:</h4>
-        <p>{{$ctrl.company.business_model}}</p>
-      </div>
-
-      <div ng-show="$ctrl.company.product_stage">
-
-        <h4>Product Stage:</h4>
-        <p>{{$ctrl.company.product_stage}}</p>
-      </div>
-
-      <div ng-show="$ctrl.company.contact">
-
-        <h4>Contact:</h4>
-        <p>{{$ctrl.company.contact}}</p>
-      </div>
-
-      <div ng-show="$ctrl.company.company_stage">
-
-        <h4>Company Stage:</h4>
-        <p>{{$ctrl.company.company_stage}}</p>
-      </div>
-
-      <div ng-show="$ctrl.company.incubator">
-
-        <h4>Incubator/Accelerator:</h4>
-        <p>{{$ctrl.company.incubator}}</p>
-      </div>
-
-      <div ng-show="$ctrl.company.operational_status">
-
-        <h4>Status:</h4>
-        <p>{{$ctrl.company.operational_status}}</p>
-      </div>
-
-      <div ng-show="$ctrl.company.government_assistance">
-
-        <h4>Government Assistance:</h4>
-        <p>{{$ctrl.company.government_assistance}}</p>
-      </div>
-
-      <div ng-show="$ctrl.company.selling ">
-
-        <h4>Selling already:</h4>
-        <p>{{$ctrl.company.selling | booleanToHuman}}</p>
-      </div>
-
-      <div ng-show="$ctrl.company.looking_for">
-
-        <h4>We're looking for:</h4>
-        <p>{{$ctrl.company.looking_for}}</p>
-      </div>
-
+  <profile-overview entity="$ctrl.company" entity-type="company"></profile-overview>
+  <div class="block block-bordered-lg" style="padding-top:40px;padding-bottom:30px;">
+    <div class="container text-center app-translate-15" data-transition="entrance" style="transition: transform 1200ms cubic-bezier(0.2, 0.7, 0.5, 1); transform: none;">
+      <blockquote class="pull-quote">
+        <cite style="margin-top:0;">Insight</cite>
+        <p style="margin-top:0px;font-size:26px;color:#e92a8b">
+          Company Overview
+        </p>
+      </blockquote>
     </div>
   </div>
-</div>
-
-
-<div ng-show="$ctrl.company.funding_rounds" class="dsc-timeline">
-  <div id="funding" class="container">
-
-  <h2>Funding</h2>
-
-    <div class="row" ng-repeat="round in $ctrl.company.funding_rounds">
-
-      <div class="col-xs-3 col-sm-3 col-xs-offset-2 col-sm-offset-3 text-right">
-        <span class="triangle-border right">{{round.date}}</span>
-      </div>
-
-      <div class="col-xs-2 col-sm-1">
-        <div class="dsc-timeline-dot"></div>
-        <div ng-show="(!$last || ($last && $first))" class="dsc-timeline-line"></div>
-      </div>
-
-      <div class="col-xs-4 col-sm-3text-left">
-        <p>{{round.type}}</p>
-        <p>{{round.amount}}</p>
-      </div>
-
+  <div id="details" class="row text-center">
+    <div class="col-md-4 m-b-md" ng-show="$ctrl.company.acquisitions">
+      <div class="company-info-title">Acquisitions</div>
+      <div class="company-info-value">{{$ctrl.company.acquisitions}}</div>
     </div>
 
+    <div class="col-md-4 m-b-md" ng-show="$ctrl.company.headquarters">
+      <div class="company-info-title">Headquarters</div>
+      <div class="company-info-value">{{$ctrl.company.headquarters}}</div>
+    </div>
+
+    <div class="col-md-4 m-b-md" ng-show="$ctrl.company.formerly_known_as">
+      <div class="company-info-title">Formerly known as</div>
+      <div class="company-info-value">{{$ctrl.company.formerly_known_as}}</div>
+    </div>
+
+    <div class="col-md-4 m-b-md" ng-show="$ctrl.company.founders">
+      <div class="company-info-title">Founders</div>
+      <div class="company-info-value">
+        <span ng-repeat="founder in $ctrl.company.founders">
+          <div ng-if="founder.linkedin"><a href="https://www.linkedin.com/in/{{founder.linkedin}}" target="_blank">{{founder.name}}</a></div>
+          <div ng-if="!founder.linkedin">{{founder.name}}</div>
+        </span>
+      </div>
+    </div>
+
+    <div class="col-md-4 m-b-md" ng-show="$ctrl.company.founded">
+      <div class="company-info-title">Founded</div>
+      <div class="company-info-value">{{$ctrl.company.founded}}</div>
+    </div>
+
+    <div class="col-md-4 m-b-md" ng-show="$ctrl.company.employees">
+      <div class="company-info-title">Employees</div>
+      <div class="company-info-value">{{$ctrl.company.employees}}</div>
+    </div>
+
+    <div class="col-md-4 m-b-md" ng-show="$ctrl.company.funding_stage">
+      <div class="company-info-title">Funding Stage</div>
+      <div class="company-info-value">{{$ctrl.company.funding_stage}}</div>
+    </div>
+
+    <div class="col-md-4 m-b-md" ng-show="$ctrl.company.funding_amount">
+      <div class="company-info-title">Total Funding</div>
+      <div class="company-info-value">{{$ctrl.company.funding_amount | shortFmt:0}}</div>
+    </div>
+
+    <div class="col-md-4 m-b-md" ng-show="$ctrl.company.target_markets">
+      <div class="company-info-title">Target Markets</div>
+      <div class="company-info-value">
+        <p id="target-markets">
+          <span ng-repeat="targetMarket in $ctrl.company.target_markets.split(',')">
+            {{targetMarket | regionCodeToHuman}}{{$last ? ' ' : ','}}
+          </span>
+        </p>
+      </div>
+    </div>
+
+    <div class="col-md-4 m-b-md" ng-show="$ctrl.company.business_model">
+      <div class="company-info-title">Business Model</div>
+      <div class="company-info-value">{{$ctrl.company.business_model}}</div>
+    </div>
+
+    <div class="col-md-4 m-b-md" ng-show="$ctrl.company.product_stage">
+      <div class="company-info-title">Product Stage</div>
+      <div class="company-info-value">{{$ctrl.company.product_stage}}</div>
+    </div>
+
+    <div class="col-md-4 m-b-md" ng-show="$ctrl.company.contact">
+      <div class="company-info-title">Contact</div>
+      <div class="company-info-value">{{$ctrl.company.contact}}</div>
+    </div>
+
+    <div class="col-md-4 m-b-md" ng-show="$ctrl.company.company_stage">
+      <div class="company-info-title">Company Stage</div>
+      <div class="company-info-value">{{$ctrl.company.company_stage}}</div>
+    </div>
+
+    <div class="col-md-4 m-b-md" ng-show="$ctrl.company.incubator">
+      <div class="company-info-title">Incubator/Accelerator</div>
+      <div class="company-info-value">{{$ctrl.company.incubator}}</div>
+    </div>
+
+    <div class="col-md-4 m-b-md" ng-show="$ctrl.company.acquired">
+      <div class="company-info-title">Aquired/IPO Status</div>
+      <div class="company-info-value">{{$ctrl.company.acquired}}</div>
+    </div>
+
+    <div class="col-md-4 m-b-md" ng-show="$ctrl.company.looking_for">
+      <div class="company-info-title">We're looking for</div>
+      <div class="company-info-value">{{$ctrl.company.looking_for}}</div>
+    </div>
+  </div>
+  <div ng-show="$ctrl.company.funding_rounds" class="row block block-bordered-lg" style="padding:40px 0;">
+    <div id="funding" class="container text-center app-translate-15" data-transition="entrance">
+      <blockquote class="pull-quote">
+        <cite style="margin-top:0;">Insight</cite>
+        <p style="margin-top:0px;font-size:26px;color:#e92a8b">
+          Funding
+        </p>
+      </blockquote>
+      <div class="row m-t-md">
+        <div class="col-md-offset-1 col-md-10">
+          <ul class="timeline">
+            <li ng-repeat="round in $ctrl.company.funding_rounds" ng-class="{'timeline-inverted': $odd}">
+              <div class="timeline-badge"><i class="glyphicon"></i></div>
+              <div class="timeline-panel">
+                <div class="timeline-heading">
+                  <h4 class="timeline-title">{{round.type}}</h4>
+                  <p><small class="text-muted">{{round.date}}</small></p>
+                </div>
+                <p>{{round.amount}}</p>
+                <div ng-if="round.investors.length > 0" class="timeline-body">
+                  <p ng-repeat="investor in round.investors">
+                    <a ui-sref="search.investorProfile({id: {{investor.id}}})">{{investor.name}}</a>
+                  </p>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div ng-show="!!$ctrl.company.office_locations.length > 0" class="portfolio">
+    <div class="block block-bordered-lg" style="padding:40px 0;">
+      <div class="container text-center app-translate-15" data-transition="entrance" style="transition: transform 1200ms cubic-bezier(0.2, 0.7, 0.5, 1); transform: none;">
+        <blockquote class="pull-quote">
+          <cite style="margin-top:0;">Locations</cite>
+          <p style="margin-top:0px;font-size:26px;color:#e92a8b">
+            Map View
+          </p>
+        </blockquote>
+      </div>
+    </div>
+    <div class="m-b-lg">
+      <ng-map zoom-to-include-markers="auto" maximum-zoom="16">
+        <marker id='ol{{officeLocation.id}}'
+                position="[{{officeLocation.lat}}, {{officeLocation.lng}}]"
+                ng-repeat="officeLocation in $ctrl.company.office_locations"
+                on-click="$ctrl.showOfficeLocationDetail(officeLocation)" />
+
+        <info-window id="foo-iw">
+          <div ng-non-bindable="">
+            {{$ctrl.officeLocation.address}}<br/>
+            <a ng-if="$ctrl.company.office_locations.length > 1"
+               href=""
+               ng-click="$ctrl.zoomTo()">
+               Zoom to location
+            </a>
+          </div>
+        </info-window>
+      </ng-map>
+    </div>
   </div>
 </div>

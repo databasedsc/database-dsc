@@ -2,12 +2,18 @@ class CompanySearchService
 
   def initialize(params)
     @params = params
-    set_geo_markets
+    set_target_markets
   end
 
   def call
     if @params[:searchText].present?
       companies = Company.search(@params[:searchText])
+    elsif @params[:tag].present?
+      companies = Company.search_by_tag(@params[:tag])
+    elsif !@params[:recently_funded].nil?
+      companies = Company.recently_funded(@params[:recently_funded].to_s == "true")
+    elsif @params[:company_ids].present?
+      companies = Company.withIds(@params[:company_ids].split(','))
     else
       companies = Company.all
     end
@@ -26,14 +32,14 @@ class CompanySearchService
   private
 
   def matching_params
-    @params.slice(:fundingStage, :productStage, :companyStage, :geographicalMarkets, :businessModel, :operationalStatus)
+    @params.slice(:fundingStage, :productStage, :companyStage, :targetMarkets, :businessModel, :operationalStatus)
   end
 
   def numeric_params
     @params.slice(:employees, :fundingAmount)
   end
 
-  def set_geo_markets
-    @params[:geographicalMarkets] = JSON.parse(@params[:geographicalMarkets]).select { |k, v| v }.keys.join(' ') if @params[:geographicalMarkets]
+  def set_target_markets
+    @params[:targetMarkets] = JSON.parse(@params[:targetMarkets]).select { |k, v| v }.keys.join(' ') if @params[:targetMarkets]
   end
 end

@@ -3,18 +3,7 @@ class V1::MultinationalsController < ApplicationController
   before_action :functions_parse, only: :index
 
   def index
-    if params[:searchText]
-      multinationals = Multinational.search(params[:searchText])
-    else
-      multinationals = Multinational.all
-    end
-
-    multinationals = multinationals.emea_hq(params[:emeaHq]) if !params[:emeaHq].nil?
-    multinationals = multinationals.startup_packages(params[:startupPackages]) if !params[:startupPackages].nil?
-    multinationals = multinationals.select_numeric_scope('employees', params[:employees]) if params[:employees]
-    multinationals = multinationals.events_space(params[:eventsSpace]) if !params[:eventsSpace].nil?
-    multinationals = multinationals.functions(params[:functions]) if params[:functions].present?
-
+    multinationals = MultinationalSearchService.new(filter_params).call
     paginate json: multinationals, status: 200
   end
 
@@ -35,4 +24,9 @@ class V1::MultinationalsController < ApplicationController
       params[key] = false if value.downcase == 'no'
     end
   end
+
+  def filter_params
+    params.permit(:searchText, :emeaHq, :startupPackages, :employees, :eventsSpace, :functions, :tag, :buildingProductInIreland)
+  end
+
 end

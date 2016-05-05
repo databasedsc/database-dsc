@@ -21,7 +21,6 @@
 #  contact_email     :string
 #  preferred_contact :text
 #  co_investors      :text
-#  board_members     :text             default([]), is an Array
 #  similar_investors :text
 #  long_description  :text
 #  exits_ipos        :string

@@ -12,6 +12,7 @@
         NA: 'North America',
         SA: 'South America',
         AS: 'Asia',
+        AA: 'Australasia',
         AF: 'Africa'
       }
 

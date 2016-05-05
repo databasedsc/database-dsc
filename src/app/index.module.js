@@ -17,6 +17,7 @@
       'rzModule',
       'home',
       'login',
+      'ngMap',
       'admin',
       'searchCompanies',
       'searchResults',
@@ -29,7 +30,8 @@
       'searchHubs',
       'hubProfile',
       'searchFilters',
-      'socialLinks'
+      'socialLinks',
+      'truncate'
     ]);
 
 })();

@@ -1,0 +1,48 @@
+<div class="row">
+  <h2>Hubs</h2>
+</div>
+<div class="row">
+  <div class="pull-right">
+    <p>
+      <button ng-click="$ctrl.export()" class="btn btn-primary">Export</button>
+      <a ui-sref="admin.hubs.new" class="btn btn-primary">New Hub</a>
+    </p>
+  </div>
+</div>
+<div class="table-responsive">
+  <table class="table table-striped table-bordered table-hover">
+    <thead>
+      <tr>
+        <th></th>
+        <th>Name</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-class="{deleted: hub.deleted_at}" ng-repeat="hub in $ctrl.hubs">
+        <td>
+          <a ng-hide="hub.deleted_at" ui-sref="admin.hubs.edit({id: hub.id})">
+            <img ng-src="{{hub.logo}}" alt="{{hub.name}}" width="80" height="50">
+          </a>
+          <img ng-show="hub.deleted_at" ng-src="{{hub.logo}}" alt="{{hub.name}}" width="80" height="50">
+        </td>
+        <td>
+          <strong>
+            <a ng-hide="hub.deleted_at" ui-sref="admin.hubs.edit({id: hub.id})">{{hub.name}}</a>
+            <span ng-show="hub.deleted_at">{{hub.name}}</span>
+          </strong>
+          <p style="color:#acacac"><i>{{hub.short_description}}</i> <a href="{{hub.website}}" ng-show="hub.website"><i class="fa fa-link"></i></a></p>
+        </td>
+        <td class="actions">
+          <span ng-hide="hub.deleted_at">
+            <a ui-sref="admin.hubs.edit({id: hub.id})"><i class="fa fa-2x fa-edit"></i></a>
+            <a href="" ng-click="$ctrl.deleteHub(hub.id)"><i class="fa fa-2x fa-trash"></i></a>
+          </span>
+          <span ng-show="hub.deleted_at">
+            <a href="" ng-click="$ctrl.restoreHub(hub.id)"><i class="fa fa-2x fa-refresh"></i></a>
+          </span>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

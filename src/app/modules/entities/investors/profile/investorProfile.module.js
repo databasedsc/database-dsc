@@ -3,6 +3,7 @@
 
   angular.module('investorProfile', [
     'ui.router',
-    'configuration'
+    'configuration',
+    'ngMap'
   ]);
 })();

@@ -21,7 +21,6 @@
 #  contact_email     :string
 #  preferred_contact :text
 #  co_investors      :text
-#  board_members     :text             default([]), is an Array
 #  similar_investors :text
 #  long_description  :text
 #  exits_ipos        :string
@@ -33,6 +32,14 @@
 class Investor < ApplicationRecord
   acts_as_paranoid
   include PgSearch
+
+  pg_search_scope :search_by_tag,
+    against: {
+      tags: 'A',
+    },
+    using: {
+      tsearch: { any_word: true }
+    }
 
   pg_search_scope :search,
     against: {
@@ -58,6 +65,7 @@ class Investor < ApplicationRecord
 
   scope :greater_than, -> (column, limit) { where "#{column} > #{limit}" }
   scope :range_scope, -> (column, range) { where("#{column}" => range) }
+  scope :deal_structure, -> (deal_structure) { where deal_structure: deal_structure }
 
   def self.select_numeric_scope(column, range_as_string)
     lower, upper = range_as_string.split('-').map(&:to_i)

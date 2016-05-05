@@ -1,7 +1,6 @@
 module V1
   module Admin
     class MultinationalsController < ApplicationController
-
       def create
         multinational = Multinational.create(multinational_params)
 
@@ -11,7 +10,14 @@ module V1
       def index
         multinationals = Multinational.with_deleted.order(:id)
 
-        render json: multinationals
+        respond_to do |format|
+          format.html do
+            render json: multinationals
+          end
+          format.csv do
+            send_data multinationals.to_csv
+          end
+        end
       end
 
       def show
@@ -33,7 +39,7 @@ module V1
       def restore
         Multinational.restore(params[:id])
       end
-      #
+
       private
 
       def multinational
@@ -56,15 +62,17 @@ module V1
           :local_office,
           :video_url,
           :website,
+          :lat,
+          :lng,
+          :building_product_in_ireland,
           :events_space_qualifiers,
           :custom_field_1, :custom_field_2, :custom_field_3, :custom_field_4,
           functions: [],
-          categories: [],
           startup_packages: [:name, :link, :description],
-          social_accounts: [:twitter, :linkedin, :facebook]
+          social_accounts: [:twitter, :linkedin, :facebook],
+          tags: []
         )
       end
-
     end
   end
 end

@@ -11,7 +11,7 @@
 #  headquarters          :string
 #  formerly_known_as     :string
 #  founders              :text
-#  categories            :text
+#  tags            :text
 #  investors             :text
 #  office_locations      :text
 #  incubator             :string
@@ -19,13 +19,12 @@
 #  funding_stage         :string
 #  funding_amount        :integer
 #  product_stage         :string
-#  geo_markets           :string
+#  target_markets        :string
 #  business_model        :string
 #  company_stage         :string
 #  operational_status    :string
 #  funding_rounds        :jsonb
 #  looking_for           :text
-#  selling               :boolean
 #  government_assistance :string
 #  contact               :text
 #  long_description      :text
@@ -43,6 +42,14 @@ class Company < ApplicationRecord
 
   using Utils
 
+  pg_search_scope :search_by_tag,
+    against: {
+      tags: 'A',
+    },
+    using: {
+      tsearch: { any_word: true }
+    }
+
   pg_search_scope :search,
     against: {
       name: 'A',
@@ -50,7 +57,7 @@ class Company < ApplicationRecord
       headquarters: 'C',
       formerly_known_as: 'A',
       founders: 'D',
-      categories: 'D',
+      tags: 'D',
       investors: 'D',
       office_locations: 'D',
       incubator: 'D'
@@ -59,15 +66,15 @@ class Company < ApplicationRecord
       tsearch: { any_word: true, prefix: true, dictionary: "english" }
     }
 
-  pg_search_scope :geographical_markets,
+  pg_search_scope :target_markets,
     against: {
-      geo_markets: 'A'
+      target_markets: 'A'
     },
     using: {
       tsearch: { any_word: true }
     }
 
-
+  scope :withIds, -> (company_ids) { where id: company_ids }
   scope :funding_stage, -> (funding_stage) { where funding_stage: funding_stage }
   scope :product_stage, -> (product_stage) { where product_stage: product_stage }
   scope :company_stage, -> (company_stage) { where company_stage: company_stage }
@@ -75,6 +82,7 @@ class Company < ApplicationRecord
   scope :operational_status, -> (operational_status) { where operational_status: operational_status }
   scope :greater_than, -> (column, limit) { where "#{column} > #{limit}" }
   scope :range_scope, -> (column, range) { where("#{column}" => range) }
+  scope :recently_funded, -> (recently_funded) { where recently_funded: recently_funded }
 
   def self.select_numeric_scope(column, range_as_string)
     if range_as_string == '>500' || range_as_string == '>100m'
@@ -85,4 +93,5 @@ class Company < ApplicationRecord
       self.range_scope(column, lower..upper)
     end
   end
+
 end

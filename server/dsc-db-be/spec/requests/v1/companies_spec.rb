@@ -12,21 +12,27 @@ RSpec.describe 'V1::Companies', :type => :request do
         "long_description": "Mustard instantly connects those with short term positions to fill, with the best available candidates. A data-science focussed company, pairing gamification and on demand technology to build the worlds largest and most functional network of instant talent.",
         "headquarters": "Dublin",
         "formerly_known_as": "Ketchup",
-        "founders": "Gavin Fogarty",
-        "categories": "Technology, Social Recruiting, Event Management",
+        "founders": [
+          {
+            "name": "Gavin Fogarty",
+            "linkedin": "fogartygavin"
+          }
+        ],
+        "tags": ["Technology, Social Recruiting, Event Management"],
         "investors": "Undisclosed",
-        "office_locations": "NDRC at the Digital Exchange, Crane Street, Dublin 8",
+        "office_locations": [
+          {"id": 1, "address": "NDRC at the Digital Exchange, Crane Street, Dublin 8", "lat": 42.4076806, "lng": -71.2764524}
+        ],
         "incubator": "NDRC",
         "funding_stage": "Seed",
         "employees": 6,
         "funding_amount": 250000,
-        "product_stage": "Complete",
-        "geo_markets": "EU",
+        "product_stage": "Live",
+        "target_markets": "EU",
         "business_model": "B2B",
         "company_stage": "Growth",
         "operational_status": "Active",
         "government_assistance": "NDRC",
-        "selling": true,
         "looking_for": "Good Talent",
         "contact": "heya@mustard.ie",
         "founded": "2015",
@@ -51,21 +57,20 @@ RSpec.describe 'V1::Companies', :type => :request do
       expect(company_json['long_description']).to eq('Mustard instantly connects those with short term positions to fill, with the best available candidates. A data-science focussed company, pairing gamification and on demand technology to build the worlds largest and most functional network of instant talent.')
       expect(company_json['headquarters']).to eq('Dublin')
       expect(company_json['formerly_known_as']).to eq('Ketchup')
-      expect(company_json['founders']).to eq('Gavin Fogarty')
-      expect(company_json['categories']).to eq('Technology, Social Recruiting, Event Management')
+      expect(company_json['founders'].size).to eq(1)
+      expect(company_json['tags']).to match_array(['Technology, Social Recruiting, Event Management'])
       expect(company_json['investors']).to eq('Undisclosed')
-      expect(company_json['office_locations']).to eq('NDRC at the Digital Exchange, Crane Street, Dublin 8')
+      expect(company_json['office_locations'].size).to eq(1)
       expect(company_json['incubator']).to eq('NDRC')
       expect(company_json['funding_stage']).to eq('Seed')
       expect(company_json['employees']).to eq(6)
       expect(company_json['funding_amount']).to eq(250000)
-      expect(company_json['product_stage']).to eq('Complete')
-      expect(company_json['geo_markets']).to eq('EU')
+      expect(company_json['product_stage']).to eq('Live')
+      expect(company_json['target_markets']).to eq('EU')
       expect(company_json['business_model']).to eq('B2B')
       expect(company_json['company_stage']).to eq('Growth')
       expect(company_json['operational_status']).to eq('Active')
       expect(company_json['government_assistance']).to eq('NDRC')
-      expect(company_json['selling']).to eq(true)
       expect(company_json['looking_for']).to eq('Good Talent')
       expect(company_json['contact']).to eq('heya@mustard.ie')
       expect(company_json['founded']).to eq('2015')
@@ -82,15 +87,20 @@ RSpec.describe 'V1::Companies', :type => :request do
         short_description: 'something',
         headquarters: 'Dublin',
         formerly_known_as: 'ketchup',
-        founders: 'Kevin Fogarty',
-        categories: 'Personalisation',
+        founders: [
+          {
+            "name": "Gavin Fogarty",
+            "linkedin": "fogartygavin"
+          }
+        ],
+        tags: 'Personalisation',
         investors: '',
         office_locations: '',
         incubator: 'NDRC',
         employees: 140,
         funding_stage: 'Bootstrapped',
-        product_stage: 'Complete',
-        geo_markets: 'IE'
+        product_stage: 'Live',
+        target_markets: 'IE'
       )
       FactoryGirl.create(
         :company,
@@ -98,20 +108,22 @@ RSpec.describe 'V1::Companies', :type => :request do
         short_description: 'another search',
         headquarters: 'Cork',
         formerly_known_as: '',
-        categories: 'Event Management',
+        tags: ['Event Management'],
         investors: 'Delta Partners',
-        office_locations: 'Tara Street',
+        office_locations: [
+          {"id": 1, "address": "Tara Street", "lat": 42.4076806, "lng": -71.2764524}
+        ],
         incubator: '',
         business_model: 'B2C',
         operational_status: 'Active',
-        geo_markets: 'UK'
+        target_markets: 'UK'
       )
       FactoryGirl.create(
         :company,
         short_description: 'third company',
         company_stage: 'Growth',
         funding_amount: 150000000,
-        geo_markets: 'G'
+        target_markets: 'G'
       )
     end
 
@@ -181,7 +193,7 @@ RSpec.describe 'V1::Companies', :type => :request do
         expect(companies_json.size).to eq(1)
       end
 
-      it 'should return companies filtered by categories field' do
+      it 'should return companies filtered by tags field' do
         get '/v1/companies?searchText=Event+Management'
         companies_json = JSON.parse(response.body)
         expect(response).to have_http_status(200)
@@ -232,29 +244,29 @@ RSpec.describe 'V1::Companies', :type => :request do
         end
 
         it 'should return companies filtered by product stage' do
-          get '/v1/companies?productStage=Complete'
+          get '/v1/companies?productStage=Live'
           companies_json = JSON.parse(response.body)
           expect(response).to have_http_status(200)
           expect(companies_json.size).to eq(1)
         end
 
-        describe 'Geographical Markets' do
-          it 'should return companies filtered by IE geographical market' do
-            get '/v1/companies?geographicalMarkets=%7B%22IE%22:true%7D'
+        describe 'Target Markets' do
+          it 'should return companies filtered by IE target market' do
+            get '/v1/companies?targetMarkets=%7B%22IE%22:true%7D'
             companies_json = JSON.parse(response.body)
             expect(response).to have_http_status(200)
             expect(companies_json.size).to eq(1)
           end
 
-          it 'should return companies filtered by multiple geographical markets' do
-            get '/v1/companies?geographicalMarkets=%7B%22IE%22:true,%22UK%22:true%7D'
+          it 'should return companies filtered by multiple target markets' do
+            get '/v1/companies?targetMarkets=%7B%22IE%22:true,%22UK%22:true%7D'
             companies_json = JSON.parse(response.body)
             expect(response).to have_http_status(200)
             expect(companies_json.size).to eq(2)
           end
 
-          it 'should return companies filtered by list of true/false geographical markets' do
-            get '/v1/companies?geographicalMarkets=%7B%22IE%22:true,%22UK%22:false%7D'
+          it 'should return companies filtered by list of true/false target markets' do
+            get '/v1/companies?targetMarkets=%7B%22IE%22:true,%22UK%22:false%7D'
             companies_json = JSON.parse(response.body)
             expect(response).to have_http_status(200)
             expect(companies_json.size).to eq(1)
@@ -289,5 +301,3 @@ RSpec.describe 'V1::Companies', :type => :request do
 
   end
 end
-
-

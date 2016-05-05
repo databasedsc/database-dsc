@@ -7,31 +7,48 @@
       controller: 'AdminCompaniesNewController',
       templateUrl: 'app/modules/admin/companies/companies.new.html'
     })
-    .controller('AdminCompaniesNewController', function(createCompanyService, $confirm, Notification) {
+    .controller('AdminCompaniesNewController', function(createCompanyService, $confirm, Notification, listInvestorsService, listTagsService) {
       this.createCompanyService = createCompanyService;
       var controller = this;
 
       var setEmptyCompany = function() {
         controller.company = {
+          office_locations: [],
+          founders: [],
           funding_rounds: [],
-          categories: []
+          tags: []
         }
       };
 
       setEmptyCompany();
 
-      var setGeoMarkets = function() {
-        controller.company.geo_markets = [];
-        for (var key in controller.geo_markets) {
-          if (controller.geo_markets.hasOwnProperty(key) && controller.geo_markets[key]) {
-            controller.company.geo_markets.push(key);
+      var setTargetMarkets = function() {
+        controller.company.target_markets = [];
+        for (var key in controller.target_markets) {
+          if (controller.target_markets.hasOwnProperty(key) && controller.target_markets[key]) {
+            controller.company.target_markets.push(key);
           }
         }
-        controller.company.geo_markets = controller.company.geo_markets.join(',')
+        controller.company.target_markets = controller.company.target_markets.join(',')
+      }
+
+      controller.queryInvestors = function(query) {
+        return listInvestorsService.filter(query);
       };
 
-      var joinCategories = function() {
-        controller.company.categories = controller.company.categories.join(',')
+      controller.queryTags = function(query) {
+        return listTagsService.filter(query);
+      };
+
+      controller.addFounder = function() {
+        controller.company.founders.push({
+          name: "",
+          linkedin: ""
+        });
+      };
+
+      controller.removeFounder = function(founder) {
+        controller.company.founders.splice(controller.company.founders.indexOf(founder), 1);
       };
 
       controller.addFundingRound = function() {
@@ -42,14 +59,30 @@
         controller.company.funding_rounds.splice(controller.company.funding_rounds.indexOf(round), 1);
       };
 
-      controller.addCategory = function(tag) {
-        this.company.categories.push(tag.text);
+      controller.addOfficeLocation = function() {
+        controller.company.office_locations.push({
+          id: controller.company.office_locations.length + 1,
+          address: "",
+          lat: null,
+          lng: null
+        });
+      };
+
+      controller.removeOfficeLocation = function(location) {
+        controller.company.office_locations.splice(controller.company.office_locations.indexOf(location), 1);
+      };
+
+      controller.addTag = function(tag) {
+        controller.company.tags.push(tag.text);
+      };
+
+      controller.removeTag = function(tag) {
+        controller.company.tags.splice(controller.company.tags.indexOf(tag.text), 1);
       };
 
       this.create = function() {
         $confirm({text: "Are you sure you want to submit?"}).then(function() {
-          setGeoMarkets();
-          joinCategories();
+          setTargetMarkets();
           controller.createCompanyService.create(controller.company).then(function() {
             Notification.success('Company Saved sucessfully!');
             setEmptyCompany();

@@ -1,39 +1,104 @@
 <div class="container">
+  <profile-overview entity="$ctrl.hub" entity-type="hub"></profile-overview>
+  <div class="block block-bordered-lg" style="padding-top:40px;padding-bottom:30px;">
+    <div class="container text-center app-translate-15" data-transition="entrance" style="transition: transform 1200ms cubic-bezier(0.2, 0.7, 0.5, 1); transform: none;">
+      <blockquote class="pull-quote">
+        <cite style="margin-top:0;">Insight</cite>
+        <p style="margin-top:0px;font-size:26px;color:#e92a8b">
+          Hub Overview
+        </p>
+      </blockquote>
+    </div>
+  </div>
+  <div id="details" class="row text-center">
 
-  <profile-overview entity="$ctrl.hub"></profile-overview>
+    <div class="col-md-4 m-b-md" ng-show="$ctrl.hub.hub_type">
+      <div class="company-info-title">Hub Type</div>
+      <div class="company-info-value">
+        <p id="hub-type">
+          <span ng-repeat="hubType in $ctrl.hub.hub_type">
+            {{hubType | hubTypeCodeToHuman}}{{$last ? ' ' : ','}}
+          </span>
+        </p>
+      </div>
+    </div>
 
-  <div class="row">
-    <!--<div id="details" class="col-xs-offset-0 col-xs-12 col-md-offset-2 col-md-10">-->
-    <div id="details" class="col-md-offset-2">
-      <div ng-show="$ctrl.hub.hub_type">
-        <h4>Hub Type:</h4>
-        <p>{{$ctrl.hub.hub_type | join: ', '}}</p>
-      </div>
-      <div ng-show="$ctrl.hub.founded">
-        <h4>Founded</h4>
-        <p>{{$ctrl.hub.founded}}</p>
-      </div>
-      <div ng-show="$ctrl.hub.contact">
-        <h4>Contact:</h4>
-        <p>{{$ctrl.hub.contact}}</p>
-      </div>
-      <div ng-show="$ctrl.hub.contact_detail">
-        <h4>Contact Details:</h4>
-        <p>{{$ctrl.hub.contact_detail}}</p>
-      </div>
+    <div class="col-md-4 m-b-md" ng-show="$ctrl.hub.founded">
+      <div class="company-info-title">Founded</div>
+      <div class="company-info-value">{{$ctrl.hub.founded}}</div>
+    </div>
+
+    <div class="col-md-4 m-b-md" ng-show="$ctrl.hub.contact">
+      <div class="company-info-title">Contact</div>
+      <div class="company-info-value">{{$ctrl.hub.contact}}</div>
+    </div>
+
+    <div class="col-md-4 m-b-md" ng-show="$ctrl.hub.contact_detail">
+      <div class="company-info-title">Contact Details</div>
+      <div class="company-info-value">{{$ctrl.hub.contact_detail}}</div>
+    </div>
+
+    <div class="col-md-4 m-b-md" ng-show="$ctrl.hub.funding_provided">
+      <div class="company-info-title">Funding Provided</div>
+      <div class="company-info-value">{{$ctrl.hub.funding_provided ? 'Yes' : 'No'}}</div>
+    </div>
+
+    <div class="col-md-4 m-b-md" ng-show="$ctrl.hub.programs && $ctrl.hub.application_deadline">
+      <div class="company-info-title">Application Deadline</div>
+      <div class="company-info-value">{{$ctrl.hub.programs}} - {{$ctrl.hub.application_deadline | date : "dd/MM/yyyy"}}</div>
     </div>
   </div>
 </div>
 
 <div ng-show="!!$ctrl.hub.alumni.length" class="alumni">
   <div class="container">
-    <div class="row">
-      <h2 class="col-md-2">Alumni</h2>
-      <div class="col-md-10 company-list">
-        <div ng-repeat="company in $ctrl.hub.alumni">
-          <p>{{company}}</p>
-        </div>
+    <div class="block block-bordered-lg" style="padding:40px 0;">
+      <div class="container text-center app-translate-15" data-transition="entrance" style="transition: transform 1200ms cubic-bezier(0.2, 0.7, 0.5, 1); transform: none;">
+        <blockquote class="pull-quote">
+          <cite style="margin-top:0;">Alumni</cite>
+          <p style="margin-top:0px;font-size:26px;color:#e92a8b">
+            {{$ctrl.hub.name}} Alumni
+          </p>
+        </blockquote>
       </div>
+    </div>
+
+    <div class="row m-b-md">
+      <div class="col-md-3 col-sm-6 result-item" ng-repeat="entity in $ctrl.hub.alumniCompanies">
+        <a ui-sref="search.companyProfile({id: entity.id})" class="no-decoration">
+        <div class="panel panel-default" style="border-bottom: 5px solid #e92a8b;">
+          <div class="panel-body result-item-panel">
+            <img ng-src="{{entity.logo}}" class="img-responsive" style="margin: 10px auto;">
+            <h2 class="text-left" style="margin-bottom:0;margin-top:30px;font-size:22px;font-weight:300;">{{entity.name}}</h2>
+            <p class="text-left" style="font-size:16px;font-weight:300;margin-bottom:0;color:#999999;">
+              {{entity.short_description | characters:140 }}
+            </p>
+          </div>
+        </div>
+        </a>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div ng-show="$ctrl.hub.lat && $ctrl.hub.lng" class="portfolio">
+  <div class="container">
+    <div class="block block-bordered-lg" style="padding:40px 0;">
+      <div class="container text-center app-translate-15" data-transition="entrance" style="transition: transform 1200ms cubic-bezier(0.2, 0.7, 0.5, 1); transform: none;">
+        <blockquote class="pull-quote">
+          <cite style="margin-top:0;">Locations</cite>
+          <p style="margin-top:0px;font-size:26px;color:#e92a8b">
+            Map View
+          </p>
+        </blockquote>
+      </div>
+    </div>
+    <div class="m-b-lg">
+      <ng-map zoom-to-include-markers="auto" maximum-zoom="16">
+        <marker id='ol{{$ctrl.hub.id}}'
+                position="[{{$ctrl.hub.lat}}, {{$ctrl.hub.lng}}]" />
+      </ng-map>
     </div>
   </div>
 </div>

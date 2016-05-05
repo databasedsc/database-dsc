@@ -28,10 +28,18 @@ class Hub < ApplicationRecord
 
   APPLICATION_DEADLINES_DATE_RANGES = {
     'This Month' => DateTime.now..DateTime.now.end_of_month,
-    'Next Month' => DateTime.now..DateTime.now.next_month.end_of_month,
-    'Next Three Months' => DateTime.now..3.months.from_now,
-    'Over Three Months' => DateTime.now..5.years.from_now
+    'Next Month' => DateTime.now.next_month.beginning_of_month..DateTime.now.next_month.end_of_month,
+    'Next 3 Months' => DateTime.now.next_month.beginning_of_month..(DateTime.now.next_month.beginning_of_month + 3.months),
+    'Over 3 Months' => 3.months.from_now..5.years.from_now
   }
+
+  pg_search_scope :search_by_tag,
+    against: {
+      tags: 'A',
+    },
+    using: {
+      tsearch: { any_word: true }
+    }
 
   pg_search_scope :search,
     against: {
@@ -52,4 +60,5 @@ class Hub < ApplicationRecord
     }
 
   scope :application_deadline, -> (range_as_text) { where(application_deadline: APPLICATION_DEADLINES_DATE_RANGES[range_as_text]) }
+  scope :funding_provided, -> (funding_provided) { where(funding_provided: funding_provided) }
 end

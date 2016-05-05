@@ -25,7 +25,7 @@ describe('MultinationalProfile', function() {
     });
 
     it('should display the tagline', function() {
-      expect(page.overview.getText()).toContain('Microsoft, a software corporation, develops licensed and support products and services ranging from personal use to enterprise application.');
+      expect(page.overview.getText()).toContain('Microsoft, a software corporation, develops licensed and support products and services ranging from personal use to enterprise application.'.toUpperCase());
     });
 
     it('should display the description', function() {
@@ -37,7 +37,7 @@ describe('MultinationalProfile', function() {
     it('should display HQ', function() {
       expect(page.details.getText()).toContain('Redmond, WA');
     });
-    it('should display EMEA HQ in Ireland', function() {
+    it('should display European HQ in Ireland', function() {
       expect(page.details.getText()).toContain('Yes');
     });
     it('should display Irish Office Location', function() {
@@ -75,4 +75,3 @@ describe('MultinationalProfile', function() {
   });
 
 });
-

@@ -6,7 +6,7 @@
       $scope,
       resultsDeferred;
 
-    beforeEach(module('companyProfile'));
+    beforeEach(module('companyProfile', 'ngMap'));
 
     beforeEach(inject(function($componentController, $rootScope,  $stateParams, $q, getCompanyService) {
       $scope = $rootScope.$new();
@@ -33,15 +33,15 @@
           "headquarters": "Dublin",
           "formerly_known_as": "",
           "founders": "Viliam Holub, Trevor Parsons",
-          "categories": "Business Analytics, Application Performance Monitoring, Big Data Analytics",
+          "tags": "Business Analytics, Application Performance Monitoring, Big Data Analytics",
           "investors": "NDRC, Seed Polaris Partners - Seed, Series A; Floodgate - Seed, Series A; Frontline Ventures - Series A; RRE Ventures - Series A",
           "office_locations": "26-28 Lomard Street, Dublin 2, Dublin; 34 Farnsworth Street, Floor 4, Boston, MA 02110, USA",
           "incubator": "NDRC",
           "funding_stage": "Acquired",
           "employees": 40,
           "funding_amount": 18000000,
-          "product_stage": "Complete",
-          "geo_markets": "G",
+          "product_stage": "Live",
+          "target_markets": "G",
           "business_model": "B2B",
           "company_stage": "Acquired",
           "operational_status": "Active"

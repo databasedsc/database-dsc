@@ -25,7 +25,7 @@ describe('InvestorProfile', function() {
     });
 
     it('should display the tagline', function() {
-      expect(page.overview.getText()).toContain('We are a pioneering early-stage venture capital firm, believing in ideas and investing in passion.');
+      expect(page.overview.getText()).toContain('We are a pioneering early-stage venture capital firm, believing in ideas and investing in passion.'.toUpperCase());
     });
 
     it('should display the description', function() {
@@ -78,10 +78,6 @@ describe('InvestorProfile', function() {
       expect(page.details.getText()).toContain('Global');
     });
 
-    it('should display Office locations', function() {
-      expect(page.details.getText()).toContain('26-28 Lombard Street East, First Floor, Dublin 2');
-    });
-
     it('should display Contact', function() {
       expect(page.details.getText()).toContain('info@frontline.vc');
     });
@@ -103,16 +99,6 @@ describe('InvestorProfile', function() {
     it('should display Co-Investors', function() {
       expect(page.details.getText()).toContain('Polaris Partners');
     });
-
-    xit('should display Board Members', function() {
-      //TODO: No data
-      expect(page.details.getText()).toContain('');
-    });
-
-    xit('should display Similar Investors', function() {
-      //TODO: No data
-      expect(page.details.getText()).toContain('');
-    });
   });
 
   describe('Portfolio', function() {
@@ -122,4 +108,3 @@ describe('InvestorProfile', function() {
   });
 
 });
-
