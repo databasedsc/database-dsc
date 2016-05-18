@@ -38,5 +38,7 @@ Rails.application.routes.draw do
       end
       resources :tags, only: [:index]
     end
+
+    resources :users, only: [:create]
   end
 end

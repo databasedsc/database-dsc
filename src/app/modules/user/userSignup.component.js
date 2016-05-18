@@ -10,7 +10,7 @@
       this.signUpService = signUpService;
       var controller = this;
 
-      this.userInfo = {};
+      this.userInfo = { user: {} };
 
       this.signUp = function() {
         signUpService.authenticate(this.userInfo).then(function(response) {
