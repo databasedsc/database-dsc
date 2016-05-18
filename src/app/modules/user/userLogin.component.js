@@ -3,7 +3,7 @@
   angular
     .module('user')
     .component('userLogin', {
-      templateUrl: 'app/modules/user/login/UserLogin.html',
+      templateUrl: 'app/modules/user/userLogin.html',
       controller: 'UserLoginController'
     })
     .controller('UserLoginController', function(store, $state, loginService) {

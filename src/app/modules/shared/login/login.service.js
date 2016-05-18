@@ -2,7 +2,7 @@
   "use strict";
 
   angular
-    .module('login', [])
+    .module('login')
     .service('loginService', function($http, $httpParamSerializer, serverUrl){
 
       this.authenticate = function(credentials, userType) {

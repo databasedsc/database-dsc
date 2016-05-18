@@ -5,12 +5,16 @@
     .module('dscFe')
     .config(function routerConfig($stateProvider, $urlRouterProvider) {
       $stateProvider
+        .state('userLogin', {
+          url: '/users/login',
+          template: '<div class="container"><user-login></user-login></div>'
+        })
+        .state('userSignUp', {
+          url: '/users/signup',
+          template: '<div class="container"><user-signup></user-signup></div>'
+        })
         .state('user', {
           template: '<user></user>'
-        })
-        .state('user.login', {
-          url: '/user/login',
-          template: '<div class="container"><user-login></user-login></div>'
         })
         .state('user.profile', {
           url: '/user',
@@ -19,8 +23,8 @@
         .state('admin', {
           template: '<admin></admin>'
         })
-        .state('admin.login', {
-          url: '/admin/login',
+        .state('adminLogin', {
+          url: '/admins/login',
           template: '<div class="container"><admin-login></admin-login></div>'
         })
         .state('admin.dashboard', {

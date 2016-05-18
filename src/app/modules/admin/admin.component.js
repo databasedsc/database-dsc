@@ -12,7 +12,7 @@
 
       this.logout = function() {
         store.remove('jwt');
-        $state.go('admin.login');
+        $state.go('adminLogin');
       };
 
       if (!this.jwt || jwtHelper.isTokenExpired(this.jwt)) {

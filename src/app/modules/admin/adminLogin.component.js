@@ -3,7 +3,7 @@
   angular
     .module('admin')
     .component('adminLogin', {
-      templateUrl: 'app/modules/admin/login/AdminLogin.html',
+      templateUrl: 'app/modules/admin/adminLogin.html',
       controller: 'AdminLoginController'
     })
     .controller('AdminLoginController', function(store, $state, loginService) {

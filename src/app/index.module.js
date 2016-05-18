@@ -19,6 +19,8 @@
       'ngMap',
       'admin',
       'user',
+      'login',
+      'signUp',
       'searchCompanies',
       'searchResults',
       'profile',
