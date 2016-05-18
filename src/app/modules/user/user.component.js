@@ -2,17 +2,17 @@
   "use strict";
 
   angular
-    .module('admin')
-    .component('admin', {
-      templateUrl: 'app/modules/admin/admin.html',
-      controller: 'AdminController'
+    .module('user')
+    .component('user', {
+      templateUrl: 'app/modules/user/user.html',
+      controller: 'UserController'
     })
-    .controller('AdminController', function(store, jwtHelper, $state) {
+    .controller('UserController', function(store, jwtHelper, $state) {
       this.jwt = store.get('jwt');
 
       this.logout = function() {
         store.remove('jwt');
-        $state.go('admin.login');
+        $state.go('user.login');
       };
 
       if (!this.jwt || jwtHelper.isTokenExpired(this.jwt)) {

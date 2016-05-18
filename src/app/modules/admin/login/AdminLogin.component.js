@@ -1,19 +1,19 @@
 (function() {
   "use strict";
   angular
-    .module('login')
-    .component('login', {
-      templateUrl: 'app/modules/login/login.html',
-      controller: 'LoginController'
+    .module('admin')
+    .component('adminLogin', {
+      templateUrl: 'app/modules/admin/login/AdminLogin.html',
+      controller: 'AdminLoginController'
     })
-    .controller('LoginController', function(store, $state, loginService) {
+    .controller('AdminLoginController', function(store, $state, loginService) {
       this.loginService = loginService;
       var controller = this;
 
       this.userCredentials = {auth: {} };
 
       this.login = function() {
-        loginService.authenticate(this.userCredentials).then(function(response) {
+        loginService.authenticate(this.userCredentials, 'admin').then(function(response) {
           store.set('jwt', response.jwt);
           $state.go('admin.dashboard');
         }).catch(function () {

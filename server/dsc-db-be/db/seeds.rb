@@ -12,8 +12,8 @@ unless Rails.env.production?
   Investor.delete_all
   Hub.delete_all
 
-  User.create(
-    email: 'test@test.com',
+  Admin.create(
+    email: 'admin@test.com',
     password: '12345678'
   )
 

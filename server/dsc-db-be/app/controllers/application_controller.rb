@@ -1,4 +1,4 @@
 class ApplicationController < ActionController::API
   include ActionController::MimeResponds
-  include Knock::Authenticable
+  include Knock::Authenticatable
 end
