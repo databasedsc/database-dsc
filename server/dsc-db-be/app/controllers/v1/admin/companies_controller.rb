@@ -1,6 +1,8 @@
 module V1
   module Admin
     class CompaniesController < ApplicationController
+      before_action :authenticate
+      before_action :is_user_admin
 
       def create
         company = Company.create(company_params)
@@ -32,18 +34,23 @@ module V1
 
       def update
         company.update(company_params)
-
         render json: company
       end
 
       def destroy
         company.destroy
-
-        render status: 204
+        render json: :nothing, status: 204
       end
 
       def restore
         Company.restore(params[:id])
+      end
+
+      def is_user_admin
+        if current_user.user_type != "admin"
+          render json: :nothing, status: 401
+          return
+        end
       end
 
       private

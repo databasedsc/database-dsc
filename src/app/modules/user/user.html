@@ -18,6 +18,26 @@
       <div class="sidebar-nav navbar-collapse">
         <ul class="nav" id="side-menu">
           <li>
+            <a ui-sref="admin.dashboard">
+              <i class="fa fa-user fa-fw"></i> Profile
+            </a>
+          </li>
+          <li>
+            <a ui-sref="admin.companies.index">
+              <i class="fa fa-coffee fa-fw"></i> Companies
+            </a>
+          </li>
+          <li>
+            <a ui-sref="admin.multinationals.index">
+              <i class="fa fa-building fa-fw"></i> Multinationals
+            </a>
+          </li>
+          <li>
+            <a ui-sref="admin.investors.index">
+              <i class="fa fa-money fa-fw"></i> Investors
+            </a>
+          </li>
+          <li>
             <a id="logout" href="" ng-click="$ctrl.logout()">
               <i class="fa fa-sign-out fa-fw"></i> Logout!
             </a>

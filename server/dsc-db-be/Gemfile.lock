@@ -6,16 +6,6 @@ GIT
     paranoia (2.2.0.alpha)
       activerecord (>= 4.0, < 5.1)
 
-GIT
-  remote: https://github.com/nsarno/knock.git
-  revision: c9d84df63fae6579b7925113cb2b54c00b988c06
-  branch: v2
-  specs:
-    knock (1.3.0)
-      bcrypt (~> 3.1)
-      jwt (~> 1.5)
-      rails (~> 4.2)
-
 GEM
   remote: https://rubygems.org/
   specs:
@@ -38,6 +28,10 @@ GEM
       erubis (~> 2.7.0)
       rails-dom-testing (~> 1.0, >= 1.0.5)
       rails-html-sanitizer (~> 1.0, >= 1.0.2)
+    active_model_serializers (0.10.0)
+      actionpack (>= 4.0)
+      activemodel (>= 4.0)
+      railties (>= 4.0)
     activejob (4.2.6)
       activesupport (= 4.2.6)
       globalid (>= 0.3.0)
@@ -81,6 +75,10 @@ GEM
     kaminari (0.16.3)
       actionpack (>= 3.0.0)
       activesupport (>= 3.0.0)
+    knock (1.4.2)
+      bcrypt (~> 3.1)
+      jwt (~> 1.5)
+      rails (>= 4.2)
     loofah (2.0.3)
       nokogiri (>= 1.5.9)
     mail (2.6.4)
@@ -166,6 +164,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  active_model_serializers
   annotate
   api-pagination
   bcrypt (~> 3.1.7)
@@ -174,7 +173,7 @@ DEPENDENCIES
   factory_girl_rails
   faker
   kaminari
-  knock!
+  knock
   paranoia!
   pg
   pg_search

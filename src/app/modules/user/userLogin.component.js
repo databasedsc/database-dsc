@@ -13,7 +13,7 @@
       this.userCredentials = {auth: {} };
 
       this.login = function() {
-        loginService.authenticate(this.userCredentials, 'user').then(function(response) {
+        loginService.authenticate(this.userCredentials).then(function(response) {
           store.set('jwt', response.jwt);
           $state.go('user.profile');
         }).catch(function () {

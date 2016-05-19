@@ -3,12 +3,24 @@
 
   angular
     .module('admin')
-    .service('deleteMultinationalService', function(serverUrl, $http) {
+    .service('deleteMultinationalService', function(store, serverUrl, $http) {
+
+      function token() {
+        return store.get('jwt');
+      }
 
       this.delete = function(id){
-        var baseUrl = serverUrl + '/admin/multinationals/' +id;
+        var baseUrl = serverUrl + '/admin/multinationals/' + id;
 
-        return $http.delete(baseUrl);
+        var req = {
+          method: 'DELETE',
+          url: basePath,
+          headers: {
+            'Authorization': 'Bearer ' + token()
+          }
+        }
+
+        return $http(req);
       }
     })
 })();

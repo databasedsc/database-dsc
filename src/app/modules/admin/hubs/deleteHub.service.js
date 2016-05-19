@@ -3,12 +3,24 @@
 
   angular
     .module('admin')
-    .service('deleteHubService', function(serverUrl, $http) {
+    .service('deleteHubService', function(store, serverUrl, $http) {
+
+      function token() {
+        return store.get('jwt');
+      }
 
       this.delete = function(id){
-        var baseUrl = serverUrl + '/admin/hubs/' +id;
+        var basePath = serverUrl + '/admin/hubs/' +id;
 
-        return $http.delete(baseUrl);
+        var req = {
+          method: 'DELETE',
+          url: basePath,
+          headers: {
+            'Authorization': 'Bearer ' + token()
+          }
+        }
+
+        return $http(req);
       }
     })
 })();

@@ -3,12 +3,24 @@
 
   angular
     .module('admin')
-    .service('restoreHubService', function(serverUrl, $http) {
+    .service('restoreHubService', function(store, serverUrl, $http) {
+
+      function token() {
+        return store.get('jwt');
+      }
 
       this.restore = function(id) {
-        var baseUrl = serverUrl + '/admin/hubs/' + id + '/restore';
+        var basePath = serverUrl + '/admin/hubs/' + id + '/restore';
 
-        return $http.put(baseUrl);
+        var req = {
+          method: 'PUT',
+          url: basePath,
+          headers: {
+            'Authorization': 'Bearer ' + token()
+          }
+        }
+
+        return $http(req);
       }
     })
 

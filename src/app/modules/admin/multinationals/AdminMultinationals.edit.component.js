@@ -7,10 +7,15 @@
       templateUrl: 'app/modules/admin/multinationals/multinationals.edit.html',
       controller: 'AdminMultinationalsEditController'
     })
-    .controller('AdminMultinationalsEditController', function(getMultinationalService, updateMultinationalService, $stateParams, Notification, listTagsService) {
+    .controller('AdminMultinationalsEditController', function(adminGetMultinationalService, updateMultinationalService, $stateParams, Notification, listTagsService) {
       var controller = this;
       this.tags = [];
       this.functions = [];
+
+      function logout() {
+        store.remove('jwt');
+        $state.go('adminLogin');
+      }
 
       function loadTags() {
         controller.multinational.tags.forEach(function(tag) {
@@ -57,10 +62,12 @@
         controller.multinational.tags.splice(controller.multinational.tags.indexOf(tag.text), 1);
       };
 
-      getMultinationalService.find($stateParams.id).then(function(multinational) {
+      adminGetMultinationalService.find($stateParams.id).then(function(multinational) {
         controller.multinational = multinational;
         loadFunctions();
         loadTags();
+      }, function() {
+        logout();
       });
 
       this.update = function() {
@@ -69,7 +76,5 @@
           Notification.success("Multinational has been updated successfully.");
         });
       };
-
-
     });
 })();

@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   post 'v1/user_token' => 'user_token#create'
 
   namespace :v1 do
+    mount Knock::Engine => "/knock"
+
     get 'companies', to: 'companies#index'
     get 'companies/:id', to: 'companies#show'
     get 'multinationals', to: 'multinationals#index'
@@ -39,6 +41,6 @@ Rails.application.routes.draw do
       resources :tags, only: [:index]
     end
 
-    resources :users, only: [:create]
+    resources :users, only: [:create, :show, :update]
   end
 end

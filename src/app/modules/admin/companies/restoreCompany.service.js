@@ -3,13 +3,24 @@
 
   angular
     .module('admin')
-    .service('restoreCompanyService', function(serverUrl, $http) {
+    .service('restoreCompanyService', function(store, serverUrl, $http) {
+
+      function token() {
+        return store.get('jwt');
+      }
 
       this.restore = function(id) {
-        var baseUrl = serverUrl + '/admin/companies/' + id + '/restore';
+        var basePath = serverUrl + '/admin/companies/' + id + '/restore';
 
-        return $http.put(baseUrl);
+        var req = {
+          method: 'PUT',
+          url: basePath,
+          headers: {
+            'Authorization': 'Bearer ' + token()
+          }
+        }
+
+        return $http(req);
       }
     })
-
 })();

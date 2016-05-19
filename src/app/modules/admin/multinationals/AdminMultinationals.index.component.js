@@ -13,7 +13,14 @@
       function getMultinationals() {
         listMultinationalsService.getAll().then(function(multinationals) {
           controller.multinationals = multinationals;
+        }, function() {
+          logout();
         });
+      }
+
+      function logout() {
+        store.remove('jwt');
+        $state.go('adminLogin');
       }
 
       getMultinationals();

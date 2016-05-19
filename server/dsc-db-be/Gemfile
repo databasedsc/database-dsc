@@ -11,18 +11,12 @@ gem 'puma'
 gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
-
-# Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
-
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
 gem 'rack-cors'
-
+gem 'active_model_serializers'
 gem 'kaminari'
 gem 'api-pagination'
-
-gem 'knock', :git => "https://github.com/nsarno/knock.git", :branch => "v2"
-
+gem 'knock'
 gem 'paranoia', github: 'rubysherpas/paranoia', branch: 'core'
 
 group :development, :test do

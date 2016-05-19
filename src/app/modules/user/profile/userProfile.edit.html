@@ -1,0 +1,36 @@
+<h2>Update Profile</h2>
+<form name="edit" ng-submit="edit.$valid && $ctrl.update()">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="panel panel-default">
+        <div class="panel-heading">Details</div>
+        <div class="panel-body">
+
+          <div class="form-group">
+            <label for="first_name">First Name</label>
+            <input id="firstName" class="form-control" type="text" ng-model="$ctrl.user.first_name" placeholder="First Name" />
+          </div>
+
+          <div class="form-group">
+            <label for="lastName">Last Name</label>
+            <input id="lastName" class="form-control" type="text" ng-model="$ctrl.user.last_name" placeholder="Last Name" />
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input id="email" class="form-control" type="text" ng-model="$ctrl.user.email" placeholder="Email" />
+          </div>
+
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input id="password" class="form-control" type="password" ng-model="$ctrl.user.password" placeholder="Change Password" />
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <button type="submit" class="btn btn-success">Update</button>
+  </div>
+</form>

@@ -1,6 +1,9 @@
 module V1
   module Admin
     class MultinationalsController < ApplicationController
+      before_action :authenticate
+      before_action :is_user_admin
+
       def create
         multinational = Multinational.create(multinational_params)
 
@@ -26,18 +29,23 @@ module V1
 
       def update
         multinational.update(multinational_params)
-
         render json: multinational
       end
 
       def destroy
         multinational.destroy
-
-        render status: 204
+        render json: :nothing, status: 204
       end
 
       def restore
         Multinational.restore(params[:id])
+      end
+
+      def is_user_admin
+        if current_user.user_type != "admin"
+          render json: :nothing, status: 401
+          return
+        end
       end
 
       private

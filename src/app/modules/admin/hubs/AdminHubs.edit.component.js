@@ -7,7 +7,7 @@
       templateUrl: 'app/modules/admin/hubs/hubs.edit.html',
       controller: 'AdminHubsEditController'
     })
-    .controller('AdminHubsEditController', function(getHubService,
+    .controller('AdminHubsEditController', function(adminGetHubService,
       updateHubService, $stateParams, Notification, listTagsService, listCompaniesService) {
 
       var controller = this;
@@ -18,6 +18,11 @@
       this.appDeadlineDatePicker = {
         opened: false
       };
+
+      function logout() {
+        store.remove('jwt');
+        $state.go('adminLogin');
+      }
 
       this.currentAppDeadlineDate;
 
@@ -118,7 +123,7 @@
         controller.hub.hub_type = controller.hub.hub_type
       }
 
-      getHubService.find($stateParams.id).then(function(hub) {
+      adminGetHubService.find($stateParams.id).then(function(hub) {
         controller.hub = hub;
 
         if (!angular.isArray(controller.hub.contact_urls)) {
@@ -129,6 +134,8 @@
         controller.currentAppDeadlineDate = hub.application_deadline;
         loadTags();
         loadHubTypes();
+      }, function() {
+        logout();
       });
 
       this.update = function() {

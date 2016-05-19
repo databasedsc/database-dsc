@@ -1,19 +1,38 @@
 (function() {
   angular
     .module('admin')
-    .service('listInvestorsService', function(serverUrl, $http) {
+    .service('listInvestorsService', function(store, serverUrl, $http) {
+
+      function token() {
+        return store.get('jwt');
+      }
 
       this.getAll = function() {
         var basePath = serverUrl + '/admin/investors';
 
-        return $http.get(basePath).then(function(responseObject) {
+        var req = {
+          url: basePath,
+          headers: {
+            'Authorization': 'Bearer ' + token()
+          }
+        }
+
+        return $http(req).then(function(responseObject) {
           return responseObject.data;
         })
       };
 
       this.filter = function(query) {
         var basePath = serverUrl + '/admin/investors?filter=' + query;
-        return $http.get(basePath);
+
+        var req = {
+          url: basePath,
+          headers: {
+            'Authorization': 'Bearer ' + token()
+          }
+        }
+
+        return $http(req);
       };
     });
 })();

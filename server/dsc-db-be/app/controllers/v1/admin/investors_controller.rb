@@ -1,6 +1,8 @@
 module V1
   module Admin
     class InvestorsController < ApplicationController
+      before_action :authenticate
+      before_action :is_user_admin
 
       def create
         investor = Investor.create(investor_params)
@@ -36,11 +38,18 @@ module V1
 
       def destroy
         investor.destroy
-        render status: 204
+        render json: :nothing, status: 204
       end
 
       def restore
         Investor.restore(params[:id])
+      end
+
+      def is_user_admin
+        if current_user.user_type != "admin"
+          render json: :nothing, status: 401
+          return
+        end
       end
 
       private

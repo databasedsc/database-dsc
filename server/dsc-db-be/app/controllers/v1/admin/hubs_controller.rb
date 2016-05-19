@@ -1,6 +1,8 @@
 module V1
   module Admin
     class HubsController < ApplicationController
+      before_action :authenticate
+      before_action :is_user_admin
 
       def create
         hub = Hub.create(hub_params)
@@ -31,11 +33,18 @@ module V1
 
       def destroy
         hub.destroy
-        render status: 204
+        render json: :nothing, status: 204
       end
 
       def restore
         Hub.restore(params[:id])
+      end
+
+      def is_user_admin
+        if current_user.user_type != "admin"
+          render json: :nothing, status: 401
+          return
+        end
       end
 
       private

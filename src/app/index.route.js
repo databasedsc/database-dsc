@@ -18,7 +18,7 @@
         })
         .state('user.profile', {
           url: '/user',
-          templateUrl: 'app/modules/user/profile.html'
+          template: '<user-profile-edit></user-profile-edit>'
         })
         .state('admin', {
           template: '<admin></admin>'

@@ -7,12 +7,17 @@
       templateUrl: 'app/modules/admin/investors/investors.edit.html',
       controller: 'AdminInvestorsEditController'
     })
-    .controller('AdminInvestorsEditController', function(getInvestorService,
+    .controller('AdminInvestorsEditController', function(adminGetInvestorService,
       updateInvestorService, $stateParams, Notification, listTagsService, listCompaniesService) {
 
       var controller = this;
       this.tags = [];
       this.fundingTypes = [];
+
+      function logout() {
+        store.remove('jwt');
+        $state.go('adminLogin');
+      }
 
       function loadTags() {
         controller.investor.tags.forEach(function(tag) {
@@ -75,10 +80,12 @@
         controller.investor.office_locations.splice(controller.investor.office_locations.indexOf(location), 1);
       };
 
-      getInvestorService.find($stateParams.id).then(function(investor) {
+      adminGetInvestorService.find($stateParams.id).then(function(investor) {
         controller.investor = investor;
         loadTags();
         loadFundingTypes();
+      }, function() {
+        logout();
       });
 
       this.update = function() {

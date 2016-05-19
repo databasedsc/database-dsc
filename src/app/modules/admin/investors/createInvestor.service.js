@@ -1,12 +1,25 @@
 (function(){
   angular
     .module('admin')
-    .service('createInvestorService', function(serverUrl, $http){
+    .service('createInvestorService', function(store, serverUrl, $http){
+
+      function token() {
+        return store.get('jwt');
+      }
 
       this.create = function(investor) {
         var basePath = serverUrl + '/admin/investors';
 
-        return $http.post(basePath, investor).then(function(responseObject) {
+        var req = {
+          method: 'POST',
+          url: basePath,
+          headers: {
+            'Authorization': 'Bearer ' + token()
+          },
+          data: investor
+        }
+
+        return $http(req).then(function(responseObject) {
           return responseObject;
         })
       };
