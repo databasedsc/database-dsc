@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160518162048) do
+ActiveRecord::Schema.define(version: 20160519132150) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -61,6 +61,7 @@ ActiveRecord::Schema.define(version: 20160518162048) do
     t.string   "acquired"
     t.integer  "revenue"
     t.boolean  "recently_funded",       default: false
+    t.integer  "user_id"
   end
 
   add_index "companies", ["deleted_at"], name: "index_companies_on_deleted_at", using: :btree
@@ -97,6 +98,7 @@ ActiveRecord::Schema.define(version: 20160518162048) do
     t.boolean  "funding_provided"
     t.float    "lat"
     t.float    "lng"
+    t.integer  "user_id"
   end
 
   add_index "hubs", ["alumni"], name: "index_hubs_on_alumni", using: :gin
@@ -138,6 +140,7 @@ ActiveRecord::Schema.define(version: 20160518162048) do
     t.jsonb    "office_locations",      default: {}
     t.string   "deal_structure"
     t.jsonb    "companies_invested_in", default: []
+    t.integer  "user_id"
   end
 
   add_index "investors", ["companies_invested_in"], name: "index_investors_on_companies_invested_in", using: :gin
@@ -174,6 +177,7 @@ ActiveRecord::Schema.define(version: 20160518162048) do
     t.float    "lat"
     t.float    "lng"
     t.boolean  "building_product_in_ireland", default: false
+    t.integer  "user_id"
   end
 
   add_index "multinationals", ["deleted_at"], name: "index_multinationals_on_deleted_at", using: :btree
@@ -202,7 +206,5 @@ ActiveRecord::Schema.define(version: 20160518162048) do
     t.datetime "updated_at",                  null: false
     t.integer  "user_type",       default: 0
   end
-
-  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
 
 end

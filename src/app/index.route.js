@@ -20,6 +20,13 @@
           url: '/user',
           template: '<user-profile-edit></user-profile-edit>'
         })
+        .state('user.companies', {
+          template: '<user-companies ui-view></user-companies>'
+        })
+        .state('user.companies.index', {
+          url: '/user/companies',
+          template: '<user-companies-index></user-companies-index>'
+        })
         .state('admin', {
           template: '<admin></admin>'
         })

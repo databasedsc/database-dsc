@@ -75,6 +75,7 @@ class Company < ApplicationRecord
     }
 
   scope :withIds, -> (company_ids) { where id: company_ids }
+  scope :unclaimed_or_owned_by, -> (user_id) { where "(user_id is null) OR (user_id = #{user_id})" }
   scope :funding_stage, -> (funding_stage) { where funding_stage: funding_stage }
   scope :product_stage, -> (product_stage) { where product_stage: product_stage }
   scope :company_stage, -> (company_stage) { where company_stage: company_stage }
