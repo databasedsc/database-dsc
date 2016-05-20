@@ -7,7 +7,7 @@
       templateUrl: 'app/modules/admin/companies/companies.edit.html',
       controller: 'AdminCompaniesEditController'
     })
-    .controller('AdminCompaniesEditController', function(adminGetCompanyService, updateCompanyService, $stateParams, Notification, listTagsService, listInvestorsService) {
+    .controller('AdminCompaniesEditController', function(store, $state, adminGetCompanyService, updateCompanyService, $stateParams, Notification, listTagsService, listInvestorsService) {
       var controller = this;
       this.tags = [];
       this.target_markets = {};

@@ -7,7 +7,7 @@
       controller: 'AdminInvestorsIndexController',
       templateUrl: 'app/modules/admin/investors/investors.index.html'
     })
-    .controller('AdminInvestorsIndexController', function(listInvestorsService, deleteInvestorService, restoreInvestorService, Notification, exportToCSV) {
+    .controller('AdminInvestorsIndexController', function(store, $state, listInvestorsService, deleteInvestorService, restoreInvestorService, Notification, exportToCSV) {
       this.listInvestorsService = listInvestorsService;
       this.deleteInvestorService = deleteInvestorService;
       this.restoreInvestorService = restoreInvestorService;

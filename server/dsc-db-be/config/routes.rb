@@ -19,6 +19,8 @@ Rails.application.routes.draw do
 
     # Administration Routes
     namespace :admin do
+      resources :user_entity_claims, only: [:index]
+      
       resources :companies, only: [:create, :index, :show, :update, :destroy] do
         member do
           put :restore

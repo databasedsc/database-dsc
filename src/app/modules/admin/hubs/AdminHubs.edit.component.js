@@ -7,7 +7,7 @@
       templateUrl: 'app/modules/admin/hubs/hubs.edit.html',
       controller: 'AdminHubsEditController'
     })
-    .controller('AdminHubsEditController', function(adminGetHubService,
+    .controller('AdminHubsEditController', function(store, $state, adminGetHubService,
       updateHubService, $stateParams, Notification, listTagsService, listCompaniesService) {
 
       var controller = this;

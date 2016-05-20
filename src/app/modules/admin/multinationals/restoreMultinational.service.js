@@ -10,7 +10,7 @@
       }
 
       this.restore = function(id) {
-        var baseUrl = serverUrl + '/admin/multinationals/' + id + '/restore';
+        var basePath = serverUrl + '/admin/multinationals/' + id + '/restore';
 
         var req = {
           method: 'PUT',

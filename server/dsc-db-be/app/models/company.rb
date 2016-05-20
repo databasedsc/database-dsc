@@ -98,8 +98,6 @@ class Company < ApplicationRecord
   end
 
   def as_json(options = { })
-    # just in case someone says as_json(nil) and bypasses
-    # our default...
     super((options || { }).merge({
         :methods => [:claimed_requested_by_current_user]
     }))
@@ -110,7 +108,7 @@ class Company < ApplicationRecord
       user_id: current_user.id,
       entity_id: self.id,
       entity_type: UserEntityClaim.entity_types['company']
-    ).count > 0
+    ).count > 0 if current_user
   end
 
 end

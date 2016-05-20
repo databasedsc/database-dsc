@@ -23,7 +23,6 @@
 
       function getCompanies() {
         listCompaniesService.getAll().then(function(companies) {
-          console.log(companies);
           controller.companies = companies;
         }, function() {
           logout();
@@ -59,7 +58,6 @@
             Notification.success('Claim has been requested sucessfully. The Admin team will review this shortly!');
           });
         })
-        // To be done — Fire request to claim company.
       };
 
       this.export = function() {

@@ -46,6 +46,13 @@
           url: '/admin',
           templateUrl: 'app/modules/admin/dashboard.html'
         })
+        .state('admin.claims', {
+          template: '<admin-claims ui-view></admin-claims>'
+        })
+        .state('admin.claims.index', {
+          url: '/admin/claims',
+          template: '<admin-claims-index></admin-claims-index>'
+        })
         .state('admin.companies', {
           template: '<admin-companies ui-view></admin-companies>'
         })
