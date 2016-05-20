@@ -43,6 +43,12 @@
         });
       };
 
+      this.claimCompany = function(e, id) {
+        var element = angular.element(e.target)
+        element.text('Requested');
+        element.attr('disabled', true);
+      };
+
       this.export = function() {
         exportToCSV.export('companies').then(function(data) {
           var anchor = angular.element('<a/>');

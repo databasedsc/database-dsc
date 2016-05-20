@@ -46,10 +46,8 @@
           </span>
         </div>
         <div class="" ng-if="!company.user_id">
-          <a href="#" class="btn btn-xs btn-block btn-default">Claim</a>
+          <a ng-click="$ctrl.claimCompany($event, company.id)" class="btn btn-xs btn-block btn-default">Claim</a>
         </div>
-
-
       </td>
     </tr>
     </tbody>
