@@ -7,11 +7,11 @@
       controller: 'UserCompaniesIndexController',
       templateUrl: 'app/modules/user/companies/companies.index.html'
     })
-    .controller('UserCompaniesIndexController', function(store, $state, $confirm, jwtHelper, listCompaniesService, userClaimCompanyService, deleteCompanyService, restoreCompanyService, Notification, exportToCSV) {
+    .controller('UserCompaniesIndexController', function(store, $state, $confirm, jwtHelper, listCompaniesService, userClaimEntityService, deleteCompanyService, restoreCompanyService, Notification, exportToCSV) {
       this.listCompaniesService = listCompaniesService;
       this.deleteCompanyService = deleteCompanyService;
       this.restoreCompanyService = restoreCompanyService;
-      this.userClaimCompanyService = userClaimCompanyService;
+      this.userClaimEntityService = userClaimEntityService;
       var controller = this;
 
       getCompanies();
@@ -44,17 +44,16 @@
       };
 
       this.claimCompany = function(e, id) {
-        var element = angular.element(e.target)
-        element.text('Requested');
-        element.attr('disabled', true);
-
         var requestedClaim = {
           entity_id: id,
           entity_type: 'company'
         }
 
         $confirm({text: "Are you sure you want request ownership of this company?"}).then(function() {
-          controller.userClaimCompanyService.create(requestedClaim).then(function() {
+          controller.userClaimEntityService.create(requestedClaim).then(function() {
+            var element = angular.element(e.target)
+            element.text('Requested');
+            element.attr('disabled', true);
             Notification.success('Claim has been requested sucessfully. The Admin team will review this shortly!');
           });
         })

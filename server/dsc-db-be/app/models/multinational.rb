@@ -55,10 +55,11 @@ class Multinational < ApplicationRecord
       tsearch: {any_word: true}
     }
 
+  attr_accessor :current_user
+
   scope :emea_hq, -> (emea_hq) { where(emea_hq: emea_hq) }
-
-
   scope :empty_startup_packages, -> { where(startup_packages: '{}') }
+  scope :unclaimed_or_owned_by, -> (user_id) { where "(user_id is null) OR (user_id = #{user_id})" }
   scope :have_startup_packages, -> { where.not(startup_packages: '{}') }
   scope :building_product_in_ireland, -> (building_product_in_ireland) {
     where(building_product_in_ireland: building_product_in_ireland)

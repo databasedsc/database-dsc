@@ -1,22 +1,22 @@
 (function(){
   angular
     .module('user')
-    .service('userClaimCompanyService', function(store, serverUrl, $http){
+    .service('adminUpdateClaim', function(store, serverUrl, $http){
 
       function token() {
         return store.get('jwt');
       }
 
-      this.create = function(claim) {
-        var basePath = serverUrl + '/user/user_entity_claims';
+      this.update = function(claimStatus) {
+        var basePath = serverUrl + '/admin/user_entity_claims/' + claimStatus.claim_id;
 
         var req = {
-          method: 'POST',
+          method: 'PUT',
           url: basePath,
           headers: {
             'Authorization': 'Bearer ' + token()
           },
-          data: claim
+          data: claimStatus
         }
 
         return $http(req).then(function(responseObject) {

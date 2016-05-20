@@ -35,6 +35,13 @@
           url: '/user/companies/new',
           template: '<user-companies-new></user-companies-new>'
         })
+        .state('user.multinationals', {
+          template: '<user-multinationals ui-view></user-multinationals>'
+        })
+        .state('user.multinationals.index', {
+          url: '/user/multinationals',
+          template: '<user-multinationals-index></user-multinationals-index>'
+        })
         .state('admin', {
           template: '<admin></admin>'
         })

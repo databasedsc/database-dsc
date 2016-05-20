@@ -29,7 +29,8 @@
         {{claim.created_at | date:'medium'}}
       </td>
       <td>
-        <a href="#" class="btn btn-xs btn-default">Approve</a>
+        <a ng-click="$ctrl.approveClaim($event, claim.id)" class="btn btn-xs btn-success">Approve</a>
+        <a ng-click="$ctrl.denyClaim($event, claim.id)" class="btn btn-xs btn-danger">Deny</a>
       </td>
     </tr>
     </tbody>
