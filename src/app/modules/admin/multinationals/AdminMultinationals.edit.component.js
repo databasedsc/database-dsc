@@ -7,7 +7,7 @@
       templateUrl: 'app/modules/admin/multinationals/multinationals.edit.html',
       controller: 'AdminMultinationalsEditController'
     })
-    .controller('AdminMultinationalsEditController', function(adminGetMultinationalService, updateMultinationalService, $stateParams, Notification, listTagsService) {
+    .controller('AdminMultinationalsEditController', function(store, $state, adminGetMultinationalService, updateMultinationalService, $stateParams, Notification, listTagsService) {
       var controller = this;
       this.tags = [];
       this.functions = [];

@@ -7,7 +7,7 @@
       templateUrl: 'app/modules/admin/multinationals/multinationals.index.html',
       controller: 'AdminMultinationalsIndexController'
     })
-    .controller('AdminMultinationalsIndexController', function(listMultinationalsService, restoreMultinationalService, deleteMultinationalService, Notification, exportToCSV) {
+    .controller('AdminMultinationalsIndexController', function(store, $state, listMultinationalsService, restoreMultinationalService, deleteMultinationalService, Notification, exportToCSV) {
       var controller = this;
 
       function getMultinationals() {

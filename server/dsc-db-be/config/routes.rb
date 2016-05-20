@@ -2,10 +2,9 @@ Rails.application.routes.draw do
 
   root to: 'health#index'
 
-  post 'v1//admin_token' => 'admin_token#create'
-  post 'v1/user_token' => 'user_token#create'
-
   namespace :v1 do
+    post '/auth/:provider',      to: 'auth#authenticate'
+
     mount Knock::Engine => "/knock"
 
     get 'companies', to: 'companies#index'

@@ -7,7 +7,7 @@
       templateUrl: 'app/modules/admin/investors/investors.edit.html',
       controller: 'AdminInvestorsEditController'
     })
-    .controller('AdminInvestorsEditController', function(adminGetInvestorService,
+    .controller('AdminInvestorsEditController', function(store, $state, adminGetInvestorService,
       updateInvestorService, $stateParams, Notification, listTagsService, listCompaniesService) {
 
       var controller = this;

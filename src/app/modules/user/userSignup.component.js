@@ -13,7 +13,7 @@
       this.userInfo = { user: {} };
 
       this.signUp = function() {
-        signUpService.authenticate(this.userInfo).then(function(response) {
+        signUpService.signUp(this.userInfo, false).then(function(response) {
           store.set('jwt', response.jwt);
           $state.go('user.profile');
         }).catch(function () {

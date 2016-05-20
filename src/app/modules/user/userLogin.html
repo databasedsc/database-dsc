@@ -11,6 +11,10 @@
         <input ng-model="$ctrl.userCredentials.auth.password" type="password" class="form-control" id="inputPassword" placeholder="Password">
       </div>
       <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+      <a class="btn btn-block btn-social btn-lg btn-linkedin" style="text-align:center;padding-left:30px;" ng-click="$ctrl.authenticate('linkedin')">
+        <i class="fa fa-linkedin"></i>
+        Sign in with LinkedIn
+      </a>
     </form>
   </div>
   <div class="">

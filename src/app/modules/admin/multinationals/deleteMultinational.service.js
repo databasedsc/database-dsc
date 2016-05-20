@@ -10,7 +10,7 @@
       }
 
       this.delete = function(id){
-        var baseUrl = serverUrl + '/admin/multinationals/' + id;
+        var basePath = serverUrl + '/admin/multinationals/' + id;
 
         var req = {
           method: 'DELETE',

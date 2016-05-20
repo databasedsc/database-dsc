@@ -5,3 +5,5 @@ coverage/
 .idea/
 .tmp/
 dist/
+
+server/dsc-db-be/config/environment_variables.yml
