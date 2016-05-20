@@ -31,6 +31,10 @@
           url: '/user/companies/:id/edit',
           template: '<user-companies-edit></user-companies-edit>'
         })
+        .state('user.companies.new', {
+          url: '/user/companies/new',
+          template: '<user-companies-new></user-companies-new>'
+        })
         .state('admin', {
           template: '<admin></admin>'
         })

@@ -1,0 +1,8 @@
+<h1>Create Company</h1>
+<form name="create" ng-submit="create.$valid && $ctrl.create()">
+  <div ng-include="'app/modules/user/companies/companies.form.html'"></div>
+  <div class="form-group">
+    <button type="submit" class="btn btn-success">Create</button>
+    <button type="button" class="btn btn-default">Reset Form</button>
+  </div>
+</form>
