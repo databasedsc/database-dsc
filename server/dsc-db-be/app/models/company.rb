@@ -85,6 +85,8 @@ class Company < ApplicationRecord
   scope :range_scope, -> (column, range) { where("#{column}" => range) }
   scope :recently_funded, -> (recently_funded) { where recently_funded: recently_funded }
 
+  attr_accessor :current_user
+
   def self.select_numeric_scope(column, range_as_string)
     if range_as_string == '>500' || range_as_string == '>100m'
       limit = range_as_string.parse_units.gsub('>', '').to_i
@@ -93,6 +95,22 @@ class Company < ApplicationRecord
       lower, upper = range_as_string.parse_units.split('-').map(&:to_i)
       self.range_scope(column, lower..upper)
     end
+  end
+
+  def as_json(options = { })
+    # just in case someone says as_json(nil) and bypasses
+    # our default...
+    super((options || { }).merge({
+        :methods => [:claimed_requested_by_current_user]
+    }))
+  end
+
+  def claimed_requested_by_current_user
+    UserEntityClaim.where(
+      user_id: current_user.id,
+      entity_id: self.id,
+      entity_type: UserEntityClaim.entity_types['company']
+    ).count > 0
   end
 
 end

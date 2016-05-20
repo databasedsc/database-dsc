@@ -10,6 +10,8 @@ module V1
           companies = Company.unclaimed_or_owned_by(current_user.id).with_deleted.order(:id)
         end
 
+        companies.each {|company| company.current_user = current_user} if current_user
+
         respond_to do |format|
           format.html {
             render json: companies

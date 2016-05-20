@@ -47,6 +47,7 @@ Rails.application.routes.draw do
     end
 
     namespace :user do
+      resources :user_entity_claims, only: [:create]
       resources :companies, only: [:create, :index, :show, :update, :destroy] do
         member do
           put :restore
