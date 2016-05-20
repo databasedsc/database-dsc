@@ -60,6 +60,11 @@ Rails.application.routes.draw do
           put :restore
         end
       end
+      resources :investors, only: [:create, :index, :show, :update, :destroy] do
+        member do
+          put :restore
+        end
+      end
     end
   end
 end
