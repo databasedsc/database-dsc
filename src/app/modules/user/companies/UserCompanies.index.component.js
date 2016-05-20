@@ -22,6 +22,7 @@
 
       function getCompanies() {
         listCompaniesService.getAll().then(function(companies) {
+          console.log(companies);
           controller.companies = companies;
         }, function() {
           logout();

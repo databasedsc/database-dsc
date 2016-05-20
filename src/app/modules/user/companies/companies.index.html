@@ -31,19 +31,24 @@
           <span ng-show="company.deleted_at">{{company.name}}</span>
         </strong>
         <p style="color:#acacac"><i>{{company.short_description}}</i> <a ng-href="{{company.website}}" ng-show="company.website"><i class="fa fa-link"></i></a></p>
-
       </td>
       <td class="base">{{company.headquarters}}</td>
       <td class="actions">
         <!--<button class="btn"><i class="fa fa-2x fa-edit"></button>-->
         <!--<button class="btn btn-danger"><i class="fa fa-2x fa-trash"></button>-->
-        <span ng-hide="company.deleted_at">
-          <a ui-sref="admin.companies.edit({id: company.id})"><i class="fa fa-2x fa-edit"></i></a>
-          <a href="" ng-click="$ctrl.deleteCompany(company.id)"><i class="fa fa-2x fa-trash"></i></a>
-        </span>
-        <span ng-show="company.deleted_at">
-          <a href="" ng-click="$ctrl.restoreCompany(company.id)"><i class="fa fa-2x fa-refresh"></i></a>
-        </span>
+        <div class="" ng-if="company.user_id">
+          <span ng-hide="company.deleted_at">
+            <a ui-sref="user.companies.edit({id: company.id})"><i class="fa fa-2x fa-edit"></i></a>
+            <a href="" ng-click="$ctrl.deleteCompany(company.id)"><i class="fa fa-2x fa-trash"></i></a>
+          </span>
+          <span ng-show="company.deleted_at">
+            <a href="" ng-click="$ctrl.restoreCompany(company.id)"><i class="fa fa-2x fa-refresh"></i></a>
+          </span>
+        </div>
+        <div class="" ng-if="!company.user_id">
+          <a href="#" class="btn btn-xs btn-block btn-default">Claim</a>
+        </div>
+
 
       </td>
     </tr>
