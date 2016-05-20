@@ -46,7 +46,7 @@
       this.claimHub = function(e, id) {
         var requestedClaim = {
           entity_id: id,
-          entity_type: 'investor'
+          entity_type: 'hub'
         }
 
         $confirm({text: "Are you sure you want request ownership of this hub?"}).then(function() {
