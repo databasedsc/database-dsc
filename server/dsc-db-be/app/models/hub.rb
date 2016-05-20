@@ -61,4 +61,7 @@ class Hub < ApplicationRecord
 
   scope :application_deadline, -> (range_as_text) { where(application_deadline: APPLICATION_DEADLINES_DATE_RANGES[range_as_text]) }
   scope :funding_provided, -> (funding_provided) { where(funding_provided: funding_provided) }
+  scope :unclaimed_or_owned_by, -> (user_id) { where "(user_id is null) OR (user_id = #{user_id})" }
+
+  attr_accessor :current_user
 end

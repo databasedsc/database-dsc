@@ -47,7 +47,7 @@
         </div>
 
         <div class="" ng-if="!investor.user_id">
-          <a ng-if="!investor.claimed_requested_by_current_user" ng-click="$ctrl.claimInvestor($event, multinational.id)" class="btn btn-xs btn-block btn-default">Claim</a>
+          <a ng-if="!investor.claimed_requested_by_current_user" ng-click="$ctrl.claimInvestor($event, investor.id)" class="btn btn-xs btn-block btn-default">Claim</a>
           <a ng-if="investor.claimed_requested_by_current_user" class="btn btn-xs btn-block btn-default" disabled>Requested</a>
         </div>
 

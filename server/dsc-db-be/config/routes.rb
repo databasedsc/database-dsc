@@ -50,6 +50,7 @@ Rails.application.routes.draw do
 
     namespace :user do
       resources :user_entity_claims, only: [:create, :update]
+      
       resources :companies, only: [:create, :index, :show, :update, :destroy] do
         member do
           put :restore
@@ -61,6 +62,11 @@ Rails.application.routes.draw do
         end
       end
       resources :investors, only: [:create, :index, :show, :update, :destroy] do
+        member do
+          put :restore
+        end
+      end
+      resources :hubs, only: [:create, :index, :show, :update, :destroy] do
         member do
           put :restore
         end

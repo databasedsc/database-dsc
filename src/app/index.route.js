@@ -49,6 +49,13 @@
           url: '/user/investors',
           template: '<user-investors-index></user-investors-index>'
         })
+        .state('user.hubs', {
+          template: '<user-hubs ui-view></user-hubs>'
+        })
+        .state('user.hubs.index', {
+          url: '/admin/hubs',
+          template: '<user-hubs-index></user-hubs-index>'
+        })
         .state('admin', {
           template: '<admin></admin>'
         })
