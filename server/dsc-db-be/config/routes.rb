@@ -19,8 +19,8 @@ Rails.application.routes.draw do
 
     # Administration Routes
     namespace :admin do
-      resources :user_entity_claims, only: [:index]
-      
+      resources :user_entity_claims, only: [:index, :update]
+
       resources :companies, only: [:create, :index, :show, :update, :destroy] do
         member do
           put :restore
@@ -49,7 +49,7 @@ Rails.application.routes.draw do
     end
 
     namespace :user do
-      resources :user_entity_claims, only: [:create]
+      resources :user_entity_claims, only: [:create, :update]
       resources :companies, only: [:create, :index, :show, :update, :destroy] do
         member do
           put :restore
