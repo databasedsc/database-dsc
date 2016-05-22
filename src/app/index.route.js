@@ -72,6 +72,14 @@
           url: '/admin/hubs',
           template: '<user-hubs-index></user-hubs-index>'
         })
+        .state('user.hubs.new', {
+          url: '/user/hubs/new',
+          template: '<user-hubs-new></user-hubs-new>'
+        })
+        .state('user.hubs.edit', {
+          url: '/user/hubs/:id/edit',
+          template: '<user-hubs-edit></user-hubs-edit>'
+        })
         .state('admin', {
           template: '<admin></admin>'
         })

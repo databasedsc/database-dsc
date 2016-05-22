@@ -56,7 +56,7 @@ module V1
       private
 
       def investor
-        Investor.find(params[:id])
+        Investor.where(user_id: current_user.id, id: params[:id]).first
       end
 
       def investor_params

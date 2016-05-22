@@ -1,0 +1,202 @@
+<admin-overview entity="$ctrl.hub"></admin-overview>
+
+<div class="panel panel-default">
+  <div class="panel-heading">Details</div>
+  <div class="panel-body">
+    <div class="row">
+      <div class="col-md-6">
+
+        <div class="form-group">
+          <label for="address">Address:</label>
+          <input ng-model="$ctrl.hub.address" id="address" class="form-control" type="text">
+        </div>
+
+        <div class="form-group">
+          <label for="address">Latitude:</label>
+          <input ng-model="$ctrl.hub.lat" id="address" class="form-control" type="text">
+        </div>
+
+        <div class="form-group">
+          <label for="address">Longitude:</label>
+          <input ng-model="$ctrl.hub.lng" id="address" class="form-control" type="text">
+        </div>
+
+        <div class="form-group">
+          <label for="contact">Contact:</label>
+          <input ng-model="$ctrl.hub.contact" id="contact" class="form-control" type="text">
+        </div>
+
+        <div class="form-group">
+          <label for="contact">Funding Provided:</label>
+          <br>
+          <input type="radio" ng-model="$ctrl.hub.funding_provided" ng-value="true"> Yes
+          &nbsp;
+          <input type="radio" ng-model="$ctrl.hub.funding_provided" ng-value="false"> No
+        </div>
+
+        <div class="form-group">
+          <label>Hub Type</label>
+          <div class="checkbox">
+            <label>
+              <input ng-model="$ctrl.hub_type.I" type="checkbox" value="I">Incubator</label>
+            <br/>
+          </div>
+          <div class="checkbox">
+            <label>
+              <input ng-model="$ctrl.hub_type.A" type="checkbox" value="A">Accelerator</label>
+            <br/>
+          </div>
+          <div class="checkbox">
+            <label>
+              <input ng-model="$ctrl.hub_type.CW" type="checkbox" value="CW">Co-working</label>
+            <br/>
+          </div>
+          <div class="checkbox">
+            <label>
+              <input ng-model="$ctrl.hub_type.E" type="checkbox" value="E">Education</label>
+            <br/>
+          </div>
+          <div class="checkbox">
+            <label>
+              <input ng-model="$ctrl.hub_type.G" type="checkbox" value="G">Government</label>
+            <br/>
+          </div>
+          <div class="checkbox">
+            <label>
+              <input ng-model="$ctrl.hub_type.C" type="checkbox" value="C">Community</label>
+            <br/>
+          </div>
+        </div>
+
+      </div>
+      <div class="col-md-6">
+
+        <div class="form-group">
+          <label for="founded">Founded:</label>
+          <input ng-model="$ctrl.hub.founded" id="founded" class="form-control" type="text">
+        </div>
+
+        <div class="form-group">
+          <label for="contact_detail">Contact Detail:</label>
+          <input ng-model="$ctrl.hub.contact_detail" id="contact_detail" class="form-control" type="text">
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="panel panel-default">
+  <div class="panel-heading">Application Details</div>
+  <div class="panel-body">
+    <div class="row">
+      <div class="col-md-6">
+
+        <div class="form-group">
+          <label for="application-deadline-name">Application Title:</label>
+          <input ng-model="$ctrl.hub.programs" id="application-deadline-name" class="form-control" type="text">
+        </div>
+
+      </div>
+      <div class="col-md-6">
+
+        <div class="form-group col-xs-12 col-sm-12 col-md-6">
+          <label for="application-deadline-date">Application Deadline:</label>
+          <div class="input-group">
+            <input id="application-deadline-date"
+                   class="form-control"
+                   type="text"
+                   ng-model="$ctrl.hub.application_deadline"
+                   uib-datepicker-popup="dd/MM/yyyy"
+                   is-open="$ctrl.appDeadlineDatePicker.opened"
+                   close-text="Close">
+            <span class="input-group-btn">
+              <button type="button" class="btn btn-default" ng-click="$ctrl.toggleCalendar()"><i class="fa fa-calendar"></i></button>
+            </span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    Private Contacts (for admin purposes only)
+    <a ng-click="$ctrl.addPrivateContact()" class="btn btn-primary btn-sm pull-right">Add Contact</a>
+  </div>
+  <div class="panel-body">
+    <div ng-if="$ctrl.hub.contact_urls.length == 0">
+      <p>There are no private contacts.</p>
+    </div>
+    <div ng-if="$ctrl.hub.contact_urls.length > 0" ng-repeat="contact in $ctrl.hub.contact_urls track by $index">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          Contact
+          <a ng-click="$ctrl.removePrivateContact(contact)" class="pull-right"><i class="fa fa-2x fa-trash"></i></a>
+        </div>
+        <div class="panel-body">
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="form-group">
+                <label for="contact-name">Name</label>
+                <input type="text" ng-model="contact.name" id="contact-name" class="form-control">
+                </textarea>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="form-group">
+                <label for="contact-email">Email</label>
+                <input type="text" ng-model="contact.email" id="contact-email" class="form-control">
+                </textarea>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="form-group">
+                <label for="contact-phone">Phone</label>
+                <input type="number" ng-model="contact.phone" id="contact-phone" class="form-control">
+                </textarea>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="panel panel-default">
+  <div class="panel-heading">Alumni</div>
+  <div class="panel-body">
+    <tags-input ng-model="$ctrl.hub.alumni"
+                replace-spaces-with-dashes="false"
+                placeholder="Add a company"
+                add-on-enter="false"
+                add-from-auto-complete-only="true"
+                key-property="id"
+                display-property="name">
+      <auto-complete source="$ctrl.queryCompanies($query)" display-property="name">
+      </auto-complete>
+    </tags-input>
+  </div>
+</div>
+
+<div class="panel panel-default">
+  <div class="panel-heading">Tags</div>
+  <div class="panel-body">
+    <tags-input ng-model="$ctrl.tags"
+                add-on-enter="false"
+                on-tag-added="$ctrl.addTag($tag)"
+                on-tag-removed="$ctrl.removeTag($tag)">
+      <auto-complete source="$ctrl.queryTags($query)"></auto-complete>
+    </tags-input>
+    <span ng-show="create.newTag.$invalid" class="label label-danger">At least 1 tag is required.</span>
+  </div>
+</div>
+
+<custom-fields entity="$ctrl.hub"></custom-fields>

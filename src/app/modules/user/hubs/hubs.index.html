@@ -37,8 +37,7 @@
 
           <div class="" ng-if="hub.user_id">
             <span ng-hide="hub.deleted_at">
-              <a ui-sref="admin.hubs.edit({id: hub.id})"><i class="fa fa-2x fa-edit"></i></a>
-              <a href="" ng-click="$ctrl.deleteHub(hub.id)"><i class="fa fa-2x fa-trash"></i></a>
+              <a ui-sref="user.hubs.edit({id: hub.id})"><i class="fa fa-2x fa-edit"></i></a>
             </span>
             <span ng-show="hub.deleted_at">
               <a href="" ng-click="$ctrl.restoreHub(hub.id)"><i class="fa fa-2x fa-refresh"></i></a>
