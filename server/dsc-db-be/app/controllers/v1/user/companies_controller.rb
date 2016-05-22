@@ -3,6 +3,14 @@ module V1
     class CompaniesController < ApplicationController
       before_action :authenticate
 
+      def create
+        company = Company.new(company_params)
+        company.user_id = current_user.id
+        company.save
+
+        render json: company
+      end
+
       def index
         if params[:filter].present?
           companies = Company.unclaimed_or_owned_by(current_user.id).select(:id, :name).where("name ILIKE ?", "%#{params[:filter]}%")

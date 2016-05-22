@@ -1,7 +1,7 @@
 (function(){
   angular
     .module('user')
-    .service('createCompanyService', function(store, serverUrl, $http){
+    .service('userCreateCompanyService', function(store, serverUrl, $http){
 
       function token() {
         return store.get('jwt');

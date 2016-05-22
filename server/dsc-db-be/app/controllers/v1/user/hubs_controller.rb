@@ -51,7 +51,7 @@ module V1
       private
 
       def hub
-        Hub.find(params[:id])
+        Hub.where(user_id: current_user.id, id: params[:id]).first
       end
 
       def hub_params

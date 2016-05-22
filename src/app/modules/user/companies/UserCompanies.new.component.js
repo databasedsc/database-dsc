@@ -7,8 +7,8 @@
       controller: 'UserCompaniesNewController',
       templateUrl: 'app/modules/user/companies/companies.new.html'
     })
-    .controller('UserCompaniesNewController', function(createCompanyService, $confirm, Notification, listInvestorsService, listTagsService) {
-      this.createCompanyService = createCompanyService;
+    .controller('UserCompaniesNewController', function(userCreateCompanyService, $confirm, Notification, listInvestorsService, listTagsService) {
+      this.userCreateCompanyService = userCreateCompanyService;
       var controller = this;
 
       var setEmptyCompany = function() {
@@ -83,7 +83,7 @@
       this.create = function() {
         $confirm({text: "Are you sure you want to submit?"}).then(function() {
           setTargetMarkets();
-          controller.createCompanyService.create(controller.company).then(function() {
+          controller.userCreateCompanyService.create(controller.company).then(function() {
             Notification.success('Company Saved sucessfully!');
             setEmptyCompany();
           });
