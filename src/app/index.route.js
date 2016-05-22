@@ -57,6 +57,14 @@
           url: '/user/investors',
           template: '<user-investors-index></user-investors-index>'
         })
+        .state('user.investors.new', {
+          url: '/user/investors/new',
+          template: '<user-investors-new></user-investors-new>'
+        })
+        .state('user.investors.edit', {
+          url: '/user/investors/:id/edit',
+          template: '<user-investors-edit></user-investors-edit>'
+        })
         .state('user.hubs', {
           template: '<user-hubs ui-view></user-hubs>'
         })

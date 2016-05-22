@@ -38,8 +38,7 @@
 
         <div class="" ng-if="investor.user_id">
           <span ng-hide="investor.deleted_at">
-            <a ui-sref="admin.investors.edit({id: investor.id})"><i class="fa fa-2x fa-edit"></i></a>
-            <a href="" ng-click="$ctrl.deleteInvestor(investor.id)"><i class="fa fa-2x fa-trash"></i></a>
+            <a ui-sref="user.investors.edit({id: investor.id})"><i class="fa fa-2x fa-edit"></i></a>
           </span>
           <span ng-show="investor.deleted_at">
             <a href="" ng-click="$ctrl.restoreInvestor(investor.id)"><i class="fa fa-2x fa-refresh"></i></a>
