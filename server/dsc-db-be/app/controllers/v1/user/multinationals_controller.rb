@@ -51,7 +51,7 @@ module V1
       private
 
       def multinational
-        Multinational.find(params[:id])
+        Multinational.where(user_id: current_user.id, id: params[:id]).first
       end
 
       def multinational_params

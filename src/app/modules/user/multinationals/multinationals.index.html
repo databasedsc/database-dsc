@@ -44,8 +44,7 @@
 
         <div class="" ng-if="multinational.user_id">
           <span ng-hide="multinational.deleted_at">
-            <a ui-sref="admin.multinationals.edit({id: multinational.id})"><i class="fa fa-2x fa-edit"></i></a>
-            <a href="" ng-click="$ctrl.deleteMultinational(multinational.id)"><i class="fa fa-2x fa-trash"></i></a>
+            <a ui-sref="user.multinationals.edit({id: multinational.id})"><i class="fa fa-2x fa-edit"></i></a>
           </span>
           <span ng-show="multinational.deleted_at">
             <a href="" ng-click="$ctrl.restoreMultinational(multinational.id)"><i class="fa fa-2x fa-refresh"></i></a>

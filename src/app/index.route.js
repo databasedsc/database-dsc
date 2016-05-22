@@ -42,6 +42,14 @@
           url: '/user/multinationals',
           template: '<user-multinationals-index></user-multinationals-index>'
         })
+        .state('user.multinationals.new', {
+          url: '/user/multinationals/new',
+          template: '<user-multinationals-new></user-multinationals-new>'
+        })
+        .state('user.multinationals.edit', {
+          url: '/user/multinationals/:id/edit',
+          template: '<user-multinationals-edit></user-multinationals-edit>'
+        })
         .state('user.investors', {
           template: '<user-investors ui-view></user-investors>'
         })
