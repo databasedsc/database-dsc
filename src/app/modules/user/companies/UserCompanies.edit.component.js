@@ -7,7 +7,7 @@
       templateUrl: 'app/modules/user/companies/companies.edit.html',
       controller: 'UserCompaniesEditController'
     })
-    .controller('UserCompaniesEditController', function(store, $state, userGetCompanyService, updateCompanyService, $stateParams, Notification, listTagsService, listInvestorsService) {
+    .controller('UserCompaniesEditController', function(store, $state, userGetCompanyService, userUpdateCompanyService, $stateParams, Notification, listTagsService, listInvestorsService) {
       var controller = this;
       this.tags = [];
       this.target_markets = {};
@@ -98,7 +98,7 @@
       this.update = function() {
         setTargetMarkets();
 
-        updateCompanyService.update(controller.company)
+        userUpdateCompanyService.update(controller.company)
           .then(function(company) {
             controller.company = company;
             Notification.success('Company Updated!')

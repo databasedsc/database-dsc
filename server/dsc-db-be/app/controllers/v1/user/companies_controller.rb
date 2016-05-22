@@ -26,10 +26,15 @@ module V1
         render json: company
       end
 
+      def update
+        company.update(company_params)
+        render json: company
+      end
+
       private
 
       def company
-        Company.find(params[:id])
+        Company.where(user_id: current_user.id, id: params[:id]).first
       end
 
       def company_params
