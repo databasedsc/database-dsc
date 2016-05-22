@@ -4,7 +4,10 @@ module V1
       before_action :authenticate
 
       def create
-        hub = Hub.create(hub_params)
+        hub = Hub.new(hub_params)
+        hub.user_id = current_user.id
+        hub.save
+
         render json: hub
       end
 

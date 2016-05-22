@@ -4,7 +4,9 @@ module V1
       before_action :authenticate
 
       def create
-        multinational = Multinational.create(multinational_params)
+        multinational = Multinational.new(multinational_params)
+        multinational.user_id = current_user.id
+        multinational.save
 
         render json: multinational
       end
