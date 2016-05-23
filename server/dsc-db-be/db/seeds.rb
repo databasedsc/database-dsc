@@ -12,9 +12,11 @@ unless Rails.env.production?
   Investor.delete_all
   Hub.delete_all
 
-  Admin.create(
+  # create admin user
+  User.create(
     email: 'admin@test.com',
-    password: '12345678'
+    password: '12345678',
+    user_type: 1
   )
 
   Hub.create(

@@ -28,8 +28,8 @@
       }
 
       // pagination
-      controller.currentPage = 1;
-      controller.perPage = 9;
+      $scope.currentPage = 1;
+      $scope.perPage = 9;
 
       $scope.$watch('currentPage', function () {
         controller.search();
@@ -37,8 +37,8 @@
 
       function getPaginationDetails() {
         return {
-          currentPage: controller.currentPage,
-          perPage: controller.perPage
+          currentPage: $scope.currentPage,
+          perPage: $scope.perPage
         }
       }
 
@@ -71,7 +71,6 @@
 
       // search
       this.search = function() {
-
         var query = {};
         if (this.query != undefined) {
           query.searchText = this.query;

@@ -69,7 +69,7 @@
         hubType: '',
         fundingProvided: '',
         applicationDeadlines: ''
-      }, {currentPage: 5, perPage: 20});
+      }, {currentPage: 1, perPage: 9});
       expect($ctrl.results.length).toEqual(1);
     });
 

@@ -1,9 +1,9 @@
 (function() {
   'use strict';
 
-  describe('listMultinationalsService', function() {
+  describe('adminListMultinationalsService', function() {
     var $httpBackend,
-      listMultinationalsService;
+      adminListMultinationalsService;
 
     beforeEach(module('admin'));
 
@@ -11,9 +11,9 @@
       $provide.constant('serverUrl', 'http://test.example.com');
     }));
 
-    beforeEach(inject(function(_$httpBackend_, _listMultinationalsService_) {
+    beforeEach(inject(function(_$httpBackend_, _adminListMultinationalsService_) {
       $httpBackend = _$httpBackend_;
-      listMultinationalsService = _listMultinationalsService_;
+      adminListMultinationalsService = _adminListMultinationalsService_;
     }));
 
     describe('#find', function() {
@@ -26,7 +26,7 @@
 
         $httpBackend.expectGET('http://test.example.com/admin/multinationals').respond(multinationals);
 
-        listMultinationalsService.getAll().then(function(response) {
+        adminListMultinationalsService.getAll().then(function(response) {
           expect(response).toEqual(multinationals);
         });
 

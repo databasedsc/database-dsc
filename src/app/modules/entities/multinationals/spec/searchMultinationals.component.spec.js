@@ -67,7 +67,7 @@
       $ctrl.search();
       $scope.$apply();
 
-      expect($ctrl.searchMultinationalsService.get).toHaveBeenCalledWith({searchText: 'microsoft'},{ emeaHq: '', startupPackages: '', employees: '', buildingProductInIreland: '', eventsSpace: '', functions: '' }, { currentPage: 1, perPage: 5 });
+      expect($ctrl.searchMultinationalsService.get).toHaveBeenCalledWith({searchText: 'microsoft'},{ emeaHq: '', startupPackages: '', employees: '', buildingProductInIreland: '', eventsSpace: '', functions: '' }, { currentPage: 1, perPage: 9 });
       expect($ctrl.results.length).toEqual(1);
     });
 

@@ -6,12 +6,12 @@ describe('Login Page', function() {
   beforeEach(function (){
     page = require('./login.po');
     browser.executeScript('window.localStorage.clear()');
-    browser.get('#/login');
+    browser.get('#/admin/login');
   });
 
   describe('correct login credentials', function() {
     it("should redirect to /admin", function() {
-      page.emailField.sendKeys('test@test.com');
+      page.emailField.sendKeys('admin@test.com');
       page.passwordField.sendKeys('12345678');
       page.submitButton.click();
 
@@ -40,7 +40,7 @@ describe('Login Page', function() {
 
   describe('logout', function (){
     it('should return to login page after logout', function(){
-      page.emailField.sendKeys('test@test.com');
+      page.emailField.sendKeys('admin@test.com');
       page.passwordField.sendKeys('12345678');
       page.submitButton.click();
 
