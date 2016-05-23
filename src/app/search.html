@@ -20,14 +20,18 @@
           <li >
             <a data-ui-sref="search.searchCompanies" data-ui-sref-opts="{reload: true}">Companies</a>
           </li>
-          <li class="">
+          <li>
             <a data-ui-sref="search.searchMultinationals" data-ui-sref-opts="{reload: true}">Multinationals</a>
           </li>
-          <li >
+          <li>
             <a data-ui-sref="search.searchInvestors" data-ui-sref-opts="{reload: true}">Investors</a>
           </li>
-          <li >
+          <li>
             <a data-ui-sref="search.searchHubs" data-ui-sref-opts="{reload: true}">Hubs</a>
+          </li>
+          <li>
+            <a ng-if="!loggedIn" data-ui-sref="userLogin">Login</a>
+            <a ng-if="loggedIn" ng-click="logout()" data-ui-sref="userLogin">Logout</a>
           </li>
         </ul>
       </div><!--/.nav-collapse -->

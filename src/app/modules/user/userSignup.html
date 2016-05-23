@@ -16,10 +16,16 @@
       <div class="form-group">
         <input name="password" ng-model="$ctrl.userInfo.user.password" type="password" class="form-control" id="inputPassword" placeholder="Password" required="">
       </div>
-      <button class="btn btn-lg btn-primary btn-block" type="submit">Sign Up</button>
+      <div class="row">
+        <div class="col-xs-12">
+          <button class="btn btn-lg btn-primary btn-block" type="submit">Sign Up</button>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12">
+          Have an account? <a ui-sref="userLogin">Sign In</a>
+        </div>
+      </div>
     </form>
-  </div>
-  <div class="">
-    <uib-alert ng-show="$ctrl.signUpFail" type="danger">Please complete all fields to continue.</uib-alert>
   </div>
 </div>
