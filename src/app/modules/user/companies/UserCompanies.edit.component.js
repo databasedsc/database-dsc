@@ -24,17 +24,10 @@
         });
       }
 
-      function logout() {
-        store.remove('jwt');
-        $state.go('userLogin');
-      }
-
       userGetCompanyService.find($stateParams.id).then(function(company) {
         controller.company = company;
         loadTags();
         loadTargetMarkets();
-      }, function() {
-        logout();
       });
 
       controller.queryInvestors = function(query) {

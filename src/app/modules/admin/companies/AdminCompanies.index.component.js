@@ -7,7 +7,7 @@
       controller: 'AdminCompaniesIndexController',
       templateUrl: 'app/modules/admin/companies/companies.index.html'
     })
-    .controller('AdminCompaniesIndexController', function(store, $state, jwtHelper, adminListCompaniesService, deleteCompanyService, restoreCompanyService, Notification, exportToCSV) {
+    .controller('AdminCompaniesIndexController', function($auth, store, $state, jwtHelper, adminListCompaniesService, deleteCompanyService, restoreCompanyService, Notification, exportToCSV) {
       this.adminListCompaniesService = adminListCompaniesService;
       this.deleteCompanyService = deleteCompanyService;
       this.restoreCompanyService = restoreCompanyService;
@@ -15,16 +15,9 @@
 
       getCompanies();
 
-      function logout() {
-        store.remove('jwt');
-        $state.go('adminLogin');
-      }
-
       function getCompanies() {
         adminListCompaniesService.getAll().then(function(companies) {
           controller.companies = companies;
-        }, function() {
-          logout();
         });
       }
 

@@ -7,21 +7,14 @@
       templateUrl: 'app/modules/user/profile/userProfile.edit.html',
       controller: 'UserProfileEditController'
     })
-    .controller('UserProfileEditController', function(store, $state, jwtHelper, userProfileService, updateUserProfileService, $stateParams, Notification) {
+    .controller('UserProfileEditController', function($auth, $state, jwtHelper, userProfileService, updateUserProfileService, $stateParams, Notification) {
       var controller = this;
 
-      var token = store.get('jwt');
+      var token = $auth.getToken();
       var payload = jwtHelper.decodeToken(token);
-
-      function logout() {
-        store.remove('jwt');
-        $state.go('userLogin');
-      }
 
       userProfileService.getUserProfile(payload.sub).then(function(user) {
         controller.user = user;
-      }, function() {
-        logout();
       });
 
       this.update = function() {

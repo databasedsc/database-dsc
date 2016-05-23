@@ -7,7 +7,7 @@
       templateUrl: 'app/modules/admin/companies/companies.edit.html',
       controller: 'AdminCompaniesEditController'
     })
-    .controller('AdminCompaniesEditController', function(store, $state, adminGetCompanyService, updateCompanyService, $stateParams, Notification, listTagsService, listInvestorsService) {
+    .controller('AdminCompaniesEditController', function(store, $state, adminGetCompanyService, updateCompanyService, $stateParams, Notification, listTagsService, adminListInvestorsService) {
       var controller = this;
       this.tags = [];
       this.target_markets = {};
@@ -24,21 +24,14 @@
         });
       }
 
-      function logout() {
-        store.remove('jwt');
-        $state.go('adminLogin');
-      }
-
       adminGetCompanyService.find($stateParams.id).then(function(company) {
         controller.company = company;
         loadTags();
         loadTargetMarkets();
-      }, function() {
-        logout();
       });
 
       controller.queryInvestors = function(query) {
-        return listInvestorsService.filter(query);
+        return adminListInvestorsService.filter(query);
       };
 
       controller.queryTags = function(query) {

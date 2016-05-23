@@ -159,13 +159,12 @@
           template: '<admin-hubs-edit></admin-hubs-edit>'
         })
         .state('search', {
-          controller: function(store, $scope, $auth) {
+          controller: function($scope, $auth) {
             $scope.logout = function() {
-              store.remove('jwt');
               $auth.logout();
             }
 
-            $scope.loggedIn = store.get('jwt') != null
+            $scope.loggedIn = $auth.isAuthenticated();
           },
           templateUrl: 'app/search.html'
         })

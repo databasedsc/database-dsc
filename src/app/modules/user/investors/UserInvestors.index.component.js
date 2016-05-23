@@ -16,16 +16,9 @@
 
       getInvestors();
 
-      function logout() {
-        store.remove('jwt');
-        $state.go('userLogin');
-      }
-
       function getInvestors() {
         userListInvestorsService.getAll().then(function(investors) {
           controller.investors = investors;
-        }, function() {
-          logout();
         });
       }
 

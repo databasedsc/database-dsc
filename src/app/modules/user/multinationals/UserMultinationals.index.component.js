@@ -14,14 +14,7 @@
       function getMultinationals() {
         userListMultinationalsService.getAll().then(function(multinationals) {
           controller.multinationals = multinationals;
-        }, function() {
-          logout();
         });
-      }
-
-      function logout() {
-        store.remove('jwt');
-        $state.go('userLogin');
       }
 
       this.claimMultinational = function(e, id) {

@@ -15,16 +15,9 @@
 
       getHubs();
 
-      function logout() {
-        store.remove('jwt');
-        $state.go('adminLogin');
-      }
-
       function getHubs() {
         adminListHubsService.getAll().then(function(hubs) {
           controller.hubs = hubs;
-        }, function() {
-          logout();
         });
       }
 

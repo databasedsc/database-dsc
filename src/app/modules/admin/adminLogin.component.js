@@ -6,7 +6,7 @@
       templateUrl: 'app/modules/admin/adminLogin.html',
       controller: 'AdminLoginController'
     })
-    .controller('AdminLoginController', function(store, $state, loginService) {
+    .controller('AdminLoginController', function(store, $state, loginService, $auth) {
       this.loginService = loginService;
       var controller = this;
 
@@ -14,7 +14,7 @@
 
       this.login = function() {
         loginService.authenticate(this.userCredentials).then(function(response) {
-          store.set('jwt', response.jwt);
+          $auth.setToken(response.jwt);
           $state.go('admin.dashboard');
         }).catch(function () {
           controller.loginFail = true;

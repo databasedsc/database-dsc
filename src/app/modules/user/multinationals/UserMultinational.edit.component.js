@@ -12,11 +12,6 @@
       this.tags = [];
       this.functions = [];
 
-      function logout() {
-        store.remove('jwt');
-        $state.go('userLogin');
-      }
-
       function loadTags() {
         controller.multinational.tags.forEach(function(tag) {
           controller.tags.push({text: tag})
@@ -66,8 +61,6 @@
         controller.multinational = multinational;
         loadFunctions();
         loadTags();
-      }, function() {
-        logout();
       });
 
       this.update = function() {

@@ -12,8 +12,7 @@
       var controller = this;
 
       this.authenticate = function(provider) {
-        $auth.authenticate(provider).then(function(response) {
-          store.set('jwt', response.data.token);
+        $auth.authenticate(provider).then(function() {
           $state.go('user.profile');
         });
       };
@@ -22,7 +21,7 @@
 
       this.login = function() {
         loginService.authenticate(this.userCredentials).then(function(response) {
-          store.set('jwt', response.jwt);
+          $auth.setToken(response.jwt);
           $state.go('user.profile');
         }).catch(function () {
           controller.loginFail = true;

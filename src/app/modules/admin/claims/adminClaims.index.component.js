@@ -14,16 +14,9 @@
 
       getClaims();
 
-      function logout() {
-        store.remove('jwt');
-        $state.go('adminLogin');
-      }
-
       function getClaims() {
         adminListClaimsService.getAll().then(function(claims) {
           controller.claims = claims;
-        }, function() {
-          logout();
         });
       }
 

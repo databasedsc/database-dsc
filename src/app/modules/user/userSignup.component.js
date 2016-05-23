@@ -6,7 +6,7 @@
       templateUrl: 'app/modules/user/userSignup.html',
       controller: 'UserSignUpController'
     })
-    .controller('UserSignUpController', function(store, $state, signUpService) {
+    .controller('UserSignUpController', function(store, $state, signUpService, $auth) {
       this.signUpService = signUpService;
       var controller = this;
 
@@ -14,7 +14,7 @@
 
       this.signUp = function() {
         signUpService.signUp(this.userInfo, false).then(function(response) {
-          store.set('jwt', response.jwt);
+          $auth.setToken(response.jwt);
           $state.go('user.profile');
         }).catch(function () {
           controller.signUpFail = true;

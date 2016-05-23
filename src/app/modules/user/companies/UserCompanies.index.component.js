@@ -16,16 +16,9 @@
 
       getCompanies();
 
-      function logout() {
-        store.remove('jwt');
-        $state.go('userLogin');
-      }
-
       function getCompanies() {
         listCompaniesService.getAll().then(function(companies) {
           controller.companies = companies;
-        }, function() {
-          logout();
         });
       }
 

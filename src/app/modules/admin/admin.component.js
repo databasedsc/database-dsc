@@ -7,11 +7,11 @@
       templateUrl: 'app/modules/admin/admin.html',
       controller: 'AdminController'
     })
-    .controller('AdminController', function(store, jwtHelper, $state) {
-      this.jwt = store.get('jwt');
+    .controller('AdminController', function($auth, jwtHelper, $state) {
+      this.jwt = $auth.getToken();
 
       this.logout = function() {
-        store.remove('jwt');
+        $auth.removeToken();
         $state.go('adminLogin');
       };
 

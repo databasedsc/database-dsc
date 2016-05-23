@@ -14,11 +14,6 @@
       this.tags = [];
       this.fundingTypes = [];
 
-      function logout() {
-        store.remove('jwt');
-        $state.go('adminLogin');
-      }
-
       function loadTags() {
         controller.investor.tags.forEach(function(tag) {
           controller.tags.push({text: tag})
@@ -84,8 +79,6 @@
         controller.investor = investor;
         loadTags();
         loadFundingTypes();
-      }, function() {
-        logout();
       });
 
       this.update = function() {

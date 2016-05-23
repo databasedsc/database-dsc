@@ -19,11 +19,6 @@
         opened: false
       };
 
-      function logout() {
-        store.remove('jwt');
-        $state.go('userLogin');
-      }
-
       this.currentAppDeadlineDate;
 
       function loadTags() {
@@ -103,8 +98,6 @@
         controller.currentAppDeadlineDate = hub.application_deadline;
         loadTags();
         loadHubTypes();
-      }, function() {
-        logout();
       });
 
       this.update = function() {
