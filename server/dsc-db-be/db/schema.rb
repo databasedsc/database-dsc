@@ -73,6 +73,7 @@ ActiveRecord::Schema.define(version: 20160520123822) do
     t.string   "acquired"
     t.integer  "revenue"
     t.boolean  "recently_funded",       default: false
+    t.integer  "user_id"
   end
 
   add_index "companies", ["deleted_at"], name: "index_companies_on_deleted_at", using: :btree
@@ -109,6 +110,7 @@ ActiveRecord::Schema.define(version: 20160520123822) do
     t.boolean  "funding_provided"
     t.float    "lat"
     t.float    "lng"
+    t.integer  "user_id"
   end
 
   add_index "hubs", ["alumni"], name: "index_hubs_on_alumni", using: :gin
@@ -150,6 +152,7 @@ ActiveRecord::Schema.define(version: 20160520123822) do
     t.jsonb    "office_locations",      default: {}
     t.string   "deal_structure"
     t.jsonb    "companies_invested_in", default: []
+    t.integer  "user_id"
   end
 
   add_index "investors", ["companies_invested_in"], name: "index_investors_on_companies_invested_in", using: :gin
@@ -186,6 +189,7 @@ ActiveRecord::Schema.define(version: 20160520123822) do
     t.float    "lat"
     t.float    "lng"
     t.boolean  "building_product_in_ireland", default: false
+    t.integer  "user_id"
   end
 
   add_index "multinationals", ["deleted_at"], name: "index_multinationals_on_deleted_at", using: :btree
@@ -205,6 +209,14 @@ ActiveRecord::Schema.define(version: 20160520123822) do
     t.string "name", null: false
   end
 
+  create_table "user_entity_claims", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "entity_type"
+    t.integer  "entity_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
   create_table "users", force: :cascade do |t|
     t.string   "email"
     t.string   "first_name"
@@ -214,7 +226,5 @@ ActiveRecord::Schema.define(version: 20160520123822) do
     t.datetime "updated_at",                  null: false
     t.integer  "user_type",       default: 0
   end
-
-  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
 
 end

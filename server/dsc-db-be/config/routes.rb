@@ -16,7 +16,10 @@ Rails.application.routes.draw do
     get 'hubs', to: 'hubs#index'
     get 'hubs/:id', to: 'hubs#show'
 
+    # Administration Routes
     namespace :admin do
+      resources :user_entity_claims, only: [:index, :update]
+
       resources :companies, only: [:create, :index, :show, :update, :destroy] do
         member do
           put :restore
@@ -40,6 +43,33 @@ Rails.application.routes.draw do
       resources :tags, only: [:index]
     end
 
-    resources :users, only: [:create, :show, :update]
+    # User routes
+    resources :users, only: [:create, :show, :update] do
+    end
+
+    namespace :user do
+      resources :user_entity_claims, only: [:create, :update]
+      
+      resources :companies, only: [:create, :index, :show, :update, :destroy] do
+        member do
+          put :restore
+        end
+      end
+      resources :multinationals, only: [:create, :index, :show, :update, :destroy] do
+        member do
+          put :restore
+        end
+      end
+      resources :investors, only: [:create, :index, :show, :update, :destroy] do
+        member do
+          put :restore
+        end
+      end
+      resources :hubs, only: [:create, :index, :show, :update, :destroy] do
+        member do
+          put :restore
+        end
+      end
+    end
   end
 end

@@ -15,6 +15,7 @@ require 'securerandom'
 
 class User < ApplicationRecord
   has_secure_password
+  has_many :user_entity_claims
 
   has_many :authorizations, dependent: :destroy
 

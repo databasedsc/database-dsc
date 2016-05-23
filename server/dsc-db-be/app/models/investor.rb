@@ -66,6 +66,9 @@ class Investor < ApplicationRecord
   scope :greater_than, -> (column, limit) { where "#{column} > #{limit}" }
   scope :range_scope, -> (column, range) { where("#{column}" => range) }
   scope :deal_structure, -> (deal_structure) { where deal_structure: deal_structure }
+  scope :unclaimed_or_owned_by, -> (user_id) { where "(user_id is null) OR (user_id = #{user_id})" }
+
+  attr_accessor :current_user
 
   def self.select_numeric_scope(column, range_as_string)
     lower, upper = range_as_string.split('-').map(&:to_i)

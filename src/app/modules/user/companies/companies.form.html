@@ -1,0 +1,350 @@
+<admin-overview entity="$ctrl.company"></admin-overview>
+
+<div class="panel panel-default">
+  <div class="panel-heading">Details</div>
+  <div class="panel-body">
+
+    <div class="row">
+
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="acquisitions">Acquisitions</label>
+          <select ng-model="$ctrl.company.acquisitions" id="acquisitions" class="form-control">
+            <option></option>
+            <option>Yes</option>
+            <option>No</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="acquired">Acquired/IPO Status</label>
+          <select ng-model="$ctrl.company.acquired " id="acquired" class="form-control">
+            <option></option>
+            <option>IPO</option>
+            <option>Acquired</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="headquarters">Headquarters:</label>
+          <input ng-model="$ctrl.company.headquarters" id="headquarters" class="form-control" type="text">
+        </div>
+
+        <div class="form-group">
+          <label for="formerly-known">Formerly known as</label>
+          <input ng-model="$ctrl.company.formerly_known_as" id="formerly-known" class="form-control" type="text">
+        </div>
+
+        <div class="form-group">
+          <label for="founded">Founded:</label>
+          <input integer ng-model="$ctrl.company.founded" id="founded" class="form-control" type="text">
+        </div>
+
+        <div class="form-group">
+          <label for="employees">Employees:</label>
+          <input integer ng-model="$ctrl.company.employees" id="employees" class="form-control" type="number">
+        </div>
+
+        <div class="form-group">
+          <label for="funding-stage">Funding Stage</label>
+          <select ng-model="$ctrl.company.funding_stage" class="form-control" name="funding-stage" id="funding-stage">
+            <option></option>
+            <option>Bootstrapped</option>
+            <option>Pre-seed</option>
+            <option>Seed</option>
+            <option>Series A</option>
+            <option>Series B</option>
+            <option>Series C</option>
+            <option>Series C+</option>
+            <option>Acquired</option>
+            <option>Public</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="total-funding">Total Funding</label>
+          <input ng-model="$ctrl.company.funding_amount" id="total-funding" class="form-control" type="text">
+        </div>
+
+        <div class="form-group">
+          <label for="revenue">Revenue (admin purposes only)</label>
+          <input ng-model="$ctrl.company.revenue" id="revenue" class="form-control" type="number">
+        </div>
+
+        <div class="form-group">
+          <label>Target Markets</label>
+          <div class="checkbox">
+            <label>
+              <input ng-model="$ctrl.target_markets.IE" type="checkbox" value="IE">Ireland</label>
+            <br/>
+          </div>
+          <div class="checkbox">
+            <label>
+              <input ng-model="$ctrl.target_markets.UK" type="checkbox" value="UK">UK</label>
+            <br/>
+          </div>
+          <div class="checkbox">
+            <label>
+              <input ng-model="$ctrl.target_markets.EU" type="checkbox" value="EU">Europe</label>
+            <br/>
+          </div>
+          <div class="checkbox">
+            <label>
+              <input ng-model="$ctrl.target_markets.NA" type="checkbox" value="NA">North America </label>
+            <br/>
+          </div>
+          <div class="checkbox">
+            <label>
+              <input ng-model="$ctrl.target_markets.AS" type="checkbox" value="AS">Asia</label>
+            <br/>
+          </div>
+          <div class="checkbox">
+            <label>
+              <input ng-model="$ctrl.target_markets.AA" type="checkbox" value="AA">Australasia</label>
+            <br/>
+          </div>
+          <div class="checkbox">
+            <label>
+              <input ng-model="$ctrl.target_markets.AF" type="checkbox" value="AF">Africa</label>
+            <br/>
+          </div>
+          <div class="checkbox">
+            <label>
+              <input ng-model="$ctrl.target_markets.SA" type="checkbox" value="SA">South America
+            </label>
+            <br/>
+          </div>
+          <div class="checkbox">
+            <label>
+              <input ng-model="$ctrl.target_markets.G" type="checkbox" value="G">Global</label>
+            <br/>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="business-model">Business Model</label>
+          <select ng-model="$ctrl.company.business_model" id="business-model" class="form-control">
+            <option></option>
+            <option>B2B</option>
+            <option>B2C</option>
+            <option>B2B2C</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="product-stage">Product Stage</label>
+          <select ng-model="$ctrl.company.product_stage" id="product-stage" class="form-control">
+            <option></option>
+            <option>Development</option>
+            <option>Live</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="contact">Contact:</label>
+          <input ng-model="$ctrl.company.contact" id="contact" class="form-control" type="text">
+        </div>
+
+        <div class="form-group">
+          <label for="company-stage">Company Stage</label>
+          <select ng-model="$ctrl.company.company_stage" id="company-stage" class="form-control">
+            <option></option>
+            <option>Growth</option>
+            <option>Complete</option>
+            <option>Late-stage</option>
+            <option>Public</option>
+            <option>Acquired</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="incubator">Incubator/Accelator</label>
+          <input ng-model="$ctrl.company.incubator" id="incubator" class="form-control" type="">
+        </div>
+
+        <div class="form-group">
+          <label for="status">Status:</label>
+          <select ng-model="$ctrl.company.operational_status" id="status" class="form-control">
+            <option></option>
+            <option>Active</option>
+            <option>Inactive</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="government-assistance">Government Assistance</label>
+          <input ng-model="$ctrl.company.government_assistance" id="government-assistance" class="form-control" type="text">
+        </div>
+
+        <div class="form-group">
+          <label for="looking-for">We're looking for</label>
+          <input ng-model="$ctrl.company.looking_for" id="looking-for" class="form-control" type="text">
+        </div>
+
+        <div class="form-group">
+          <label>Recently Funded?</label>
+          <br>
+          <input type="radio" ng-model="$ctrl.company.recently_funded" ng-value="true"> Yes
+          &nbsp;
+          <input type="radio" ng-model="$ctrl.company.recently_funded" ng-value="false"> No
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    Office Locations
+    <a ng-click="$ctrl.addOfficeLocation()" class="btn btn-primary btn-sm pull-right">Add Location</a>
+  </div>
+  <div class="panel-body">
+    <div ng-if="$ctrl.company.office_locations.length == 0">
+      <p>There are no office locations.</p>
+    </div>
+    <div ng-if="$ctrl.company.office_locations.length > 0" ng-repeat="location in $ctrl.company.office_locations track by $index">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          Location
+          <a ng-click="$ctrl.removeOfficeLocation(location)" class="pull-right"><i class="fa fa-2x fa-trash"></i></a>
+        </div>
+        <div class="panel-body">
+          <div class="row">
+            <div class="col-sm-12">
+
+              <div class="form-group">
+                <label for="location-address">Address</label>
+                <input type="text" ng-model="location.address" id="location-address" class="form-control">
+                </textarea>
+              </div>
+
+              <div class="form-group">
+                <label for="location-lat">Latitude</label>
+                <input type="text" ng-model="location.lat" id="location-lat" class="form-control">
+                </textarea>
+              </div>
+
+              <div class="form-group">
+                <label for="location-lng">Longitude</label>
+                <input type="text" ng-model="location.lng" id="location-lng" class="form-control">
+                </textarea>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    Founders
+    <a ng-click="$ctrl.addFounder()" class="btn btn-primary btn-sm pull-right">Add Founder</a>
+  </div>
+  <div class="panel-body">
+    <div ng-if="$ctrl.company.founders.length == 0">
+      <p>There are no founders.</p>
+    </div>
+    <div ng-if="$ctrl.company.founders.length > 0" ng-repeat="founder in $ctrl.company.founders track by $index">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          Founder
+          <a ng-click="$ctrl.removeFounder(founder)" class="pull-right"><i class="fa fa-2x fa-trash"></i></a>
+        </div>
+        <div class="panel-body">
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="form-group">
+                <label for="package-name">Name</label>
+                <input type="text" ng-model="founder.name" id="founder-name" class="form-control">
+                </textarea>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="form-group">
+                <label for="founder-linkedin">LinkedIn</label>
+                <input type="text" ng-model="founder.linkedin" id="founder-linkedin" class="form-control">
+                </textarea>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    Funding
+    <a ng-click="$ctrl.addFundingRound()" class="btn btn-primary btn-sm pull-right">Add round</a>
+  </div>
+  <div class="panel-body">
+    <div ng-if="$ctrl.company.funding_rounds.length == 0">
+      <p>There are no funding rounds.</p>
+    </div>
+    <div ng-if="$ctrl.company.funding_rounds.length > 0" ng-repeat="round in $ctrl.company.funding_rounds">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          Round
+          <a ng-click="$ctrl.removeFundingRound(round)" class="pull-right"><i class="fa fa-2x fa-trash"></i></a>
+        </div>
+        <div class="panel-body">
+          <div class="row">
+            <div class="col-sm-6">
+              <div class="form-group">
+                <label for="funding-type">Funding type</label>
+                <input ng-model="round.type" id="funding-type" class="form-control" type="text">
+              </div>
+              <div class="form-group">
+                <label for="funding-amount">Funding amount</label>
+                <input ng-model="round.amount" id="funding-amount" class="form-control" type="text">
+              </div>
+              <div class="form-group">
+                <label for="funding-date">Funding date</label>
+                <input ng-model="round.date" id="funding-date" class="form-control" type="text">
+              </div>
+              <div class="form-group">
+                <label for="funding-date">Investors</label>
+                <tags-input ng-model="round.investors"
+                            replace-spaces-with-dashes="false"
+                            placeholder="Add an investor"
+                            add-on-enter="false"
+                            add-from-auto-complete-only="true"
+                            key-property="id"
+                            display-property="name">
+                  <auto-complete source="$ctrl.queryInvestors($query)" display-property="name">
+                  </auto-complete>
+                </tags-input>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="panel panel-default">
+  <div class="panel-heading">Tags</div>
+  <div class="panel-body">
+    <tags-input ng-model="$ctrl.tags"
+                add-on-enter="false"
+                on-tag-added="$ctrl.addTag($tag)"
+                on-tag-removed="$ctrl.removeTag($tag)">
+      <auto-complete source="$ctrl.queryTags($query)"></auto-complete>
+    </tags-input>
+  </div>
+  </div>
+</div>
+
+<custom-fields entity="$ctrl.company"></custom-fields>

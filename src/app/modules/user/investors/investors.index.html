@@ -1,0 +1,57 @@
+<div class="row">
+  <h2>Investors</h2>
+</div>
+<div class="row">
+  <div class="pull-right">
+    <p>
+      <button ng-click="$ctrl.export()" class="btn btn-primary">Export</button>
+      <a ui-sref="user.investors.new" class="btn btn-primary">New Investor</a>
+    </p>
+  </div>
+</div>
+<div class="table-responsive">
+  <table class="table table-striped table-bordered table-hover">
+    <thead>
+    <tr>
+      <th></th>
+      <th>Name</th>
+      <th>Headquarters</th>
+      <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr ng-class="{deleted: investor.deleted_at}" ng-repeat="investor in $ctrl.investors">
+      <td>
+        <a ng-hide="investor.deleted_at" ui-sref="admin.investors.edit({id: investor.id})"><img ng-src="{{investor.logo}}" alt="{{investor.name}}" width="80" height="50"></a>
+        <img ng-show="investor.deleted_at" ng-src="{{investor.logo}}" alt="{{investor.name}}" width="80" height="50">
+      </td>
+      <td>
+        <strong>
+          <a ng-hide="investor.deleted_at" ui-sref="admin.investors.edit({id: investor.id})">{{investor.name}}</a>
+          <span ng-show="investor.deleted_at">{{investor.name}}</span>
+        </strong>
+        <p style="color:#acacac"><i>{{investor.short_description}}</i> <a href="{{investor.website}}" ng-show="investor.website"><i class="fa fa-link"></i></a></p>
+
+      </td>
+      <td class="base">{{investor.headquarters}}</td>
+      <td class="actions">
+
+        <div class="" ng-if="investor.user_id">
+          <span ng-hide="investor.deleted_at">
+            <a ui-sref="user.investors.edit({id: investor.id})"><i class="fa fa-2x fa-edit"></i></a>
+          </span>
+          <span ng-show="investor.deleted_at">
+            <a href="" ng-click="$ctrl.restoreInvestor(investor.id)"><i class="fa fa-2x fa-refresh"></i></a>
+          </span>
+        </div>
+
+        <div class="" ng-if="!investor.user_id">
+          <a ng-if="!investor.claimed_requested_by_current_user" ng-click="$ctrl.claimInvestor($event, investor.id)" class="btn btn-xs btn-block btn-default">Claim</a>
+          <a ng-if="investor.claimed_requested_by_current_user" class="btn btn-xs btn-block btn-default" disabled>Requested</a>
+        </div>
+
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>
