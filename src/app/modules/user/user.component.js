@@ -7,10 +7,11 @@
       templateUrl: 'app/modules/user/user.html',
       controller: 'UserController'
     })
-    .controller('UserController', function(store, jwtHelper, $state) {
+    .controller('UserController', function(store, jwtHelper, $state, $auth) {
       this.jwt = store.get('jwt');
 
       this.logout = function() {
+        $auth.logout();
         store.remove('jwt');
         $state.go('userLogin');
       };

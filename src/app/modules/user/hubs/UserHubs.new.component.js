@@ -7,7 +7,7 @@
       controller: 'UserHubsNewController',
       templateUrl: 'app/modules/user/hubs/hubs.new.html'
     })
-    .controller('UserHubsNewController', function(userCreateHubService, $confirm, Notification, listInvestorsService, listTagsService, listCompaniesService) {
+    .controller('UserHubsNewController', function(userCreateHubService, $confirm, Notification, listTagsService, listCompaniesService) {
       this.userCreateHubService = userCreateHubService;
       var controller = this;
       this.hub_type = {};

@@ -23,20 +23,16 @@
     <tbody>
     <tr ng-class="{deleted: multinational.deleted_at}" ng-repeat="multinational in $ctrl.multinationals">
       <td>
-        <a ng-hide="multinational.deleted_at" ui-sref="admin.multinationals.edit({id: multinational.id})"><img
-          ng-src="{{multinational.logo}}" alt="{{multinational.name}}" width="80" height="50"></a>
-        <img ng-show="multinational.deleted_at" ng-src="{{multinational.logo}}" alt="{{multinational.name}}" width="80"
-             height="50">
+        <a ng-if="multinational.user_id" ui-sref="user.multinationals.edit({id: multinational.id})"><img ng-src="{{multinational.logo}}" alt="{{multinational.name}}" width="80" height="50"></a>
+        <a ng-if="!multinational.user_id" ui-sref="search.multinationalProfile({id: multinational.id})"><img ng-src="{{multinational.logo}}" alt="{{multinational.name}}" width="80" height="50"></a>
       </td>
       <td>
         <strong>
-          <a ng-hide="multinational.deleted_at" ui-sref="admin.multinationals.edit({id: multinational.id})">{{multinational.name}}</a>
+          <a ng-if="multinational.user_id" ui-sref="user.multinationals.edit({id: multinational.id})">{{multinational.name}}</a>
+          <a ng-if="!multinational.user_id" ui-sref="search.multinationalProfile({id: multinational.id})">{{multinational.name}}</a>
           <span ng-show="multinational.deleted_at">{{multinational.name}}</span>
         </strong>
-        <p style="color:#acacac"><i>{{multinational.short_description}}</i> <a href="{{multinational.website}}"
-                                                                               ng-show="multinational.website"><i
-          class="fa fa-link"></i></a></p>
-
+        <p style="color:#acacac"><i>{{multinational.short_description}}</i> <a ng-href="{{multinational.website}}" ng-show="multinational.website"><i class="fa fa-link"></i></a></p>
       </td>
       <td class="base">{{multinational.headquarters}}</td>
       <td class="base">{{multinational.status}}</td>

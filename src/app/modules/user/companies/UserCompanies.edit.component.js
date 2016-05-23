@@ -7,7 +7,7 @@
       templateUrl: 'app/modules/user/companies/companies.edit.html',
       controller: 'UserCompaniesEditController'
     })
-    .controller('UserCompaniesEditController', function(store, $state, userGetCompanyService, userUpdateCompanyService, $stateParams, Notification, listTagsService, listInvestorsService) {
+    .controller('UserCompaniesEditController', function(store, $state, userGetCompanyService, userUpdateCompanyService, $stateParams, Notification, listTagsService, adminListInvestorsService) {
       var controller = this;
       this.tags = [];
       this.target_markets = {};
@@ -38,7 +38,7 @@
       });
 
       controller.queryInvestors = function(query) {
-        return listInvestorsService.filter(query);
+        return adminListInvestorsService.filter(query);
       };
 
       controller.queryTags = function(query) {

@@ -6,11 +6,11 @@
     .config(function routerConfig($stateProvider, $urlRouterProvider) {
       $stateProvider
         .state('userLogin', {
-          url: '/users/login',
+          url: '/user/login',
           template: '<div class="container"><user-login></user-login></div>'
         })
         .state('userSignUp', {
-          url: '/users/signup',
+          url: '/user/signup',
           template: '<div class="container"><user-signup></user-signup></div>'
         })
         .state('user', {
@@ -69,7 +69,7 @@
           template: '<user-hubs ui-view></user-hubs>'
         })
         .state('user.hubs.index', {
-          url: '/admin/hubs',
+          url: '/user/hubs',
           template: '<user-hubs-index></user-hubs-index>'
         })
         .state('user.hubs.new', {
@@ -84,7 +84,7 @@
           template: '<admin></admin>'
         })
         .state('adminLogin', {
-          url: '/admins/login',
+          url: '/admin/login',
           template: '<div class="container"><admin-login></admin-login></div>'
         })
         .state('admin.dashboard', {

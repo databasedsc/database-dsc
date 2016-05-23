@@ -7,8 +7,8 @@
       controller: 'AdminHubsIndexController',
       templateUrl: 'app/modules/admin/hubs/hubs.index.html'
     })
-    .controller('AdminHubsIndexController', function(store, $state, listHubsService, deleteHubService, restoreHubService, Notification, exportToCSV) {
-      this.listHubsService = listHubsService;
+    .controller('AdminHubsIndexController', function(store, $state, adminListHubsService, deleteHubService, restoreHubService, Notification, exportToCSV) {
+      this.adminListHubsService = adminListHubsService;
       this.deleteHubService = deleteHubService;
       this.restoreHubService = restoreHubService;
       var controller = this;
@@ -21,7 +21,7 @@
       }
 
       function getHubs() {
-        listHubsService.getAll().then(function(hubs) {
+        adminListHubsService.getAll().then(function(hubs) {
           controller.hubs = hubs;
         }, function() {
           logout();

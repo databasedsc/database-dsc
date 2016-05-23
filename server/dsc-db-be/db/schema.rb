@@ -227,4 +227,6 @@ ActiveRecord::Schema.define(version: 20160520123822) do
     t.integer  "user_type",       default: 0
   end
 
+  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
+
 end

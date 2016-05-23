@@ -1,7 +1,7 @@
 (function(){
   angular
     .module('admin')
-    .service('listMultinationalsService', function(store, serverUrl, $http){
+    .service('adminListMultinationalsService', function(store, serverUrl, $http){
 
       function token() {
         return store.get('jwt');

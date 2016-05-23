@@ -22,16 +22,15 @@
     <tbody>
     <tr ng-class="{deleted: investor.deleted_at}" ng-repeat="investor in $ctrl.investors">
       <td>
-        <a ng-hide="investor.deleted_at" ui-sref="admin.investors.edit({id: investor.id})"><img ng-src="{{investor.logo}}" alt="{{investor.name}}" width="80" height="50"></a>
-        <img ng-show="investor.deleted_at" ng-src="{{investor.logo}}" alt="{{investor.name}}" width="80" height="50">
+        <a ng-if="investor.user_id" ui-sref="user.investors.edit({id: investor.id})"><img ng-src="{{investor.logo}}" alt="{{investor.name}}" width="80" height="50"></a>
+        <a ng-if="!investor.user_id" ui-sref="search.investorProfile({id: investor.id})"><img ng-src="{{investor.logo}}" alt="{{investor.name}}" width="80" height="50"></a>
       </td>
       <td>
         <strong>
-          <a ng-hide="investor.deleted_at" ui-sref="admin.investors.edit({id: investor.id})">{{investor.name}}</a>
-          <span ng-show="investor.deleted_at">{{investor.name}}</span>
+          <a ng-if="investor.user_id" ui-sref="user.investors.edit({id: investor.id})">{{investor.name}}</a>
+          <a ng-if="!investor.user_id" ui-sref="search.investorProfile({id: investor.id})">{{investor.name}}</a>
         </strong>
         <p style="color:#acacac"><i>{{investor.short_description}}</i> <a href="{{investor.website}}" ng-show="investor.website"><i class="fa fa-link"></i></a></p>
-
       </td>
       <td class="base">{{investor.headquarters}}</td>
       <td class="actions">

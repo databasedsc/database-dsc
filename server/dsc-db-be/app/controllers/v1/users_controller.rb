@@ -1,9 +1,9 @@
 require 'securerandom'
 
 class V1::UsersController < ApplicationController
-  before_action :authenticate, only: [:show]
+  before_action :authenticate, only: [:show, :update]
   before_action :is_user, only: [:show, :update]
-  before_action :set_user, only: [:show, :update]
+  # before_action :set_user, only: [:show, :update]
 
   def create
     if params[:via_linkedin] == false
@@ -27,12 +27,12 @@ class V1::UsersController < ApplicationController
   end
 
   def show
-    render json: UserSerializer.new(@user), root: false, status: 200
+    render json: UserSerializer.new(current_user), root: false, status: 200
   end
 
   def update
-    if @user.update_attributes(user_params)
-      render json: UserSerializer.new(@user), root: false, status: 200
+    if current_user.update_attributes(user_params)
+      render json: UserSerializer.new(current_user), root: false, status: 200
     else
       # bad request
       render json: :nothing, status: 400
@@ -47,10 +47,6 @@ class V1::UsersController < ApplicationController
   end
 
 private
-
-  def set_user
-    @user = User.find(params[:id])
-  end
 
   def auth_token(user)
     Knock::AuthToken.new payload: { sub: user.id }

@@ -7,8 +7,8 @@
       controller: 'AdminInvestorsIndexController',
       templateUrl: 'app/modules/admin/investors/investors.index.html'
     })
-    .controller('AdminInvestorsIndexController', function(store, $state, listInvestorsService, deleteInvestorService, restoreInvestorService, Notification, exportToCSV) {
-      this.listInvestorsService = listInvestorsService;
+    .controller('AdminInvestorsIndexController', function(store, $state, adminListInvestorsService, deleteInvestorService, restoreInvestorService, Notification, exportToCSV) {
+      this.adminListInvestorsService = adminListInvestorsService;
       this.deleteInvestorService = deleteInvestorService;
       this.restoreInvestorService = restoreInvestorService;
       var controller = this;
@@ -21,7 +21,7 @@
       }
 
       function getInvestors() {
-        listInvestorsService.getAll().then(function(investors) {
+        adminListInvestorsService.getAll().then(function(investors) {
           controller.investors = investors;
         }, function() {
           logout();

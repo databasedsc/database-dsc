@@ -21,17 +21,15 @@
     <tbody>
       <tr ng-class="{deleted: hub.deleted_at}" ng-repeat="hub in $ctrl.hubs">
         <td>
-          <a ng-hide="hub.deleted_at" ui-sref="admin.hubs.edit({id: hub.id})">
-            <img ng-src="{{hub.logo}}" alt="{{hub.name}}" width="80" height="50">
-          </a>
-          <img ng-show="hub.deleted_at" ng-src="{{hub.logo}}" alt="{{hub.name}}" width="80" height="50">
+          <a ng-if="hub.user_id" ui-sref="user.hubs.edit({id: hub.id})"><img ng-src="{{hub.logo}}" alt="{{hub.name}}" width="80" height="50"></a>
+          <a ng-if="!hub.user_id" ui-sref="search.hubProfile({id: hub.id})"><img ng-src="{{hub.logo}}" alt="{{hub.name}}" width="80" height="50"></a>
         </td>
         <td>
           <strong>
-            <a ng-hide="hub.deleted_at" ui-sref="admin.hubs.edit({id: hub.id})">{{hub.name}}</a>
-            <span ng-show="hub.deleted_at">{{hub.name}}</span>
+            <a ng-if="hub.user_id" ui-sref="user.hubs.edit({id: hub.id})">{{hub.name}}</a>
+            <a ng-if="!hub.user_id" ui-sref="search.hubProfile({id: hub.id})">{{hub.name}}</a>
           </strong>
-          <p style="color:#acacac"><i>{{hub.short_description}}</i> <a href="{{hub.website}}" ng-show="hub.website"><i class="fa fa-link"></i></a></p>
+          <p style="color:#acacac"><i>{{hub.short_description}}</i> <a ng-href="{{hub.website}}" ng-show="hub.website"><i class="fa fa-link"></i></a></p>
         </td>
         <td class="actions">
 

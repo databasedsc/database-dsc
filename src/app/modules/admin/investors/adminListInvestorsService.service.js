@@ -1,14 +1,14 @@
 (function() {
   angular
     .module('admin')
-    .service('listCompaniesService', function(store, serverUrl, $http) {
+    .service('adminListInvestorsService', function(store, serverUrl, $http) {
 
       function token() {
         return store.get('jwt');
       }
 
       this.getAll = function() {
-        var basePath = serverUrl + '/admin/companies';
+        var basePath = serverUrl + '/admin/investors';
 
         var req = {
           url: basePath,
@@ -17,15 +17,13 @@
           }
         }
 
-        console.log("List Companies Token: " + token());
-
         return $http(req).then(function(responseObject) {
           return responseObject.data;
         })
       };
 
       this.filter = function(query) {
-        var basePath = serverUrl + '/admin/companies?filter=' + query;
+        var basePath = serverUrl + '/admin/investors?filter=' + query;
 
         var req = {
           url: basePath,

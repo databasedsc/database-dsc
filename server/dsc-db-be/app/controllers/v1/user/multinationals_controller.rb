@@ -2,6 +2,7 @@ module V1
   module User
     class MultinationalsController < ApplicationController
       before_action :authenticate
+      before_action :is_user
 
       def create
         multinational = Multinational.new(multinational_params)
@@ -13,6 +14,7 @@ module V1
 
       def index
         multinationals = Multinational.unclaimed_or_owned_by(current_user.id).with_deleted.order(:id)
+
         multinationals.each {|multinational| multinational.current_user = current_user} if current_user
 
         respond_to do |format|
@@ -43,8 +45,8 @@ module V1
         Multinational.restore(params[:id])
       end
 
-      def is_user_admin
-        if current_user.user_type != "admin"
+      def is_user
+        if current_user.user_type != "user"
           render json: :nothing, status: 401
           return
         end

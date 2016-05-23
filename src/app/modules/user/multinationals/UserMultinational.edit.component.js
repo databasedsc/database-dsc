@@ -14,7 +14,7 @@
 
       function logout() {
         store.remove('jwt');
-        $state.go('adminLogin');
+        $state.go('userLogin');
       }
 
       function loadTags() {

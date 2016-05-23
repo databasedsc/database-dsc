@@ -21,7 +21,7 @@
 
       function logout() {
         store.remove('jwt');
-        $state.go('adminLogin');
+        $state.go('userLogin');
       }
 
       this.claimMultinational = function(e, id) {
@@ -30,7 +30,7 @@
           entity_type: 'multinational'
         }
 
-        $confirm({text: "Are you sure you want request ownership of this company?"}).then(function() {
+        $confirm({text: "Are you sure you want request ownership of this multinational?"}).then(function() {
           controller.userClaimEntityService.create(requestedClaim).then(function() {
             var element = angular.element(e.target)
             element.text('Requested');

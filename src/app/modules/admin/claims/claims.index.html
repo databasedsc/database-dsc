@@ -1,5 +1,5 @@
 <div class="row">
-  <h2>Open Claims</h2>
+  <h2>Pending Claims</h2>
 </div>
 <div class="table-responsive">
   <table class="table table-striped table-bordered table-hover">
@@ -12,7 +12,7 @@
     </tr>
     </thead>
     <tbody>
-    <tr ng-repeat="claim in $ctrl.claims">
+    <tr ng-if="$ctrl.claims.length > 0" ng-repeat="claim in $ctrl.claims">
       <td>
         <strong>
           {{claim.user_requesting.first_name}} {{claim.user_requesting.last_name}}
@@ -31,6 +31,11 @@
       <td>
         <a ng-click="$ctrl.approveClaim($event, claim.id)" class="btn btn-xs btn-success">Approve</a>
         <a ng-click="$ctrl.denyClaim($event, claim.id)" class="btn btn-xs btn-danger">Deny</a>
+      </td>
+    </tr>
+    <tr ng-if="$ctrl.claims.length == 0">
+      <td colspan="4">
+        You have no pending claims.
       </td>
     </tr>
     </tbody>

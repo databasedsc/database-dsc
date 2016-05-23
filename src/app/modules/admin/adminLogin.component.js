@@ -14,7 +14,6 @@
 
       this.login = function() {
         loginService.authenticate(this.userCredentials).then(function(response) {
-          console.log("Login Token: " + response.jwt);
           store.set('jwt', response.jwt);
           $state.go('admin.dashboard');
         }).catch(function () {

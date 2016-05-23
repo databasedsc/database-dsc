@@ -22,29 +22,24 @@
     <tbody>
     <tr ng-class="{deleted: company.deleted_at}" ng-repeat="company in $ctrl.companies">
       <td>
-        <a ng-hide="company.deleted_at" ui-sref="admin.companies.edit({id: company.id})"><img ng-src="{{company.logo}}" alt="{{company.name}}" width="80" height="50"></a>
-        <img ng-show="company.deleted_at" ng-src="{{company.logo}}" alt="{{company.name}}" width="80" height="50">
+        <a ng-if="company.user_id" ui-sref="user.companies.edit({id: company.id})"><img ng-src="{{company.logo}}" alt="{{company.name}}" width="80" height="50"></a>
+        <a ng-if="!company.user_id" ui-sref="search.companyProfile({id: company.id})"><img ng-src="{{company.logo}}" alt="{{company.name}}" width="80" height="50"></a>
       </td>
       <td>
         <strong>
-          <a ng-hide="company.deleted_at" ui-sref="admin.companies.edit({id: company.id})">{{company.name}}</a>
-          <span ng-show="company.deleted_at">{{company.name}}</span>
+          <a ng-if="company.user_id" ui-sref="user.companies.edit({id: company.id})">{{company.name}}</a>
+          <a ng-if="!company.user_id" ui-sref="search.companyProfile({id: company.id})">{{company.name}}</a>
         </strong>
         <p style="color:#acacac"><i>{{company.short_description}}</i> <a ng-href="{{company.website}}" ng-show="company.website"><i class="fa fa-link"></i></a></p>
       </td>
       <td class="base">{{company.headquarters}}</td>
       <td class="actions">
-        <!--<button class="btn"><i class="fa fa-2x fa-edit"></button>-->
-        <!--<button class="btn btn-danger"><i class="fa fa-2x fa-trash"></button>-->
         <div class="" ng-if="company.user_id">
           <span ng-hide="company.deleted_at">
             <a ui-sref="user.companies.edit({id: company.id})"><i class="fa fa-2x fa-edit"></i></a>
           </span>
-          <span ng-show="company.deleted_at">
-            <a href="" ng-click="$ctrl.restoreCompany(company.id)"><i class="fa fa-2x fa-refresh"></i></a>
-          </span>
         </div>
-        <div class="" ng-if="!company.user_id">
+        <div class="" ng-if="!company.user_id && !company.deleted_at">
           <a ng-if="!company.claimed_requested_by_current_user" ng-click="$ctrl.claimCompany($event, company.id)" class="btn btn-xs btn-block btn-default">Claim</a>
           <a ng-if="company.claimed_requested_by_current_user" class="btn btn-xs btn-block btn-default" disabled>Requested</a>
         </div>

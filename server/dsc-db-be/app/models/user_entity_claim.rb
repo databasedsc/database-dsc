@@ -28,7 +28,7 @@ class UserEntityClaim < ActiveRecord::Base
   end
 
   def allocate_to_user!
-    entity.update_attributes(user_id: 2)
+    entity.update_attributes(user_id: self.user_id)
     self.destroy
   end
 

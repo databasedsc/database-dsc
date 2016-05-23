@@ -83,4 +83,18 @@ class Multinational < ApplicationRecord
     empty_startup_packages
   end
 
+  def as_json(options = { })
+    super((options || { }).merge({
+        :methods => [:claimed_requested_by_current_user]
+    }))
+  end
+
+  def claimed_requested_by_current_user
+    UserEntityClaim.where(
+      user_id: current_user.id,
+      entity_id: self.id,
+      entity_type: UserEntityClaim.entity_types['multinational']
+    ).count > 0 if current_user
+  end
+
 end

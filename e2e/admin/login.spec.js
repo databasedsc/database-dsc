@@ -44,7 +44,7 @@ describe('Login Page', function() {
       page.passwordField.sendKeys('12345678');
       page.submitButton.click();
 
-      expect(page.body.getText()).toContain('Logout!');
+      expect(page.body.getText()).toContain('Logout');
 
       page.logoutButton.click();
 

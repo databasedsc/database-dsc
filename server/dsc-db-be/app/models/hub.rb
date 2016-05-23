@@ -64,4 +64,18 @@ class Hub < ApplicationRecord
   scope :unclaimed_or_owned_by, -> (user_id) { where "(user_id is null) OR (user_id = #{user_id})" }
 
   attr_accessor :current_user
+
+  def as_json(options = { })
+    super((options || { }).merge({
+        :methods => [:claimed_requested_by_current_user]
+    }))
+  end
+
+  def claimed_requested_by_current_user
+    UserEntityClaim.where(
+      user_id: current_user.id,
+      entity_id: self.id,
+      entity_type: UserEntityClaim.entity_types['hub']
+    ).count > 0 if current_user
+  end
 end

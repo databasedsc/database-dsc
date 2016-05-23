@@ -7,11 +7,11 @@
       templateUrl: 'app/modules/admin/multinationals/multinationals.index.html',
       controller: 'AdminMultinationalsIndexController'
     })
-    .controller('AdminMultinationalsIndexController', function(store, $state, listMultinationalsService, restoreMultinationalService, deleteMultinationalService, Notification, exportToCSV) {
+    .controller('AdminMultinationalsIndexController', function(store, $state, adminListMultinationalsService, restoreMultinationalService, deleteMultinationalService, Notification, exportToCSV) {
       var controller = this;
 
       function getMultinationals() {
-        listMultinationalsService.getAll().then(function(multinationals) {
+        adminListMultinationalsService.getAll().then(function(multinationals) {
           controller.multinationals = multinationals;
         }, function() {
           logout();

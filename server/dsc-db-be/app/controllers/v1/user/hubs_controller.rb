@@ -2,6 +2,7 @@ module V1
   module User
     class HubsController < ApplicationController
       before_action :authenticate
+      before_action :is_user
 
       def create
         hub = Hub.new(hub_params)
@@ -44,8 +45,8 @@ module V1
         Hub.restore(params[:id])
       end
 
-      def is_user_admin
-        if current_user.user_type != "admin"
+      def is_user
+        if current_user.user_type != "user"
           render json: :nothing, status: 401
           return
         end

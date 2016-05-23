@@ -76,4 +76,18 @@ class Investor < ApplicationRecord
     range_scope(column, lower..upper)
   end
 
+  def as_json(options = { })
+    super((options || { }).merge({
+        :methods => [:claimed_requested_by_current_user]
+    }))
+  end
+
+  def claimed_requested_by_current_user
+    UserEntityClaim.where(
+      user_id: current_user.id,
+      entity_id: self.id,
+      entity_type: UserEntityClaim.entity_types['investor']
+    ).count > 0 if current_user
+  end
+
 end

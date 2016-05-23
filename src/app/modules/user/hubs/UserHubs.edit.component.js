@@ -21,7 +21,7 @@
 
       function logout() {
         store.remove('jwt');
-        $state.go('adminLogin');
+        $state.go('userLogin');
       }
 
       this.currentAppDeadlineDate;
@@ -30,37 +30,6 @@
         controller.hub.tags.forEach(function(tag) {
           controller.tags.push({text: tag})
         });
-      }
-
-      function loadFundingTypes() {
-        controller.hub.funding_types.forEach(function(fType) {
-          controller.fundingTypes[fType] = true;
-        });
-      }
-
-      function setFundingTypes() {
-        controller.hub.funding_types = [];
-        Object.keys(controller.fundingTypes).forEach(function(fType) {
-          if (controller.fundingTypes[fType]) {
-            controller.hub.funding_types.push(fType);
-          }
-        });
-      }
-
-      function loadOfficeLocations() {
-        controller.hub.office_locations.forEach(function(location) {
-          controller.officeLocations.push(location);
-        });
-      }
-
-      function setOfficeLocations() {
-        controller.hub.office_locations = [];
-        for (var i=0;i<controller.officeLocations.length;i++) {
-          var location = controller.officeLocations[i];
-          if (location.trim().length > 0) {
-            controller.hub.office_locations.push(location)
-          }
-        }
       }
 
       function convertDateForDisplay() {

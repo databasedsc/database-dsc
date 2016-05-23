@@ -2,6 +2,7 @@ module V1
   module User
     class CompaniesController < ApplicationController
       before_action :authenticate
+      before_action :is_user
 
       def create
         company = Company.new(company_params)
@@ -37,6 +38,13 @@ module V1
       def update
         company.update(company_params)
         render json: company
+      end
+
+      def is_user
+        if current_user.user_type != "user"
+          render json: :nothing, status: 401
+          return
+        end
       end
 
       private
