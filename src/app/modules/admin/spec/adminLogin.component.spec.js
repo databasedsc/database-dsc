@@ -1,14 +1,14 @@
 (function() {
   'use strict';
 
-  describe('Login', function() {
+  describe('AdminLogin', function() {
     var $ctrl,
       $scope,
       resultsDeferred,
       store,
       $state;
 
-    beforeEach(module('login'));
+    beforeEach(module('login', 'admin'));
 
     beforeEach(inject(function($componentController, $rootScope, $q, loginService, _store_, _$state_) {
       $scope = $rootScope.$new();
@@ -26,7 +26,7 @@
 
       spyOn($state, 'go');
 
-      $ctrl = $componentController('login', {
+      $ctrl = $componentController('adminLogin', {
         $scope: $scope,
         loginService: loginService
       })

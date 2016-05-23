@@ -60,8 +60,8 @@
           }
         });
 
-      $scope.currentPage = 2;
-      $scope.perPage = 5;
+      $ctrl.currentPage = 2;
+      $ctrl.perPage = 5;
 
       $ctrl.query = 'microsoft';
       $ctrl.search();

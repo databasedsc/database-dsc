@@ -1,9 +1,9 @@
 (function () {
   'use strict';
 
-  describe('getMultinationalService', function () {
+  describe('adminGetMultinationalService', function () {
     var $httpBackend,
-      getMultinationalService;
+      adminGetMultinationalService;
 
     beforeEach(module('admin'));
 
@@ -11,18 +11,18 @@
       $provide.constant('serverUrl', 'http://test.example.com');
     }));
 
-    beforeEach(inject(function (_$httpBackend_, _getMultinationalService_) {
+    beforeEach(inject(function (_$httpBackend_, _adminGetMultinationalService_) {
       $httpBackend = _$httpBackend_;
-      getMultinationalService = _getMultinationalService_;
+      adminGetMultinationalService = _adminGetMultinationalService_;
     }));
 
     describe('#find', function() {
-      it('calls the server to get companies', function () {
+      it('calls the server to get multinationals', function () {
         var multinational = { name: 'Multinational', short_description: 'Very short desc.'}
 
         $httpBackend.expectGET('http://test.example.com/admin/multinationals/1').respond(multinational);
 
-        getMultinationalService.find(1).then(function (response) {
+        adminGetMultinationalService.find(1).then(function (response) {
           expect(response).toEqual(multinational);
         });
 

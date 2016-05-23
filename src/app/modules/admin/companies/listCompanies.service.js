@@ -17,6 +17,8 @@
           }
         }
 
+        console.log("List Companies Token: " + token());
+
         return $http(req).then(function(responseObject) {
           return responseObject.data;
         })

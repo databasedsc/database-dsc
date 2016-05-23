@@ -3,12 +3,13 @@
 
   angular
     .module('user', ['configuration', 'angular-jwt', 'angular-storage', 'ui.router', 'ui-notification', 'satellizer'])
-    .config(function(serverUrl, $authProvider) {
+    .config(function(serverUrl, $authProvider, $windowProvider) {
+      var $window = $windowProvider.$get();
       $authProvider.linkedin({
         clientId: '77kusgvv1604kj',
         url: serverUrl + '/auth/linkedin',
         authorizationEndpoint: 'https://www.linkedin.com/uas/oauth2/authorization',
-        redirectUri: window.location.origin,
+        redirectUri: $window.location.origin,
         requiredUrlParams: ['state', 'scope'],
         scope: ['r_basicprofile','r_emailaddress'],
         scopeDelimiter: ' ',

@@ -14,7 +14,7 @@
           <p>
             <div class="video-player" ng-show="$ctrl.entity.video_url">
               <div class="embed-responsive embed-responsive-16by9">
-                <iframe ng-src="{{trustSrc($ctrl.entity.video_url)}}" frameborder="0" allowfullscreen></iframe>
+                <iframe ng-src="{{$ctrl.trustSrc($ctrl.entity.video_url)}}" frameborder="0" allowfullscreen></iframe>
               </div>
             </div>
           </p>

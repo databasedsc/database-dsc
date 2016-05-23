@@ -32,37 +32,6 @@
         });
       }
 
-      function loadFundingTypes() {
-        controller.hub.funding_types.forEach(function(fType) {
-          controller.fundingTypes[fType] = true;
-        });
-      }
-
-      function setFundingTypes() {
-        controller.hub.funding_types = [];
-        Object.keys(controller.fundingTypes).forEach(function(fType) {
-          if (controller.fundingTypes[fType]) {
-            controller.hub.funding_types.push(fType);
-          }
-        });
-      }
-
-      function loadOfficeLocations() {
-        controller.hub.office_locations.forEach(function(location) {
-          controller.officeLocations.push(location);
-        });
-      }
-
-      function setOfficeLocations() {
-        controller.hub.office_locations = [];
-        for (var i=0;i<controller.officeLocations.length;i++) {
-          var location = controller.officeLocations[i];
-          if (location.trim().length > 0) {
-            controller.hub.office_locations.push(location)
-          }
-        }
-      }
-
       function convertDateForDisplay() {
         if (controller.hub.application_deadline) {
           controller.hub.application_deadline = Date.parse(controller.hub.application_deadline);

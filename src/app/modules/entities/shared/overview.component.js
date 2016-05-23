@@ -12,8 +12,9 @@
       }
     })
     .controller('OverviewController', function($scope, $sce) {
+      var controller = this;
 
-      $scope.trustSrc = function(src) {
+      controller.trustSrc = function(src) {
         return $sce.trustAsResourceUrl(src);
       }
     })

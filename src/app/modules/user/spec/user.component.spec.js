@@ -1,12 +1,12 @@
 (function() {
   'use strict';
 
-  describe('Admin Component', function() {
+  describe('User Component', function() {
     var $scope,
       store,
       $state;
 
-    beforeEach(module('admin'));
+    beforeEach(module('user'));
 
     beforeEach(inject(function($componentController, $rootScope, $q, _store_, _$state_) {
       $scope = $rootScope.$new();
@@ -19,7 +19,7 @@
 
       spyOn($state, 'go');
 
-      $componentController('admin', {
+      $componentController('user', {
         $scope: $scope,
         $state: $state
       })

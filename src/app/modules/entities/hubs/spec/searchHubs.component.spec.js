@@ -59,8 +59,8 @@
         });
 
       $ctrl.query = 'NDRC';
-      $scope.currentPage = 5;
-      $scope.perPage = 20;
+      $ctrl.currentPage = 5;
+      $ctrl.perPage = 20;
 
       $ctrl.search();
       $scope.$apply();

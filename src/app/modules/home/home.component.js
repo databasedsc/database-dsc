@@ -41,8 +41,8 @@
       var controller = this;
       this.searchCompaniesService = searchCompaniesService;
 
-      $scope.currentPage = 1;
-      $scope.perPage = 4;
+      controller.currentPage = 1;
+      controller.perPage = 4;
       this.query = "";
 
       $scope.$watch('currentPage', function () {
@@ -77,8 +77,8 @@
 
       function getPaginationDetails() {
         return {
-          currentPage: $scope.currentPage,
-          perPage: $scope.perPage
+          currentPage: controller.currentPage,
+          perPage: controller.perPage
         }
       }
 

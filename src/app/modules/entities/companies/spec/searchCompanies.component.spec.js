@@ -86,8 +86,8 @@
         }
       );
 
-      $scope.currentPage = 1;
-      $scope.perPage = 5;
+      $ctrl.currentPage = 1;
+      $ctrl.perPage = 5;
 
       $ctrl.query = 'mustard';
       $ctrl.search();
