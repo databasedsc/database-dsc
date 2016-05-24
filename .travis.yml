@@ -50,7 +50,6 @@ script:
   - rspec
   - echo 'END BACKEND TESTS'
   - RAILS_ENV=integration rake db:create
-  - rails db:environment:set RAILS_ENV=integration
   - RAILS_ENV=integration rake db:drop db:create db:migrate db:seed
   - RAILS_ENV=integration rails s -p 4000 > /dev/null &
   - cd ../../

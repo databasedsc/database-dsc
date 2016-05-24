@@ -16,12 +16,6 @@ ActiveRecord::Schema.define(version: 20160523183515) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "ar_internal_metadata", primary_key: "key", force: :cascade do |t|
-    t.string   "value"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "authorizations", force: :cascade do |t|
     t.string   "provider"
     t.string   "uid"
@@ -35,8 +29,8 @@ ActiveRecord::Schema.define(version: 20160523183515) do
   add_index "authorizations", ["user_id"], name: "index_authorizations_on_user_id", using: :btree
 
   create_table "companies", force: :cascade do |t|
-    t.datetime "created_at",                            null: false
-    t.datetime "updated_at",                            null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
     t.string   "name"
     t.string   "logo"
     t.text     "short_description"
@@ -68,7 +62,7 @@ ActiveRecord::Schema.define(version: 20160523183515) do
     t.text     "custom_field_3"
     t.text     "custom_field_4"
     t.jsonb    "office_locations",      default: {}
-    t.string   "tags",                  default: [],                 array: true
+    t.string   "tags",                  default: [],    array: true
     t.jsonb    "founders"
     t.string   "acquired"
     t.integer  "revenue"
@@ -86,9 +80,9 @@ ActiveRecord::Schema.define(version: 20160523183515) do
     t.string   "logo"
     t.text     "short_description"
     t.text     "programs"
-    t.datetime "created_at",                        null: false
-    t.datetime "updated_at",                        null: false
-    t.text     "hub_type",             default: [],              array: true
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.text     "hub_type",             default: [], array: true
     t.date     "application_deadline"
     t.text     "long_description"
     t.string   "founded"
@@ -96,7 +90,7 @@ ActiveRecord::Schema.define(version: 20160523183515) do
     t.string   "contact_detail"
     t.text     "address"
     t.jsonb    "contact_urls",         default: []
-    t.text     "events",               default: [],              array: true
+    t.text     "events",               default: [], array: true
     t.jsonb    "alumni",               default: []
     t.datetime "deleted_at"
     t.text     "custom_field_1"
@@ -106,7 +100,7 @@ ActiveRecord::Schema.define(version: 20160523183515) do
     t.string   "website"
     t.text     "video_url"
     t.jsonb    "social_accounts"
-    t.string   "tags",                 default: [],              array: true
+    t.string   "tags",                 default: [], array: true
     t.boolean  "funding_provided"
     t.float    "lat"
     t.float    "lng"
@@ -125,10 +119,10 @@ ActiveRecord::Schema.define(version: 20160523183515) do
     t.jsonb    "founders",              default: {}
     t.text     "short_description"
     t.string   "local_office"
-    t.text     "tags",                  default: [],              array: true
-    t.datetime "created_at",                         null: false
-    t.datetime "updated_at",                         null: false
-    t.text     "funding_types",         default: [],              array: true
+    t.text     "tags",                  default: [], array: true
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.text     "funding_types",         default: [], array: true
     t.integer  "investment_size"
     t.string   "funds_raised"
     t.text     "regions"
@@ -167,12 +161,12 @@ ActiveRecord::Schema.define(version: 20160523183515) do
     t.text     "short_description"
     t.string   "headquarters"
     t.string   "local_office"
-    t.datetime "created_at",                                  null: false
-    t.datetime "updated_at",                                  null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
     t.boolean  "emea_hq",                     default: false
     t.integer  "employees"
     t.boolean  "events_space",                default: false
-    t.text     "functions",                   default: [],                 array: true
+    t.text     "functions",                   default: [],    array: true
     t.text     "long_description"
     t.text     "events_space_qualifiers"
     t.string   "next_event"
@@ -185,7 +179,7 @@ ActiveRecord::Schema.define(version: 20160523183515) do
     t.text     "custom_field_4"
     t.jsonb    "startup_packages"
     t.text     "video_url"
-    t.string   "tags",                        default: [],                 array: true
+    t.string   "tags",                        default: [],    array: true
     t.float    "lat"
     t.float    "lng"
     t.boolean  "building_product_in_ireland", default: false
@@ -197,8 +191,8 @@ ActiveRecord::Schema.define(version: 20160523183515) do
 
   create_table "pg_search_documents", force: :cascade do |t|
     t.text     "content"
-    t.string   "searchable_type"
     t.integer  "searchable_id"
+    t.string   "searchable_type"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
   end
@@ -222,8 +216,8 @@ ActiveRecord::Schema.define(version: 20160523183515) do
     t.string   "first_name"
     t.string   "last_name"
     t.string   "password_digest"
-    t.datetime "created_at",                  null: false
-    t.datetime "updated_at",                  null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
     t.integer  "user_type",       default: 0
     t.string   "reset_digest"
     t.datetime "reset_sent_at"
