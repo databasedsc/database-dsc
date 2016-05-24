@@ -26,13 +26,13 @@ describe('Login Page', function() {
       page.passwordField.sendKeys('false');
       page.submitButton.click();
 
-      expect(page.body.getText()).toContain('Email/Password incorrect! Please try again.');
+      expect(page.body.getText()).toContain('There was a problem with your email or password. Please try again.');
     })
   });
 
   describe('access admin without login', function () {
     it('should return to login page', function() {
-      browser.get('#/admin');
+      browser.get('#/admin/login');
 
       expect(page.body.getText()).toContain('Sign in');
     })

@@ -4,14 +4,16 @@
   describe('AdminLogin', function() {
     var $ctrl,
       $scope,
+      $auth,
       resultsDeferred,
       store,
       $state;
 
-    beforeEach(module('login', 'admin'));
+    beforeEach(module('login', 'admin', 'satellizer'));
 
-    beforeEach(inject(function($componentController, $rootScope, $q, loginService, _store_, _$state_) {
+    beforeEach(inject(function($componentController, $rootScope, $q, loginService, _store_, _$state_, _$auth_) {
       $scope = $rootScope.$new();
+      $auth = _$auth_;
       store = _store_;
       $state = _$state_;
 
@@ -20,7 +22,7 @@
         return resultsDeferred.promise
       });
 
-      spyOn(store, 'set').and.callFake(function (key, value) {
+      spyOn($auth, 'setToken').and.callFake(function (key, value) {
         return store[key] = value + '';
       });
 
@@ -28,6 +30,7 @@
 
       $ctrl = $componentController('adminLogin', {
         $scope: $scope,
+        $auth: $auth,
         loginService: loginService
       })
     }));
@@ -43,7 +46,7 @@
       $scope.$apply();
 
       expect($ctrl.loginService.authenticate.calls.count()).toEqual(1);
-      expect(store.set.calls.count()).toEqual(1);
+      expect($auth.setToken.calls.count()).toEqual(1);
       expect($state.go.calls.count()).toEqual(1);
     });
 
