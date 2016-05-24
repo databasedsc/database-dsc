@@ -170,6 +170,7 @@
           controller: function($scope, $auth) {
             $scope.loggedIn = $auth.isAuthenticated();
           },
+          controllerAs: 'vm',
           templateUrl: 'app/search.html'
         })
         .state('search.home', {

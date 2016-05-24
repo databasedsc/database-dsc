@@ -26,7 +26,7 @@
         controller.passwordResetFail = false;
         controller.passwordResetSuccess = false;
 
-        userForgotPasswordService.resetPassword(token, this.params).then(function(response) {
+        userForgotPasswordService.resetPassword(token, this.params).then(function() {
           $document[0].getElementById("inputPassword").value = "";
           controller.passwordResetSuccess = true;
         }).catch(function () {
