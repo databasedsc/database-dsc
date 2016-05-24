@@ -1,4 +1,4 @@
-class AddFiltersFieldsToCompanies < ActiveRecord::Migration[5.0]
+class AddFiltersFieldsToCompanies < ActiveRecord::Migration
   def change
     add_column :companies, :employees, :integer
     add_column :companies, :funding_stage, :string

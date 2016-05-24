@@ -1,4 +1,4 @@
-class AddWebsiteAndSocialAccountsToInvestors < ActiveRecord::Migration[5.0]
+class AddWebsiteAndSocialAccountsToInvestors < ActiveRecord::Migration
   def change
     add_column :investors, :website, :string
     add_column :investors, :video_url, :text

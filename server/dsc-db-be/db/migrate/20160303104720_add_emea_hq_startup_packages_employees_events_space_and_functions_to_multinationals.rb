@@ -1,4 +1,4 @@
-class AddEmeaHqStartupPackagesEmployeesEventsSpaceAndFunctionsToMultinationals < ActiveRecord::Migration[5.0]
+class AddEmeaHqStartupPackagesEmployeesEventsSpaceAndFunctionsToMultinationals < ActiveRecord::Migration
   def change
     add_column :multinationals, :emea_hq, :boolean, default: false
     add_column :multinationals, :startup_packages, :text, array: true, default: []

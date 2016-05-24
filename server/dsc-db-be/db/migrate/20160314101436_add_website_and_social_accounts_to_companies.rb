@@ -1,4 +1,4 @@
-class AddWebsiteAndSocialAccountsToCompanies < ActiveRecord::Migration[5.0]
+class AddWebsiteAndSocialAccountsToCompanies < ActiveRecord::Migration
   def change
     add_column :companies, :website, :string
     add_column :companies, :social_accounts, :jsonb

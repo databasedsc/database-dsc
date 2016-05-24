@@ -1,4 +1,4 @@
-class AddFundingProvidedToHubs < ActiveRecord::Migration[5.0]
+class AddFundingProvidedToHubs < ActiveRecord::Migration
   def change
     add_column :hubs, :funding_provided, :boolean
   end

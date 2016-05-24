@@ -1,4 +1,4 @@
-class AddRemainingFieldsToInvestors < ActiveRecord::Migration[5.0]
+class AddRemainingFieldsToInvestors < ActiveRecord::Migration
   def change
     add_column :investors, :funds_raised, :string
     add_column :investors, :regions, :text

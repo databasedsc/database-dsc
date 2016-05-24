@@ -1,4 +1,4 @@
-class AddVideoUrlToMultinationals < ActiveRecord::Migration[5.0]
+class AddVideoUrlToMultinationals < ActiveRecord::Migration
   def change
     add_column :multinationals, :video_url, :text
   end

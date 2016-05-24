@@ -1,4 +1,4 @@
-class AddRevenueToCompanies < ActiveRecord::Migration[5.0]
+class AddRevenueToCompanies < ActiveRecord::Migration
   def change
     add_column :companies, :revenue, :integer
   end

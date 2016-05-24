@@ -1,4 +1,4 @@
-class AddRemainingFieldsToHubs < ActiveRecord::Migration[5.0]
+class AddRemainingFieldsToHubs < ActiveRecord::Migration
   def change
     add_column :hubs, :long_description, :text
     add_column :hubs, :founded, :string

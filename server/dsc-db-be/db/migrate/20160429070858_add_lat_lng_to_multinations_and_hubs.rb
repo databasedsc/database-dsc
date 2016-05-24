@@ -1,4 +1,4 @@
-class AddLatLngToMultinationsAndHubs < ActiveRecord::Migration[5.0]
+class AddLatLngToMultinationsAndHubs < ActiveRecord::Migration
   def change
     add_column :multinationals, :lat, :float
     add_column :multinationals, :lng, :float

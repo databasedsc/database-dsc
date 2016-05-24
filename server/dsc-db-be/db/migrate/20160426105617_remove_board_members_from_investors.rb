@@ -1,4 +1,4 @@
-class RemoveBoardMembersFromInvestors < ActiveRecord::Migration[5.0]
+class RemoveBoardMembersFromInvestors < ActiveRecord::Migration
   def change
     remove_column :investors, :board_members, :text, array: true, default: []
   end

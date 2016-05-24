@@ -1,4 +1,4 @@
-class ChangeFoundersToJsonbForCompanies < ActiveRecord::Migration[5.0]
+class ChangeFoundersToJsonbForCompanies < ActiveRecord::Migration
   def change
     remove_column :companies, :founders, :text
 

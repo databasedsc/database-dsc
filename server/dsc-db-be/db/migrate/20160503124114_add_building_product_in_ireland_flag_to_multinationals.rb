@@ -1,4 +1,4 @@
-class AddBuildingProductInIrelandFlagToMultinationals < ActiveRecord::Migration[5.0]
+class AddBuildingProductInIrelandFlagToMultinationals < ActiveRecord::Migration
   def change
     add_column :multinationals,
                :building_product_in_ireland,

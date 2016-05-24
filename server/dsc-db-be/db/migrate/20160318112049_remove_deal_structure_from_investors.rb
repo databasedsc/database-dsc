@@ -1,4 +1,4 @@
-class RemoveDealStructureFromInvestors < ActiveRecord::Migration[5.0]
+class RemoveDealStructureFromInvestors < ActiveRecord::Migration
   def change
     remove_column :investors, :deal_structure
   end

@@ -1,4 +1,4 @@
-class AddWebsiteAndSocialAccountsToHubs < ActiveRecord::Migration[5.0]
+class AddWebsiteAndSocialAccountsToHubs < ActiveRecord::Migration
   def change
     add_column :hubs, :website, :string
     add_column :hubs, :video_url, :text

@@ -1,4 +1,4 @@
-class AddFormerlyKnownAsToCompany < ActiveRecord::Migration[5.0]
+class AddFormerlyKnownAsToCompany < ActiveRecord::Migration
   def change
     add_column :companies, :formerly_known_as, :string
   end

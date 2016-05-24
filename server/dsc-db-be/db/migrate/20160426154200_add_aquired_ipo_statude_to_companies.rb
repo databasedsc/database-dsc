@@ -1,4 +1,4 @@
-class AddAquiredIpoStatudeToCompanies < ActiveRecord::Migration[5.0]
+class AddAquiredIpoStatudeToCompanies < ActiveRecord::Migration
   def change
     add_column :companies, :acquired, :string
   end

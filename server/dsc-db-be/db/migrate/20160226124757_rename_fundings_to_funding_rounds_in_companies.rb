@@ -1,4 +1,4 @@
-class RenameFundingsToFundingRoundsInCompanies < ActiveRecord::Migration[5.0]
+class RenameFundingsToFundingRoundsInCompanies < ActiveRecord::Migration
   def change
     rename_column :companies, :fundings, :funding_rounds
   end

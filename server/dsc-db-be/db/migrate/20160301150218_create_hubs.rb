@@ -1,4 +1,4 @@
-class CreateHubs < ActiveRecord::Migration[5.0]
+class CreateHubs < ActiveRecord::Migration
   def change
     create_table :hubs do |t|
       t.string :name

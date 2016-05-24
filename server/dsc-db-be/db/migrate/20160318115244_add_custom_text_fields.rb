@@ -1,4 +1,4 @@
-class AddCustomTextFields < ActiveRecord::Migration[5.0]
+class AddCustomTextFields < ActiveRecord::Migration
   def change
     add_column :companies, :custom_field_1, :text
     add_column :companies, :custom_field_2, :text

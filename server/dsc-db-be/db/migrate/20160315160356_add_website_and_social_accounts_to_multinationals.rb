@@ -1,4 +1,4 @@
-class AddWebsiteAndSocialAccountsToMultinationals < ActiveRecord::Migration[5.0]
+class AddWebsiteAndSocialAccountsToMultinationals < ActiveRecord::Migration
   def change
     add_column :multinationals, :website, :string
     add_column :multinationals, :social_accounts, :jsonb

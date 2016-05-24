@@ -1,4 +1,4 @@
-class ChangeFundingRoundsDatatypeInCompanies < ActiveRecord::Migration[5.0]
+class ChangeFundingRoundsDatatypeInCompanies < ActiveRecord::Migration
   def change
     change_column :companies, :funding_rounds, 'jsonb USING CAST(funding_rounds as jsonb)'
 

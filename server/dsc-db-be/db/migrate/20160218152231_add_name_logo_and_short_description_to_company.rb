@@ -1,4 +1,4 @@
-class AddNameLogoAndShortDescriptionToCompany < ActiveRecord::Migration[5.0]
+class AddNameLogoAndShortDescriptionToCompany < ActiveRecord::Migration
   def change
     add_column :companies, :name, :string
     add_column :companies, :logo, :string

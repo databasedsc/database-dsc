@@ -1,4 +1,4 @@
-class AddDealStructureToInvestors < ActiveRecord::Migration[5.0]
+class AddDealStructureToInvestors < ActiveRecord::Migration
   def change
     add_column :investors, :deal_structure, :string
   end

@@ -1,4 +1,4 @@
-class ChangeStartupPackagesFormatInMultinationals < ActiveRecord::Migration[5.0]
+class ChangeStartupPackagesFormatInMultinationals < ActiveRecord::Migration
   def up
     remove_column :multinationals, :startup_packages
     add_column :multinationals, :startup_packages, :jsonb

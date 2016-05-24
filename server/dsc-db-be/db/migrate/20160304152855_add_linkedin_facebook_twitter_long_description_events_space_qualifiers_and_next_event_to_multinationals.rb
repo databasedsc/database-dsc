@@ -1,4 +1,4 @@
-class AddLinkedinFacebookTwitterLongDescriptionEventsSpaceQualifiersAndNextEventToMultinationals < ActiveRecord::Migration[5.0]
+class AddLinkedinFacebookTwitterLongDescriptionEventsSpaceQualifiersAndNextEventToMultinationals < ActiveRecord::Migration
   def change
     add_column :multinationals, :linkedin, :string
     add_column :multinationals, :facebook, :string

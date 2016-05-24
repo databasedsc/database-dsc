@@ -1,4 +1,4 @@
-class AddRemainingProfileFieldsToCompanies < ActiveRecord::Migration[5.0]
+class AddRemainingProfileFieldsToCompanies < ActiveRecord::Migration
   def change
       add_column :companies, :fundings, :text
       add_column :companies, :looking_for, :text

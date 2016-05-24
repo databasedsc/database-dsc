@@ -1,4 +1,4 @@
-class CreateMultinationals < ActiveRecord::Migration[5.0]
+class CreateMultinationals < ActiveRecord::Migration
   def change
     create_table :multinationals do |t|
       t.string :name
