@@ -7,7 +7,7 @@ echo 'CF DONE - STARTING DEPLOY'
 echo $CF_EMAIL $CF_PWD
 cf api https://api.run.pivotal.io
 cf auth $CF_EMAIL $CF_PWD
-cf target bengt-org development
+cf target TechIreland
 cf push
 
 cf logout

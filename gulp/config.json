@@ -9,6 +9,6 @@
     "serverUrl": "http://localhost:4000/v1"
   },
   "production": {
-    "serverUrl": "http://database-dsc.cfapps.io/v1"
+    "serverUrl": "http://techireland-be.cfapps.io/v1"
   }
 }
