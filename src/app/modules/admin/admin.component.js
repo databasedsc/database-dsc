@@ -12,7 +12,7 @@
 
       this.logout = function() {
         $auth.removeToken();
-        $state.go('adminLogin');
+        $state.go('search.home');
       };
 
       if (!this.jwt || jwtHelper.isTokenExpired(this.jwt)) {

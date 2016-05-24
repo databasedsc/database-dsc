@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+
+
   root to: 'health#index'
 
   namespace :v1 do
@@ -15,6 +17,8 @@ Rails.application.routes.draw do
     get 'investors/:id', to: 'investors#show'
     get 'hubs', to: 'hubs#index'
     get 'hubs/:id', to: 'hubs#show'
+
+    resources :password_resets, only: [:new, :create, :edit, :update]
 
     # Administration Routes
     namespace :admin do
@@ -49,7 +53,7 @@ Rails.application.routes.draw do
 
     namespace :user do
       resources :user_entity_claims, only: [:create, :update]
-      
+
       resources :companies, only: [:create, :index, :show, :update, :destroy] do
         member do
           put :restore

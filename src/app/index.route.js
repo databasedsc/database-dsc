@@ -13,6 +13,14 @@
           url: '/user/signup',
           template: '<div class="container"><user-signup></user-signup></div>'
         })
+        .state('userRequestPasswordReset', {
+          url: '/user/request-password-reset',
+          template: '<div class="container"><user-forgot-password></user-forgot-password></div>'
+        })
+        .state('userResetPassword', {
+          url: '/user/reset-password',
+          template: '<div class="container"><user-reset-password></user-reset-password></div>'
+        })
         .state('user', {
           template: '<user></user>'
         })
@@ -160,10 +168,6 @@
         })
         .state('search', {
           controller: function($scope, $auth) {
-            $scope.logout = function() {
-              $auth.logout();
-            }
-
             $scope.loggedIn = $auth.isAuthenticated();
           },
           templateUrl: 'app/search.html'
