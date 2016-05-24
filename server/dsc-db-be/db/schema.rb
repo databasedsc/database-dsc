@@ -229,6 +229,4 @@ ActiveRecord::Schema.define(version: 20160523183515) do
     t.datetime "reset_sent_at"
   end
 
-  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
-
 end

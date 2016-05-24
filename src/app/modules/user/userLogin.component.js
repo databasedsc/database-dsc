@@ -13,7 +13,7 @@
 
       this.authenticate = function(provider) {
         $auth.authenticate(provider).then(function() {
-          $state.go('user.profile');
+          $state.go('user.companies.index');
         });
       };
 
@@ -22,7 +22,7 @@
       this.login = function() {
         loginService.authenticate(this.userCredentials).then(function(response) {
           $auth.setToken(response.jwt);
-          $state.go('user.profile');
+          $state.go('user.companies.index');
         }).catch(function () {
           controller.loginFail = true;
         })
