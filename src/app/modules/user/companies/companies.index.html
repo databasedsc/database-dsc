@@ -1,14 +1,16 @@
 <div class="row">
-  <h2>Companies</h2>
-</div>
-<div class="row">
-  <div class="pull-right">
-    <p>
-      <button ng-click="$ctrl.export()" class="btn btn-primary">Export</button>
-      <a ui-sref="user.companies.new" class="btn btn-primary">New Company</a>
+  <div class="col-md-12">
+    <h2 style="margin-bottom:0;">Companies</h2>
+    <p class="text-muted" style="margin-bottom:20px;">
+      All companies listed on Tech Ireland are listed below. Please claim any company you own or alternativly create a new company.
+    </p>
+    <p class="pull-right">
+      <button ng-click="$ctrl.export()" class="btn btn-primary btn-xs">Export Companies</button>
+      <a ui-sref="user.companies.new" class="btn btn-primary btn-xs">Create a Company</a>
     </p>
   </div>
 </div>
+
 <div class="table-responsive">
   <table class="table table-striped table-bordered table-hover">
     <thead>

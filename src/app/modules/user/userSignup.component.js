@@ -15,7 +15,7 @@
       this.signUp = function() {
         signUpService.signUp(this.userInfo, false).then(function(response) {
           $auth.setToken(response.jwt);
-          $state.go('user.profile');
+          $state.go('user.companies.index');
         }).catch(function () {
           controller.signUpFail = true;
         })
