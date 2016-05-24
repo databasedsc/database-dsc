@@ -40,6 +40,8 @@ module V1
         render json: company
       end
 
+      protected
+
       def is_user
         if current_user.user_type != "user"
           render json: :nothing, status: 401

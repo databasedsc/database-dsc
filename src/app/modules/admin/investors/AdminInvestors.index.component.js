@@ -36,7 +36,7 @@
       };
 
       this.export = function() {
-        exportToCSV.export('investors').then(function(data) {
+        exportToCSV.export('admin', 'investors').then(function(data) {
           var anchor = angular.element('<a/>');
           anchor.attr({
             href: 'data:attachment/csv;charset=utf-8,' + encodeURI(data),

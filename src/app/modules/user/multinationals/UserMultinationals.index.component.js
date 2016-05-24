@@ -36,7 +36,7 @@
       getMultinationals();
 
       this.export = function() {
-        exportToCSV.export('multinationals').then(function(data) {
+        exportToCSV.export('user', 'multinationals').then(function(data) {
           var anchor = angular.element('<a/>');
           anchor.attr({
             href: 'data:attachment/csv;charset=utf-8,' + encodeURI(data),

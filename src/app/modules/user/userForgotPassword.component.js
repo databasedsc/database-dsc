@@ -6,7 +6,7 @@
       templateUrl: 'app/modules/user/userForgotPassword.html',
       controller: 'UserForgotPasswordController'
     })
-    .controller('UserForgotPasswordController', function(store, $state, userForgotPasswordService, $scope) {
+    .controller('UserForgotPasswordController', function(store, $state, userForgotPasswordService, $scope, $document) {
       var controller = this;
 
       this.userForgotPasswordService = userForgotPasswordService;
@@ -17,8 +17,9 @@
         // reset messages
         controller.passwordResetFail = false;
         controller.passwordResetSuccess = false;
-        
+
         userForgotPasswordService.requestPasswordReset(this.params).then(function(response) {
+          $document[0].getElementById("inputEmail").value = "";
           controller.passwordResetSuccess = true;
         }).catch(function () {
           controller.passwordResetFail = true;
