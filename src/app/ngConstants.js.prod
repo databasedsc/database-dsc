@@ -1,2 +1,2 @@
 angular.module("configuration", [])
-  .constant("serverUrl", "http://database-dsc-be.cfapps.io/v1");
+  .constant("serverUrl", "http://techireland-be.cfapps.io/v1");

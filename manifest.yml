@@ -1,4 +1,4 @@
 applications:
-  - name: database-dsc
+  - name: techireland
     memory: 128M
     buildpack: staticfile_buildpack
